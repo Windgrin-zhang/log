@@ -1,0 +1,25 @@
+写ppt
+调整lenet和resnet并运行，手写数字的训练提升，基本99往上没什么其他好提升的了                      上午
+
+
+下午
+寻找其他训练集。mnistfashion，第一次 5epoch 有88准确率
+第二次
+Epoch [1/10], Loss: 0.6570, Train Acc: 75.50%, Val Acc: 82.16%
+Epoch [2/10], Loss: 0.4098, Train Acc: 85.06%, Val Acc: 85.38%
+Epoch [3/10], Loss: 0.3507, Train Acc: 87.09%, Val Acc: 87.52%
+Epoch [4/10], Loss: 0.3172, Train Acc: 88.40%, Val Acc: 87.71%
+Epoch [5/10], Loss: 0.2967, Train Acc: 89.24%, Val Acc: 87.86%
+Epoch [6/10], Loss: 0.2797, Train Acc: 89.77%, Val Acc: 89.04%
+Epoch [7/10], Loss: 0.2649, Train Acc: 90.25%, Val Acc: 88.62%
+Epoch [8/10], Loss: 0.2512, Train Acc: 90.61%, Val Acc: 89.03%
+Epoch [9/10], Loss: 0.2412, Train Acc: 90.90%, Val Acc: 89.07%
+Epoch [10/10], Loss: 0.2323, Train Acc: 91.27%, Val Acc: 88.85%
+Accuracy on test set: 88.85%
+有点过拟合 1换模型 2正则化
+
+
+yolo
+超参调整 yaml 
+模型选择
+算法选择 多方面
