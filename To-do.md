@@ -1,0 +1,29 @@
+# to-do 
+- Git related
+  - git concpet, principle
+  - difference: github gitee gitlab
+  - files could/couldn't be tracked by git 
+- SSH
+  - concept
+  - private, public key
+- ubuntu shell (bash),kernel
+  - linux 
+  - tools
+- network
+  - qos
+  - smb(nas)
+- cv
+  - streaming
+  - rtsp
+- ML
+  - dataset: kaggle, huggingface
+  - framework: keras, scikit-learn
+- NLP
+  - EN vs CN
+  - hanlp
+- docker
+  - vs vm 
+  - podman
+- Jupyter notebook
+  - how to use
+  - referencee
