@@ -2,7 +2,7 @@
 - Git related
   - [x] git concpet, principle
   - [x] difference: github gitee gitlab
-  - [ ] files could/couldn't be tracked by git 
+  - [x] files could/couldn't be tracked by git 
 - SSH
   - [ ] concept
   - [ ] private, public key
@@ -25,5 +25,5 @@
   - [ ] vs vm 
   - [ ] podman
 - Jupyter notebook
-  - [ ] how to use
+  - [x] how to use
   - [ ] referencee
