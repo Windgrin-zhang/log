@@ -1,11 +1,22 @@
-# to-do 
+# To-do 
 - Git related
   - [x] git concpet, principle
-  - [x] difference: github gitee gitlab
+    - git concept: repository, commit, branch, working directory, staging area, head
+    - git principle:  
+      - Git thinks of its data like a series of snapshots. If files have not changed, Git doesn’t store the file again, just a link to the previous identical file it has already stored. 
+      - Nearly every operation is local
+      - Git stores everything in its database by the hash value of its contents.
+      - Only add data generally
+      - Three state: modifiled, staged, committed
+  - [x] difference: git github gitee gitlab
+    - git: **local** a distributed version control system for tracking changes, branches, and merges entirely on your machine without any network dependency.
+    - github: **remote** ( based by git ) cloud-hosted Git platform optimized for open-source collaboration.
+    - gitlab: **remote or self-hosted**  an end-to-end DevOps solution with both cloud and on-premise options.
+    - gitee: **remote china** 
   - [x] files could/couldn't be tracked by git 
 - SSH
-  - [ ] concept
-  - [ ] private, public key
+  - [ ] concept: a secure protocol for remote login and command execution.
+  - [ ] private, public key: rear one can be opened by front one. The server uses your public key to verify that you have the matching private key.
 - ubuntu shell (bash),kernel
   - [ ] linux 
   - [ ] tools
