@@ -15,9 +15,12 @@
     - gitee: **remote china** 
   - [x] files could/couldn't be tracked by git 
 - SSH
-  - [ ] concept: a secure protocol for remote login and command execution.
-  - [ ] private, public key: rear one can be opened by front one. The server uses your public key to verify that you have the matching private key.
-- ubuntu shell (bash),kernel
+  - [x] concept: 
+    - a secure protocol for remote login and command execution.
+  - [x] private, public key: 
+    - rear one can be opened by front one. The server uses your public key to verify that you have the matching private key.
+- ubuntu
+  - [ ] shell (bash),kernel
   - [ ] linux 
   - [ ] tools
 - network
