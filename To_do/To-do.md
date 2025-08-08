@@ -21,6 +21,7 @@
     - rear one can be opened by front one. The server uses your public key to verify that you have the matching private key.
 - ubuntu
   - [ ] shell (bash),kernel
+    - s
   - [ ] linux 
   - [ ] tools
 - network
