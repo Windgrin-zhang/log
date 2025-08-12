@@ -14,14 +14,31 @@
     - gitlab: **remote or self-hosted**  an end-to-end DevOps solution with both cloud and on-premise options.
     - gitee: **remote china** 
   - [x] files could/couldn't be tracked by git 
+    - what:
+      - normal files in right directory can be tracked ,such as .yaml .md .py
+      - some abnormal files like .log .tmp would not be tracked
+      - also files in .git/ or the inner files get its own .git like ./lab/.git then the father repositor would not be able to track the files inside but to track the directory as a pin.
+      - .ignore of course 
+  > my own recongnize vs gpt
+    - Trackable: Files inside the repo that you git add (including pptx/docx/xlsx). Use Git LFS for big ones.
+    - Not tracked: .git/, empty directories, ignored paths (node_modules/, .log, ~$.docx), files inside a nested repo, sparse-excluded paths.
+    - Why: Git tracks files under the repo and respects ignore/isolation settings.
+    - Fix: git add -f; git check-ignore -v; git rm --cached; clear flags; use Git LFS.
 - SSH
   - [x] concept: 
     - a secure protocol for remote login and command execution.
   - [x] private, public key: 
-    - rear one can be opened by front one. The server uses your public key to verify that you have the matching private key.
+    - The latter can be opened by the former. The server uses your public key to verify that you possess the matching private key.
 - ubuntu
   - [ ] shell (bash),kernel
-    - s
+    - concept: terminal is just a simulator of keyboard and screen ,it's a software now to connect with computer. Only shell ,such as bash powershell ,can ubderstand your command which is similar to a translater between people & computer .
+    - all shells:
+      - win : cmd.exe ,powershell ,git bash(foe windows) ,WSL shell(linux)
+      - Linux : bash ,(fish zsh) 
+      - mac :terminal.app ,zsh ,bash
+    - kernel :
+      - concept :a core of an OS to manage CPU memory devices filesystems network security.运行在内核态（ring 0）
+      - 
   - [ ] linux 
   - [ ] tools
 - network
