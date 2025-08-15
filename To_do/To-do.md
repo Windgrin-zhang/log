@@ -48,7 +48,7 @@
   - [ ] streaming
   - [ ] rtsp
 - ML
-  - [ ] dataset: kaggle, huggingface
+  - [x] dataset: kaggle, huggingface
   - [ ] framework: keras, scikit-learn
 - NLP
   - [ ] EN vs CN
