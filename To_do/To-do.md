@@ -59,3 +59,13 @@
 - Jupyter notebook
   - [x] how to use
   - [ ] referencee
+
+- vs放入大模型（1-2周）
+  - 注意数据集本身
+  - 注意消耗
+  - 注意效率
+- 本地部署
+- MCP
+- MACD
+- 北京移动手机定位
+- 传统数据分析（1-2周）
