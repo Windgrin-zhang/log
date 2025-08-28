@@ -1,0 +1,7035 @@
+
+
+---
+
+### Page 1
+
+- EN: Microprocessors and Microsystems 73 (2020) 102991
+- ZH: Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-1_2.jpg)
+
+
+![](/workspace/CoNNa-1_1.jpg)
+
+- EN: Contents lists available at ScienceDirect
+- ZH: Contents lists available at ScienceDirect
+- EN: Microprocessors and Microsystems
+- ZH: Microprocessors and Microsystems
+- EN: journal homepage:
+- ZH: journal homepage:
+- EN: www.
+- ZH: www.
+- EN: elsevier.
+- ZH: elsevier.
+- EN: com/locate/micpro
+- ZH: com/locate/micpro
+- EN: CoNNa–Hardware accelerator for compressed convolutional neural
+- ZH: CoNNa–Hardware accelerator for compressed convolutional neural
+
+![](/workspace/CoNNa-1_3.png)
+
+- EN: networks
+- ZH: networks
+- EN: ∗ a , b a Rastislav J.
+- ZH: ∗ a , b a Rastislav J.
+- EN: R.
+- ZH: R.
+- EN: Struharik , Bogdan Z.
+- ZH: Struharik , Bogdan Z.
+- EN: Vukobratovi ´c , Andrea M.
+- ZH: Vukobratovi ´c , Andrea M.
+- EN: Erdeljan ,
+- ZH: Erdeljan ,
+- EN: a ´c Damjan M.
+- ZH: a ´c Damjan M.
+- EN: Rakanovi
+- ZH: Rakanovi
+- EN: a University of Novi Sad, Faculty of Technical Sciences, Trg Dositeja Obradovi ´ca 6, Novi Sad, 210 0 0, Serbia
+- ZH: a University of Novi Sad, Faculty of Technical Sciences, Trg Dositeja Obradovi ´ca 6, Novi Sad, 210 0 0, Serbia
+- EN: b Kortiq GmbH, Gebrüder-Eicher-Ring 45, Forstern, Germany
+- ZH: b Kortiq GmbH, Gebrüder-Eicher-Ring 45, Forstern, Germany
+- EN: a r t i c l e i n f o a b s t r a c t
+- ZH: a r t i c l e i n f o a b s t r a c t
+- EN: Article history:
+- ZH: Article history:
+- EN: In this paper, we propose a novel Convolutional Neural Network hardware accelerator called CoNNA, ca-
+- ZH: In this paper, we propose a novel Convolutional Neural Network hardware accelerator called CoNNA, ca-
+- EN: Received 6 January 2019 pable of accelerating pruned, quantized CNNs.
+- ZH: Received 6 January 2019 pable of accelerating pruned, quantized CNNs.
+- EN: In contrast to most existing solutions, CoNNA offers a
+- ZH: In contrast to most existing solutions, CoNNA offers a
+- EN: Revised 21 December 2019
+- ZH: Revised 21 December 2019
+- EN: complete solution to the compressed CNN acceleration, being able to accelerate all layer types commonly
+- ZH: complete solution to the compressed CNN acceleration, being able to accelerate all layer types commonly
+- EN: Accepted 2 January 2020
+- ZH: Accepted 2 January 2020
+- EN: found in contemporary CNNs.
+- ZH: found in contemporary CNNs.
+- EN: CoNNA is designed as a coarse-grained reconﬁgurable architecture, which
+- ZH: CoNNA is designed as a coarse-grained reconﬁgurable architecture, which
+- EN: Available online 11 January 2020
+- ZH: Available online 11 January 2020
+- EN: uses rapid, dynamic reconﬁguration during CNN layer processing.
+- ZH: uses rapid, dynamic reconﬁguration during CNN layer processing.
+- EN: The CoNNA architecture enables the
+- ZH: The CoNNA architecture enables the
+- EN: on-the-ﬂy selection of the CNN network that should be accelerated and also supports the acceleration of Keywords:
+- ZH: on-the-ﬂy selection of the CNN network that should be accelerated and also supports the acceleration of Keywords:
+- EN: CNN networks with dynamic topology.
+- ZH: CNN networks with dynamic topology.
+- EN: Furthermore, by being able to directly process compressed feature Machine learning
+- ZH: Furthermore, by being able to directly process compressed feature Machine learning
+- EN: Convolutional neural network and kernel maps, and skip all ineffectual com putations during CNN layer processing, the CoNNA CNN ac-
+- ZH: Convolutional neural network and kernel maps, and skip all ineffectual com putations during CNN layer processing, the CoNNA CNN ac-
+- EN: CNN pruning celerator is able to achieve higher CNN processing rates than some of the previously proposed solutions.
+- ZH: CNN pruning celerator is able to achieve higher CNN processing rates than some of the previously proposed solutions.
+- EN: compressed CNN + The CoNNA architecture has been implemented using Xilinx ZynqUtrascale FPGA family and compared
+- ZH: compressed CNN + The CoNNA architecture has been implemented using Xilinx ZynqUtrascale FPGA family and compared
+- EN: Hardware acceleration
+- ZH: Hardware acceleration
+- EN: with seven previously proposed CNN hardware accelerators.
+- ZH: with seven previously proposed CNN hardware accelerators.
+- EN: Results of the experiments seem to indicate
+- ZH: Results of the experiments seem to indicate
+- EN: FPGA
+- ZH: FPGA
+- EN: that the CoNNA architecture is up to 14.
+- ZH: that the CoNNA architecture is up to 14.
+- EN: 10, 6.
+- ZH: 10, 6.
+- EN: 05, 4.
+- ZH: 05, 4.
+- EN: 91, 2.
+- ZH: 91, 2.
+- EN: 67, 11.
+- ZH: 67, 11.
+- EN: 30, 3.
+- ZH: 30, 3.
+- EN: 08 and 3.
+- ZH: 08 and 3.
+- EN: 58 times faster than previ-
+- ZH: 58 times faster than previ-
+- EN: ously proposed MIT’s Eyeriss, NullHop, NVIDIA’s Deep Learning Accelerator (NVDLA), NEURAghe, CNN_A1,
+- ZH: ously proposed MIT’s Eyeriss, NullHop, NVIDIA’s Deep Learning Accelerator (NVDLA), NEURAghe, CNN_A1,
+- EN: fpgaConvNet, and Deephi’s Aristotle CNN accelerators respectively, while using identical number of com-
+- ZH: fpgaConvNet, and Deephi’s Aristotle CNN accelerators respectively, while using identical number of com-
+- EN: puting units and operating at the same clock frequency.
+- ZH: puting units and operating at the same clock frequency.
+- EN: © 2020 Elsevier B.
+- ZH: © 2020 Elsevier B.
+- EN: V.
+- ZH: V.
+- EN: All rights reserved.
+- ZH: All rights reserved.
+- EN: 1.
+- ZH: 1.
+- EN: Introduction to obtain an effective representation of input space.
+- ZH: Introduction to obtain an effective representation of input space.
+- EN: This approach
+- ZH: This approach
+- EN: is different from earlier attempts that have used manually crafted
+- ZH: is different from earlier attempts that have used manually crafted
+- EN: Deep learning [1] , and particularly Deep Neural Networks features or rules designed by experts.
+- ZH: Deep learning [1] , and particularly Deep Neural Networks features or rules designed by experts.
+- EN: Because of this CNNs cur-
+- ZH: Because of this CNNs cur-
+- EN: (DNNs), are currently one of the most intensively and widely used rently offer the best recognition quality versus alternative object
+- ZH: (DNNs), are currently one of the most intensively and widely used rently offer the best recognition quality versus alternative object
+- EN: machine learning predictive models.
+- ZH: machine learning predictive models.
+- EN: DNNs are not a new concept recognition or image classiﬁcation algorithms.
+- ZH: DNNs are not a new concept recognition or image classiﬁcation algorithms.
+- EN: [2] , but after recent breakthrough applications in the ﬁelds of im- However, the superior accuracy of CNNs comes at a high cost
+- ZH: [2] , but after recent breakthrough applications in the ﬁelds of im- However, the superior accuracy of CNNs comes at a high cost
+- EN: age processing [3–5] .
+- ZH: age processing [3–5] .
+- EN: and speech recognition [6] , they have re- because of their computational and storage complexity.
+- ZH: and speech recognition [6] , they have re- because of their computational and storage complexity.
+- EN: State-of-
+- ZH: State-of-
+- EN: turned to the academic and industrial focus.
+- ZH: turned to the academic and industrial focus.
+- EN: Today, different types the-art CNNs are described by hundreds of millions of parameters
+- ZH: Today, different types the-art CNNs are described by hundreds of millions of parameters
+- EN: of DNNs are being employed in a wide range of applications, rang- and require billions of computations in order to classify single in-
+- ZH: of DNNs are being employed in a wide range of applications, rang- and require billions of computations in order to classify single in-
+- EN: ing from autonomous driving [7] , medical [8] , and even to playing put instance [3–5] .
+- ZH: ing from autonomous driving [7] , medical [8] , and even to playing put instance [3–5] .
+- EN: For example, one of the largest CNN networks,
+- ZH: For example, one of the largest CNN networks,
+- EN: × complex games [9] .
+- ZH: × complex games [9] .
+- EN: In many of these application domains, DNNs VGG-16 CNN [10] , which operates on 224 224 input images, re-
+- ZH: In many of these application domains, DNNs VGG-16 CNN [10] , which operates on 224 224 input images, re-
+- EN: are now able to exceed human levels of performance.
+- ZH: are now able to exceed human levels of performance.
+- EN: The excep- quires around 500 MB for storing network parameters and per-
+- ZH: The excep- quires around 500 MB for storing network parameters and per-
+- EN: tional performance of DNNs, and in particular Convolutional Neu- forming more than 30 billion ﬂoating-point operations in order to
+- ZH: tional performance of DNNs, and in particular Convolutional Neu- forming more than 30 billion ﬂoating-point operations in order to
+- EN: ral Networks (CNNs) [3] , predominantly arises from their ability classify single input image.
+- ZH: ral Networks (CNNs) [3] , predominantly arises from their ability classify single input image.
+- EN: It is highly likely that future CNNs will
+- ZH: It is highly likely that future CNNs will
+- EN: to automatically extract high-level features from raw sensory data be even larger, deeper, will process larger input instances, requir-
+- ZH: to automatically extract high-level features from raw sensory data be even larger, deeper, will process larger input instances, requir-
+- EN: during the training phase, using a large amount of data, in order ing even more computations per input instance, and will be used
+- ZH: during the training phase, using a large amount of data, in order ing even more computations per input instance, and will be used
+- EN: to perform more intricate classiﬁcation tasks at faster speeds, ever-
+- ZH: to perform more intricate classiﬁcation tasks at faster speeds, ever-
+- EN: increasingly in real-time, within low-power operating conditions.
+- ZH: increasingly in real-time, within low-power operating conditions.
+- EN: ∗ Corresponding author.
+- ZH: ∗ Corresponding author.
+- EN: Because of this, careful selection of appropriate computing plat-
+- ZH: Because of this, careful selection of appropriate computing plat-
+- EN: E-mail addresses:
+- ZH: E-mail addresses:
+- EN: rasti@uns.
+- ZH: rasti@uns.
+- EN: ac.
+- ZH: ac.
+- EN: rs (R.
+- ZH: rs (R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik), bogdan.
+- ZH: Struharik), bogdan.
+- EN: vukobratovic@kortiq.
+- ZH: vukobratovic@kortiq.
+- EN: form for the implementation of CNN-based applications is of great
+- ZH: form for the implementation of CNN-based applications is of great
+- EN: com (B.
+- ZH: com (B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c), andrea.
+- ZH: Vukobratovi ´c), andrea.
+- EN: erdeljan@uns.
+- ZH: erdeljan@uns.
+- EN: ac.
+- ZH: ac.
+- EN: rs (A.
+- ZH: rs (A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan),
+- ZH: Erdeljan),
+- EN: importance.
+- ZH: importance.
+- EN: rdamjan@uns.
+- ZH: rdamjan@uns.
+- EN: ac.
+- ZH: ac.
+- EN: rs (D.
+- ZH: rs (D.
+- EN: M.
+- ZH: M.
+- EN: Rakanovi ´c).
+- ZH: Rakanovi ´c).
+- EN: https:
+- ZH: https:
+- EN: //doi.
+- ZH: //doi.
+- EN: org/10.
+- ZH: org/10.
+- EN: 1016/j.
+- ZH: 1016/j.
+- EN: micpro.
+- ZH: micpro.
+- EN: 2020.
+- ZH: 2020.
+- EN: 102991
+- ZH: 102991
+- EN: 0141-9331/© 2020 Elsevier B.
+- ZH: 0141-9331/© 2020 Elsevier B.
+- EN: V.
+- ZH: V.
+- EN: All rights reserved.
+- ZH: All rights reserved.
+
+
+---
+
+### Page 2
+
+- EN: 2 R.
+- ZH: 2 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: Currently, there are two approaches to implementing CNN net- types, types of non-linear activation functions, etc.
+- ZH: Currently, there are two approaches to implementing CNN net- types, types of non-linear activation functions, etc.
+- EN: This is one of
+- ZH: This is one of
+- EN: works:
+- ZH: works:
+- EN: the main drawbacks of the majority of previously proposed cus-
+- ZH: the main drawbacks of the majority of previously proposed cus-
+- EN: tom hardware solutions, which puts them at a great disadvantage
+- ZH: tom hardware solutions, which puts them at a great disadvantage
+- EN: 1 Using multicore processor-based hardware accelerators (CPUs
+- ZH: 1 Using multicore processor-based hardware accelerators (CPUs
+- EN: when compared with CPU/GPU implementations.
+- ZH: when compared with CPU/GPU implementations.
+- EN: or GPUs)
+- ZH: or GPUs)
+- EN: Both groups of accelerators (CPU/GPU and custom) tend to use
+- ZH: Both groups of accelerators (CPU/GPU and custom) tend to use
+- EN: 2 Using dedicated hardware accelerators (ASICs or FPGAs)
+- ZH: 2 Using dedicated hardware accelerators (ASICs or FPGAs)
+- EN: a sequential approach when processing the CNN network.
+- ZH: a sequential approach when processing the CNN network.
+- EN: CNN
+- ZH: CNN
+- EN: network is processed layer by layer, storing intermediate values The ﬁrst group of CPU/GPU based accelerators offers highly ﬂex-
+- ZH: network is processed layer by layer, storing intermediate values The ﬁrst group of CPU/GPU based accelerators offers highly ﬂex-
+- EN: in the external, off-chip DRAM memory.
+- ZH: in the external, off-chip DRAM memory.
+- EN: Usually, no parallelization ible and easy to develop solutions, in terms of supported CNN
+- ZH: Usually, no parallelization ible and easy to develop solutions, in terms of supported CNN
+- EN: of layer processing is employed.
+- ZH: of layer processing is employed.
+- EN: Please notice, that this frequent architectures, kernel parameters, nonlinear activation functions,
+- ZH: Please notice, that this frequent architectures, kernel parameters, nonlinear activation functions,
+- EN: movement of data between the accelerator and DRAM memory is pooling algorithms, and deep learning software frameworks (Caffe,
+- ZH: movement of data between the accelerator and DRAM memory is pooling algorithms, and deep learning software frameworks (Caffe,
+- EN: one of the most power-consuming operations, and accounts for the TensorFlow, Keras, Matlab), but is ineﬃcient when usage of avail-
+- ZH: one of the most power-consuming operations, and accounts for the TensorFlow, Keras, Matlab), but is ineﬃcient when usage of avail-
+- EN: majority of power consumption of the complete accelerator sys- able computing resources and power eﬃciency is considered.
+- ZH: majority of power consumption of the complete accelerator sys- able computing resources and power eﬃciency is considered.
+- EN: Stan-
+- ZH: Stan-
+- EN: dard CPU can perform between 10–100 GFLOP/s, with the power tem.
+- ZH: dard CPU can perform between 10–100 GFLOP/s, with the power tem.
+- EN: Parallelization in both groups of accelerators mostly comes from consumption that is usually around 100 Watts.
+- ZH: Parallelization in both groups of accelerators mostly comes from consumption that is usually around 100 Watts.
+- EN: Therefore, using
+- ZH: Therefore, using
+- EN: the parallel evaluation of individual convolution operations, located CPUs in high-performance requirements, found in CNN cloud appli-
+- ZH: the parallel evaluation of individual convolution operations, located CPUs in high-performance requirements, found in CNN cloud appli-
+- EN: cations, or in low power requirements in edge/mobile applications within convolutional layers, usually using a 2D array of processing
+- ZH: cations, or in low power requirements in edge/mobile applications within convolutional layers, usually using a 2D array of processing
+- EN: elements.
+- ZH: elements.
+- EN: Multiplications and additions involved in the convolution is diﬃcult.
+- ZH: Multiplications and additions involved in the convolution is diﬃcult.
+- EN: In contrast, GPUs can reach over 10 TOP/s of peak per-
+- ZH: In contrast, GPUs can reach over 10 TOP/s of peak per-
+- EN: calculation are executed in parallel, on dedicated multiplier and formance, but with power consumption reaching over 250 Watts
+- ZH: calculation are executed in parallel, on dedicated multiplier and formance, but with power consumption reaching over 250 Watts
+- EN: [11] , GPUs are good choices only for high-performance CNN cloud adder modules located within each processing element.
+- ZH: [11] , GPUs are good choices only for high-performance CNN cloud adder modules located within each processing element.
+- EN: Although
+- ZH: Although
+- EN: this is an eﬃcient way of achieving higher performance numbers, applications but are not suitable for the edge/mobile applications.
+- ZH: this is an eﬃcient way of achieving higher performance numbers, applications but are not suitable for the edge/mobile applications.
+- EN: it has one signiﬁcant drawback.
+- ZH: it has one signiﬁcant drawback.
+- EN: Mapping of convolution operations NVIDIA is offering its Jetson TX2 family [12] based on GPUs with
+- ZH: Mapping of convolution operations NVIDIA is offering its Jetson TX2 family [12] based on GPUs with
+- EN: of different sizes (with different sizes and shapes of convolutional Pascal architecture as the edge solution.
+- ZH: of different sizes (with different sizes and shapes of convolutional Pascal architecture as the edge solution.
+- EN: TX2 can reach the perfor-
+- ZH: TX2 can reach the perfor-
+- EN: kernels and with different values of kernel stride values) to these mance of up to 1 TOP/s but with the power consumption of over
+- ZH: kernels and with different values of kernel stride values) to these mance of up to 1 TOP/s but with the power consumption of over
+- EN: 2D array structures can be very diﬃcult, and even when it is pos- 10 Watts, which is still too high for most of the edge applications,
+- ZH: 2D array structures can be very diﬃcult, and even when it is pos- 10 Watts, which is still too high for most of the edge applications,
+- EN: sible typically results in ineﬃcient usage of available multipliers which can require solutions with the power consumption of less
+- ZH: sible typically results in ineﬃcient usage of available multipliers which can require solutions with the power consumption of less
+- EN: than 1 Watt.
+- ZH: than 1 Watt.
+- EN: and adders, therefore signiﬁcantly decreasing the eﬃciency of an
+- ZH: and adders, therefore signiﬁcantly decreasing the eﬃciency of an
+- EN: accelerator.
+- ZH: accelerator.
+- EN: Dedicated hardware accelerators offer much higher utilization
+- ZH: Dedicated hardware accelerators offer much higher utilization
+- EN: In this paper, we present a novel, coarse-grained reconﬁgurable, of computing resources, but usually lack ﬂexibility, i.
+- ZH: In this paper, we present a novel, coarse-grained reconﬁgurable, of computing resources, but usually lack ﬂexibility, i.
+- EN: e.
+- ZH: e.
+- EN: they sup-
+- ZH: they sup-
+- EN: port only a few different CNN architectures with smaller ranges compressed CNN hardware accelerator, named CoNNA, which aims
+- ZH: port only a few different CNN architectures with smaller ranges compressed CNN hardware accelerator, named CoNNA, which aims
+- EN: to overcome these diﬃculties.
+- ZH: to overcome these diﬃculties.
+- EN: The CoNNA architecture is based of supported CNN architecture parameters, like kernel size, shape,
+- ZH: The CoNNA architecture is based of supported CNN architecture parameters, like kernel size, shape,
+- EN: on a different way of parallelizing CNN operations.
+- ZH: on a different way of parallelizing CNN operations.
+- EN: It sequentially etc.
+- ZH: It sequentially etc.
+- EN: This is mostly the case because solutions from this group use
+- ZH: This is mostly the case because solutions from this group use
+- EN: highly optimized hardware structures for calculation of only cer- computes individual convolution operation, keeping it folded, using
+- ZH: highly optimized hardware structures for calculation of only cer- computes individual convolution operation, keeping it folded, using
+- EN: a single processing unit to calculate all multiply-accumulate oper- tain pre-deﬁned convolutional kernel conﬁgurations, which then
+- ZH: a single processing unit to calculate all multiply-accumulate oper- tain pre-deﬁned convolutional kernel conﬁgurations, which then
+- EN: ations contained within one convolution, but employs a number cannot be reconﬁgured to eﬃciently calculate other convolutional
+- ZH: ations contained within one convolution, but employs a number cannot be reconﬁgured to eﬃciently calculate other convolutional
+- EN: kernel conﬁgurations.
+- ZH: kernel conﬁgurations.
+- EN: However, because of the higher utilization of of these processing units to compute a number of convolutions in
+- ZH: However, because of the higher utilization of of these processing units to compute a number of convolutions in
+- EN: parallel.
+- ZH: parallel.
+- EN: This parallelizing approach can easily accommodate con- available computing resources, accelerators from this group tend to
+- ZH: This parallelizing approach can easily accommodate con- available computing resources, accelerators from this group tend to
+- EN: volutional kernels of different sizes, shapes and stride values, with- be more power-eﬃcient than the processor-based accelerators.
+- ZH: volutional kernels of different sizes, shapes and stride values, with- be more power-eﬃcient than the processor-based accelerators.
+- EN: out signiﬁcant loss on the computational eﬃciency.
+- ZH: out signiﬁcant loss on the computational eﬃciency.
+- EN: While general-purpose compute engines, especially GPUs, have
+- ZH: While general-purpose compute engines, especially GPUs, have
+- EN: been the mainstay for much of contemporary CNN processing, Furthermore, CoNNA is designed to be able to directly oper-
+- ZH: been the mainstay for much of contemporary CNN processing, Furthermore, CoNNA is designed to be able to directly oper-
+- EN: ate on compressed CNN networks and compressed feature maps, increasingly there is a growing interest in providing more CNN
+- ZH: ate on compressed CNN networks and compressed feature maps, increasingly there is a growing interest in providing more CNN
+- EN: which results in a signiﬁcant increase in CNN processing perfor- implementations based on FPGAs.
+- ZH: which results in a signiﬁcant increase in CNN processing perfor- implementations based on FPGAs.
+- EN: This shift is occurring mainly
+- ZH: This shift is occurring mainly
+- EN: because of two reasons.
+- ZH: because of two reasons.
+- EN: Improvements in FPGA technology re- mance.
+- ZH: Improvements in FPGA technology re- mance.
+- EN: The CoNNA architecture is highly conﬁgurable, enabling
+- ZH: The CoNNA architecture is highly conﬁgurable, enabling
+- EN: various types of CNN families (VGG, Inception, ResNet, MobileNet, cently demonstrated FPGA performance which comes very close
+- ZH: various types of CNN families (VGG, Inception, ResNet, MobileNet, cently demonstrated FPGA performance which comes very close
+- EN: NASNet, etc.
+- ZH: NASNet, etc.
+- EN: ) to be implemented eﬃciently.
+- ZH: ) to be implemented eﬃciently.
+- EN: It is also capable of ac- to GPU performance, with the reported performance of 9.
+- ZH: It is also capable of ac- to GPU performance, with the reported performance of 9.
+- EN: 2 TOP/s
+- ZH: 2 TOP/s
+- EN: for FPGA [13] .
+- ZH: for FPGA [13] .
+- EN: Second, recent trends in CNN architecture develop- celerating complete compressed CNNs, supporting all major layers
+- ZH: Second, recent trends in CNN architecture develop- celerating complete compressed CNNs, supporting all major layers
+- EN: found in contemporary CNNs, like convolutional, depthwise convo- ment increasingly exploit the sparsity of CNN networks and the
+- ZH: found in contemporary CNNs, like convolutional, depthwise convo- ment increasingly exploit the sparsity of CNN networks and the
+- EN: lutional, pooling, adding and fully-connected layers.
+- ZH: lutional, pooling, adding and fully-connected layers.
+- EN: use of extreme compact data types to represent data that is be-
+- ZH: use of extreme compact data types to represent data that is be-
+- EN: ing processed.
+- ZH: ing processed.
+- EN: These trends strongly favor FPGA devices, which are The CoNNA architecture is not the ﬁrst architecture that takes
+- ZH: These trends strongly favor FPGA devices, which are The CoNNA architecture is not the ﬁrst architecture that takes
+- EN: beneﬁt from processing sparse, compressed CNNs.
+- ZH: beneﬁt from processing sparse, compressed CNNs.
+- EN: Some of the designed to easily handle irregular parallelism, which is present
+- ZH: Some of the designed to easily handle irregular parallelism, which is present
+- EN: most notable previously proposed compressed CNN accelerators when working with sparse CNNs, and custom data types.
+- ZH: most notable previously proposed compressed CNN accelerators when working with sparse CNNs, and custom data types.
+- EN: As a re-
+- ZH: As a re-
+- EN: are Cnvlutin [31] , NullHop [32] , SparseNN [33] , Cambricon-x [34] , sult, next-generation CNN accelerators are expected to deliver up
+- ZH: are Cnvlutin [31] , NullHop [32] , SparseNN [33] , Cambricon-x [34] , sult, next-generation CNN accelerators are expected to deliver up
+- EN: EIE [35] , and Scnn [36] .
+- ZH: EIE [35] , and Scnn [36] .
+- EN: Although not being the ﬁrst compressed to x5.
+- ZH: Although not being the ﬁrst compressed to x5.
+- EN: 4 better computational throughput than GPUs [14] .
+- ZH: 4 better computational throughput than GPUs [14] .
+- EN: CNN accelerator, CoNNA still has some important advantages over The ﬁeld of custom CNN hardware accelerators has been in
+- ZH: CNN accelerator, CoNNA still has some important advantages over The ﬁeld of custom CNN hardware accelerators has been in
+- EN: all these previously proposed architectures.
+- ZH: all these previously proposed architectures.
+- EN: the focus of the academic community in recent years, generat-
+- ZH: the focus of the academic community in recent years, generat-
+- EN: ing more than ninety different solutions.
+- ZH: ing more than ninety different solutions.
+- EN: However, the majority of Cnvlutin architecture [31] , proposed by Albericio et al.
+- ZH: However, the majority of Cnvlutin architecture [31] , proposed by Albericio et al.
+- EN: bene-
+- ZH: bene-
+- EN: ﬁts from the sparsity of input feature maps but not the sparsity these solutions are concerned with acceleration of only one par-
+- ZH: ﬁts from the sparsity of input feature maps but not the sparsity these solutions are concerned with acceleration of only one par-
+- EN: of weights.
+- ZH: of weights.
+- EN: It is closely based on the well-known dense CNN ac- ticular layer type from the CNN, typically the convolutional layer,
+- ZH: It is closely based on the well-known dense CNN ac- ticular layer type from the CNN, typically the convolutional layer,
+- EN: because of its high computational demand, [15–19] .
+- ZH: because of its high computational demand, [15–19] .
+- EN: A signiﬁcant celerator DaDianNao [15] , where the authors of Cnvlutin have re-
+- ZH: A signiﬁcant celerator DaDianNao [15] , where the authors of Cnvlutin have re-
+- EN: designed the DaDianNao’s NFU module and created a CNV module, number of architectures have been proposed for the acceleration
+- ZH: designed the DaDianNao’s NFU module and created a CNV module, number of architectures have been proposed for the acceleration
+- EN: capable of eﬃcient detection and skipping of zeros present in input of complete CNNs [20–30] .
+- ZH: capable of eﬃcient detection and skipping of zeros present in input of complete CNNs [20–30] .
+- EN: Furthermore, most of the proposed so-
+- ZH: Furthermore, most of the proposed so-
+- EN: lutions are able to accelerate only uncompressed CNNs [15–30] , feature maps.
+- ZH: lutions are able to accelerate only uncompressed CNNs [15–30] , feature maps.
+- EN: The CoNNA architecture can also skip input feature
+- ZH: The CoNNA architecture can also skip input feature
+- EN: maps zeros, but it can also skip any zeros that are present in the with only several examples being able to process compressed CNNs
+- ZH: maps zeros, but it can also skip any zeros that are present in the with only several examples being able to process compressed CNNs
+- EN: convolutional kernels, or fully-connected weights, which should re- to some degree [31–36] .
+- ZH: convolutional kernels, or fully-connected weights, which should re- to some degree [31–36] .
+- EN: In addition, almost all proposed solu-
+- ZH: In addition, almost all proposed solu-
+- EN: sult in more eﬃcient CNN processing when compared to Cnvlutin.
+- ZH: sult in more eﬃcient CNN processing when compared to Cnvlutin.
+- EN: tions are not highly conﬁgurable, severely limiting the ﬂexibility of
+- ZH: tions are not highly conﬁgurable, severely limiting the ﬂexibility of
+- EN: Furthermore, Cnvlutin is designed to perform complete CNN pro- supported CNNs, in terms of supported layer types, kernel recep-
+- ZH: Furthermore, Cnvlutin is designed to perform complete CNN pro- supported CNNs, in terms of supported layer types, kernel recep-
+- EN: cessing storing all intermediate data in the on-chip memory.
+- ZH: cessing storing all intermediate data in the on-chip memory.
+- EN: This tive ﬁeld sizes, horizontal and vertical kernel stride values, pooling
+- ZH: This tive ﬁeld sizes, horizontal and vertical kernel stride values, pooling
+
+
+---
+
+### Page 3
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 3
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 3
+- EN: is a power-eﬃcient solution but requires large on-chip memories, 2.
+- ZH: is a power-eﬃcient solution but requires large on-chip memories, 2.
+- EN: Compressed convolutional neural networks
+- ZH: Compressed convolutional neural networks
+- EN: of the order of tens of megabytes, and cannot support arbitrarily
+- ZH: of the order of tens of megabytes, and cannot support arbitrarily
+- EN: large CNN networks.
+- ZH: large CNN networks.
+- EN: On the other hand, CoNNA stores intermedi- Convolutional Neural Network [37] is a type of feed-forward ar-
+- ZH: On the other hand, CoNNA stores intermedi- Convolutional Neural Network [37] is a type of feed-forward ar-
+- EN: ate feature maps in the external DRAM memory, but the power tiﬁcial neural network in which the connectivity pattern between
+- ZH: ate feature maps in the external DRAM memory, but the power tiﬁcial neural network in which the connectivity pattern between
+- EN: consumption is reduced signiﬁcantly because CoNNA uses an on- the neurons is inspired by the neural connectivity found in the an-
+- ZH: consumption is reduced signiﬁcantly because CoNNA uses an on- the neurons is inspired by the neural connectivity found in the an-
+- EN: chip feature map cache to minimize the amount of data movement imal visual cortex.
+- ZH: chip feature map cache to minimize the amount of data movement imal visual cortex.
+- EN: Individual neurons from the visual cortex re-
+- ZH: Individual neurons from the visual cortex re-
+- EN: between the accelerator and the external memory.
+- ZH: between the accelerator and the external memory.
+- EN: However, by us- spond to stimuli only from a restricted region of space, known as
+- ZH: However, by us- spond to stimuli only from a restricted region of space, known as
+- EN: ing external memory to store all CNN related data, CoNNA can pro- the receptive ﬁeld.
+- ZH: ing external memory to store all CNN related data, CoNNA can pro- the receptive ﬁeld.
+- EN: Receptive ﬁelds of neighboring neurons par-
+- ZH: Receptive ﬁelds of neighboring neurons par-
+- EN: vide acceleration to arbitrarily sized CNN networks.
+- ZH: vide acceleration to arbitrarily sized CNN networks.
+- EN: tially overlap, spanning the entire visual ﬁeld.
+- ZH: tially overlap, spanning the entire visual ﬁeld.
+- EN: Previously it was
+- ZH: Previously it was
+- EN: NullHop architecture [32] , proposed by Aimar et al.
+- ZH: NullHop architecture [32] , proposed by Aimar et al.
+- EN: is similar to shown that the response of an individual neuron to the stimuli
+- ZH: is similar to shown that the response of an individual neuron to the stimuli
+- EN: Cnvlutin since it also takes beneﬁt from skipping any zeros that are within its receptive ﬁeld can be approximated mathematically by
+- ZH: Cnvlutin since it also takes beneﬁt from skipping any zeros that are within its receptive ﬁeld can be approximated mathematically by
+- EN: present in the input feature maps but cannot skip zeros in the CNN a convolution operation, which is extensively used in CNNs.
+- ZH: present in the input feature maps but cannot skip zeros in the CNN a convolution operation, which is extensively used in CNNs.
+- EN: weights.
+- ZH: weights.
+- EN: Since the CoNNA architecture can effectively skip all zeros, CNN architecture is formed by stacking together layers of differ-
+- ZH: Since the CoNNA architecture can effectively skip all zeros, CNN architecture is formed by stacking together layers of differ-
+- EN: present either in the input feature maps or in the CNN weights, entiable functions, which gradually transform input instance into
+- ZH: present either in the input feature maps or in the CNN weights, entiable functions, which gradually transform input instance into
+- EN: it should offer a more eﬃcient acceleration of CNNs.
+- ZH: it should offer a more eﬃcient acceleration of CNNs.
+- EN: Similar to an appropriate output response (e.
+- ZH: Similar to an appropriate output response (e.
+- EN: g.
+- ZH: g.
+- EN: holding the class scores).
+- ZH: holding the class scores).
+- EN: CoNNA, NullHop stores both CNN weights and compressed inter- A number of different layers types are commonly used when
+- ZH: CoNNA, NullHop stores both CNN weights and compressed inter- A number of different layers types are commonly used when
+- EN: mediate feature maps in external memory, but NullHop doesn’t building a CNN:
+- ZH: mediate feature maps in external memory, but NullHop doesn’t building a CNN:
+- EN: convolutional layer, depthwise convolutional layer,
+- ZH: convolutional layer, depthwise convolutional layer,
+- EN: implement any input feature map caching, which CoNNA does, to pooling layer, non-linear activation layer, adding layer, concatena-
+- ZH: implement any input feature map caching, which CoNNA does, to pooling layer, non-linear activation layer, adding layer, concatena-
+- EN: reduce the required data movement between the accelerator and tion layer, and fully-connected layer.
+- ZH: reduce the required data movement between the accelerator and tion layer, and fully-connected layer.
+- EN: external memory when processing convolutional and pooling lay- Before proceeding, let us introduce some notations.
+- ZH: external memory when processing convolutional and pooling lay- Before proceeding, let us introduce some notations.
+- EN: By an input
+- ZH: By an input
+- EN: ers.
+- ZH: ers.
+- EN: feature map (IFM) we will assume a 3D set of values that make
+- ZH: feature map (IFM) we will assume a 3D set of values that make
+- EN: SparseNN [33] and Cambricon-x [34] architectures take the op- the input volume of the current CNN layer.
+- ZH: SparseNN [33] and Cambricon-x [34] architectures take the op- the input volume of the current CNN layer.
+- EN: The input values vol-
+- ZH: The input values vol-
+- EN: posite approach than one taken in Cnvlutin and NullHop archi- ume of the ﬁrst CNN layer is usually not called an input feature
+- ZH: posite approach than one taken in Cnvlutin and NullHop archi- ume of the ﬁrst CNN layer is usually not called an input feature
+- EN: tectures, by skipping zeros that are present in the CNN weights map;
+- ZH: tectures, by skipping zeros that are present in the CNN weights map;
+- EN: rather it is called an input instance.
+- ZH: rather it is called an input instance.
+- EN: Similarly, an output fea-
+- ZH: Similarly, an output fea-
+- EN: but are not able to skip zeros that are present in the input fea- ture map (OFM) designates the 3D set of activation values of every
+- ZH: but are not able to skip zeros that are present in the input fea- ture map (OFM) designates the 3D set of activation values of every
+- EN: ture maps.
+- ZH: ture maps.
+- EN: By being able to skip zeros that are present both neuron present in the current CNN layer.
+- ZH: By being able to skip zeros that are present both neuron present in the current CNN layer.
+- EN: The output volume of the
+- ZH: The output volume of the
+- EN: in input feature maps and CNN weights the CoNNA architecture last CNN layer is usually not called the output feature map;
+- ZH: in input feature maps and CNN weights the CoNNA architecture last CNN layer is usually not called the output feature map;
+- EN: rather
+- ZH: rather
+- EN: should offer more eﬃcient CNN acceleration than Cambricon-x and it is called the classiﬁcation vector.
+- ZH: should offer more eﬃcient CNN acceleration than Cambricon-x and it is called the classiﬁcation vector.
+- EN: × × SparseNN architectures.
+- ZH: × × SparseNN architectures.
+- EN: A 3D region of N M D points within the input feature map
+- ZH: A 3D region of N M D points within the input feature map
+- EN: Similar to CoNNA, EIE architecture [35] can skip zeros located that is directly connected to one neuron from the current CNN
+- ZH: Similar to CoNNA, EIE architecture [35] can skip zeros located that is directly connected to one neuron from the current CNN
+- EN: both in input feature maps and CNN weight.
+- ZH: both in input feature maps and CNN weight.
+- EN: But, EIE is able layer will be designated as the input feature map bundle.
+- ZH: But, EIE is able layer will be designated as the input feature map bundle.
+- EN: In most
+- ZH: In most
+- EN: to do this only for fully-connected layers, and not for convolu- CNN architectures values for the horizontal and vertical size of the
+- ZH: to do this only for fully-connected layers, and not for convolu- CNN architectures values for the horizontal and vertical size of the
+- EN: = tional layers.
+- ZH: = tional layers.
+- EN: Therefore, EIE architecture cannot be used to pro- input feature map bundle are equal, N M .
+- ZH: Therefore, EIE architecture cannot be used to pro- input feature map bundle are equal, N M .
+- EN: For example, the size
+- ZH: For example, the size
+- EN: cess convolutional, pooling or adding layers from CNNs, which of the input feature map bundle of the 4th convolutional layer
+- ZH: cess convolutional, pooling or adding layers from CNNs, which of the input feature map bundle of the 4th convolutional layer
+- EN: × × makes EIE an interesting solution for the acceleration of fully- from the VGG-16 CNN network [10] is a 3D region of 3 3 128
+- ZH: × × makes EIE an interesting solution for the acceleration of fully- from the VGG-16 CNN network [10] is a 3D region of 3 3 128
+- EN: connected CNN layers, but not the complete compressed CNN ac- points.
+- ZH: connected CNN layers, but not the complete compressed CNN ac- points.
+- EN: Similarly, the size of the input feature map bundle for the
+- ZH: Similarly, the size of the input feature map bundle for the
+- EN: celerator.
+- ZH: celerator.
+- EN: On the other hand, the CoNNA architecture is designed 2nd pooling layer from the VGG-16 network is a 3D region of
+- ZH: On the other hand, the CoNNA architecture is designed 2nd pooling layer from the VGG-16 network is a 3D region of
+- EN: × × to be capable of accelerating all standard CNN layer types, in- 2 2 1 points.
+- ZH: × × to be capable of accelerating all standard CNN layer types, in- 2 2 1 points.
+- EN: × × cluding convolutional, depthwise convolutional, pooling, adding A 3D region of 1 1 D points within the feature map bundle
+- ZH: × × cluding convolutional, depthwise convolutional, pooling, adding A 3D region of 1 1 D points within the feature map bundle
+- EN: and fully-connected layers.
+- ZH: and fully-connected layers.
+- EN: Furthermore, during the acceleration will be designated as the feature map stick.
+- ZH: Furthermore, during the acceleration will be designated as the feature map stick.
+- EN: If the feature map is
+- ZH: If the feature map is
+- EN: of convolutional and fully-connected layers, CoNNA is able to skip the input feature map, then the feature map stick will be called
+- ZH: of convolutional and fully-connected layers, CoNNA is able to skip the input feature map, then the feature map stick will be called
+- EN: all zeros that are present in the input feature maps and convo- the input feature map stick.
+- ZH: all zeros that are present in the input feature maps and convo- the input feature map stick.
+- EN: Accordingly, if the feature map is the
+- ZH: Accordingly, if the feature map is the
+- EN: lutional coeﬃcient and fully-connected weight maps.
+- ZH: lutional coeﬃcient and fully-connected weight maps.
+- EN: This makes output feature map, then the feature map stick will be called the
+- ZH: This makes output feature map, then the feature map stick will be called the
+- EN: CoNNA a universal pruned CNN accelerator, as opposed to the EIE output feature map stick.
+- ZH: CoNNA a universal pruned CNN accelerator, as opposed to the EIE output feature map stick.
+- EN: Every input feature map bundle is com-
+- ZH: Every input feature map bundle is com-
+- EN: architecture.
+- ZH: architecture.
+- EN: posed of a number of input feature map sticks.
+- ZH: posed of a number of input feature map sticks.
+- EN: For example, the
+- ZH: For example, the
+- EN: Scnn architecture [36] can also skip all zeros located both in input feature map bundle of the 4th convolutional layer from the
+- ZH: Scnn architecture [36] can also skip all zeros located both in input feature map bundle of the 4th convolutional layer from the
+- EN: input feature maps and CNN weights, similar to EIE and CoNNA ar- VGG CNN is composed of 9 input feature map sticks, each being a
+- ZH: input feature maps and CNN weights, similar to EIE and CoNNA ar- VGG CNN is composed of 9 input feature map sticks, each being a
+- EN: × × chitectures, but it can process only convolutional layer type.
+- ZH: × × chitectures, but it can process only convolutional layer type.
+- EN: So the 3D region of 1 1 128 points.
+- ZH: So the 3D region of 1 1 128 points.
+- EN: Scnn architecture is to a degree complementary to the EIE archi- Fig.
+- ZH: Scnn architecture is to a degree complementary to the EIE archi- Fig.
+- EN: 1 illustrates the deﬁnitions of the feature map stick and the
+- ZH: 1 illustrates the deﬁnitions of the feature map stick and the
+- EN: tecture.
+- ZH: tecture.
+- EN: Both architectures can skip all zeros but in different layer feature map bundle, in the case when the feature map bundle is
+- ZH: Both architectures can skip all zeros but in different layer feature map bundle, in the case when the feature map bundle is
+- EN: types.
+- ZH: types.
+- EN: Once more, CoNNA is able to skip all zeros both in convo- composed of 9 feature map sticks.
+- ZH: Once more, CoNNA is able to skip all zeros both in convo- composed of 9 feature map sticks.
+- EN: lutional and fully-connected layers, and opposed to EIE and Scnn CNNs are both computationally and memory demanding, which
+- ZH: lutional and fully-connected layers, and opposed to EIE and Scnn CNNs are both computationally and memory demanding, which
+- EN: architecture offers a solution to hardware acceleration of complete makes their usage diﬃcult, especially in embedded applications.
+- ZH: architecture offers a solution to hardware acceleration of complete makes their usage diﬃcult, especially in embedded applications.
+- EN: pruned CNNs.
+- ZH: pruned CNNs.
+- EN: For example, VGG-16 CNN [10] has more than 138 million net-
+- ZH: For example, VGG-16 CNN [10] has more than 138 million net-
+- EN: The rest of the paper is organized as follows.
+- ZH: The rest of the paper is organized as follows.
+- EN: Section 2 presents work parameters.
+- ZH: Section 2 presents work parameters.
+- EN: Using 32-bit ﬂoating number representation, ap-
+- ZH: Using 32-bit ﬂoating number representation, ap-
+- EN: a brief introduction to CNNs, with the emphasis on CNN com- proximately 552 MB of memory space must be available only for
+- ZH: a brief introduction to CNNs, with the emphasis on CNN com- proximately 552 MB of memory space must be available only for
+- EN: pression, since CoNNA takes great beneﬁt from CNN compression.
+- ZH: pression, since CoNNA takes great beneﬁt from CNN compression.
+- EN: storing all required network parameters.
+- ZH: storing all required network parameters.
+- EN: Furthermore, during layer
+- ZH: Furthermore, during layer
+- EN: Section 3 presents details of the proposed CoNNA architecture, de- processing, CNN uses an input feature map, which is either the in-
+- ZH: Section 3 presents details of the proposed CoNNA architecture, de- processing, CNN uses an input feature map, which is either the in-
+- EN: scribing all of its major components.
+- ZH: scribing all of its major components.
+- EN: Section 4 contains the re- put image itself, or the output of the previous CNN layer, and pro-
+- ZH: Section 4 contains the re- put image itself, or the output of the previous CNN layer, and pro-
+- EN: sults of the experiments aimed at comparing the performance of duces an output feature map (OFM).
+- ZH: sults of the experiments aimed at comparing the performance of duces an output feature map (OFM).
+- EN: The sizes of input and output
+- ZH: The sizes of input and output
+- EN: the CoNNA architecture with some of the previously proposed CNN feature maps depend on the characteristics of CNN layers.
+- ZH: the CoNNA architecture with some of the previously proposed CNN feature maps depend on the characteristics of CNN layers.
+- EN: For ex-
+- ZH: For ex-
+- EN: hardware acceleration solutions, and also presents a detailed dis- ample, the largest input and output feature maps in the case of
+- ZH: hardware acceleration solutions, and also presents a detailed dis- ample, the largest input and output feature maps in the case of
+- EN: cussion about the impact of the irregular distribution of non-zero the VGG-16 CNN are more than 12 MB large each, when 32-bit
+- ZH: cussion about the impact of the irregular distribution of non-zero the VGG-16 CNN are more than 12 MB large each, when 32-bit
+- EN: input feature map and CNN weight values on the CoNNA’s CNN ﬂoating-point representation is used.
+- ZH: input feature map and CNN weight values on the CoNNA’s CNN ﬂoating-point representation is used.
+- EN: Compared to the size of the
+- ZH: Compared to the size of the
+- EN: processing eﬃciency.
+- ZH: processing eﬃciency.
+- EN: Section 5 holds ﬁnal remarks and conclu- memory required to store VGG-16 CNN parameters, the size of the
+- ZH: Section 5 holds ﬁnal remarks and conclu- memory required to store VGG-16 CNN parameters, the size of the
+- EN: sions.
+- ZH: sions.
+- EN: required memory for storing all intermediate feature maps is only
+- ZH: required memory for storing all intermediate feature maps is only
+
+
+---
+
+### Page 4
+
+- EN: 4 R.
+- ZH: 4 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: Fig.
+- ZH: Fig.
+- EN: 1.
+- ZH: 1.
+- EN: Illustration of deﬁnitions of feature map bundle and feature map stick.
+- ZH: Illustration of deﬁnitions of feature map bundle and feature map stick.
+- EN: around 6% of the required network parameters memory size.
+- ZH: around 6% of the required network parameters memory size.
+- EN: How- rameters, especially if CNN parameters are stored in external,
+- ZH: How- rameters, especially if CNN parameters are stored in external,
+- EN: ever, the total required feature map data movement size to pro- off-chip memory, which is usually the case.
+- ZH: ever, the total required feature map data movement size to pro- off-chip memory, which is usually the case.
+- EN: cess one input image reaches around 120 MB.
+- ZH: cess one input image reaches around 120 MB.
+- EN: If we analyze the
+- ZH: If we analyze the
+- EN: A critical step during the CNN network pruning process requires
+- ZH: A critical step during the CNN network pruning process requires
+- EN: number of required computations in order to classify one input
+- ZH: number of required computations in order to classify one input
+- EN: identifying kernel coeﬃcients or fully-connected weights that are
+- ZH: identifying kernel coeﬃcients or fully-connected weights that are
+- EN: image, in the case of VGG-16 CNN it reaches over 15 G of MAC
+- ZH: image, in the case of VGG-16 CNN it reaches over 15 G of MAC
+- EN: redundant and can be removed.
+- ZH: redundant and can be removed.
+- EN: Since this can be done in nu-
+- ZH: Since this can be done in nu-
+- EN: operations, or equivalently, over 30 GOPs.
+- ZH: operations, or equivalently, over 30 GOPs.
+- EN: For example, if VGG-16
+- ZH: For example, if VGG-16
+- EN: merous ways, a large number of different pruning algorithms have
+- ZH: merous ways, a large number of different pruning algorithms have
+- EN: CNN is deployed in a system that is processing real-time video data
+- ZH: CNN is deployed in a system that is processing real-time video data
+- EN: been proposed in the open literature [38–45] , with the new ones
+- ZH: been proposed in the open literature [38–45] , with the new ones
+- EN: stream, with a speed of 25 frames-per-second, the required com-
+- ZH: stream, with a speed of 25 frames-per-second, the required com-
+- EN: continuously being proposed.
+- ZH: continuously being proposed.
+- EN: However, all CNN pruning algorithms
+- ZH: However, all CNN pruning algorithms
+- EN: pute power of CNN implementation system reaches 750 GOP/sec
+- ZH: pute power of CNN implementation system reaches 750 GOP/sec
+- EN: can be broadly divided into two large categories:
+- ZH: can be broadly divided into two large categories:
+- EN: with required data throughput of at least 16.
+- ZH: with required data throughput of at least 16.
+- EN: 8 GB/sec.
+- ZH: 8 GB/sec.
+- EN: This makes
+- ZH: This makes
+- EN: deployment of CNNs in embedded applications very challenging, 1.
+- ZH: deployment of CNNs in embedded applications very challenging, 1.
+- EN: Coarse-grained pruning algorithms – these algorithms remove
+- ZH: Coarse-grained pruning algorithms – these algorithms remove
+- EN: especially when latency, throughput and/or power consumption is complete convolutional kernels (entire ﬁlters) from a convolu-
+- ZH: especially when latency, throughput and/or power consumption is complete convolutional kernels (entire ﬁlters) from a convolu-
+- EN: of interest.
+- ZH: of interest.
+- EN: tional layer.
+- ZH: tional layer.
+- EN: Some of the previously proposed coarse-grained
+- ZH: Some of the previously proposed coarse-grained
+- EN: One way of solving these issues is to reduce the memory size pruning algorithms are [38–41] .
+- ZH: One way of solving these issues is to reduce the memory size pruning algorithms are [38–41] .
+- EN: required to store network parameters and intermediate feature 2.
+- ZH: required to store network parameters and intermediate feature 2.
+- EN: Fine-grained pruning algorithms – these algorithms remove in-
+- ZH: Fine-grained pruning algorithms – these algorithms remove in-
+- EN: maps, by using different CNN compression methods.
+- ZH: maps, by using different CNN compression methods.
+- EN: Generally, all dividual kernel coeﬃcients from selected ﬁlter within convolu-
+- ZH: Generally, all dividual kernel coeﬃcients from selected ﬁlter within convolu-
+- EN: CNN compression methods can be divided into two groups, de- tional layers, leaving the original number of ﬁlters unchanged,
+- ZH: CNN compression methods can be divided into two groups, de- tional layers, leaving the original number of ﬁlters unchanged,
+- EN: pending on the target data:
+- ZH: pending on the target data:
+- EN: methods that compress CNN network or remove individual weights from fully-connected layers.
+- ZH: methods that compress CNN network or remove individual weights from fully-connected layers.
+- EN: Some
+- ZH: Some
+- EN: parameters, and methods that compress feature map data.
+- ZH: parameters, and methods that compress feature map data.
+- EN: of the previously proposed ﬁne-grained pruning algorithms are
+- ZH: of the previously proposed ﬁne-grained pruning algorithms are
+- EN: CNN pruning [38–45] is the major technique used to compress [42–45] .
+- ZH: CNN pruning [38–45] is the major technique used to compress [42–45] .
+- EN: CNN network parameters.
+- ZH: CNN network parameters.
+- EN: CNN pruning can be beneﬁcial because
+- ZH: CNN pruning can be beneﬁcial because
+- EN: One widely used CNN network parameter compression algo-
+- ZH: One widely used CNN network parameter compression algo-
+- EN: of a number of reasons:
+- ZH: of a number of reasons:
+- EN: rithm is the “Deep Compression” algorithm, proposed by Song Han,
+- ZH: rithm is the “Deep Compression” algorithm, proposed by Song Han,
+- EN: 1.
+- ZH: 1.
+- EN: By removing redundant weights memory footprint of the target et al.
+- ZH: By removing redundant weights memory footprint of the target et al.
+- EN: in [44] .
+- ZH: in [44] .
+- EN: “Deep Compression” algorithm uses a three-stage
+- ZH: “Deep Compression” algorithm uses a three-stage
+- EN: CNN network is reduced, allowing it to be used in memory- pipeline to reduce the storage size required by the CNN network, in
+- ZH: CNN network is reduced, allowing it to be used in memory- pipeline to reduce the storage size required by the CNN network, in
+- EN: constrained applications.
+- ZH: constrained applications.
+- EN: Since pruned weights are actually set a manner that preserves original accuracy.
+- ZH: Since pruned weights are actually set a manner that preserves original accuracy.
+- EN: First, the original CNN
+- ZH: First, the original CNN
+- EN: to zero, resulting pruned CNN is a sparse structure, containing network is pruned by removing all redundant kernel coeﬃcients
+- ZH: to zero, resulting pruned CNN is a sparse structure, containing network is pruned by removing all redundant kernel coeﬃcients
+- EN: many zeros within its convolutional kernel and fully-connected and fully-connected weights, keeping only the most informative
+- ZH: many zeros within its convolutional kernel and fully-connected and fully-connected weights, keeping only the most informative
+- EN: weight maps.
+- ZH: weight maps.
+- EN: Some of the data compression techniques could ones, using ﬁne-grained pruning algorithm.
+- ZH: Some of the data compression techniques could ones, using ﬁne-grained pruning algorithm.
+- EN: Next, remaining con-
+- ZH: Next, remaining con-
+- EN: be used to compress this sparse representation of CNN, which nection weights are quantized so that multiple connections share
+- ZH: be used to compress this sparse representation of CNN, which nection weights are quantized so that multiple connections share
+- EN: will then require a smaller amount of memory space for its the same weight, thus only the codebooks (effective weights) and
+- ZH: will then require a smaller amount of memory space for its the same weight, thus only the codebooks (effective weights) and
+- EN: storage.
+- ZH: storage.
+- EN: the indices need to be stored.
+- ZH: the indices need to be stored.
+- EN: Finally, Huffman encoding is applied
+- ZH: Finally, Huffman encoding is applied
+- EN: 2.
+- ZH: 2.
+- EN: Trainable CNN weights are dominantly located within convolu- to take advantage of the biased distribution of effective weights.
+- ZH: Trainable CNN weights are dominantly located within convolu- to take advantage of the biased distribution of effective weights.
+- EN: tional and fully-connected layers and are always used in mul- After performing all three steps of the “Deep Compression” algo-
+- ZH: tional and fully-connected layers and are always used in mul- After performing all three steps of the “Deep Compression” algo-
+- EN: tiplicative operations.
+- ZH: tiplicative operations.
+- EN: If some of these weights are set to zero, rithm, the size of memory required for storing all CNN parameters
+- ZH: If some of these weights are set to zero, rithm, the size of memory required for storing all CNN parameters
+- EN: because they are redundant, product terms that involve these can be reduced signiﬁcantly.
+- ZH: because they are redundant, product terms that involve these can be reduced signiﬁcantly.
+- EN: For example, in the case of VGG-16
+- ZH: For example, in the case of VGG-16
+- EN: zero-valued weights actually don’t have to be computed, be- CNN, the required memory size is reduced from 552 MB to only
+- ZH: zero-valued weights actually don’t have to be computed, be- CNN, the required memory size is reduced from 552 MB to only
+- EN: cause their value will also be equal to zero.
+- ZH: cause their value will also be equal to zero.
+- EN: If we could detect 5.
+- ZH: If we could detect 5.
+- EN: 5 MB.
+- ZH: 5 MB.
+- EN: these zero-outcome product terms and skip them, the process- Please notice that pruning and weight quantization affect the
+- ZH: these zero-outcome product terms and skip them, the process- Please notice that pruning and weight quantization affect the
+- EN: ing time of convolutional or fully-connected layers could be re- overall accuracy of the CNN network, but as shown in [44] , signif-
+- ZH: ing time of convolutional or fully-connected layers could be re- overall accuracy of the CNN network, but as shown in [44] , signif-
+- EN: duced, resulting in shorter input instance processing time.
+- ZH: duced, resulting in shorter input instance processing time.
+- EN: The icant pruning and quantization can be applied to standard CNNs,
+- ZH: The icant pruning and quantization can be applied to standard CNNs,
+- EN: process of skipping zero-valued product terms is also known as trained on standard datasets, without degrading initial, unpruned,
+- ZH: process of skipping zero-valued product terms is also known as trained on standard datasets, without degrading initial, unpruned,
+- EN: the “Zero Skipping” process, and the CoNNA accelerator is de- CNN network accuracy.
+- ZH: the “Zero Skipping” process, and the CoNNA accelerator is de- CNN network accuracy.
+- EN: In this paper, we also use ﬁne-grained
+- ZH: In this paper, we also use ﬁne-grained
+- EN: signed to use it during CNN processing.
+- ZH: signed to use it during CNN processing.
+- EN: Speeding-up instance pruning to sparsify CNN network parameters before the sparse
+- ZH: Speeding-up instance pruning to sparsify CNN network parameters before the sparse
+- EN: processing by zero skipping can be beneﬁcial because it can ei- CNN network is run on the CoNNA CNN accelerator.
+- ZH: processing by zero skipping can be beneﬁcial because it can ei- CNN network is run on the CoNNA CNN accelerator.
+- EN: However, we
+- ZH: However, we
+- EN: ther allow us to process input instances at a faster rate, result- don’t cluster remaining weights into codebooks, nor do we use
+- ZH: ther allow us to process input instances at a faster rate, result- don’t cluster remaining weights into codebooks, nor do we use
+- EN: ing in higher throughput, or alternatively save power because Huffman encoding.
+- ZH: ing in higher throughput, or alternatively save power because Huffman encoding.
+- EN: However, we do perform quantization of un-
+- ZH: However, we do perform quantization of un-
+- EN: we could run CNN accelerator at a slower clock frequency and pruned weights into a 16-bit ﬁxed-point representation to further
+- ZH: we could run CNN accelerator at a slower clock frequency and pruned weights into a 16-bit ﬁxed-point representation to further
+- EN: still be able to ﬁnish with instance processing on time.
+- ZH: still be able to ﬁnish with instance processing on time.
+- EN: reduce the memory footprint and enable more eﬃcient FPGA im-
+- ZH: reduce the memory footprint and enable more eﬃcient FPGA im-
+- EN: 3.
+- ZH: 3.
+- EN: Finally, since the compressed sparse representation of CNN net- plementation.
+- ZH: Finally, since the compressed sparse representation of CNN net- plementation.
+- EN: work is signiﬁcantly smaller in size when compared with the In a ﬁne-grained pruning approach, each convolutional kernel
+- ZH: work is signiﬁcantly smaller in size when compared with the In a ﬁne-grained pruning approach, each convolutional kernel
+- EN: original, un-pruned, dense representation of CNN, a signiﬁcant is pruned individually.
+- ZH: original, un-pruned, dense representation of CNN, a signiﬁcant is pruned individually.
+- EN: Usually, a speciﬁed number of kernel coef-
+- ZH: Usually, a speciﬁed number of kernel coef-
+- EN: amount of energy can be saved during movement of CNN pa- ﬁcients are removed from each kernel, to create a sparse convo-
+- ZH: amount of energy can be saved during movement of CNN pa- ﬁcients are removed from each kernel, to create a sparse convo-
+
+
+---
+
+### Page 5
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 5
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 5
+- EN: Fig.
+- ZH: Fig.
+- EN: 2.
+- ZH: 2.
+- EN: Fine-grained CNN pruning principle of operation.
+- ZH: Fine-grained CNN pruning principle of operation.
+- EN: lutional kernel.
+- ZH: lutional kernel.
+- EN: For example, Fig.
+- ZH: For example, Fig.
+- EN: 2 illustrates the process of ﬁne- underlying problem that CNN network is being trained to solve,
+- ZH: 2 illustrates the process of ﬁne- underlying problem that CNN network is being trained to solve,
+- EN: × × grained pruning of a 3 3 5 convolutional kernel.
+- ZH: × × grained pruning of a 3 3 5 convolutional kernel.
+- EN: pruning algorithm that is being used, distribution of pruning ratios
+- ZH: pruning algorithm that is being used, distribution of pruning ratios
+- EN: We start with the dense representation of the convolutional over layers from CNN network selected for pruning, optimization
+- ZH: We start with the dense representation of the convolutional over layers from CNN network selected for pruning, optimization
+- EN: kernel, shown on the left of Fig.
+- ZH: kernel, shown on the left of Fig.
+- EN: 2 .
+- ZH: 2 .
+- EN: Dense kernel coeﬃcients are algorithm used to train CNN network, etc.
+- ZH: Dense kernel coeﬃcients are algorithm used to train CNN network, etc.
+- EN: Achieving the highest
+- ZH: Achieving the highest
+- EN: obtained during the training process of the selected CNN network.
+- ZH: obtained during the training process of the selected CNN network.
+- EN: pruning ratios for the selected layers from the CNN network can
+- ZH: pruning ratios for the selected layers from the CNN network can
+- EN: During ﬁne-grained pruning, a speciﬁed number of kernel coef- be a very time-consuming, trial and error, process.
+- ZH: During ﬁne-grained pruning, a speciﬁed number of kernel coef- be a very time-consuming, trial and error, process.
+- EN: ﬁcients are removed, effectively setting them to zero.
+- ZH: ﬁcients are removed, effectively setting them to zero.
+- EN: In the ex- Please notice that pruned, sparse representations of CNN net-
+- ZH: In the ex- Please notice that pruned, sparse representations of CNN net-
+- EN: ample from Fig.
+- ZH: ample from Fig.
+- EN: 2 , a total of 33 kernel coeﬃcients are removed works by themselves don’t reduce the memory size required for
+- ZH: 2 , a total of 33 kernel coeﬃcients are removed works by themselves don’t reduce the memory size required for
+- EN: × × × × from dense 3 3 5 kernel, to obtain a sparse 3 3 5 ker- storing network parameters.
+- ZH: × × × × from dense 3 3 5 kernel, to obtain a sparse 3 3 5 ker- storing network parameters.
+- EN: They also don’t reduce the amount of
+- ZH: They also don’t reduce the amount of
+- EN: nel, shown on the right of Fig.
+- ZH: nel, shown on the right of Fig.
+- EN: 2 .
+- ZH: 2 .
+- EN: In this sparse representation of data that will be moved between the CNN accelerator and operat-
+- ZH: In this sparse representation of data that will be moved between the CNN accelerator and operat-
+- EN: × × 3 3 5 kernel, only 12 coeﬃcients have non-zero values, while ing memory, nor do they reduce the time required to process the
+- ZH: × × 3 3 5 kernel, only 12 coeﬃcients have non-zero values, while ing memory, nor do they reduce the time required to process the
+- EN: the remaining 33 coeﬃcients are set to zero.
+- ZH: the remaining 33 coeﬃcients are set to zero.
+- EN: input images.
+- ZH: input images.
+- EN: Pruning only introduces a certain amount of zero-
+- ZH: Pruning only introduces a certain amount of zero-
+- EN: Criteria upon which kernel coeﬃcients are selected for pruning valued parameters within the CNN network description, but the
+- ZH: Criteria upon which kernel coeﬃcients are selected for pruning valued parameters within the CNN network description, but the
+- EN: can be numerous.
+- ZH: can be numerous.
+- EN: One commonly used approach is to prune ker- total number of network parameters remains the same as in the
+- ZH: One commonly used approach is to prune ker- total number of network parameters remains the same as in the
+- EN: nel coeﬃcients with the smallest absolute values.
+- ZH: nel coeﬃcients with the smallest absolute values.
+- EN: In this approach, original unpruned CNN network.
+- ZH: In this approach, original unpruned CNN network.
+- EN: selected kernel coeﬃcients are ﬁrst sorted in ascending order of Therefore, the amount of memory required to store pruned
+- ZH: selected kernel coeﬃcients are ﬁrst sorted in ascending order of Therefore, the amount of memory required to store pruned
+- EN: their absolute value, and the speciﬁed number of smallest valued CNN network parameters will be identical with the amount re-
+- ZH: their absolute value, and the speciﬁed number of smallest valued CNN network parameters will be identical with the amount re-
+- EN: coeﬃcients is then set to zero.
+- ZH: coeﬃcients is then set to zero.
+- EN: This process is repeated for all con- quired to store parameters of the unpruned CNN network, the only
+- ZH: This process is repeated for all con- quired to store parameters of the unpruned CNN network, the only
+- EN: volutional kernels from all convolutional layers of the target CNN difference being that a certain amount of these parameters will
+- ZH: volutional kernels from all convolutional layers of the target CNN difference being that a certain amount of these parameters will
+- EN: network, with possibly different pruning ratios for each individual have zero value in the case of pruned CNN network.
+- ZH: network, with possibly different pruning ratios for each individual have zero value in the case of pruned CNN network.
+- EN: Similarly, the
+- ZH: Similarly, the
+- EN: convolutional layer.
+- ZH: convolutional layer.
+- EN: Weight values from fully-connected layers can amount of data movement between CNN accelerator and the op-
+- ZH: Weight values from fully-connected layers can amount of data movement between CNN accelerator and the op-
+- EN: also be pruned using a similar approach in order to create a sparse erating memory, where the CNN network parameters are stored,
+- ZH: also be pruned using a similar approach in order to create a sparse erating memory, where the CNN network parameters are stored,
+- EN: weight map for every fully-connected layer.
+- ZH: weight map for every fully-connected layer.
+- EN: will be identical for unpruned and pruned CNN network represen-
+- ZH: will be identical for unpruned and pruned CNN network represen-
+- EN: After CNN network pruning has been performed the result is a tations, the difference once more being the fact that in the case of
+- ZH: After CNN network pruning has been performed the result is a tations, the difference once more being the fact that in the case of
+- EN: sparse representation of selected CNN network, containing a sig- pruned CNN network many of parameters that will be transferred
+- ZH: sparse representation of selected CNN network, containing a sig- pruned CNN network many of parameters that will be transferred
+- EN: niﬁcant number of zero-valued convolutional coeﬃcients or fully- to the accelerator will be zero-valued.
+- ZH: niﬁcant number of zero-valued convolutional coeﬃcients or fully- to the accelerator will be zero-valued.
+- EN: connected weight values.
+- ZH: connected weight values.
+- EN: Usually, especially when high pruning ra- However, since pruned CNN network representation contains a
+- ZH: Usually, especially when high pruning ra- However, since pruned CNN network representation contains a
+- EN: tios are employed, the resulting pruned CNN network has signiﬁ- signiﬁcant number of zero-valued parameters, lossless data com-
+- ZH: tios are employed, the resulting pruned CNN network has signiﬁ- signiﬁcant number of zero-valued parameters, lossless data com-
+- EN: cantly lower accuracy, compared with the original dense, unpruned pression algorithms can be used to reduce the amount of data re-
+- ZH: cantly lower accuracy, compared with the original dense, unpruned pression algorithms can be used to reduce the amount of data re-
+- EN: CNN network.
+- ZH: CNN network.
+- EN: Therefore, an additional retraining process of the quired to store pruned CNN network representation.
+- ZH: Therefore, an additional retraining process of the quired to store pruned CNN network representation.
+- EN: The CoNNA
+- ZH: The CoNNA
+- EN: pruned CNN network is necessary, in order to regain the accuracy architecture uses a variation of standard Zero Run-Length (ZRL)
+- ZH: pruned CNN network is necessary, in order to regain the accuracy architecture uses a variation of standard Zero Run-Length (ZRL)
+- EN: of the unpruned CNN network.
+- ZH: of the unpruned CNN network.
+- EN: Depending on how severe the CNN encoding compression algorithm [19] to compress sparse pruned
+- ZH: Depending on how severe the CNN encoding compression algorithm [19] to compress sparse pruned
+- EN: pruning process has been, retraining of pruned CNN network can CNN representations.
+- ZH: pruning process has been, retraining of pruned CNN network can CNN representations.
+- EN: Using ZRL compression a signiﬁcant reduc-
+- ZH: Using ZRL compression a signiﬁcant reduc-
+- EN: restore complete or only a fraction of original unpruned CNN net- tion in the memory size required to store pruned CNN network
+- ZH: restore complete or only a fraction of original unpruned CNN net- tion in the memory size required to store pruned CNN network
+- EN: work accuracy.
+- ZH: work accuracy.
+- EN: representation and the total data transfer size required to transfer
+- ZH: representation and the total data transfer size required to transfer
+- EN: Although CNN network pruning can be performed incremen- pruned CNN network representation to the CNN accelerator, can be
+- ZH: Although CNN network pruning can be performed incremen- pruned CNN network representation to the CNN accelerator, can be
+- EN: tally, layer by layer, most common approach is to prune all applica- achieved.
+- ZH: tally, layer by layer, most common approach is to prune all applica- achieved.
+- EN: For more details about the ZRL compression algorithm
+- ZH: For more details about the ZRL compression algorithm
+- EN: ble CNN layers at the same time, create one sparse representation used within the CoNNA architecture and the amount of data stor-
+- ZH: ble CNN layers at the same time, create one sparse representation used within the CoNNA architecture and the amount of data stor-
+- EN: of complete CNN network and then retrain it, in order to regain as age and transfer size reduction that is achievable, please refer to
+- ZH: of complete CNN network and then retrain it, in order to regain as age and transfer size reduction that is achievable, please refer to
+- EN: much of original accuracy.
+- ZH: much of original accuracy.
+- EN: Please notice that the presented prun- Horowitz [46] .
+- ZH: Please notice that the presented prun- Horowitz [46] .
+- EN: ing algorithm was used in this paper to prune the CNN networks Please also notice that, compared to the unpruned CNN net-
+- ZH: ing algorithm was used in this paper to prune the CNN networks Please also notice that, compared to the unpruned CNN net-
+- EN: prior to their acceleration by the CoNNA CNN accelerator.
+- ZH: prior to their acceleration by the CoNNA CNN accelerator.
+- EN: work, having a pruned CNN network doesn’t reduce the num-
+- ZH: work, having a pruned CNN network doesn’t reduce the num-
+- EN: The amount of pruning that can be used with given CNN net- ber of MAC operations that need to be performed in order to
+- ZH: The amount of pruning that can be used with given CNN net- ber of MAC operations that need to be performed in order to
+- EN: work depends on a number of factors:
+- ZH: work depends on a number of factors:
+- EN: CNN network architecture, process one input image.
+- ZH: CNN network architecture, process one input image.
+- EN: The only difference will be that in the
+- ZH: The only difference will be that in the
+
+
+---
+
+### Page 6
+
+- EN: 6 R.
+- ZH: 6 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: case of a pruned CNN network, a number of these MAC opera- accelerators proposed in [31,32] use this optimization technique
+- ZH: case of a pruned CNN network, a number of these MAC opera- accelerators proposed in [31,32] use this optimization technique
+- EN: tions will result in zero value since we will be multiplying in- to increase CNN processing eﬃciency.
+- ZH: tions will result in zero value since we will be multiplying in- to increase CNN processing eﬃciency.
+- EN: put feature map points with zero-valued convolutional coeﬃcients 2.
+- ZH: put feature map points with zero-valued convolutional coeﬃcients 2.
+- EN: Weights “zero-skipping” - in this approach all MAC operations
+- ZH: Weights “zero-skipping” - in this approach all MAC operations
+- EN: or fully-connected weight values.
+- ZH: or fully-connected weight values.
+- EN: Reduction in instance processing where convolutional coeﬃcient or fully-connected weight value
+- ZH: Reduction in instance processing where convolutional coeﬃcient or fully-connected weight value
+- EN: time could be possible if the CNN accelerator could somehow “de- is zero are skipped during the process of convolutional and
+- ZH: time could be possible if the CNN accelerator could somehow “de- is zero are skipped during the process of convolutional and
+- EN: tect” and "skip" these zero-valued MAC operations since they don’t weighted sum calculation.
+- ZH: tect” and "skip" these zero-valued MAC operations since they don’t weighted sum calculation.
+- EN: For example, CNN accelerators pro-
+- ZH: For example, CNN accelerators pro-
+- EN: change the ﬁnal outcome of convolution or weighted sum calcula- posed in [33,34] use this optimization technique to increase
+- ZH: change the ﬁnal outcome of convolution or weighted sum calcula- posed in [33,34] use this optimization technique to increase
+- EN: tions.
+- ZH: tions.
+- EN: The CoNNA architecture was designed speciﬁcally to exploit CNN processing eﬃciency.
+- ZH: The CoNNA architecture was designed speciﬁcally to exploit CNN processing eﬃciency.
+- EN: this optimization opportunity.
+- ZH: this optimization opportunity.
+- EN: 3.
+- ZH: 3.
+- EN: “All zero-skipping” - in this approach all MAC operations where
+- ZH: “All zero-skipping” - in this approach all MAC operations where
+- EN: Reduction in memory size required for storing CNN network either IFM point or convolutional coeﬃcient/fully-connected
+- ZH: Reduction in memory size required for storing CNN network either IFM point or convolutional coeﬃcient/fully-connected
+- EN: representation, reduction in required data transfer size and reduc- weight value is zero are skipped during the process of convolu-
+- ZH: representation, reduction in required data transfer size and reduc- weight value is zero are skipped during the process of convolu-
+- EN: tion in instance processing time can have beneﬁcial effects in low- tional and weighted sum calculation.
+- ZH: tion in instance processing time can have beneﬁcial effects in low- tional and weighted sum calculation.
+- EN: For example, CNN accel-
+- ZH: For example, CNN accel-
+- EN: ering the cost and increasing the energy eﬃciency of CNN network erators proposed in [35,36] use this optimization technique to
+- ZH: ering the cost and increasing the energy eﬃciency of CNN network erators proposed in [35,36] use this optimization technique to
+- EN: processing, which could be of special interest, especially in embed- increase CNN processing eﬃciency.
+- ZH: processing, which could be of special interest, especially in embed- increase CNN processing eﬃciency.
+- EN: ded, edge-computing applications.
+- ZH: ded, edge-computing applications.
+- EN: Each of the three presented "zero-skipping" techniques lead
+- ZH: Each of the three presented "zero-skipping" techniques lead
+- EN: To further improve energy and compute eﬃciency of CNN net-
+- ZH: To further improve energy and compute eﬃciency of CNN net-
+- EN: to an improvement in the CNN instance processing time, but it
+- ZH: to an improvement in the CNN instance processing time, but it
+- EN: work processing, statistics of feature map data being processed
+- ZH: work processing, statistics of feature map data being processed
+- EN: is clear that the "All zero-skipping" technique leads to the most
+- ZH: is clear that the "All zero-skipping" technique leads to the most
+- EN: by CNN network can also be explored to reduce the number of
+- ZH: by CNN network can also be explored to reduce the number of
+- EN: signiﬁcant improvement, although it is the most diﬃcult to im-
+- ZH: signiﬁcant improvement, although it is the most diﬃcult to im-
+- EN: required memory accesses, using feature map compression tech-
+- ZH: required memory accesses, using feature map compression tech-
+- EN: plement.
+- ZH: plement.
+- EN: Proposed CoNNA architecture is designed speciﬁcally to
+- ZH: Proposed CoNNA architecture is designed speciﬁcally to
+- EN: nique.
+- ZH: nique.
+- EN: Eﬃcient feature map compression is possible because of the
+- ZH: Eﬃcient feature map compression is possible because of the
+- EN: implement this third, "All zero-skipping" optimization technique.
+- ZH: implement this third, "All zero-skipping" optimization technique.
+- EN: heavy use of the ReLU activation function within CNN layers.
+- ZH: heavy use of the ReLU activation function within CNN layers.
+- EN: The
+- ZH: The
+- EN: Please notice that the majority of the previously proposed CNN
+- ZH: Please notice that the majority of the previously proposed CNN
+- EN: ReLU activation function introduces a signiﬁcant number of zeros
+- ZH: ReLU activation function introduces a signiﬁcant number of zeros
+- EN: accelerators [15–30] have completely ignored this “zero-skipping”
+- ZH: accelerators [15–30] have completely ignored this “zero-skipping”
+- EN: in the intermediate feature maps, by rectifying all negative out-
+- ZH: in the intermediate feature maps, by rectifying all negative out-
+- EN: optimization opportunity.
+- ZH: optimization opportunity.
+- EN: put feature map values to zero.
+- ZH: put feature map values to zero.
+- EN: The number of zeros in feature
+- ZH: The number of zeros in feature
+- EN: maps depends on the information content of input data being fed
+- ZH: maps depends on the information content of input data being fed
+- EN: 3.
+- ZH: 3.
+- EN: CoNNA CNN accelerator details to CNN, CNN architecture that is being used to process input data,
+- ZH: CoNNA CNN accelerator details to CNN, CNN architecture that is being used to process input data,
+- EN: as well as the underlying problem that the CNN network is trained
+- ZH: as well as the underlying problem that the CNN network is trained
+- EN: The CoNNA CNN accelerator is speciﬁcally designed to ex- to solve.
+- ZH: The CoNNA CNN accelerator is speciﬁcally designed to ex- to solve.
+- EN: Nevertheless, it tends to increase as we move deeper into
+- ZH: Nevertheless, it tends to increase as we move deeper into
+- EN: ploit the “All zero-skipping” optimization opportunity, described in the CNN network.
+- ZH: ploit the “All zero-skipping” optimization opportunity, described in the CNN network.
+- EN: For example, in VGG-16 CNN almost 48% of the
+- ZH: For example, in VGG-16 CNN almost 48% of the
+- EN: Section 2 .
+- ZH: Section 2 .
+- EN: The CoNNA architecture is designed to accelerate com- IFM values of the CONV1_2 layer are zeros on average, and this
+- ZH: The CoNNA architecture is designed to accelerate com- IFM values of the CONV1_2 layer are zeros on average, and this
+- EN: pressed pruned CNNs, created using some of existing ﬁne-grained value goes up to 88% for the CONV5_3 layer, Chen et al.
+- ZH: pressed pruned CNNs, created using some of existing ﬁne-grained value goes up to 88% for the CONV5_3 layer, Chen et al.
+- EN: [19] .
+- ZH: [19] .
+- EN: CNN pruning algorithms, for example [38–45] .
+- ZH: CNN pruning algorithms, for example [38–45] .
+- EN: As the result of Zero Run-Length encoding [19] has again been proposed to ef-
+- ZH: As the result of Zero Run-Length encoding [19] has again been proposed to ef-
+- EN: the application of CNN pruning procedure, CNN kernel and weight ﬁciently exploit this phenomenon and compress zero values found
+- ZH: the application of CNN pruning procedure, CNN kernel and weight ﬁciently exploit this phenomenon and compress zero values found
+- EN: maps will be sparse, since a certain number of weights will be re- in the feature maps, by replacing consecutive runs of zeros with
+- ZH: maps will be sparse, since a certain number of weights will be re- in the feature maps, by replacing consecutive runs of zeros with
+- EN: moved from the CNN during pruning step.
+- ZH: moved from the CNN during pruning step.
+- EN: Similarly, because of − the single run-length value.
+- ZH: Similarly, because of − the single run-length value.
+- EN: Using ZRL encoding only adds 5% 10%
+- ZH: Using ZRL encoding only adds 5% 10%
+- EN: ReLU activation function use, a signiﬁcant number of intermedi- overhead to the theoretical entropy limit [19] .
+- ZH: ReLU activation function use, a signiﬁcant number of intermedi- overhead to the theoretical entropy limit [19] .
+- EN: For example, in the
+- ZH: For example, in the
+- EN: ate feature map values will be zero also.
+- ZH: ate feature map values will be zero also.
+- EN: CoNNA is able to detect case of VGG-16 CNN, using ZRL encoding results in the reduction of
+- ZH: CoNNA is able to detect case of VGG-16 CNN, using ZRL encoding results in the reduction of
+- EN: on-the-ﬂy all product terms that will result in the zero-valued out- required feature map transfer size per input image, from 60 MB in
+- ZH: on-the-ﬂy all product terms that will result in the zero-valued out- required feature map transfer size per input image, from 60 MB in
+- EN: come and skip their calculation, therefore reducing layer process- the uncompressed case, to only 30 MB in compressed case, when
+- ZH: come and skip their calculation, therefore reducing layer process- the uncompressed case, to only 30 MB in compressed case, when
+- EN: ing time signiﬁcantly.
+- ZH: ing time signiﬁcantly.
+- EN: This is done when convolutional, pooling and 16-bit ﬁxed-point representation of feature map data is used [19] .
+- ZH: This is done when convolutional, pooling and 16-bit ﬁxed-point representation of feature map data is used [19] .
+- EN: fully-connected layers are being processed by the CoNNA.
+- ZH: fully-connected layers are being processed by the CoNNA.
+- EN: Further- In the typical usage of feature map compression, all feature
+- ZH: Further- In the typical usage of feature map compression, all feature
+- EN: more, CoNNA is able to process feature and kernel maps data in maps, except input image, are stored in compressed format in op-
+- ZH: more, CoNNA is able to process feature and kernel maps data in maps, except input image, are stored in compressed format in op-
+- EN: compressed form, removing the need for decompression step, thus erating memory.
+- ZH: compressed form, removing the need for decompression step, thus erating memory.
+- EN: Accelerator reads encoded IFMs from operating
+- ZH: Accelerator reads encoded IFMs from operating
+- EN: further shortening processing time and reducing the size of on- memory, decompresses them using an appropriate decoder, and
+- ZH: further shortening processing time and reducing the size of on- memory, decompresses them using an appropriate decoder, and
+- EN: chip memories used for storing IFM and KM data, which is a sig- uses a decompressed data stream within the accelerator to com-
+- ZH: chip memories used for storing IFM and KM data, which is a sig- uses a decompressed data stream within the accelerator to com-
+- EN: niﬁcant improvement compared to existing solutions [19] .
+- ZH: niﬁcant improvement compared to existing solutions [19] .
+- EN: pute output feature map.
+- ZH: pute output feature map.
+- EN: Computed output feature maps are op-
+- ZH: Computed output feature maps are op-
+- EN: tionally processed by the ReLU module, compressed by the ZRL en-
+- ZH: tionally processed by the ReLU module, compressed by the ZRL en-
+- EN: coder, and transmitted to external memory.
+- ZH: coder, and transmitted to external memory.
+- EN: This saves both space 3.
+- ZH: This saves both space 3.
+- EN: 1.
+- ZH: 1.
+- EN: Principle of operation of the CoNNA CNN accelerator
+- ZH: Principle of operation of the CoNNA CNN accelerator
+- EN: and R/W bandwidth of the external memory.
+- ZH: and R/W bandwidth of the external memory.
+- EN: For example, this ap-
+- ZH: For example, this ap-
+- EN: proach is used in MIT’s Eyeriss accelerator [19] .
+- ZH: proach is used in MIT’s Eyeriss accelerator [19] .
+- EN: More than 90% of the operations in CNN processing involve
+- ZH: More than 90% of the operations in CNN processing involve
+- EN: However, please notice that a further improvement in the CNN convolutions [3,10,51,52] .
+- ZH: However, please notice that a further improvement in the CNN convolutions [3,10,51,52] .
+- EN: Therefore, optimizing the execution of
+- ZH: Therefore, optimizing the execution of
+- EN: processing time is possible if all MAC operations where IFM points convolutional layers has an overwhelming impact on the overall
+- ZH: processing time is possible if all MAC operations where IFM points convolutional layers has an overwhelming impact on the overall
+- EN: are zero-valued are “skipped” since they once more don’t change eﬃciency and performance of any CNN accelerator.
+- ZH: are zero-valued are “skipped” since they once more don’t change eﬃciency and performance of any CNN accelerator.
+- EN: The process
+- ZH: The process
+- EN: the ﬁnal outcome of convolution or weighted sum calculations, of transforming an input feature map into an output feature map
+- ZH: the ﬁnal outcome of convolution or weighted sum calculations, of transforming an input feature map into an output feature map
+- EN: similar to "skipping" MAC operations with zero-valued convolu- by a convolutional layer can be described by Algorithm 1 .
+- ZH: similar to "skipping" MAC operations with zero-valued convolu- by a convolutional layer can be described by Algorithm 1 .
+- EN: Please
+- ZH: Please
+- EN: tional coeﬃcients or fully-connected weight values, described pre- note that, for the reason of simplicity, in presented pseudo-code
+- ZH: tional coeﬃcients or fully-connected weight values, described pre- note that, for the reason of simplicity, in presented pseudo-code
+- EN: viously.
+- ZH: viously.
+- EN: adding of bias term for each convolutional kernel and optional IFM
+- ZH: adding of bias term for each convolutional kernel and optional IFM
+- EN: In principle, having a signiﬁcant number of zero values in in- padding (necessary if we want to keep the horizontal and vertical
+- ZH: In principle, having a signiﬁcant number of zero values in in- padding (necessary if we want to keep the horizontal and vertical
+- EN: put feature maps, as well as in convolutional kernel and fully- size of OFM equal to that of IFM) were omitted.
+- ZH: put feature maps, as well as in convolutional kernel and fully- size of OFM equal to that of IFM) were omitted.
+- EN: connected weight maps can be used to improve CNN instance pro- A convolutional layer takes as an input a feature map which
+- ZH: connected weight maps can be used to improve CNN instance pro- A convolutional layer takes as an input a feature map which
+- EN: cessing eﬃciency by using one of three possible "zero-skipping" can be represented as a 3D tensor of dimension IFM_Width x
+- ZH: cessing eﬃciency by using one of three possible "zero-skipping" can be represented as a 3D tensor of dimension IFM_Width x
+- EN: × techniques:
+- ZH: × techniques:
+- EN: IFM_Height IFM_Depth .
+- ZH: IFM_Height IFM_Depth .
+- EN: The convolutional layer then transforms
+- ZH: The convolutional layer then transforms
+- EN: this input feature map, using Kernel_Num different convolutional
+- ZH: this input feature map, using Kernel_Num different convolutional
+- EN: × 1.
+- ZH: × 1.
+- EN: IFM “zero-skipping” - in this approach all MAC operations kernels, into an output feature map of dimension OFM_Width
+- ZH: IFM “zero-skipping” - in this approach all MAC operations kernels, into an output feature map of dimension OFM_Width
+- EN: × where IFM point value is zero are skipped during the process of OFM_Height Kernel_Num .
+- ZH: × where IFM point value is zero are skipped during the process of OFM_Height Kernel_Num .
+- EN: Each convolutional kernel K is a 3D
+- ZH: Each convolutional kernel K is a 3D
+- EN: × × convolutional and weighted sum calculation.
+- ZH: × × convolutional and weighted sum calculation.
+- EN: For example, CNN tensor of dimension Kernel_Width Kernel_Height Kernel_Depth ,
+- ZH: For example, CNN tensor of dimension Kernel_Width Kernel_Height Kernel_Depth ,
+
+
+---
+
+### Page 7
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 7
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 7
+- EN: tion of individual convolutions CoNNA architecture processes IFM
+- ZH: tion of individual convolutions CoNNA architecture processes IFM
+- EN: Algorithm 1 Pseudo-code of generic convolutional layer processing algorithm.
+- ZH: Algorithm 1 Pseudo-code of generic convolutional layer processing algorithm.
+- EN: bundles in the “Stick First” manner.
+- ZH: bundles in the “Stick First” manner.
+- EN: Each IFM bundle that should
+- ZH: Each IFM bundle that should
+- EN: = < ++ L1:
+- ZH: = < ++ L1:
+- EN: for ( y 0;
+- ZH: for ( y 0;
+- EN: y OFM_Height;
+- ZH: y OFM_Height;
+- EN: y )
+- ZH: y )
+- EN: be convolved is divided into a number of IFM sticks, using nota-
+- ZH: be convolved is divided into a number of IFM sticks, using nota-
+- EN: = < ++ L2:
+- ZH: = < ++ L2:
+- EN: for ( x 0;
+- ZH: for ( x 0;
+- EN: x OFM_Width;
+- ZH: x OFM_Width;
+- EN: x )
+- ZH: x )
+- EN: tion from Fig.
+- ZH: tion from Fig.
+- EN: 1 , and then each individual IFM stick is multiplied
+- ZH: 1 , and then each individual IFM stick is multiplied
+- EN: = < ++ L3:
+- ZH: = < ++ L3:
+- EN: for (kn 0;
+- ZH: for (kn 0;
+- EN: kn Kernel_Num;
+- ZH: kn Kernel_Num;
+- EN: kn )
+- ZH: kn )
+- EN: with the corresponding convolutional coeﬃcients from appropriate = < ++ L4:
+- ZH: with the corresponding convolutional coeﬃcients from appropriate = < ++ L4:
+- EN: for (kd 0;
+- ZH: for (kd 0;
+- EN: kd Kernel_Depth;
+- ZH: kd Kernel_Depth;
+- EN: kd )
+- ZH: kd )
+- EN: = < ++ convolutional kernel stick.
+- ZH: = < ++ convolutional kernel stick.
+- EN: Furthermore, each individual convolu- L5:
+- ZH: Furthermore, each individual convolu- L5:
+- EN: for (kw 0;
+- ZH: for (kw 0;
+- EN: kw Kernel_Width;
+- ZH: kw Kernel_Width;
+- EN: kw )
+- ZH: kw )
+- EN: = < ++ L6:
+- ZH: = < ++ L6:
+- EN: for (kh 0;
+- ZH: for (kh 0;
+- EN: kh Kernel_Height;
+- ZH: kh Kernel_Height;
+- EN: kh ) tion is calculated sequentially, meaning that loops L4-L6 are kept
+- ZH: kh ) tion is calculated sequentially, meaning that loops L4-L6 are kept
+- EN: += OFM[ x ][y][kn]
+- ZH: += OFM[ x ][y][kn]
+- EN: rolled.
+- ZH: rolled.
+- EN: This is in sharp contrast with most of the previously pro-
+- ZH: This is in sharp contrast with most of the previously pro-
+- EN: ∗ ∗ ∗ + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn ][kw][ kh ][kd];
+- ZH: ∗ ∗ ∗ + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn ][kw][ kh ][kd];
+- EN: posed CNN accelerators that try to increase processing speed by
+- ZH: posed CNN accelerators that try to increase processing speed by
+- EN: partially or totally unrolling some or all of loops L4-L6.
+- ZH: partially or totally unrolling some or all of loops L4-L6.
+- EN: where Kernel_Depth parameter must be equal to the IFM_Depth
+- ZH: where Kernel_Depth parameter must be equal to the IFM_Depth
+- EN: Sequential approach of calculating individual convolutions em-
+- ZH: Sequential approach of calculating individual convolutions em-
+- EN: parameter.
+- ZH: parameter.
+- EN: Since Kernel_Width and Kernel_Height parameters are
+- ZH: Since Kernel_Width and Kernel_Height parameters are
+- EN: ployed by the CoNNA architecture is highly ﬂexible regarding the
+- ZH: ployed by the CoNNA architecture is highly ﬂexible regarding the
+- EN: usually much smaller than IFM_Width and IFM_Height parameters,
+- ZH: usually much smaller than IFM_Width and IFM_Height parameters,
+- EN: parameters of convolutions (kernel size, horizontal and vertical
+- ZH: parameters of convolutions (kernel size, horizontal and vertical
+- EN: each convolutional kernel is actually convolved many times, each
+- ZH: each convolutional kernel is actually convolved many times, each
+- EN: stride, kernel shape, etc.
+- ZH: stride, kernel shape, etc.
+- EN: ), resulting in highly-conﬁgurable accel-
+- ZH: ), resulting in highly-conﬁgurable accel-
+- EN: time with different IFM bundle, using notation introduced in Fig.
+- ZH: time with different IFM bundle, using notation introduced in Fig.
+- EN: 1 .
+- ZH: 1 .
+- EN: erator, almost to the level of the accelerators based on CPUs and
+- ZH: erator, almost to the level of the accelerators based on CPUs and
+- EN: The way how kernels traverse IFM is controlled by two additional
+- ZH: The way how kernels traverse IFM is controlled by two additional
+- EN: GPUs, while still having high utilization of PB units, equal or even
+- ZH: GPUs, while still having high utilization of PB units, equal or even
+- EN: parameters, horizontal and vertical kernel stride values, Sh and Sv .
+- ZH: parameters, horizontal and vertical kernel stride values, Sh and Sv .
+- EN: higher than the MAC utilization of the accelerators based on the
+- ZH: higher than the MAC utilization of the accelerators based on the
+- EN: Input feature map horizontal and vertical dimensions, stride pa-
+- ZH: Input feature map horizontal and vertical dimensions, stride pa-
+- EN: custom hardware solutions.
+- ZH: custom hardware solutions.
+- EN: This high ﬂexibility is in sharp con-
+- ZH: This high ﬂexibility is in sharp con-
+- EN: rameters, together with horizontal and vertical padding values de-
+- ZH: rameters, together with horizontal and vertical padding values de-
+- EN: trast with most of previously proposed CNN accelerators, which
+- ZH: trast with most of previously proposed CNN accelerators, which
+- EN: termine the horizontal and vertical dimensions of resulting output
+- ZH: termine the horizontal and vertical dimensions of resulting output
+- EN: usually support only certain kernel conﬁgurations, allowing for ex-
+- ZH: usually support only certain kernel conﬁgurations, allowing for ex-
+- EN: feature map, OFM_Width, and OFM_Height respectively.
+- ZH: feature map, OFM_Width, and OFM_Height respectively.
+- EN: The depth
+- ZH: The depth
+- EN: × × ample only 3 3 or 5 5 kernels with the stride of 1.
+- ZH: × × ample only 3 3 or 5 5 kernels with the stride of 1.
+- EN: Even if
+- ZH: Even if
+- EN: of the resulting output feature map is unrelated to the depth of
+- ZH: of the resulting output feature map is unrelated to the depth of
+- EN: they do support arbitrary kernel size and stride values, their eﬃ-
+- ZH: they do support arbitrary kernel size and stride values, their eﬃ-
+- EN: the input feature map and is purely determined by the number of
+- ZH: the input feature map and is purely determined by the number of
+- EN: ciency drops signiﬁcantly when these parameters are set to some
+- ZH: ciency drops signiﬁcantly when these parameters are set to some
+- EN: different convolutional kernels that are deﬁned within the current
+- ZH: different convolutional kernels that are deﬁned within the current
+- EN: non-standard values.
+- ZH: non-standard values.
+- EN: convolutional layer, Kernel_Num .
+- ZH: convolutional layer, Kernel_Num .
+- EN: Since individual convolutions are calculated sequentially, one
+- ZH: Since individual convolutions are calculated sequentially, one
+- EN: As can be seen from the pseudo-code of Algorithm 1 , the pro-
+- ZH: As can be seen from the pseudo-code of Algorithm 1 , the pro-
+- EN: MAC operation at a time, CoNNA architecture can easily support
+- ZH: MAC operation at a time, CoNNA architecture can easily support
+- EN: cess of computing the output from a convolutional layer requires
+- ZH: cess of computing the output from a convolutional layer requires
+- EN: convolutional kernels of any size, with different horizontal and
+- ZH: convolutional kernels of any size, with different horizontal and
+- EN: going through six nested loops.
+- ZH: going through six nested loops.
+- EN: Please notice that there can be an
+- ZH: Please notice that there can be an
+- EN: vertical sizes, with different horizontal and vertical strides, with-
+- ZH: vertical sizes, with different horizontal and vertical strides, with-
+- EN: additional 7th, outermost loop if batch processing is used, but for
+- ZH: additional 7th, outermost loop if batch processing is used, but for
+- EN: out any degradation of the processing eﬃciency.
+- ZH: out any degradation of the processing eﬃciency.
+- EN: Furthermore, the
+- ZH: Furthermore, the
+- EN: simplicity reasons, it is not present in Algorithm 1 .
+- ZH: simplicity reasons, it is not present in Algorithm 1 .
+- EN: At the core of
+- ZH: At the core of
+- EN: shape of the convolutional kernel doesn’t have to be squared, it
+- ZH: shape of the convolutional kernel doesn’t have to be squared, it
+- EN: these nested loops are the MAC operations, where selected IFM
+- ZH: these nested loops are the MAC operations, where selected IFM
+- EN: can be rectangular also, and it can even be triangular, oval, or
+- ZH: can be rectangular also, and it can even be triangular, oval, or
+- EN: and KM points are multiplied and then added to the running sum
+- ZH: and KM points are multiplied and then added to the running sum
+- EN: any other shape for that matter, including asymmetric shapes also.
+- ZH: any other shape for that matter, including asymmetric shapes also.
+- EN: of appropriate OFM point.
+- ZH: of appropriate OFM point.
+- EN: This six nested loops algorithmic de-
+- ZH: This six nested loops algorithmic de-
+- EN: Since each convolutional kernel is processed sequentially, one co-
+- ZH: Since each convolutional kernel is processed sequentially, one co-
+- EN: scription of convolutional layer operation creates a rather large de-
+- ZH: scription of convolutional layer operation creates a rather large de-
+- EN: eﬃcient at a time, its actual shape and size are of no relevance to
+- ZH: eﬃcient at a time, its actual shape and size are of no relevance to
+- EN: sign space of possible computing architectures, each of them im-
+- ZH: sign space of possible computing architectures, each of them im-
+- EN: the CoNNA architecture, and it also doesn’t affect the eﬃciency of
+- ZH: the CoNNA architecture, and it also doesn’t affect the eﬃciency of
+- EN: plementing a different type of parallelism, sequencing computa-
+- ZH: plementing a different type of parallelism, sequencing computa-
+- EN: computing individual convolution.
+- ZH: computing individual convolution.
+- EN: tions and partitioning large IFM and KM data into smaller blocks
+- ZH: tions and partitioning large IFM and KM data into smaller blocks
+- EN: The second modiﬁcation of Algorithm 1 that is present in
+- ZH: The second modiﬁcation of Algorithm 1 that is present in
+- EN: that can then more easily ﬁt into smaller on-chip memories.
+- ZH: that can then more easily ﬁt into smaller on-chip memories.
+- EN: It is
+- ZH: It is
+- EN: Algorithm 2 is the partial unrolling of loop L3, with the partial un-
+- ZH: Algorithm 2 is the partial unrolling of loop L3, with the partial un-
+- EN: worth noting that each of the previously proposed CNN hardware
+- ZH: worth noting that each of the previously proposed CNN hardware
+- EN: rolling factor equalling the number of available Processing Block
+- ZH: rolling factor equalling the number of available Processing Block
+- EN: accelerator architectures is actually representing one of these de-
+- ZH: accelerator architectures is actually representing one of these de-
+- EN: modules, Num_PB .
+- ZH: modules, Num_PB .
+- EN: This parameter is actually one of the conﬁg-
+- ZH: This parameter is actually one of the conﬁg-
+- EN: sign space points, CoNNA architecture included.
+- ZH: sign space points, CoNNA architecture included.
+- EN: uration parameters of the CoNNA architecture and can be speci-
+- ZH: uration parameters of the CoNNA architecture and can be speci-
+- EN: The CoNNA architecture is based on the idea of sequen-
+- ZH: The CoNNA architecture is based on the idea of sequen-
+- EN: ﬁed at compile time to generate an instance of the CoNNA archi-
+- ZH: ﬁed at compile time to generate an instance of the CoNNA archi-
+- EN: tial computation of individual convolutions from a convolutional
+- ZH: tial computation of individual convolutions from a convolutional
+- EN: tecture with a speciﬁed number of Processing Blocks.
+- ZH: tecture with a speciﬁed number of Processing Blocks.
+- EN: This con-
+- ZH: This con-
+- EN: layer, using a single Processing Block (PB) unit for each convo-
+- ZH: layer, using a single Processing Block (PB) unit for each convo-
+- EN: ﬁgurability enables the scalability of the CoNNA architecture in
+- ZH: ﬁgurability enables the scalability of the CoNNA architecture in
+- EN: lution that needs to be computed, and employing a number of
+- ZH: lution that needs to be computed, and employing a number of
+- EN: terms of achievable instance processing performance.
+- ZH: terms of achievable instance processing performance.
+- EN: As can be
+- ZH: As can be
+- EN: PB units to compute several different convolutions in parallel.
+- ZH: PB units to compute several different convolutions in parallel.
+- EN: seen from Algorithm 2 , CoNNA uses existing Processing Block mod-
+- ZH: seen from Algorithm 2 , CoNNA uses existing Processing Block mod-
+- EN: Algorithm 2 presents the pseudo-code of the convolutional layer
+- ZH: Algorithm 2 presents the pseudo-code of the convolutional layer
+- EN: ules to concurrently compute a number of individual convolutions.
+- ZH: ules to concurrently compute a number of individual convolutions.
+- EN: processing algorithm implemented in the CoNNA architecture.
+- ZH: processing algorithm implemented in the CoNNA architecture.
+- EN: All these convolutions involve the same IFM bundle but use differ-
+- ZH: All these convolutions involve the same IFM bundle but use differ-
+- EN: ent convolutional kernels.
+- ZH: ent convolutional kernels.
+- EN: Algorithm 2
+- ZH: Algorithm 2
+- EN: Partial unrolling of loop L3 actually is one way of speeding-up Pseudo-code of convolutional layer processing algorithm, Implemented by the
+- ZH: Partial unrolling of loop L3 actually is one way of speeding-up Pseudo-code of convolutional layer processing algorithm, Implemented by the
+- EN: CoNNA architecture.
+- ZH: CoNNA architecture.
+- EN: the CNN processing used within the CoNNA architecture, by paral-
+- ZH: the CNN processing used within the CoNNA architecture, by paral-
+- EN: lelizing the process of computation of individual convolutions.
+- ZH: lelizing the process of computation of individual convolutions.
+- EN: An- = < ++
+- ZH: An- = < ++
+- EN: L1:
+- ZH: L1:
+- EN: for ( y 0;
+- ZH: for ( y 0;
+- EN: y OFM_Height;
+- ZH: y OFM_Height;
+- EN: y )
+- ZH: y )
+- EN: = < ++ other way of speeding-up CNN processing used in CoNNA is skip- L2:
+- ZH: = < ++ other way of speeding-up CNN processing used in CoNNA is skip- L2:
+- EN: for ( x 0;
+- ZH: for ( x 0;
+- EN: x OFM_Width;
+- ZH: x OFM_Width;
+- EN: x )
+- ZH: x )
+- EN: = < += L3:
+- ZH: = < += L3:
+- EN: for (kn 0;
+- ZH: for (kn 0;
+- EN: kn Kernel_Num;
+- ZH: kn Kernel_Num;
+- EN: kn Num_PB) ping ineffectual MAC operations, by skipping all product terms that
+- ZH: kn Num_PB) ping ineffectual MAC operations, by skipping all product terms that
+- EN: = < ++ L5:
+- ZH: = < ++ L5:
+- EN: for (kw 0;
+- ZH: for (kw 0;
+- EN: kw Kernel_Width;
+- ZH: kw Kernel_Width;
+- EN: kw )
+- ZH: kw )
+- EN: result in the zero-valued outcome.
+- ZH: result in the zero-valued outcome.
+- EN: As previously stated, the CoNNA
+- ZH: As previously stated, the CoNNA
+- EN: = < ++ L6:
+- ZH: = < ++ L6:
+- EN: for (kh 0;
+- ZH: for (kh 0;
+- EN: kh Kernel_Height;
+- ZH: kh Kernel_Height;
+- EN: kh )
+- ZH: kh )
+- EN: architecture implements “All zero-skipping” technique, presented
+- ZH: architecture implements “All zero-skipping” technique, presented
+- EN: = < ++ L4:
+- ZH: = < ++ L4:
+- EN: for (kd 0;
+- ZH: for (kd 0;
+- EN: kd Kernel_Depth;
+- ZH: kd Kernel_Depth;
+- EN: kd )
+- ZH: kd )
+- EN: in Section 2 , to skip all unnecessary multiplications, which will += {OFM[ x ][y][kn]
+- ZH: in Section 2 , to skip all unnecessary multiplications, which will += {OFM[ x ][y][kn]
+- EN: ∗ + ∗ + ∗ IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn ][kw][ kh ][kd];
+- ZH: ∗ + ∗ + ∗ IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn ][kw][ kh ][kd];
+- EN: result in zero-valued outcome during convolutional, pooling and
+- ZH: result in zero-valued outcome during convolutional, pooling and
+- EN: + += OFM[ x ][y][kn 1] fully-connected layer processing, so the actual convolutional layer
+- ZH: + += OFM[ x ][y][kn 1] fully-connected layer processing, so the actual convolutional layer
+- EN: ∗ ∗ ∗ + + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn 1][kw][ kh ][kd];
+- ZH: ∗ ∗ ∗ + + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn 1][kw][ kh ][kd];
+- EN: …
+- ZH: …
+- EN: processing algorithm that is implemented in the CoNNA architec-
+- ZH: processing algorithm that is implemented in the CoNNA architec-
+- EN: + += OFM[ x ][y][kn Num_PB-1]
+- ZH: + += OFM[ x ][y][kn Num_PB-1]
+- EN: ture is slightly different from Algorithm 2 .
+- ZH: ture is slightly different from Algorithm 2 .
+- EN: Algorithm 3 presents ∗ ∗ ∗ + + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn N um _PB-
+- ZH: Algorithm 3 presents ∗ ∗ ∗ + + + IFM[ x S h kw ][y Sv kh][ kd ] KM[ kn N um _PB-
+- EN: the pseudo-code of the ﬁnal convolutional layer processing algo- 1][kw][ kh ][kd];
+- ZH: the pseudo-code of the ﬁnal convolutional layer processing algo- 1][kw][ kh ][kd];
+- EN: }
+- ZH: }
+- EN: rithm, using the “All zero-skipping” technique, which is actually
+- ZH: rithm, using the “All zero-skipping” technique, which is actually
+- EN: implemented in the CoNNA architecture.
+- ZH: implemented in the CoNNA architecture.
+- EN: Comparing Algorithm 2 with Algorithm 1 it can be seen that
+- ZH: Comparing Algorithm 2 with Algorithm 1 it can be seen that
+- EN: As opposed to Algorithms 1–3 operates on a compressed input two modiﬁcations have been made.
+- ZH: As opposed to Algorithms 1–3 operates on a compressed input two modiﬁcations have been made.
+- EN: The ﬁrst modiﬁcation makes
+- ZH: The ﬁrst modiﬁcation makes
+- EN: feature map, represented by CIFM tensor, and compressed convolu- loop L4 the innermost loop, which means that during the calcula-
+- ZH: feature map, represented by CIFM tensor, and compressed convolu- loop L4 the innermost loop, which means that during the calcula-
+
+
+---
+
+### Page 8
+
+- EN: 8 R.
+- ZH: 8 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: tional kernels, represented by CKM tensor.
+- ZH: tional kernels, represented by CKM tensor.
+- EN: Compressed input fea- In case of Algorithm 3 , the number of MAC operations is not
+- ZH: Compressed input fea- In case of Algorithm 3 , the number of MAC operations is not
+- EN: ture map is the result of compressing zero-valued activations that constant, since it depends on the number of non-zero valued prod-
+- ZH: ture map is the result of compressing zero-valued activations that constant, since it depends on the number of non-zero valued prod-
+- EN: are present due to the use of the ReLU activation function, while uct terms that are present, which in turn depends on the num-
+- ZH: are present due to the use of the ReLU activation function, while uct terms that are present, which in turn depends on the num-
+- EN: compressed convolutional kernels are the result of the CNN prun- ber of non-zero values in input feature map bundle and associated
+- ZH: compressed convolutional kernels are the result of the CNN prun- ber of non-zero values in input feature map bundle and associated
+- EN: ing process, described in Section 2 .
+- ZH: ing process, described in Section 2 .
+- EN: These compressed structures convolutional kernel, as well as on their actual positions within
+- ZH: These compressed structures convolutional kernel, as well as on their actual positions within
+- EN: contain only non-zero input feature map and kernel values, to- uncompressed structures.
+- ZH: contain only non-zero input feature map and kernel values, to- uncompressed structures.
+- EN: However, on average, the number of re-
+- ZH: However, on average, the number of re-
+- EN: gether with the information about their positions in the original, quired MAC operations to compute one convolution operation us-
+- ZH: gether with the information about their positions in the original, quired MAC operations to compute one convolution operation us-
+- EN: uncompressed structures.
+- ZH: uncompressed structures.
+- EN: ing “All zero-skipping” technique equals
+- ZH: ing “All zero-skipping” technique equals
+- EN: Algorithm 3 implements the “All zero-skipping” tech-
+- ZH: Algorithm 3 implements the “All zero-skipping” tech-
+- EN: = · · Num _ MACs _ Al g K ernel _ W idth K ernel _ Height K ernel _ Depth
+- ZH: = · · Num _ MACs _ Al g K ernel _ W idth K ernel _ Height K ernel _ Depth
+- EN: 3 nique within the W1 loop, which replaces loops L4-L6 from
+- ZH: 3 nique within the W1 loop, which replaces loops L4-L6 from
+- EN: · · P _ IF MNZ P _ KMNZ (2)
+- ZH: · · P _ IF MNZ P _ KMNZ (2)
+- EN: Algorithms 1 and 2 .
+- ZH: Algorithms 1 and 2 .
+- EN: W1 loop is actually a while loop that is active
+- ZH: W1 loop is actually a while loop that is active
+- EN: until all Processing Blocks have ﬁnished computing all non-zero
+- ZH: until all Processing Blocks have ﬁnished computing all non-zero
+- EN: where P_IFMNZ is the percentage of non-zero valued points in the
+- ZH: where P_IFMNZ is the percentage of non-zero valued points in the
+- EN: product terms from their associated convolution.
+- ZH: product terms from their associated convolution.
+- EN: When all PBs
+- ZH: When all PBs
+- EN: input feature map bundle, and P_KMNZ is the percentage of non-
+- ZH: input feature map bundle, and P_KMNZ is the percentage of non-
+- EN: complete their convolution calculation tasks, PBs_Busy() function
+- ZH: complete their convolution calculation tasks, PBs_Busy() function
+- EN: zero valued convolutional coeﬃcients in the convolutional kernel.
+- ZH: zero valued convolutional coeﬃcients in the convolutional kernel.
+- EN: will return a false value, indicating that the process of computing
+- ZH: will return a false value, indicating that the process of computing
+- EN: Theoretical speedup in computing one convolution using the
+- ZH: Theoretical speedup in computing one convolution using the
+- EN: the next batch of Num_PB convolutions is completed and the
+- ZH: the next batch of Num_PB convolutions is completed and the
+- EN: “All zero-skipping” technique over the “No zero-skipping” ap-
+- ZH: “All zero-skipping” technique over the “No zero-skipping” ap-
+- EN: process of computing the next batch of Num_PB convolutions can
+- ZH: process of computing the next batch of Num_PB convolutions can
+- EN: proach equals
+- ZH: proach equals
+- EN: commence.
+- ZH: commence.
+- EN: Num _ MACs _ Al g Each PB actually implements Calc_Next_NZPT() function.
+- ZH: Num _ MACs _ Al g Each PB actually implements Calc_Next_NZPT() function.
+- EN: This /
+- ZH: This /
+- EN: 1 2 = v Con olution _ Cal cul ation _ Speedup
+- ZH: 1 2 = v Con olution _ Cal cul ation _ Speedup
+- EN: Num _ MACs _ Al g function determines on-the-ﬂy, on a clock by clock basis, the next
+- ZH: Num _ MACs _ Al g function determines on-the-ﬂy, on a clock by clock basis, the next
+- EN: 3
+- ZH: 3
+- EN: non-zero valued product term that should be computed, based 1
+- ZH: non-zero valued product term that should be computed, based 1
+- EN: = (3)
+- ZH: = (3)
+- EN: · · + on supplied compressed IFM bundle, CIFM[x Sh:
+- ZH: · · + on supplied compressed IFM bundle, CIFM[x Sh:
+- EN: x Sh Kernel_Width- ·
+- ZH: x Sh Kernel_Width- ·
+- EN: P _ IF MNZ P _ KMNZ
+- ZH: P _ IF MNZ P _ KMNZ
+- EN: · · + 1][y Sv:
+- ZH: · · + 1][y Sv:
+- EN: y Sv Kernel_Height-1][:
+- ZH: y Sv Kernel_Height-1][:
+- EN: ], and compressed convolutional ker-
+- ZH: ], and compressed convolutional ker-
+- EN: Convolution calculation speedup clearly depends on the num-
+- ZH: Convolution calculation speedup clearly depends on the num-
+- EN: nel, CKM[kn][:
+- ZH: nel, CKM[kn][:
+- EN: ][:
+- ZH: ][:
+- EN: ][:
+- ZH: ][:
+- EN: ] .
+- ZH: ] .
+- EN: If there are no more non-zero product terms
+- ZH: If there are no more non-zero product terms
+- EN: ber of zeros that are present in the input feature map bundle and
+- ZH: ber of zeros that are present in the input feature map bundle and
+- EN: Calc_Next_NZPT() function returns zero value, which is an indica-
+- ZH: Calc_Next_NZPT() function returns zero value, which is an indica-
+- EN: convolutional kernel.
+- ZH: convolutional kernel.
+- EN: While the number of zeros in the input fea-
+- ZH: While the number of zeros in the input fea-
+- EN: tion that the PB has ﬁnished computing the convolution operation
+- ZH: tion that the PB has ﬁnished computing the convolution operation
+- EN: ture maps cannot be directly controlled and also depends on the
+- ZH: ture maps cannot be directly controlled and also depends on the
+- EN: associated with it.
+- ZH: associated with it.
+- EN: input instance that is currently being processed by the CNN net-
+- ZH: input instance that is currently being processed by the CNN net-
+- EN: Please notice that the number of non-zero valued product
+- ZH: Please notice that the number of non-zero valued product
+- EN: work, the number of zeros in the convolutional kernel depends on
+- ZH: work, the number of zeros in the convolutional kernel depends on
+- EN: terms present in individual convolution operation depends on
+- ZH: terms present in individual convolution operation depends on
+- EN: the pruning ratio that was achieved during CNN network pruning
+- ZH: the pruning ratio that was achieved during CNN network pruning
+- EN: the number of non-zero values in the input feature map bun-
+- ZH: the number of non-zero values in the input feature map bun-
+- EN: process.
+- ZH: process.
+- EN: Using previously published research we can estimate the
+- ZH: Using previously published research we can estimate the
+- EN: dle and associated convolutional kernel.
+- ZH: dle and associated convolutional kernel.
+- EN: Since all PBs operate on
+- ZH: Since all PBs operate on
+- EN: typical number of zeros in the input feature maps, which ranges
+- ZH: typical number of zeros in the input feature maps, which ranges
+- EN: the same input feature map bundle, the number of non-zero IFM
+- ZH: the same input feature map bundle, the number of non-zero IFM
+- EN: from 25% to 88% [19] , and the typical number of zeros in con-
+- ZH: from 25% to 88% [19] , and the typical number of zeros in con-
+- EN: points is identical for all PBs.
+- ZH: points is identical for all PBs.
+- EN: However, the number of non-zero
+- ZH: However, the number of non-zero
+- EN: volutional kernels, which ranges from 16% to 78% [43] .
+- ZH: volutional kernels, which ranges from 16% to 78% [43] .
+- EN: Based on
+- ZH: Based on
+- EN: convolutional coeﬃcients can vary from one convolutional ker-
+- ZH: convolutional coeﬃcients can vary from one convolutional ker-
+- EN: these ﬁgures, the achievable speedup of computing individual con-
+- ZH: these ﬁgures, the achievable speedup of computing individual con-
+- EN: nel to another.
+- ZH: nel to another.
+- EN: If this would be allowed, computing eﬃciency of
+- ZH: If this would be allowed, computing eﬃciency of
+- EN: volutional layers using the “All zero-skipping” technique over the
+- ZH: volutional layers using the “All zero-skipping” technique over the
+- EN: Algorithm 3 could be severely degraded, because in this case, the
+- ZH: Algorithm 3 could be severely degraded, because in this case, the
+- EN: “No zero-skipping” approach ranges from 1.
+- ZH: “No zero-skipping” approach ranges from 1.
+- EN: 59 up to 37.
+- ZH: 59 up to 37.
+- EN: 88, which
+- ZH: 88, which
+- EN: number of non-zero product terms each PB must compute could
+- ZH: number of non-zero product terms each PB must compute could
+- EN: is clearly a signiﬁcant improvement.
+- ZH: is clearly a signiﬁcant improvement.
+- EN: vary signiﬁcantly.
+- ZH: vary signiﬁcantly.
+- EN: In this scenario, all PBs that have already ﬁn-
+- ZH: In this scenario, all PBs that have already ﬁn-
+- EN: Computing output of a fully-connected layer is the second
+- ZH: Computing output of a fully-connected layer is the second
+- EN: ished with computing their associated convolution would have to
+- ZH: ished with computing their associated convolution would have to
+- EN: most computationally demanding CNN layer type, after the con-
+- ZH: most computationally demanding CNN layer type, after the con-
+- EN: wait for the slowest performing PB to complete its calculation pro-
+- ZH: wait for the slowest performing PB to complete its calculation pro-
+- EN: volutional layer.
+- ZH: volutional layer.
+- EN: All other standard layer types, including pool-
+- ZH: All other standard layer types, including pool-
+- EN: cess.
+- ZH: cess.
+- EN: In order to limit this variation, we can enforce that each con-
+- ZH: In order to limit this variation, we can enforce that each con-
+- EN: ing, adding, concatenation, have a negligible computational load,
+- ZH: ing, adding, concatenation, have a negligible computational load,
+- EN: volutional kernel from a given convolutional layer has to have an
+- ZH: volutional kernel from a given convolutional layer has to have an
+- EN: compared to convolutional and fully-connected layers.
+- ZH: compared to convolutional and fully-connected layers.
+- EN: Please no-
+- ZH: Please no-
+- EN: identical number of non-zero valued coeﬃcients after pruning is
+- ZH: identical number of non-zero valued coeﬃcients after pruning is
+- EN: tice that the computation of a fully-connected layer can be
+- ZH: tice that the computation of a fully-connected layer can be
+- EN: performed.
+- ZH: performed.
+- EN: In other words, during pruning identical number of
+- ZH: In other words, during pruning identical number of
+- EN: mapped to a convolutional layer computation in the following
+- ZH: mapped to a convolutional layer computation in the following
+- EN: convolutional coeﬃcients will be removed in every convolutional
+- ZH: convolutional coeﬃcients will be removed in every convolutional
+- EN: way.
+- ZH: way.
+- EN: Each neuron from the fully-connected layer computes the
+- ZH: Each neuron from the fully-connected layer computes the
+- EN: kernel from a given convolutional layer.
+- ZH: kernel from a given convolutional layer.
+- EN: Experiments that authors
+- ZH: Experiments that authors
+- EN: weighted sum over the entire input feature map, using its own
+- ZH: weighted sum over the entire input feature map, using its own
+- EN: have conducted seem to indicate that this constraint is not signiﬁ-
+- ZH: have conducted seem to indicate that this constraint is not signiﬁ-
+- EN: speciﬁc set of weights.
+- ZH: speciﬁc set of weights.
+- EN: However, this weighted sum computa-
+- ZH: However, this weighted sum computa-
+- EN: cantly limiting the previously reported maximum achievable prun-
+- ZH: cantly limiting the previously reported maximum achievable prun-
+- EN: tion can be seen as the special case of convolutional sum com-
+- ZH: tion can be seen as the special case of convolutional sum com-
+- EN: ing rate for all CNN networks used in [ 3 , 10 , 52 ,53].
+- ZH: ing rate for all CNN networks used in [ 3 , 10 , 52 ,53].
+- EN: putation, where the convolution involves the entire input fea-
+- ZH: putation, where the convolution involves the entire input fea-
+- EN: Please notice that even having convolutional kernels with an
+- ZH: Please notice that even having convolutional kernels with an
+- EN: ture map and convolutional coeﬃcients equal fully-connected neu-
+- ZH: ture map and convolutional coeﬃcients equal fully-connected neu-
+- EN: identical number of non-zero coeﬃcients will not result in iden-
+- ZH: identical number of non-zero coeﬃcients will not result in iden-
+- EN: ron weight values.
+- ZH: ron weight values.
+- EN: Therefore, computing fully-connected layer of
+- ZH: Therefore, computing fully-connected layer of
+- EN: tical convolution computation times for different PBs.
+- ZH: tical convolution computation times for different PBs.
+- EN: This is be-
+- ZH: This is be-
+- EN: N neurons is equivalent to computing N different convolutions
+- ZH: N neurons is equivalent to computing N different convolutions
+- EN: cause the distribution of these non-zero coeﬃcients will vary be-
+- ZH: cause the distribution of these non-zero coeﬃcients will vary be-
+- EN: spanning the entire input feature map.
+- ZH: spanning the entire input feature map.
+- EN: The result of processing
+- ZH: The result of processing
+- EN: tween different convolutional kernels, and when these kernels
+- ZH: tween different convolutional kernels, and when these kernels
+- EN: a fully-connected layer will be an output feature map of dimen-
+- ZH: a fully-connected layer will be an output feature map of dimen-
+- EN: are correlated with the IFM bundle they could still have an un-
+- ZH: are correlated with the IFM bundle they could still have an un-
+- EN: × sion 1 1x N .
+- ZH: × sion 1 1x N .
+- EN: This means that we could use Algorithms 1 – 3
+- ZH: This means that we could use Algorithms 1 – 3
+- EN: equal number of non-zero valued product terms to compute.
+- ZH: equal number of non-zero valued product terms to compute.
+- EN: In
+- ZH: In
+- EN: to compute the output of a fully-connected layer also, conﬁgur-
+- ZH: to compute the output of a fully-connected layer also, conﬁgur-
+- EN: Section 4.
+- ZH: Section 4.
+- EN: 4 a detailed analysis of this effect on the overall CNN
+- ZH: 4 a detailed analysis of this effect on the overall CNN
+- EN: = ing algorithm parameters in the following way:
+- ZH: = ing algorithm parameters in the following way:
+- EN: OFM_Width 1;
+- ZH: OFM_Width 1;
+- EN: processing eﬃciency of the CoNNA architecture will be presented.
+- ZH: processing eﬃciency of the CoNNA architecture will be presented.
+- EN: = = = OFM_Height 1;
+- ZH: = = = OFM_Height 1;
+- EN: Kernel_Num N;
+- ZH: Kernel_Num N;
+- EN: Kernel_Width IFM_Width;
+- ZH: Kernel_Width IFM_Width;
+- EN: Ker-
+- ZH: Ker-
+- EN: Let us compare the number of MAC operations required to
+- ZH: Let us compare the number of MAC operations required to
+- EN: = = nel_Height IFM_Height;
+- ZH: = = nel_Height IFM_Height;
+- EN: Kernel_Depth IFM_Depth .
+- ZH: Kernel_Depth IFM_Depth .
+- EN: compute one convolution using Algorithms 1–3 .
+- ZH: compute one convolution using Algorithms 1–3 .
+- EN: In the case of
+- ZH: In the case of
+- EN: Algorithms 1 and 2 , the number of operations is constant and
+- ZH: Algorithms 1 and 2 , the number of operations is constant and
+- EN: 3.
+- ZH: 3.
+- EN: 2.
+- ZH: 2.
+- EN: Overview of the CoNNA CNN accelerator architecture
+- ZH: Overview of the CoNNA CNN accelerator architecture
+- EN: equals
+- ZH: equals
+- EN: The CoNNA architecture is designed to act as a standalone CNN
+- ZH: The CoNNA architecture is designed to act as a standalone CNN
+- EN: = · · hardware accelerator.
+- ZH: = · · hardware accelerator.
+- EN: It is designed as a standard soft-IP core, that Num _ MACs _ Al g K ernel _ W idth K ernel _ Height K ernel _ Depth
+- ZH: It is designed as a standard soft-IP core, that Num _ MACs _ Al g K ernel _ W idth K ernel _ Height K ernel _ Depth
+- EN: / 1 2
+- ZH: / 1 2
+- EN: can be easily integrated into contemporary System-on-Chip (SoC)
+- ZH: can be easily integrated into contemporary System-on-Chip (SoC)
+- EN: (1)
+- ZH: (1)
+
+
+---
+
+### Page 9
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 9
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 9
+- EN: Fig.
+- ZH: Fig.
+- EN: 3.
+- ZH: 3.
+- EN: CoNNA Compressed CNN Accelerator:
+- ZH: CoNNA Compressed CNN Accelerator:
+- EN: a) Integration into SoC or PSoC;
+- ZH: a) Integration into SoC or PSoC;
+- EN: b) Top level architecture with available interfaces.
+- ZH: b) Top level architecture with available interfaces.
+- EN: • or Programmable System-on-Chip (PSoC) solutions.
+- ZH: • or Programmable System-on-Chip (PSoC) solutions.
+- EN: CoNNA uses Output Stream Manager (OSM) – used to format, compress and
+- ZH: CoNNA uses Output Stream Manager (OSM) – used to format, compress and
+- EN: standard AXI interfaces, so it can be easily connected with ARM or stream output feature map data, generated by the RCU as it
+- ZH: standard AXI interfaces, so it can be easily connected with ARM or stream output feature map data, generated by the RCU as it
+- EN: RISC-V microprocessors, using standard AXI-Interconnect modules, processes CNN layers, to the external DRAM memory or on-chip
+- ZH: RISC-V microprocessors, using standard AXI-Interconnect modules, processes CNN layers, to the external DRAM memory or on-chip
+- EN: as shown in Fig.
+- ZH: as shown in Fig.
+- EN: 3 a.
+- ZH: 3 a.
+- EN: cache memory.
+- ZH: cache memory.
+- EN: • Having a microprocessor within the system eases the control Conﬁguration and Control Unit (CCU) – used to control the op-
+- ZH: • Having a microprocessor within the system eases the control Conﬁguration and Control Unit (CCU) – used to control the op-
+- EN: and conﬁguration of the CoNNA CNN accelerator, but it must be eration of the CoNNA CNN accelerator and enable interfacing
+- ZH: and conﬁguration of the CoNNA CNN accelerator, but it must be eration of the CoNNA CNN accelerator and enable interfacing
+- EN: stated that conﬁguration and control of the CoNNA accelerator is a with surrounding logic.
+- ZH: stated that conﬁguration and control of the CoNNA accelerator is a with surrounding logic.
+- EN: relatively simple process, so a pure hardware-based solution, with
+- ZH: relatively simple process, so a pure hardware-based solution, with
+- EN: The CoNNA CNN accelerator uses four AXI interfaces to commu- hardwired FSM controlling CoNNA, can also be used.
+- ZH: The CoNNA CNN accelerator uses four AXI interfaces to commu- hardwired FSM controlling CoNNA, can also be used.
+- EN: However, in
+- ZH: However, in
+- EN: nicate with surrounding on-chip modules:
+- ZH: nicate with surrounding on-chip modules:
+- EN: order for CoNNA to be fully functional, some kind of memory
+- ZH: order for CoNNA to be fully functional, some kind of memory
+- EN: needs to be present in the system, which could be on-chip cache
+- ZH: needs to be present in the system, which could be on-chip cache
+- EN: • Input Stream Interface (ISI) – AXI-Full interface used to stream
+- ZH: • Input Stream Interface (ISI) – AXI-Full interface used to stream
+- EN: memory or off-chip operating memory, as shown in Fig.
+- ZH: memory or off-chip operating memory, as shown in Fig.
+- EN: 3 a.
+- ZH: 3 a.
+- EN: If the
+- ZH: If the
+- EN: input data, including input image, intermediate input feature
+- ZH: input data, including input image, intermediate input feature
+- EN: system can implement large enough on-chip cache memory, as
+- ZH: system can implement large enough on-chip cache memory, as
+- EN: maps and kernel maps for selected CNN network, to the CoNNA
+- ZH: maps and kernel maps for selected CNN network, to the CoNNA
+- EN: shown in Fig.
+- ZH: shown in Fig.
+- EN: 3 a, of an order of several tens of megabytes, which is
+- ZH: 3 a, of an order of several tens of megabytes, which is
+- EN: accelerator module for processing.
+- ZH: accelerator module for processing.
+- EN: CoNNA acts as the master of
+- ZH: CoNNA acts as the master of
+- EN: today possible even if we use FPGA devices, the result would be a
+- ZH: today possible even if we use FPGA devices, the result would be a
+- EN: the ISI interface.
+- ZH: the ISI interface.
+- EN: The other side of the ISI interface is connected
+- ZH: The other side of the ISI interface is connected
+- EN: highly power-eﬃcient solution.
+- ZH: highly power-eﬃcient solution.
+- EN: In this conﬁguration, all CNN topol-
+- ZH: In this conﬁguration, all CNN topol-
+- EN: either to the on-chip cache module or to the DRAM memory
+- ZH: either to the on-chip cache module or to the DRAM memory
+- EN: ogy data, as well as all intermediate feature maps would be stored
+- ZH: ogy data, as well as all intermediate feature maps would be stored
+- EN: controller module.
+- ZH: controller module.
+- EN: inside the on-chip cache.
+- ZH: inside the on-chip cache.
+- EN: This would signiﬁcantly reduce required
+- ZH: This would signiﬁcantly reduce required
+- EN: • Output Stream Interface (OSI) – AXI-Full interface used to
+- ZH: • Output Stream Interface (OSI) – AXI-Full interface used to
+- EN: data movement between external memory and the CoNNA acceler-
+- ZH: data movement between external memory and the CoNNA acceler-
+- EN: stream output feature maps data to the on-chip cache or exter-
+- ZH: stream output feature maps data to the on-chip cache or exter-
+- EN: ator and consequently lower power consumption since most of the
+- ZH: ator and consequently lower power consumption since most of the
+- EN: nal DRAM memory.
+- ZH: nal DRAM memory.
+- EN: CoNNA acts as the master of the OSI inter-
+- ZH: CoNNA acts as the master of the OSI inter-
+- EN: energy in data processing systems is spent in moving data between
+- ZH: energy in data processing systems is spent in moving data between
+- EN: face.
+- ZH: face.
+- EN: The other side of the OSI interface is connected either to
+- ZH: The other side of the OSI interface is connected either to
+- EN: external DRAM memory and processing system [47] .
+- ZH: external DRAM memory and processing system [47] .
+- EN: However, for
+- ZH: However, for
+- EN: the on-chip cache module or to the DRAM memory controller
+- ZH: the on-chip cache module or to the DRAM memory controller
+- EN: low-cost solutions, this conﬁguration will probably not be possi-
+- ZH: low-cost solutions, this conﬁguration will probably not be possi-
+- EN: module.
+- ZH: module.
+- EN: ble, so in this case, instead of using an on-chip cache, the system
+- ZH: ble, so in this case, instead of using an on-chip cache, the system
+- EN: • CNN Description Interface (CDI) – AXI-Full interface used to
+- ZH: • CNN Description Interface (CDI) – AXI-Full interface used to
+- EN: would have to include external operating memory, usually imple-
+- ZH: would have to include external operating memory, usually imple-
+- EN: load structural information about the CNN network that is be-
+- ZH: load structural information about the CNN network that is be-
+- EN: mented as DRAM memory, as shown in the Fig.
+- ZH: mented as DRAM memory, as shown in the Fig.
+- EN: 3 a.
+- ZH: 3 a.
+- EN: ing accelerated.
+- ZH: ing accelerated.
+- EN: CDI interface is implemented using standard
+- ZH: CDI interface is implemented using standard
+- EN: The top-level architecture of the CoNNA compressed CNN ac-
+- ZH: The top-level architecture of the CoNNA compressed CNN ac-
+- EN: AXI-Full interface protocol.
+- ZH: AXI-Full interface protocol.
+- EN: CoNNA acts as the master of the
+- ZH: CoNNA acts as the master of the
+- EN: celerator is shown in the Fig.
+- ZH: celerator is shown in the Fig.
+- EN: 3 b.
+- ZH: 3 b.
+- EN: The CoNNA CNN accelerator is
+- ZH: The CoNNA CNN accelerator is
+- EN: CDI interface.
+- ZH: CDI interface.
+- EN: The other side of the CDI interface is connected
+- ZH: The other side of the CDI interface is connected
+- EN: composed of the following four modules:
+- ZH: composed of the following four modules:
+- EN: either to the on-chip cache module or to the DRAM memory
+- ZH: either to the on-chip cache module or to the DRAM memory
+- EN: controller module.
+- ZH: controller module.
+- EN: • Reconﬁgurable Computing Unit (RCU) – used to perform all •
+- ZH: • Reconﬁgurable Computing Unit (RCU) – used to perform all •
+- EN: Conﬁguration Interface (CI) – AXI-Lite interface used to conﬁg-
+- ZH: Conﬁguration Interface (CI) – AXI-Lite interface used to conﬁg-
+- EN: computations deﬁned by different layers from the CNN net- ure and control the operation of the CoNNA CNN accelerator.
+- ZH: computations deﬁned by different layers from the CNN net- ure and control the operation of the CoNNA CNN accelerator.
+- EN: CI
+- ZH: CI
+- EN: work (including convolutional, depthwise convolutional, pool- interface is implemented using standard AXI-Lite interface pro-
+- ZH: work (including convolutional, depthwise convolutional, pool- interface is implemented using standard AXI-Lite interface pro-
+- EN: ing, concatenation, adding and fully connected layers), exploit- tocol.
+- ZH: ing, concatenation, adding and fully connected layers), exploit- tocol.
+- EN: CoNNA acts as the slave of the CI interface.
+- ZH: CoNNA acts as the slave of the CI interface.
+- EN: The other side
+- ZH: The other side
+- EN: ing the sparsity of kernel and feature maps.
+- ZH: ing the sparsity of kernel and feature maps.
+- EN: RCU module is fur- of the CI interface is connected either directly to the host pro-
+- ZH: RCU module is fur- of the CI interface is connected either directly to the host pro-
+- EN: ther composed out of a number of Processing Block modules.
+- ZH: ther composed out of a number of Processing Block modules.
+- EN: cessor or hardwired FSM or to some AXI interconnect module.
+- ZH: cessor or hardwired FSM or to some AXI interconnect module.
+- EN: • Input Stream Manager (ISM) – used to supply all input data
+- ZH: • Input Stream Manager (ISM) – used to supply all input data
+- EN: (conﬁguration, kernel map, input feature map), in compressed Furthermore, the CoNNA accelerator has an interrupt request
+- ZH: (conﬁguration, kernel map, input feature map), in compressed Furthermore, the CoNNA accelerator has an interrupt request
+- EN: format, coming from external DRAM memory or on-chip cache output port, which is used to signal to the surrounding mod-
+- ZH: format, coming from external DRAM memory or on-chip cache output port, which is used to signal to the surrounding mod-
+- EN: memory to the appropriate internal modules of the RCU mod- ules that CoNNA has ﬁnished processing one input instance, and
+- ZH: memory to the appropriate internal modules of the RCU mod- ules that CoNNA has ﬁnished processing one input instance, and
+- EN: ule.
+- ZH: ule.
+- EN: that the instance classiﬁcation data is available.
+- ZH: that the instance classiﬁcation data is available.
+- EN: Since the CoNNA
+- ZH: Since the CoNNA
+
+
+---
+
+### Page 10
+
+- EN: 10 R.
+- ZH: 10 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: Fig.
+- ZH: Fig.
+- EN: 4.
+- ZH: 4.
+- EN: Linked list representation of target CNN structural description that will be accelerated by the CoNNA CNN accelerator.
+- ZH: Linked list representation of target CNN structural description that will be accelerated by the CoNNA CNN accelerator.
+- EN: • CNN accelerator uses AXI interfaces, integration within ARM/RISC- Classiﬁcation Data Buffer (CDB) – memory buffer used for stor-
+- ZH: • CNN accelerator uses AXI interfaces, integration within ARM/RISC- Classiﬁcation Data Buffer (CDB) – memory buffer used for stor-
+- EN: V based SoCs or PSoCs is greatly simpliﬁed.
+- ZH: V based SoCs or PSoCs is greatly simpliﬁed.
+- EN: All data that is being ing classiﬁcation data for the last input instance that was pro-
+- ZH: All data that is being ing classiﬁcation data for the last input instance that was pro-
+- EN: processed or generated by the CoNNA accelerator is stored either cessed by the CoNNA CNN accelerator.
+- ZH: processed or generated by the CoNNA accelerator is stored either cessed by the CoNNA CNN accelerator.
+- EN: The output feature map
+- ZH: The output feature map
+- EN: in the internal on-chip cache memory or external DRAM memory, generated by the ﬁnal layer of the target CNN network is stored
+- ZH: in the internal on-chip cache memory or external DRAM memory, generated by the ﬁnal layer of the target CNN network is stored
+- EN: depending on the available memory resources in the system.
+- ZH: depending on the available memory resources in the system.
+- EN: in this buffer.
+- ZH: in this buffer.
+- EN: This data represents the classiﬁcation information
+- ZH: This data represents the classiﬁcation information
+- EN: The operation of the CoNNA CNN accelerator is conﬁgured and about the instance that was processed by the CNN network, and
+- ZH: The operation of the CoNNA CNN accelerator is conﬁgured and about the instance that was processed by the CNN network, and
+- EN: controlled using a set of internal registers, as well as several data it can be used by higher application levels within the complete
+- ZH: controlled using a set of internal registers, as well as several data it can be used by higher application levels within the complete
+- EN: structures required for correct operation, which are stored either in system.
+- ZH: structures required for correct operation, which are stored either in system.
+- EN: the on-chip cache memory or external DRAM memory.
+- ZH: the on-chip cache memory or external DRAM memory.
+- EN: The CoNNA
+- ZH: The CoNNA
+- EN: CNN accelerator operates on the following data structures:
+- ZH: CNN accelerator operates on the following data structures:
+- EN: CNNSD linked list, shown in the Fig.
+- ZH: CNNSD linked list, shown in the Fig.
+- EN: 4 , deﬁnes the topology,
+- ZH: 4 , deﬁnes the topology,
+- EN: together with various parameter values, of the target CNN network
+- ZH: together with various parameter values, of the target CNN network
+- EN: • CNN Structural Description (CNNSD) list – this is a linked list that should be accelerated by the CoNNA CNN accelerator.
+- ZH: • CNN Structural Description (CNNSD) list – this is a linked list that should be accelerated by the CoNNA CNN accelerator.
+- EN: CNNSD
+- ZH: CNNSD
+- EN: of nodes, each one describing one layer from a particular CNN list is composed of a number of nodes, the exact number being
+- ZH: of nodes, each one describing one layer from a particular CNN list is composed of a number of nodes, the exact number being
+- EN: network that the CoNNA accelerator should process.
+- ZH: network that the CoNNA accelerator should process.
+- EN: equal to the number of layers in the target CNN network, where
+- ZH: equal to the number of layers in the target CNN network, where
+- EN: • Input Instance Buffer (IIBs) – memory buffer, used for storing each node describes the characteristics of one particular layer from
+- ZH: • Input Instance Buffer (IIBs) – memory buffer, used for storing each node describes the characteristics of one particular layer from
+- EN: input instances that should be processed by the CoNNA CNN the selected CNN network.
+- ZH: input instances that should be processed by the CoNNA CNN the selected CNN network.
+- EN: accelerator.
+- ZH: accelerator.
+- EN: Every CNNSD node, shown in Fig.
+- ZH: Every CNNSD node, shown in Fig.
+- EN: 4 , contains the following
+- ZH: 4 , contains the following
+- EN: • Feature Map Buffers (FMBs) – a number of memory buffers, ﬁelds:
+- ZH: • Feature Map Buffers (FMBs) – a number of memory buffers, ﬁelds:
+- EN: used for storing input feature maps and output feature maps
+- ZH: used for storing input feature maps and output feature maps
+- EN: • data that are processed by various layers from the target CNN Layer Info – this ﬁeld, which has multiple subﬁelds, is used to
+- ZH: • data that are processed by various layers from the target CNN Layer Info – this ﬁeld, which has multiple subﬁelds, is used to
+- EN: network.
+- ZH: network.
+- EN: The minimum number of FMB buffers equals two, one specify details about the current CNN layer that should be pro-
+- ZH: The minimum number of FMB buffers equals two, one specify details about the current CNN layer that should be pro-
+- EN: for storing input feature map that is being processed by the cessed by CoNNA.
+- ZH: for storing input feature map that is being processed by the cessed by CoNNA.
+- EN: Layer Info ﬁeld is composed of the following
+- ZH: Layer Info ﬁeld is composed of the following
+- EN: current CNN layer and another for storing output feature map subﬁelds:
+- ZH: current CNN layer and another for storing output feature map subﬁelds:
+- EN: ◦ that is being generated by the current CNN layer.
+- ZH: ◦ that is being generated by the current CNN layer.
+- EN: This conﬁg- Layer Type – this ﬁeld speciﬁes the type of the current
+- ZH: This conﬁg- Layer Type – this ﬁeld speciﬁes the type of the current
+- EN: uration is suﬃcient in case the target CNN network topology layer, valid values being:
+- ZH: uration is suﬃcient in case the target CNN network topology layer, valid values being:
+- EN: convolutional, depthwise convolu-
+- ZH: convolutional, depthwise convolu-
+- EN: doesn’t contain adding or concatenation layers, like in the case tional, pooling (average or max pooling), adding, concatena-
+- ZH: doesn’t contain adding or concatenation layers, like in the case tional, pooling (average or max pooling), adding, concatena-
+- EN: of AlexNet, VGG or MobileNet V1 CNN architectures.
+- ZH: of AlexNet, VGG or MobileNet V1 CNN architectures.
+- EN: However, tion, and fully-connected.
+- ZH: However, tion, and fully-connected.
+- EN: ◦ if the target CNN network topology contains adding or concate- IFM Width – this ﬁeld speciﬁes the width of the input fea-
+- ZH: ◦ if the target CNN network topology contains adding or concate- IFM Width – this ﬁeld speciﬁes the width of the input fea-
+- EN: nation layers, which is, for example, the case with ResNet, In- ture map, expressed as the number of IFM points.
+- ZH: nation layers, which is, for example, the case with ResNet, In- ture map, expressed as the number of IFM points.
+- EN: ◦ ception and NASNet architectures, then additional FMB buffers IFM Height – this ﬁeld speciﬁes the height of the input fea-
+- ZH: ◦ ception and NASNet architectures, then additional FMB buffers IFM Height – this ﬁeld speciﬁes the height of the input fea-
+- EN: are necessary.
+- ZH: are necessary.
+- EN: ture map, expressed as the number of IFM points.
+- ZH: ture map, expressed as the number of IFM points.
+
+
+---
+
+### Page 11
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 11
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 11
+- EN: ◦ IFM Depth – this ﬁeld speciﬁes the depth of the input fea- erated is possible when using the CoNNA CNN accelerator, with-
+- ZH: ◦ IFM Depth – this ﬁeld speciﬁes the depth of the input fea- erated is possible when using the CoNNA CNN accelerator, with-
+- EN: ture map, expressed as the number of IFM points.
+- ZH: ture map, expressed as the number of IFM points.
+- EN: out the need to modify and re-implement the accelerator itself.
+- ZH: out the need to modify and re-implement the accelerator itself.
+- EN: ◦ Number of Kernels – this ﬁeld speciﬁes the number of ker- This situation is shown in the Fig.
+- ZH: ◦ Number of Kernels – this ﬁeld speciﬁes the number of ker- This situation is shown in the Fig.
+- EN: 5 .
+- ZH: 5 .
+- EN: There can be a number
+- ZH: There can be a number
+- EN: nels used to process IFM data by the current convolutional of CNN topology description lists, sitting in the operating mem-
+- ZH: nels used to process IFM data by the current convolutional of CNN topology description lists, sitting in the operating mem-
+- EN: layer.
+- ZH: layer.
+- EN: This number also determines the depth of the OFM ory to which the CoNNA accelerator is connected.
+- ZH: This number also determines the depth of the OFM ory to which the CoNNA accelerator is connected.
+- EN: By simply writ-
+- ZH: By simply writ-
+- EN: generated by the current convolutional layer.
+- ZH: generated by the current convolutional layer.
+- EN: This ﬁeld is ing the correct base address of the target CNN description list in
+- ZH: This ﬁeld is ing the correct base address of the target CNN description list in
+- EN: valid only if the “Layer Type” ﬁeld is set to “convolutional” the CNNSD Pointer register, the user can easily select the desired
+- ZH: valid only if the “Layer Type” ﬁeld is set to “convolutional” the CNNSD Pointer register, the user can easily select the desired
+- EN: or “depthwise convolutional”.
+- ZH: or “depthwise convolutional”.
+- EN: CNN network that should be processed by the CoNNA accelera-
+- ZH: CNN network that should be processed by the CoNNA accelera-
+- EN: ◦ Kernel Size – this ﬁeld speciﬁes the horizontal or vertical tor.
+- ZH: ◦ Kernel Size – this ﬁeld speciﬁes the horizontal or vertical tor.
+- EN: This selection can be done on-the-ﬂy, without any need for
+- ZH: This selection can be done on-the-ﬂy, without any need for
+- EN: size of the square convolutional kernel, or pooling area, ex- hardware reprogramming or reconﬁguration.
+- ZH: size of the square convolutional kernel, or pooling area, ex- hardware reprogramming or reconﬁguration.
+- EN: Switching between
+- ZH: Switching between
+- EN: pressed as the number of KM points.
+- ZH: pressed as the number of KM points.
+- EN: This ﬁeld is valid only different CNN networks that should be accelerated is extremely
+- ZH: This ﬁeld is valid only different CNN networks that should be accelerated is extremely
+- EN: if the “Layer Type” ﬁeld is set to “convolutional”, “depthwise fast, requiring only one write to CoNNA’s internal register (CNNSD
+- ZH: if the “Layer Type” ﬁeld is set to “convolutional”, “depthwise fast, requiring only one write to CoNNA’s internal register (CNNSD
+- EN: convolutional”, “max pooling” and “average pooling”.
+- ZH: convolutional”, “max pooling” and “average pooling”.
+- EN: Pointer).
+- ZH: Pointer).
+- EN: This feature of the CoNNA accelerator is of great impor-
+- ZH: This feature of the CoNNA accelerator is of great impor-
+- EN: ◦ Kernel Stride – this ﬁeld speciﬁes the stride of the convolu- tance in the case of applications where rapid, dynamic switching
+- ZH: ◦ Kernel Stride – this ﬁeld speciﬁes the stride of the convolu- tance in the case of applications where rapid, dynamic switching
+- EN: tional kernel or pooling area.
+- ZH: tional kernel or pooling area.
+- EN: This ﬁeld is valid only if the of CNN networks is necessary.
+- ZH: This ﬁeld is valid only if the of CNN networks is necessary.
+- EN: It is worth noting that many previ-
+- ZH: It is worth noting that many previ-
+- EN: “Layer Type” ﬁeld is set to “convolutional”, “depthwise con- ously proposed CNN accelerators, particularly accelerators designed
+- ZH: “Layer Type” ﬁeld is set to “convolutional”, “depthwise con- ously proposed CNN accelerators, particularly accelerators designed
+- EN: volutional”, “max pooling” and “average pooling”.
+- ZH: volutional”, “max pooling” and “average pooling”.
+- EN: using HLS techniques, cannot support this kind of functionality.
+- ZH: using HLS techniques, cannot support this kind of functionality.
+- EN: ◦ Padding – this ﬁeld speciﬁes if padding should be used Furthermore, on-the-ﬂy modiﬁcation of accelerated CNN net-
+- ZH: ◦ Padding – this ﬁeld speciﬁes if padding should be used Furthermore, on-the-ﬂy modiﬁcation of accelerated CNN net-
+- EN: when processing IFM data with the current CNN layer.
+- ZH: when processing IFM data with the current CNN layer.
+- EN: work topology is also possible when using CoNNA CNN accelerator,
+- ZH: work topology is also possible when using CoNNA CNN accelerator,
+- EN: ◦ Activation Function Type – this ﬁeld speciﬁes the type of removing or adding CNN layers or changing parameters of exist-
+- ZH: ◦ Activation Function Type – this ﬁeld speciﬁes the type of removing or adding CNN layers or changing parameters of exist-
+- EN: activation function to be used, valid values being:
+- ZH: activation function to be used, valid values being:
+- EN: “none”, ing layers, by a simple modiﬁcation of the target CNN description
+- ZH: “none”, ing layers, by a simple modiﬁcation of the target CNN description
+- EN: “ReLU” or “arbitrary”.
+- ZH: “ReLU” or “arbitrary”.
+- EN: In the case of the “arbitrary” type, linked list.
+- ZH: In the case of the “arbitrary” type, linked list.
+- EN: For example, in the Fig.
+- ZH: For example, in the Fig.
+- EN: 5 CNN description linked list
+- ZH: 5 CNN description linked list
+- EN: th additional Activation Function Lookup Table Pointer ﬁeld for M CNN network could be modiﬁed by replacing the existing
+- ZH: th additional Activation Function Lookup Table Pointer ﬁeld for M CNN network could be modiﬁed by replacing the existing
+- EN: points to the beginning of the activation function lookup description of Layer 2 with the description of some other layer, for
+- ZH: points to the beginning of the activation function lookup description of Layer 2 with the description of some other layer, for
+- EN: ∗ table content memory block.
+- ZH: ∗ table content memory block.
+- EN: This block is loaded into the example, Layer 2 .
+- ZH: This block is loaded into the example, Layer 2 .
+- EN: This can easily be done, by simply rewriting ex-
+- ZH: This can easily be done, by simply rewriting ex-
+- EN: CoNNA’s Arbitrary Non-Linear Activation Function Calculator isting values of the “Next Layer Pointer” ﬁeld from Layer 1 node
+- ZH: CoNNA’s Arbitrary Non-Linear Activation Function Calculator isting values of the “Next Layer Pointer” ﬁeld from Layer 1 node
+- EN: module, located within the RCU module, to specify the ex- and IFM Data Pointer ﬁeld from Layer 3 node.
+- ZH: module, located within the RCU module, to specify the ex- and IFM Data Pointer ﬁeld from Layer 3 node.
+- EN: After these modiﬁca-
+- ZH: After these modiﬁca-
+- EN: th act shape of the non-linear activation function that should tions, the topology of M CNN network will be modiﬁed to include
+- ZH: th act shape of the non-linear activation function that should tions, the topology of M CNN network will be modiﬁed to include
+- EN: ∗ be used within the current CNN layer.
+- ZH: ∗ be used within the current CNN layer.
+- EN: In the case of “none” a new layer, Layer 2 , instead of existing Layer 2.
+- ZH: In the case of “none” a new layer, Layer 2 , instead of existing Layer 2.
+- EN: As can be seen,
+- ZH: As can be seen,
+- EN: and “ReLU” values, Activation Function Lookup Table Pointer this modiﬁcation is very quick, requiring only a couple of mem-
+- ZH: and “ReLU” values, Activation Function Lookup Table Pointer this modiﬁcation is very quick, requiring only a couple of mem-
+- EN: is ignored.
+- ZH: is ignored.
+- EN: ory accesses to the operating memory where the CNN description
+- ZH: ory accesses to the operating memory where the CNN description
+- EN: • Input Feature Map Data Pointer – this ﬁeld speciﬁes the base list is stored.
+- ZH: • Input Feature Map Data Pointer – this ﬁeld speciﬁes the base list is stored.
+- EN: Therefore, rapid, dynamic modiﬁcation of target CNN
+- ZH: Therefore, rapid, dynamic modiﬁcation of target CNN
+- EN: address of the memory block, which holds the values of the topology is also supported by the CoNNA CNN accelerator, which
+- ZH: address of the memory block, which holds the values of the topology is also supported by the CoNNA CNN accelerator, which
+- EN: input feature map of the current CNN layer.
+- ZH: input feature map of the current CNN layer.
+- EN: can be of particular interest when working with hierarchical CNNs
+- ZH: can be of particular interest when working with hierarchical CNNs
+- EN: • Output Feature Map Data Pointer – this ﬁeld speciﬁes the base [48–50] .
+- ZH: • Output Feature Map Data Pointer – this ﬁeld speciﬁes the base [48–50] .
+- EN: address of the memory block, which will store the values of the CoNNA processes the CNN network in a sequential manner, one
+- ZH: address of the memory block, which will store the values of the CoNNA processes the CNN network in a sequential manner, one
+- EN: output feature map, generated by the current CNN layer.
+- ZH: output feature map, generated by the current CNN layer.
+- EN: layer at a time.
+- ZH: layer at a time.
+- EN: It uses information about the current CNN layer
+- ZH: It uses information about the current CNN layer
+- EN: • Kernel Data Pointer – this ﬁeld speciﬁes the base address of the to be accelerated, stored in the appropriate node of the associ-
+- ZH: • Kernel Data Pointer – this ﬁeld speciﬁes the base address of the to be accelerated, stored in the appropriate node of the associ-
+- EN: memory block, holding the kernel coeﬃcients, in case of a con- ated CNN description linked list, to reconﬁgure the RCU unit and
+- ZH: memory block, holding the kernel coeﬃcients, in case of a con- ated CNN description linked list, to reconﬁgure the RCU unit and
+- EN: volutional or depthwise convolutional layer, or weight values in perform all necessary computations deﬁned within that CNN layer.
+- ZH: volutional or depthwise convolutional layer, or weight values in perform all necessary computations deﬁned within that CNN layer.
+- EN: case of a fully connected layer.
+- ZH: case of a fully connected layer.
+- EN: When all computations deﬁned in the current layer are completed,
+- ZH: When all computations deﬁned in the current layer are completed,
+- EN: • Next Layer Pointer – this ﬁeld speciﬁes the address of the next output feature map data generated by the current layer is stored
+- ZH: • Next Layer Pointer – this ﬁeld speciﬁes the address of the next output feature map data generated by the current layer is stored
+- EN: CNNSD node, which describes the characteristics of the subse- in the appropriate memory buffer and CoNNA can proceed with
+- ZH: CNNSD node, which describes the characteristics of the subse- in the appropriate memory buffer and CoNNA can proceed with
+- EN: quent layer from the CNN network that is being accelerated.
+- ZH: quent layer from the CNN network that is being accelerated.
+- EN: If the next CNN layer from the supplied CNNDS linked list.
+- ZH: If the next CNN layer from the supplied CNNDS linked list.
+- EN: This op-
+- ZH: This op-
+- EN: the value of this ﬁeld is NULL , this is an indication that the eration is repeated until a ﬁnal node from the CNNDS linked list
+- ZH: the value of this ﬁeld is NULL , this is an indication that the eration is repeated until a ﬁnal node from the CNNDS linked list
+- EN: current CNN layer is actually the ﬁnal layer of the CNN and is processed, indicating the end of processing of the current input
+- ZH: current CNN layer is actually the ﬁnal layer of the CNN and is processed, indicating the end of processing of the current input
+- EN: that the CoNNA accelerator should signal completion of the cur- instance by selected CNN.
+- ZH: that the CoNNA accelerator should signal completion of the cur- instance by selected CNN.
+- EN: The process of sequential processing of
+- ZH: The process of sequential processing of
+- EN: rent input instance classiﬁcation, after it has processed this ﬁ- CNN layers employed by the CoNNA CNN accelerator is shown in
+- ZH: rent input instance classiﬁcation, after it has processed this ﬁ- CNN layers employed by the CoNNA CNN accelerator is shown in
+- EN: nal layer.
+- ZH: nal layer.
+- EN: the Fig.
+- ZH: the Fig.
+- EN: 6 .
+- ZH: 6 .
+- EN: Please note that although CoNNA processes CNN layers sequen-
+- ZH: Please note that although CoNNA processes CNN layers sequen-
+- EN: Besides CNNSD linked list, IIB, FMB and CDB buffers, the CoNNA
+- ZH: Besides CNNSD linked list, IIB, FMB and CDB buffers, the CoNNA
+- EN: tially, layer by layer, computations deﬁned within each CNN layer
+- ZH: tially, layer by layer, computations deﬁned within each CNN layer
+- EN: CNN accelerator has the following set of internal registers, that are
+- ZH: CNN accelerator has the following set of internal registers, that are
+- EN: are executed concurrently, using available Processing Block mod-
+- ZH: are executed concurrently, using available Processing Block mod-
+- EN: used to conﬁgure and control its operation.
+- ZH: used to conﬁgure and control its operation.
+- EN: All registers are 32-bit,
+- ZH: All registers are 32-bit,
+- EN: ules from the RCU module.
+- ZH: ules from the RCU module.
+- EN: The way how this is done was pre-
+- ZH: The way how this is done was pre-
+- EN: and are accessed using the CI AXI-Lite interface of the CoNNA CNN
+- ZH: and are accessed using the CI AXI-Lite interface of the CoNNA CNN
+- EN: sented at the beginning of Section 3 , and will also be explained in
+- ZH: sented at the beginning of Section 3 , and will also be explained in
+- EN: accelerator:
+- ZH: accelerator:
+- EN: more detail in Section 3.
+- ZH: more detail in Section 3.
+- EN: 2.
+- ZH: 2.
+- EN: 1 .
+- ZH: 1 .
+- EN: • Control Register – used to control the operation of the CoNNA
+- ZH: • Control Register – used to control the operation of the CoNNA
+- EN: CNN accelerator.
+- ZH: CNN accelerator.
+- EN: 3.
+- ZH: 3.
+- EN: 2.
+- ZH: 2.
+- EN: 1.
+- ZH: 1.
+- EN: Details of RCU module
+- ZH: Details of RCU module
+- EN: • Status Register – used to monitor the operation of the CoNNA
+- ZH: • Status Register – used to monitor the operation of the CoNNA
+- EN: RCU module is the central module of the CoNNA CNN accel-
+- ZH: RCU module is the central module of the CoNNA CNN accel-
+- EN: CNN accelerator.
+- ZH: CNN accelerator.
+- EN: erator.
+- ZH: erator.
+- EN: It is used to perform all necessary numerical calculations,
+- ZH: It is used to perform all necessary numerical calculations,
+- EN: • CNNSD Pointer – register holding the base address of the
+- ZH: • CNNSD Pointer – register holding the base address of the
+- EN: deﬁned by different CNN layers.
+- ZH: deﬁned by different CNN layers.
+- EN: RCU module, shown in Fig.
+- ZH: RCU module, shown in Fig.
+- EN: 7 , is
+- ZH: 7 , is
+- EN: CNNSD linked list, where the ﬁrst CNNSD node is located.
+- ZH: CNNSD linked list, where the ﬁrst CNNSD node is located.
+- EN: The
+- ZH: The
+- EN: designed as a coarse-grained reconﬁgurable hardware module, al-
+- ZH: designed as a coarse-grained reconﬁgurable hardware module, al-
+- EN: CoNNA CNN accelerator uses this address value to fetch the in-
+- ZH: CoNNA CNN accelerator uses this address value to fetch the in-
+- EN: lowing easy, fast, dynamic, on-the-ﬂy reconﬁguration, in order to
+- ZH: lowing easy, fast, dynamic, on-the-ﬂy reconﬁguration, in order to
+- EN: formation about the structure of the ﬁrst and all subsequent
+- ZH: formation about the structure of the ﬁrst and all subsequent
+- EN: create different dataﬂows, optimized for processing particular CNN
+- ZH: create different dataﬂows, optimized for processing particular CNN
+- EN: layers of the CNN network that is being accelerated.
+- ZH: layers of the CNN network that is being accelerated.
+- EN: layer type.
+- ZH: layer type.
+- EN: Because CNN’s structural information is stored in a form of a RCU module is composed of a number of Processing Block mod-
+- ZH: Because CNN’s structural information is stored in a form of a RCU module is composed of a number of Processing Block mod-
+- EN: linked list, on-the-ﬂy selection of target CNN network to be accel- ules and one Activation Function Calculator (AFC) module.
+- ZH: linked list, on-the-ﬂy selection of target CNN network to be accel- ules and one Activation Function Calculator (AFC) module.
+- EN: PBs are
+- ZH: PBs are
+
+
+---
+
+### Page 12
+
+- EN: 12 R.
+- ZH: 12 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-12_1.png)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 5.
+- ZH: 5.
+- EN: Principle of on-line switching between different CNNs and accelerating CNNs with dynamic topology.
+- ZH: Principle of on-line switching between different CNNs and accelerating CNNs with dynamic topology.
+
+![](/workspace/CoNNa-12_2.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 6.
+- ZH: 6.
+- EN: Principle of sequential layer processing during CNN acceleration implemented by CoNNA.
+- ZH: Principle of sequential layer processing during CNN acceleration implemented by CoNNA.
+- EN: able to perform all required CNN layer processing operations, using In the Fig.
+- ZH: able to perform all required CNN layer processing operations, using In the Fig.
+- EN: 7 b distribution of different convolutions over available
+- ZH: 7 b distribution of different convolutions over available
+- EN: compressed input feature map and kernel map data, implement- PBs, in case of processing convolutional layer with 6 different con-
+- ZH: compressed input feature map and kernel map data, implement- PBs, in case of processing convolutional layer with 6 different con-
+- EN: ing the “All zero-skipping” technique, to increase CNN computation volutional kernels, is presented.
+- ZH: ing the “All zero-skipping” technique, to increase CNN computation volutional kernels, is presented.
+- EN: Please notice that if the number
+- ZH: Please notice that if the number
+- EN: performance.
+- ZH: performance.
+- EN: AFC module is used for post-processing data com- of convolutional kernels is smaller than the number of PBs, some
+- ZH: AFC module is used for post-processing data com- of convolutional kernels is smaller than the number of PBs, some
+- EN: ing from PB modules.
+- ZH: ing from PB modules.
+- EN: AFC module contains a number of Rectiﬁed of the PBs will be inactive.
+- ZH: AFC module contains a number of Rectiﬁed of the PBs will be inactive.
+- EN: Also note that the amount of paral-
+- ZH: Also note that the amount of paral-
+- EN: Linear Units (ReLUs), implementing the Rectiﬁed Linear activation lelism is limited by the number of available PBs, since their num-
+- ZH: Linear Units (ReLUs), implementing the Rectiﬁed Linear activation lelism is limited by the number of available PBs, since their num-
+- EN: function and one Arbitrary Non-Linear Activation Function Calcu- ber determines the partial unrolling factor that will be used to un-
+- ZH: function and one Arbitrary Non-Linear Activation Function Calcu- ber determines the partial unrolling factor that will be used to un-
+- EN: lator unit, capable of implementing arbitrary non-linear activation roll loop L3 from Algorithm 3 , Num_PB .
+- ZH: lator unit, capable of implementing arbitrary non-linear activation roll loop L3 from Algorithm 3 , Num_PB .
+- EN: However, for most stan-
+- ZH: However, for most stan-
+- EN: functions, which are mainly used in fully-connected CNN layers.
+- ZH: functions, which are mainly used in fully-connected CNN layers.
+- EN: dard CNN networks [ 3 , 10 , 52 ,53] number of different convolutional
+- ZH: dard CNN networks [ 3 , 10 , 52 ,53] number of different convolutional
+- EN: As already mentioned in Section 3.
+- ZH: As already mentioned in Section 3.
+- EN: 1 , during convolutional layer kernels speciﬁed in convolutional layers rises sharply as we move
+- ZH: 1 , during convolutional layer kernels speciﬁed in convolutional layers rises sharply as we move
+- EN: processing CoNNA allocates computation of one complete convolu- deeper inside the CNN network, and quickly reach values above
+- ZH: processing CoNNA allocates computation of one complete convolu- deeper inside the CNN network, and quickly reach values above
+- EN: tion to a single PB.
+- ZH: tion to a single PB.
+- EN: Multiple convolutions, operating on the same 100, so this constraint is usually not so severe.
+- ZH: Multiple convolutions, operating on the same 100, so this constraint is usually not so severe.
+- EN: IFM bundle are being calculated in parallel, by different PBs, as The detailed architecture of Processing Block is shown in the
+- ZH: IFM bundle are being calculated in parallel, by different PBs, as The detailed architecture of Processing Block is shown in the
+- EN: shown in the Fig.
+- ZH: shown in the Fig.
+- EN: 7 b, and previously described by Algorithm 3 .
+- ZH: 7 b, and previously described by Algorithm 3 .
+- EN: Fig.
+- ZH: Fig.
+- EN: 8 .
+- ZH: 8 .
+- EN: PB contains non-zero product term detection logic, imple-
+- ZH: PB contains non-zero product term detection logic, imple-
+
+
+---
+
+### Page 13
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 13
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 13
+- EN: Fig.
+- ZH: Fig.
+- EN: 7.
+- ZH: 7.
+- EN: Details of the RCU Module:
+- ZH: Details of the RCU Module:
+- EN: a) top-level architecture of the RCU Module;
+- ZH: a) top-level architecture of the RCU Module;
+- EN: b) mapping individual convolutions to available PB units.
+- ZH: b) mapping individual convolutions to available PB units.
+- EN: Fig.
+- ZH: Fig.
+- EN: 8.
+- ZH: 8.
+- EN: The architecture of the processing block module.
+- ZH: The architecture of the processing block module.
+- EN: mented inside the Data Fetcher (DF) module, which allows the ex- eﬃcients and their actual positions in the original uncompressed
+- ZH: mented inside the Data Fetcher (DF) module, which allows the ex- eﬃcients and their actual positions in the original uncompressed
+- EN: ecution of numerical computations only when their result will be kernel.
+- ZH: ecution of numerical computations only when their result will be kernel.
+- EN: Remaining two memories do the same for the IFM bun-
+- ZH: Remaining two memories do the same for the IFM bun-
+- EN: different from zero, skipping all unnecessary (zero-outcome) com- dle that is currently being processed by the PB module.
+- ZH: different from zero, skipping all unnecessary (zero-outcome) com- dle that is currently being processed by the PB module.
+- EN: Please
+- ZH: Please
+- EN: putations, resulting in a signiﬁcant speedup of the CNN calcula- notice that all data stored in these four memories are stored in
+- ZH: putations, resulting in a signiﬁcant speedup of the CNN calcula- notice that all data stored in these four memories are stored in
+- EN: tion process.
+- ZH: tion process.
+- EN: Please notice that the DF module actually implements a serialized format, as the result of ﬂattening loops L4-L6 from
+- ZH: Please notice that the DF module actually implements a serialized format, as the result of ﬂattening loops L4-L6 from
+- EN: the Calc_Next_NZPT() function from Algorithm 3 , directly in hard- Algorithm 2 , using the “Stick First” approach described during the
+- ZH: the Calc_Next_NZPT() function from Algorithm 3 , directly in hard- Algorithm 2 , using the “Stick First” approach described during the
+- EN: ware.
+- ZH: ware.
+- EN: PB also contains four local memories, located in the Local analysis of Algorithm 2 .
+- ZH: PB also contains four local memories, located in the Local analysis of Algorithm 2 .
+- EN: Computing Unit (CU) performs all neces-
+- ZH: Computing Unit (CU) performs all neces-
+- EN: Memory module (LM), used for storing data from selected convo- sary operations on the selected kernel and IFM value pairs, sup-
+- ZH: Memory module (LM), used for storing data from selected convo- sary operations on the selected kernel and IFM value pairs, sup-
+- EN: lutional kernel and IFM bundle, in compressed format.
+- ZH: lutional kernel and IFM bundle, in compressed format.
+- EN: Two mem- plied by the DF module.
+- ZH: Two mem- plied by the DF module.
+- EN: It contains one MAC unit, together with
+- ZH: It contains one MAC unit, together with
+- EN: ories are used to store all non-zero valued convolution kernel co- some additional logic, for enabling different compute dataﬂows,
+- ZH: ories are used to store all non-zero valued convolution kernel co- some additional logic, for enabling different compute dataﬂows,
+
+
+---
+
+### Page 14
+
+- EN: 14 R.
+- ZH: 14 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: Fig.
+- ZH: Fig.
+- EN: 9.
+- ZH: 9.
+- EN: Zero-valued product term skipping principle of operation.
+- ZH: Zero-valued product term skipping principle of operation.
+- EN: • depending on the type of CNN layer that is being processed by the Input Stick Buffer (ISB) memory – used for storing cached IFM
+- ZH: • depending on the type of CNN layer that is being processed by the Input Stick Buffer (ISB) memory – used for storing cached IFM
+- EN: CoNNA CNN accelerator.
+- ZH: CoNNA CNN accelerator.
+- EN: Output FIFO is used to synchronize pro- sticks in compressed format.
+- ZH: Output FIFO is used to synchronize pro- sticks in compressed format.
+- EN: • cessing steps performed by different PBs since different PBs can Stick Valid (SV) memory – used to store information is the IFM
+- ZH: • cessing steps performed by different PBs since different PBs can Stick Valid (SV) memory – used to store information is the IFM
+- EN: require different periods of time to calculate their associated con- stick located at the same position in ISB memory valid for read-
+- ZH: require different periods of time to calculate their associated con- stick located at the same position in ISB memory valid for read-
+- EN: volutions.
+- ZH: volutions.
+- EN: This can occur because of the possible difference in the ing or not.
+- ZH: This can occur because of the possible difference in the ing or not.
+- EN: • actual number of non-zero valued product terms that are present Read Controller (RC) – used to read selected compressed IFM
+- ZH: • actual number of non-zero valued product terms that are present Read Controller (RC) – used to read selected compressed IFM
+- EN: in different convolutions, as it was described during the presen- stick from ISB memory and transfer it to the RCU module, more
+- ZH: in different convolutions, as it was described during the presen- stick from ISB memory and transfer it to the RCU module, more
+- EN: tation of Algorithm 3 .
+- ZH: tation of Algorithm 3 .
+- EN: Finally, the Conﬁguration Register is used speciﬁcally into two local memories located inside the LM mod-
+- ZH: Finally, the Conﬁguration Register is used speciﬁcally into two local memories located inside the LM mod-
+- EN: to specify the desired PB operating mode that should be used.
+- ZH: to specify the desired PB operating mode that should be used.
+- EN: ule of each PB module.
+- ZH: ule of each PB module.
+- EN: • PB module supports several datapath conﬁgurations, which enable Write Controller (WC) – used to write compressed IFM stick
+- ZH: • PB module supports several datapath conﬁgurations, which enable Write Controller (WC) – used to write compressed IFM stick
+- EN: eﬃcient processing of convolutional, pooling, fully-connected and from external DRAM memory or on-chip cache memory to ap-
+- ZH: eﬃcient processing of convolutional, pooling, fully-connected and from external DRAM memory or on-chip cache memory to ap-
+- EN: adding CNN layer types.
+- ZH: adding CNN layer types.
+- EN: propriate position inside ISB memory.
+- ZH: propriate position inside ISB memory.
+- EN: • The principle of the “All zero-skipping” technique used to skip Input Stream Router (ISR) – used to select which input data
+- ZH: • The principle of the “All zero-skipping” technique used to skip Input Stream Router (ISR) – used to select which input data
+- EN: all zero-valued product terms, used by the PB module during the stream will be sent to the RCU module.
+- ZH: all zero-valued product terms, used by the PB module during the stream will be sent to the RCU module.
+- EN: Two possible input data
+- ZH: Two possible input data
+- EN: convolution calculation process, is shown in the Fig.
+- ZH: convolution calculation process, is shown in the Fig.
+- EN: 9 .
+- ZH: 9 .
+- EN: LM module stream sources are available:
+- ZH: LM module stream sources are available:
+- EN: ◦ streams information about the positions of kernel and IFM bun- First, coming from the RC module, used when compressed
+- ZH: ◦ streams information about the positions of kernel and IFM bun- First, coming from the RC module, used when compressed
+- EN: dle non-zero values to the DF module.
+- ZH: dle non-zero values to the DF module.
+- EN: DF module detects on-the- IFM sticks are being transferred to the RCU.
+- ZH: DF module detects on-the- IFM sticks are being transferred to the RCU.
+- EN: ◦ ﬂy the next kernel/IFM non-zero valued pair, implementing the Second, coming directly from Input Stream Interface, used
+- ZH: ◦ ﬂy the next kernel/IFM non-zero valued pair, implementing the Second, coming directly from Input Stream Interface, used
+- EN: “All zero-skipping” technique, using the information about the ker- when convolutional kernel map or fully-connected weight
+- ZH: “All zero-skipping” technique, using the information about the ker- when convolutional kernel map or fully-connected weight
+- EN: nel/IFM non-zero value positions in the uncompressed data struc- map data is being transferred to the RCU module.
+- ZH: nel/IFM non-zero value positions in the uncompressed data struc- map data is being transferred to the RCU module.
+- EN: tures, and passes it to the CU module for processing.
+- ZH: tures, and passes it to the CU module for processing.
+- EN: This is ac-
+- ZH: This is ac-
+- EN: The central module of ISM is the Input Stick Buffer memory complished by a parallel search for the next coincident non-zero
+- ZH: The central module of ISM is the Input Stick Buffer memory complished by a parallel search for the next coincident non-zero
+- EN: module.
+- ZH: module.
+- EN: This memory is used for storing selected compressed IFM valued position in both KM and IFM data streams, within a spec-
+- ZH: This memory is used for storing selected compressed IFM valued position in both KM and IFM data streams, within a spec-
+- EN: sticks from the current input feature map, which is being pro- iﬁed search window, which is 16 elements wide in the case of
+- ZH: sticks from the current input feature map, which is being pro- iﬁed search window, which is 16 elements wide in the case of
+- EN: cessed by the current CNN layer.
+- ZH: cessed by the current CNN layer.
+- EN: During input feature map pro- the CoNNA architecture.
+- ZH: During input feature map pro- the CoNNA architecture.
+- EN: This operation is repeated until all data
+- ZH: This operation is repeated until all data
+- EN: cessing by the convolutional layers, IFM sticks are being repeatedly is used, and all relevant, non-zero valued product terms are accu-
+- ZH: cessing by the convolutional layers, IFM sticks are being repeatedly is used, and all relevant, non-zero valued product terms are accu-
+- EN: reused during the calculation of adjacent convolutions, as convo- mulated within the CU module, to obtain the ﬁnal value of convo-
+- ZH: reused during the calculation of adjacent convolutions, as convo- mulated within the CU module, to obtain the ﬁnal value of convo-
+- EN: lutional kernels slide over input feature map.
+- ZH: lutional kernels slide over input feature map.
+- EN: This will always be lution calculation operation.
+- ZH: This will always be lution calculation operation.
+- EN: the case if the horizontal and vertical stride values, Sh and Sv , are
+- ZH: the case if the horizontal and vertical stride values, Sh and Sv , are
+- EN: 3.
+- ZH: 3.
+- EN: 2.
+- ZH: 2.
+- EN: 2.
+- ZH: 2.
+- EN: Details of ISM and OSM modules smaller than the corresponding horizontal and vertical kernel sizes,
+- ZH: Details of ISM and OSM modules smaller than the corresponding horizontal and vertical kernel sizes,
+- EN: ISM module is used to stream input data to the RCU module.
+- ZH: ISM module is used to stream input data to the RCU module.
+- EN: In- Kernel_Width and Kernel_Height .
+- ZH: In- Kernel_Width and Kernel_Height .
+- EN: This opens a possibility to mini-
+- ZH: This opens a possibility to mini-
+- EN: put stream data consists of PB conﬁguration data, input image data mize data movement between the CNN accelerator and external
+- ZH: put stream data consists of PB conﬁguration data, input image data mize data movement between the CNN accelerator and external
+- EN: or input feature map data, and convolutional kernel coeﬃcient val- memory by caching IFM sticks that will be reused during the ad-
+- ZH: or input feature map data, and convolutional kernel coeﬃcient val- memory by caching IFM sticks that will be reused during the ad-
+- EN: ues or fully-connected weight values, depending on the type of jacent convolutions computation process.
+- ZH: ues or fully-connected weight values, depending on the type of jacent convolutions computation process.
+- EN: ISB memory module acts
+- ZH: ISB memory module acts
+- EN: CNN layer that is currently being processed.
+- ZH: CNN layer that is currently being processed.
+- EN: All CNN-related data, as this local cache of selected IFM sticks.
+- ZH: All CNN-related data, as this local cache of selected IFM sticks.
+- EN: ISB stores selected com-
+- ZH: ISB stores selected com-
+- EN: × which include all above-mentioned data except PB conﬁguration pressed IFM sticks, 1 1xS sections of the IFM, where S is the
+- ZH: × which include all above-mentioned data except PB conﬁguration pressed IFM sticks, 1 1xS sections of the IFM, where S is the
+- EN: D D
+- ZH: D D
+- EN: data, is received either from on-chip or external DRAM memory number of non-zero valued IFM points that are present in the cur-
+- ZH: data, is received either from on-chip or external DRAM memory number of non-zero valued IFM points that are present in the cur-
+- EN: in compressed format, which is then either stored inside the Input rent IFM stick, which will be used in the upcoming convolution
+- ZH: in compressed format, which is then either stored inside the Input rent IFM stick, which will be used in the upcoming convolution
+- EN: Stick Buffer (ISB) module, in case of the input feature map data, or calculation operations, as shown in the Fig.
+- ZH: Stick Buffer (ISB) module, in case of the input feature map data, or calculation operations, as shown in the Fig.
+- EN: 10 b.
+- ZH: 10 b.
+- EN: Please notice that
+- ZH: Please notice that
+- EN: routed directly to the appropriate LM module inside the selected the 3D cube from Fig.
+- ZH: routed directly to the appropriate LM module inside the selected the 3D cube from Fig.
+- EN: 10 b, which represents the content of the ISB
+- ZH: 10 b, which represents the content of the ISB
+- EN: PB module, in case of convolutional coeﬃcients or fully-connected memory module, is actually toothed since different IFM sticks can
+- ZH: PB module, in case of convolutional coeﬃcients or fully-connected memory module, is actually toothed since different IFM sticks can
+- EN: weights.
+- ZH: weights.
+- EN: Please notice that the CoNNA CNN accelerator is designed contain a different number of non-zero valued points.
+- ZH: Please notice that the CoNNA CNN accelerator is designed contain a different number of non-zero valued points.
+- EN: to process all incoming CNN-related data in compressed format, so Each time the same IFM stick is needed in the convolution cal-
+- ZH: to process all incoming CNN-related data in compressed format, so Each time the same IFM stick is needed in the convolution cal-
+- EN: there is no need to decompress it.
+- ZH: there is no need to decompress it.
+- EN: Fig.
+- ZH: Fig.
+- EN: 10 presents details about the culation operation, instead of re-fetching it from external DRAM
+- ZH: 10 presents details about the culation operation, instead of re-fetching it from external DRAM
+- EN: internal organization of the Input Stream Manager module, with all memory, it is fetched from the ISB module, reducing the number
+- ZH: internal organization of the Input Stream Manager module, with all memory, it is fetched from the ISB module, reducing the number
+- EN: major sub-modules shown.
+- ZH: major sub-modules shown.
+- EN: of data transfers from external DRAM memory, thus saving power.
+- ZH: of data transfers from external DRAM memory, thus saving power.
+- EN: Input Stream Manager is composed of the following major mod- Once all convolution operations involving given IFM stick are com-
+- ZH: Input Stream Manager is composed of the following major mod- Once all convolution operations involving given IFM stick are com-
+- EN: ules.
+- ZH: ules.
+- EN: pleted, that IFM stick can be removed from the ISB module and
+- ZH: pleted, that IFM stick can be removed from the ISB module and
+
+
+---
+
+### Page 15
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 15
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 15
+- EN: Fig.
+- ZH: Fig.
+- EN: 10.
+- ZH: 10.
+- EN: Input stream manager:
+- ZH: Input stream manager:
+- EN: a) Top level ism modules;
+- ZH: a) Top level ism modules;
+- EN: b) Organization of ISB and SVM memories.
+- ZH: b) Organization of ISB and SVM memories.
+- EN: Fig.
+- ZH: Fig.
+- EN: 11.
+- ZH: 11.
+- EN: Principle of ISB memory operation.
+- ZH: Principle of ISB memory operation.
+- EN: the next IFM stick can be loaded in its place from external DRAM Required ISB memory size clearly depends on the size of the
+- ZH: the next IFM stick can be loaded in its place from external DRAM Required ISB memory size clearly depends on the size of the
+- EN: memory.
+- ZH: memory.
+- EN: input feature map that is being cached and the percentage of non-
+- ZH: input feature map that is being cached and the percentage of non-
+- EN: Read Controller and Write Controller modules are charged with zero valued IFM points, but is signiﬁcantly smaller than the mem-
+- ZH: Read Controller and Write Controller modules are charged with zero valued IFM points, but is signiﬁcantly smaller than the mem-
+- EN: correct manipulation of IFM sticks stored inside the ISB cache ory required to store the complete IFM map, because Kernel_Height
+- ZH: correct manipulation of IFM sticks stored inside the ISB cache ory required to store the complete IFM map, because Kernel_Height
+- EN: memory module.
+- ZH: memory module.
+- EN: WC module sweeps the input feature map line parameter is always signiﬁcantly smaller than the IFM_Height pa-
+- ZH: WC module sweeps the input feature map line parameter is always signiﬁcantly smaller than the IFM_Height pa-
+- EN: by line, as shown in Fig.
+- ZH: by line, as shown in Fig.
+- EN: 11 , and writes IFM sticks in appropriate rameter.
+- ZH: 11 , and writes IFM sticks in appropriate rameter.
+- EN: positions inside the ISB memory module.
+- ZH: positions inside the ISB memory module.
+- EN: Please notice that the re- On the other hand, the RC module reads selected IFM sticks
+- ZH: Please notice that the re- On the other hand, the RC module reads selected IFM sticks
+- EN: quired size of ISB memory is signiﬁcantly smaller than the size of from ISB memory and transfers them to the RCU module.
+- ZH: quired size of ISB memory is signiﬁcantly smaller than the size of from ISB memory and transfers them to the RCU module.
+- EN: RC mod-
+- ZH: RC mod-
+- EN: the complete input feature map that is being processed by the cur- ule reads IFM sticks in a different order from the order WC module
+- ZH: the complete input feature map that is being processed by the cur- ule reads IFM sticks in a different order from the order WC module
+- EN: rent convolutional layer.
+- ZH: rent convolutional layer.
+- EN: ISB memory size, measured in the num- uses to write them in the ISB memory.
+- ZH: ISB memory size, measured in the num- uses to write them in the ISB memory.
+- EN: While WC traverses input
+- ZH: While WC traverses input
+- EN: ber of IFM points, that is suﬃcient to correctly cache IFM memory feature map horizontally, loading complete IFM line before moving
+- ZH: ber of IFM points, that is suﬃcient to correctly cache IFM memory feature map horizontally, loading complete IFM line before moving
+- EN: sticks from a given CNN network equals to the next one, RC traverses ISB memory in the more localized
+- ZH: sticks from a given CNN network equals to the next one, RC traverses ISB memory in the more localized
+- EN: manner, deﬁned by the frontal shape of the convolutional kernel,
+- ZH: manner, deﬁned by the frontal shape of the convolutional kernel,
+- EN: × as shown in the Fig.
+- ZH: × as shown in the Fig.
+- EN: 11 in the case of 3 3 kernel.
+- ZH: 11 in the case of 3 3 kernel.
+- EN: { } = ISB _ Memory _ Size max IF M _ W idt h
+- ZH: { } = ISB _ Memory _ Size max IF M _ W idt h
+- EN: Please notice that the speed at which the WC module writes
+- ZH: Please notice that the speed at which the WC module writes
+- EN: i
+- ZH: i
+- EN: ∈ i layers
+- ZH: ∈ i layers
+- EN: IFM sticks into ISB memory can differ from the speed at which the
+- ZH: IFM sticks into ISB memory can differ from the speed at which the
+- EN: · max Kernel _ Heigh t RC module reads IFM sticks from ISB memory.
+- ZH: · max Kernel _ Heigh t RC module reads IFM sticks from ISB memory.
+- EN: This can happen be-
+- ZH: This can happen be-
+- EN: , i j
+- ZH: , i j
+- EN: ∈ i layers
+- ZH: ∈ i layers
+- EN: cause data processing throughputs of the memory subsystem and ∈
+- ZH: cause data processing throughputs of the memory subsystem and ∈
+- EN: j ker nels
+- ZH: j ker nels
+- EN: RCU module can be different.
+- ZH: RCU module can be different.
+- EN: Therefore, a mechanism that ensures
+- ZH: Therefore, a mechanism that ensures
+- EN: · max S (4)
+- ZH: · max S (4)
+- EN: D , , the consistency of ISB memory content needs to be devised.
+- ZH: D , , the consistency of ISB memory content needs to be devised.
+- EN: This i j k
+- ZH: This i j k
+- EN: ∈ i layers
+- ZH: ∈ i layers
+- EN: ≤ < 0 j IF M _ W id t h is the purpose of the Stick Valid memory module.
+- ZH: ≤ < 0 j IF M _ W id t h is the purpose of the Stick Valid memory module.
+- EN: SV memory is
+- ZH: SV memory is
+- EN: i ≤ <
+- ZH: i ≤ <
+- EN: 0 k IF M _ Heigh t i
+- ZH: 0 k IF M _ Heigh t i
+
+
+---
+
+### Page 16
+
+- EN: 16 R.
+- ZH: 16 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: · · IFM_Width Kernel_Height 1 bits large.
+- ZH: · · IFM_Width Kernel_Height 1 bits large.
+- EN: For each IFM stick from ISB Table 1
+- ZH: For each IFM stick from ISB Table 1
+- EN: Characteristics of the CNNs used in comparison experiments.
+- ZH: Characteristics of the CNNs used in comparison experiments.
+- EN: memory there is a corresponding bit in the SV memory, indicat-
+- ZH: memory there is a corresponding bit in the SV memory, indicat-
+- EN: ing is that particular IFM stick valid or not.
+- ZH: ing is that particular IFM stick valid or not.
+- EN: Each time WC module No.
+- ZH: Each time WC module No.
+- EN: of Layers (Conv, Pool,
+- ZH: of Layers (Conv, Pool,
+- EN: wants to write a new IFM stick into selected location inside the ISB CNN Architecture Add, Fully-Conn) No.
+- ZH: wants to write a new IFM stick into selected location inside the ISB CNN Architecture Add, Fully-Conn) No.
+- EN: of Parameters
+- ZH: of Parameters
+- EN: memory it ﬁrst checks is the corresponding bit from the SV mem- [Millions] No.
+- ZH: memory it ﬁrst checks is the corresponding bit from the SV mem- [Millions] No.
+- EN: of Operations
+- ZH: of Operations
+- EN: ory cleared, which indicates that all convolutions which use IFM [GOps]
+- ZH: ory cleared, which indicates that all convolutions which use IFM [GOps]
+- EN: AlexNet [3] (16, 5, 0, 3) 60.
+- ZH: AlexNet [3] (16, 5, 0, 3) 60.
+- EN: 93 1.
+- ZH: 93 1.
+- EN: 45 stick currently stored at the selected location inside ISB memory
+- ZH: 45 stick currently stored at the selected location inside ISB memory
+- EN: VGG-16 [10] (16, 5, 0, 3) 138.
+- ZH: VGG-16 [10] (16, 5, 0, 3) 138.
+- EN: 35 30.
+- ZH: 35 30.
+- EN: 95
+- ZH: 95
+- EN: have been computed, and it can be replaced with a new IFM stick.
+- ZH: have been computed, and it can be replaced with a new IFM stick.
+- EN: VGG-19 [10] (19, 5, 0, 3) 143.
+- ZH: VGG-19 [10] (19, 5, 0, 3) 143.
+- EN: 66 39.
+- ZH: 66 39.
+- EN: 28
+- ZH: 28
+- EN: If this is the case, WC writes a new IFM stick in the selected lo-
+- ZH: If this is the case, WC writes a new IFM stick in the selected lo-
+- EN: GoogleNet [52] (21, 5, 0, 1) 6.
+- ZH: GoogleNet [52] (21, 5, 0, 1) 6.
+- EN: 97 3.
+- ZH: 97 3.
+- EN: 16
+- ZH: 16
+- EN: cation inside ISB memory and sets the corresponding bit inside SV ResNet-18 [53] (17, 2, 8, 1) 11.
+- ZH: cation inside ISB memory and sets the corresponding bit inside SV ResNet-18 [53] (17, 2, 8, 1) 11.
+- EN: 51 3.
+- ZH: 51 3.
+- EN: 59
+- ZH: 59
+- EN: memory.
+- ZH: memory.
+- EN: Otherwise, the WC module needs to wait until the corre- ResNet-50 [53] (49, 2, 16, 1) 25.
+- ZH: Otherwise, the WC module needs to wait until the corre- ResNet-50 [53] (49, 2, 16, 1) 25.
+- EN: 50 7.
+- ZH: 50 7.
+- EN: 72
+- ZH: 72
+- EN: sponding SV memory bit is cleared.
+- ZH: sponding SV memory bit is cleared.
+- EN: When the RC module wants to
+- ZH: When the RC module wants to
+- EN: read IFM stick from ISB memory it ﬁrst checks is the IFM stick at
+- ZH: read IFM stick from ISB memory it ﬁrst checks is the IFM stick at
+- EN: celerator, originally developed by a startup company Deephi [30] ,
+- ZH: celerator, originally developed by a startup company Deephi [30] ,
+- EN: selected ISB memory location valid or not, by checking the corre-
+- ZH: selected ISB memory location valid or not, by checking the corre-
+- EN: now is the part of the IP portfolio of the largest FPGA manufacturer
+- ZH: now is the part of the IP portfolio of the largest FPGA manufacturer
+- EN: sponding bit from the SV memory.
+- ZH: sponding bit from the SV memory.
+- EN: If the bit is set, this means that
+- ZH: If the bit is set, this means that
+- EN: Xilinx, who recently bought DeePhi.
+- ZH: Xilinx, who recently bought DeePhi.
+- EN: Finally, NVLDA [51] is one
+- ZH: Finally, NVLDA [51] is one
+- EN: the IFM stick is valid and RC can transfer it to the RCU module,
+- ZH: the IFM stick is valid and RC can transfer it to the RCU module,
+- EN: of the ﬁrst open-source based CNN accelerators coming from the
+- ZH: of the ﬁrst open-source based CNN accelerators coming from the
+- EN: otherwise the RC module has to wait until the WC module certi-
+- ZH: otherwise the RC module has to wait until the WC module certi-
+- EN: industrial sector, developed by NVIDIA, the current leader in the
+- ZH: industrial sector, developed by NVIDIA, the current leader in the
+- EN: ﬁes that the IFM stick data is valid.
+- ZH: ﬁes that the IFM stick data is valid.
+- EN: deep learning acceleration ﬁeld.
+- ZH: deep learning acceleration ﬁeld.
+- EN: The performance of the CoNNA
+- ZH: The performance of the CoNNA
+- EN: The operation of ISB memory is shown in the Fig.
+- ZH: The operation of ISB memory is shown in the Fig.
+- EN: 11 , which
+- ZH: 11 , which
+- EN: CNN accelerator was compared with seven previously proposed
+- ZH: CNN accelerator was compared with seven previously proposed
+- EN: × shows a snapshot of the input feature map, 6 6 IFM sticks in
+- ZH: × shows a snapshot of the input feature map, 6 6 IFM sticks in
+- EN: CNN accelerators using six well-known CNN networks, AlexNet [3] ,
+- ZH: CNN accelerators using six well-known CNN networks, AlexNet [3] ,
+- EN: size.
+- ZH: size.
+- EN: Please notice that there is a third dimension to the IFM since
+- ZH: Please notice that there is a third dimension to the IFM since
+- EN: VGG-16, VGG-19 [10] , GoogleNet [52] , ResNet-18 and ResNet-50
+- ZH: VGG-16, VGG-19 [10] , GoogleNet [52] , ResNet-18 and ResNet-50
+- EN: its depth is always bigger than one, but for clarity, it was omitted.
+- ZH: its depth is always bigger than one, but for clarity, it was omitted.
+- EN: [53].
+- ZH: [53].
+- EN: Relevant data for each CNN network used in experiments are
+- ZH: Relevant data for each CNN network used in experiments are
+- EN: × If we assume that this IFM is being processed by a 3 3 kernel
+- ZH: × If we assume that this IFM is being processed by a 3 3 kernel
+- EN: presented in Table 1 .
+- ZH: presented in Table 1 .
+- EN: with horizontal and vertical strides of 1, then each IFM stick will
+- ZH: with horizontal and vertical strides of 1, then each IFM stick will
+- EN: Conﬁgurations of all reference CNN accelerators that were used
+- ZH: Conﬁgurations of all reference CNN accelerators that were used
+- EN: be used in the process of calculating of up to nine different convo-
+- ZH: be used in the process of calculating of up to nine different convo-
+- EN: in performance comparison experiments are presented in Table 2 .
+- ZH: in performance comparison experiments are presented in Table 2 .
+- EN: lutions, as shown in the Fig.
+- ZH: lutions, as shown in the Fig.
+- EN: 11 for stick number 15.
+- ZH: 11 for stick number 15.
+- EN: Without the
+- ZH: Without the
+- EN: Conﬁgurations of Eyeriss, NullHop, NEURAghe, CNN_A1, fpgaCon-
+- ZH: Conﬁgurations of Eyeriss, NullHop, NEURAghe, CNN_A1, fpgaCon-
+- EN: ISB module, each IFM stick would have to be loaded from DRAM
+- ZH: ISB module, each IFM stick would have to be loaded from DRAM
+- EN: vNet, and Aristotle CNN accelerators are the ones that were used
+- ZH: vNet, and Aristotle CNN accelerators are the ones that were used
+- EN: memory up to nine times, but by using ISB memory it is only nec-
+- ZH: memory up to nine times, but by using ISB memory it is only nec-
+- EN: in original papers [19,23,25,29,30,32] , in order to enable easy com-
+- ZH: in original papers [19,23,25,29,30,32] , in order to enable easy com-
+- EN: essary to load each IFM stick exactly once from external DRAM.
+- ZH: essary to load each IFM stick exactly once from external DRAM.
+- EN: parison.
+- ZH: parison.
+- EN: As for the NVDLA [51] , it comes with an Excel sheet esti-
+- ZH: As for the NVDLA [51] , it comes with an Excel sheet esti-
+- EN: This means that for the example shown in the Fig.
+- ZH: This means that for the example shown in the Fig.
+- EN: 11 , it is pos-
+- ZH: 11 , it is pos-
+- EN: mator, which allows specifying different conﬁguration options.
+- ZH: mator, which allows specifying different conﬁguration options.
+- EN: We
+- ZH: We
+- EN: sible to reduce DRAM memory traﬃc when transferring IFM data,
+- ZH: sible to reduce DRAM memory traﬃc when transferring IFM data,
+- EN: have used the one presented in Table 2 since the CoNNA accel-
+- ZH: have used the one presented in Table 2 since the CoNNA accel-
+- EN: up to nine times.
+- ZH: up to nine times.
+- EN: Fig.
+- ZH: Fig.
+- EN: 11 also shows the concept of replacing al-
+- ZH: 11 also shows the concept of replacing al-
+- EN: erator is mainly intended for usage in low-cost, edge-computing
+- ZH: erator is mainly intended for usage in low-cost, edge-computing
+- EN: ready used IFM sticks within the ISB module with the new ones.
+- ZH: ready used IFM sticks within the ISB module with the new ones.
+- EN: devices with limited computing resources.
+- ZH: devices with limited computing resources.
+- EN: The new IFM stick that is written in the ISB memory by the WC
+- ZH: The new IFM stick that is written in the ISB memory by the WC
+- EN: module is shown in dark gray color in the Fig.
+- ZH: module is shown in dark gray color in the Fig.
+- EN: 11 .
+- ZH: 11 .
+- EN: 4.
+- ZH: 4.
+- EN: 1.
+- ZH: 1.
+- EN: Generating CoNNA CNN architecture instances needed for
+- ZH: Generating CoNNA CNN architecture instances needed for
+- EN: OSM module is used to collect output data from the RCU mod-
+- ZH: OSM module is used to collect output data from the RCU mod-
+- EN: comparison with previous work
+- ZH: comparison with previous work
+- EN: ule, pack it into appropriate blocks in the form of output feature
+- ZH: ule, pack it into appropriate blocks in the form of output feature
+- EN: map sticks, in order to maximize the data throughput between the
+- ZH: map sticks, in order to maximize the data throughput between the
+- EN: The CoNNA CNN accelerator was modeled as a standard soft-
+- ZH: The CoNNA CNN accelerator was modeled as a standard soft-
+- EN: accelerator and the external DRAM memory, and compress these
+- ZH: accelerator and the external DRAM memory, and compress these
+- EN: IP core, using SystemVerilog hardware description language, with
+- ZH: IP core, using SystemVerilog hardware description language, with
+- EN: OFM sticks on-the-ﬂy.
+- ZH: OFM sticks on-the-ﬂy.
+- EN: ZRL encoder module is used to compress se-
+- ZH: ZRL encoder module is used to compress se-
+- EN: many conﬁguration parameters, allowing easy generation of differ-
+- ZH: many conﬁguration parameters, allowing easy generation of differ-
+- EN: quences of zeros within the OFM sticks, which will contain a sig-
+- ZH: quences of zeros within the OFM sticks, which will contain a sig-
+- EN: ent CoNNA instances with the same underlying architecture.
+- ZH: ent CoNNA instances with the same underlying architecture.
+- EN: In or-
+- ZH: In or-
+- EN: niﬁcant number of zero values if the ReLU activation function is
+- ZH: niﬁcant number of zero values if the ReLU activation function is
+- EN: der to create a complete CNN acceleration system based on the
+- ZH: der to create a complete CNN acceleration system based on the
+- EN: being used.
+- ZH: being used.
+- EN: Compressed OFM sticks, containing only non-zero val-
+- ZH: Compressed OFM sticks, containing only non-zero val-
+- EN: CoNNA accelerator following four steps, shown in Fig.
+- ZH: CoNNA accelerator following four steps, shown in Fig.
+- EN: 12 , need to
+- ZH: 12 , need to
+- EN: ued OFM points and their locations within original, uncompressed
+- ZH: ued OFM points and their locations within original, uncompressed
+- EN: be performed:
+- ZH: be performed:
+- EN: OFM data, are then written into either external DRAM memory or
+- ZH: OFM data, are then written into either external DRAM memory or
+- EN: internal on-chip cache memory, as shown in the Fig.
+- ZH: internal on-chip cache memory, as shown in the Fig.
+- EN: 3 .
+- ZH: 3 .
+- EN: For more 1.
+- ZH: For more 1.
+- EN: Training and pruning selected CNN network – for this task, any
+- ZH: Training and pruning selected CNN network – for this task, any
+- EN: details about the encoding algorithm that is used to compress OFM ﬁne-grained pruning algorithm can be used, and also any avail-
+- ZH: details about the encoding algorithm that is used to compress OFM ﬁne-grained pruning algorithm can be used, and also any avail-
+- EN: data, please refer to Horowitz [46] .
+- ZH: data, please refer to Horowitz [46] .
+- EN: able deep learning framework, like Caffe, TensorFlow, Keras, and
+- ZH: able deep learning framework, like Caffe, TensorFlow, Keras, and
+- EN: Matlab, can be used to train and prune selected CNN network.
+- ZH: Matlab, can be used to train and prune selected CNN network.
+- EN: 4.
+- ZH: 4.
+- EN: Experiments We have implemented the ﬁne-grained pruning algorithm de-
+- ZH: Experiments We have implemented the ﬁne-grained pruning algorithm de-
+- EN: scribed in Section 2 within Keras deep learning framework, and
+- ZH: scribed in Section 2 within Keras deep learning framework, and
+- EN: The performance of the CoNNA architecture was compared with used Keras for training and pruning CNN networks presented in
+- ZH: The performance of the CoNNA architecture was compared with used Keras for training and pruning CNN networks presented in
+- EN: the following seven previously proposed CNN hardware accelera- Table 1 .
+- ZH: the following seven previously proposed CNN hardware accelera- Table 1 .
+- EN: tors.
+- ZH: tors.
+- EN: MIT’s Eyeriss [19] is an ASIC CNN hardware accelerator and 2.
+- ZH: MIT’s Eyeriss [19] is an ASIC CNN hardware accelerator and 2.
+- EN: Selecting optimal ﬁxed-point number representation and gener-
+- ZH: Selecting optimal ﬁxed-point number representation and gener-
+- EN: it was chosen because it is de-facto a standard reference for com- ating a description of pruned CNN in a format recognizable by
+- ZH: it was chosen because it is de-facto a standard reference for com- ating a description of pruned CNN in a format recognizable by
+- EN: parison, used in many CNN hardware accelerator papers.
+- ZH: parison, used in many CNN hardware accelerator papers.
+- EN: NullHop the CoNNA CNN accelerator – pruned and retrained ﬂoating-
+- ZH: NullHop the CoNNA CNN accelerator – pruned and retrained ﬂoating-
+- EN: [32] is an FPGA-based CNN accelerator using the “IFM zero skip- point CNN model needs to be converted into a 16-bit ﬁxed-
+- ZH: [32] is an FPGA-based CNN accelerator using the “IFM zero skip- point CNN model needs to be converted into a 16-bit ﬁxed-
+- EN: ping” technique.
+- ZH: ping” technique.
+- EN: NEURAghe [23] is a closely coupled CNN hard- point model because CoNNA uses ﬁxed-point arithmetic blocks
+- ZH: NEURAghe [23] is a closely coupled CNN hard- point model because CoNNA uses ﬁxed-point arithmetic blocks
+- EN: ware accelerator with ARM processor employing a cooperative het- for implementing all arithmetic operations required to process
+- ZH: ware accelerator with ARM processor employing a cooperative het- for implementing all arithmetic operations required to process
+- EN: erogeneous computing approach to CNN acceleration, intended to CNN network.
+- ZH: erogeneous computing approach to CNN acceleration, intended to CNN network.
+- EN: After this conversion, the model which is still
+- ZH: After this conversion, the model which is still
+- EN: be used with ARM-based FPGA families, like Xilinx Zynq or Zyn- represented in a format that depends on selected deep learning
+- ZH: be used with ARM-based FPGA families, like Xilinx Zynq or Zyn- represented in a format that depends on selected deep learning
+- EN: qUltrascale families.
+- ZH: qUltrascale families.
+- EN: CNN_A1 [29] is a reconﬁgurable CNN acceler- framework needs to be converted into a CNN structural descrip-
+- ZH: CNN_A1 [29] is a reconﬁgurable CNN acceler- framework needs to be converted into a CNN structural descrip-
+- EN: ator based on using CNN-speciﬁc Instruction Set Architecture, and tion linked list, presented in Section 3.
+- ZH: ator based on using CNN-speciﬁc Instruction Set Architecture, and tion linked list, presented in Section 3.
+- EN: 1 , in order to be “un-
+- ZH: 1 , in order to be “un-
+- EN: embedding parallel computation and data reuse parameters in the derstandable” by the CoNNA CNN accelerator.
+- ZH: embedding parallel computation and data reuse parameters in the derstandable” by the CoNNA CNN accelerator.
+- EN: This CNN struc-
+- ZH: This CNN struc-
+- EN: instructions.
+- ZH: instructions.
+- EN: fpgaConvNet CNN accelerator [25] is the accelerator tural description linked list will actually be generated in a bi-
+- ZH: fpgaConvNet CNN accelerator [25] is the accelerator tural description linked list will actually be generated in a bi-
+- EN: created using HLS techniques targeting FPGA devices.
+- ZH: created using HLS techniques targeting FPGA devices.
+- EN: Aristotle ac- nary format, which can be downloaded into operating memory
+- ZH: Aristotle ac- nary format, which can be downloaded into operating memory
+
+
+---
+
+### Page 17
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 17
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 17
+- EN: Table 2
+- ZH: Table 2
+- EN: Important Characteristics of reference CNN accelerators used for comparison.
+- ZH: Important Characteristics of reference CNN accelerators used for comparison.
+- EN: Accelerator/Parameter Supported CNN Layers Number of MAC Units Operating Frequency Arithmetic Precision
+- ZH: Accelerator/Parameter Supported CNN Layers Number of MAC Units Operating Frequency Arithmetic Precision
+- EN: Eyeriss [19] Conv only 168 200 MHz 16-bit
+- ZH: Eyeriss [19] Conv only 168 200 MHz 16-bit
+- EN: NullHop [32] Conv, Pooling, Fully-Connected 128 60 MHz 16-bit
+- ZH: NullHop [32] Conv, Pooling, Fully-Connected 128 60 MHz 16-bit
+- EN: NVDLA [51] All 32 100 MHz 16-bit
+- ZH: NVDLA [51] All 32 100 MHz 16-bit
+- EN: NEURAghe [23] All 864 140 MHz 16-bit
+- ZH: NEURAghe [23] All 864 140 MHz 16-bit
+- EN: CNN_A1 [29] Conv, Pooling, Fully-Connected 216 150 MHz 16-bit
+- ZH: CNN_A1 [29] Conv, Pooling, Fully-Connected 216 150 MHz 16-bit
+- EN: fpgaConvNet [25] Conv, Pooling, Fully-Connected 164, 198 125 MHz 16-bit
+- ZH: fpgaConvNet [25] Conv, Pooling, Fully-Connected 164, 198 125 MHz 16-bit
+- EN: Aristotle [30] Conv, Pooling, Fully-Connected 198 214 MHz 8-bit
+- ZH: Aristotle [30] Conv, Pooling, Fully-Connected 198 214 MHz 8-bit
+
+![](/workspace/CoNNa-17_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 12.
+- ZH: 12.
+- EN: Development ﬂow for the CNN acceleration using the CoNNA CNN accelerator.
+- ZH: Development ﬂow for the CNN acceleration using the CoNNA CNN accelerator.
+- EN: and processed by the CoNNA CNN accelerator.
+- ZH: and processed by the CoNNA CNN accelerator.
+- EN: We have devel- Fig.
+- ZH: We have devel- Fig.
+- EN: 12 .
+- ZH: 12 .
+- EN: Vivado Design Suite 2018.
+- ZH: Vivado Design Suite 2018.
+- EN: 1 has been used to perform
+- ZH: 1 has been used to perform
+- EN: oped Python-based translator software that takes pruned CNN synthesis and implementation of the complete CNN acceleration
+- ZH: oped Python-based translator software that takes pruned CNN synthesis and implementation of the complete CNN acceleration
+- EN: Keras model, performs ﬂoating-point to ﬁxed-point conversion, system, with default Vivado synthesis and implementation set-
+- ZH: Keras model, performs ﬂoating-point to ﬁxed-point conversion, system, with default Vivado synthesis and implementation set-
+- EN: determines the optimal 16-bit number format for representing tings.
+- ZH: determines the optimal 16-bit number format for representing tings.
+- EN: Implementation results for six different conﬁgurations of the
+- ZH: Implementation results for six different conﬁgurations of the
+- EN: all CNN related data and creates a binary version of CNN struc- CoNNA accelerator that have been used in the experiments are
+- ZH: all CNN related data and creates a binary version of CNN struc- CoNNA accelerator that have been used in the experiments are
+- EN: tural description linked list.
+- ZH: tural description linked list.
+- EN: shown in Table 3 .
+- ZH: shown in Table 3 .
+- EN: 3.
+- ZH: 3.
+- EN: Integrating conﬁgured instance of the CoNNA accelerator IP From Table 3 it can be seen that all conﬁgurations have been
+- ZH: Integrating conﬁgured instance of the CoNNA accelerator IP From Table 3 it can be seen that all conﬁgurations have been
+- EN: core using Vivado IP Integrator and modifying software appli- successfully implemented using a Xilinx ZU9 MPSoC device.
+- ZH: core using Vivado IP Integrator and modifying software appli- successfully implemented using a Xilinx ZU9 MPSoC device.
+- EN: Please
+- ZH: Please
+- EN: cation using Xilinx SDK – this step generates a complete CNN notice that the number of used DSP blocks for all conﬁgura-
+- ZH: cation using Xilinx SDK – this step generates a complete CNN notice that the number of used DSP blocks for all conﬁgura-
+- EN: acceleration system using some of Xilinx PSoC or MPSoC fam- tions is larger than the number of MAC units used by the refer-
+- ZH: acceleration system using some of Xilinx PSoC or MPSoC fam- tions is larger than the number of MAC units used by the refer-
+- EN: ily devices.
+- ZH: ily devices.
+- EN: Within this system speciﬁed conﬁguration of the ence CNN hardware accelerators respectively, presented in Table 2 .
+- ZH: Within this system speciﬁed conﬁguration of the ence CNN hardware accelerators respectively, presented in Table 2 .
+- EN: CoNNA CNN accelerator, with a user-deﬁned number of PBs, The reason for this is the fact that CoNNA uses additional DSP
+- ZH: CoNNA CNN accelerator, with a user-deﬁned number of PBs, The reason for this is the fact that CoNNA uses additional DSP
+- EN: will be integrated.
+- ZH: will be integrated.
+- EN: blocks inside the ISM module, but these additional DSP blocks
+- ZH: blocks inside the ISM module, but these additional DSP blocks
+- EN: 4.
+- ZH: 4.
+- EN: Programing FPGA, downloading CNN structural description bi- are not used to perform computations deﬁned by the target CNN.
+- ZH: Programing FPGA, downloading CNN structural description bi- are not used to perform computations deﬁned by the target CNN.
+- EN: nary ﬁle into operating memory, initializing and starting the All six implementations of CoNNA architecture have been tested
+- ZH: nary ﬁle into operating memory, initializing and starting the All six implementations of CoNNA architecture have been tested
+- EN: CoNNA CNN accelerator and measuring achievable CNN pro- and benchmarked on six selected CNN architectures (AlexNet,
+- ZH: CoNNA CNN accelerator and measuring achievable CNN pro- and benchmarked on six selected CNN architectures (AlexNet,
+- EN: cessing performance.
+- ZH: cessing performance.
+- EN: VGG16, VGG19, GoogleNet, ResNet-18, and ResNet-50) using Xil-
+- ZH: VGG16, VGG19, GoogleNet, ResNet-18, and ResNet-50) using Xil-
+- EN: inx ZCU102 development board.
+- ZH: inx ZCU102 development board.
+- EN: Based on these experiments per-
+- ZH: Based on these experiments per-
+- EN: In order to perform comparison experiments, the CoNNA CNN
+- ZH: In order to perform comparison experiments, the CoNNA CNN
+- EN: formance results have been extracted and compared with seven
+- ZH: formance results have been extracted and compared with seven
+- EN: accelerator has been conﬁgured in six different conﬁgurations,
+- ZH: accelerator has been conﬁgured in six different conﬁgurations,
+- EN: reference CNN accelerator architectures (Eyeriss, NullHop, NVDLA,
+- ZH: reference CNN accelerator architectures (Eyeriss, NullHop, NVDLA,
+- EN: speciﬁed in Table 3 .
+- ZH: speciﬁed in Table 3 .
+- EN: The idea was to use CoNNA conﬁgurations
+- ZH: The idea was to use CoNNA conﬁgurations
+- EN: NEURAghe, CNN_A1, fpgaConvNet, and Aristotle).
+- ZH: NEURAghe, CNN_A1, fpgaConvNet, and Aristotle).
+- EN: that are as close as possible to the conﬁgurations of the reference
+- ZH: that are as close as possible to the conﬁgurations of the reference
+- EN: accelerators from Table 2 , in terms of the number of computing
+- ZH: accelerators from Table 2 , in terms of the number of computing
+- EN: elements (MAC units), operating frequency and number represen- 4.
+- ZH: elements (MAC units), operating frequency and number represen- 4.
+- EN: 2.
+- ZH: 2.
+- EN: Performance comparison results
+- ZH: Performance comparison results
+- EN: tation, to enable as fair as possible performance comparison.
+- ZH: tation, to enable as fair as possible performance comparison.
+- EN: All six instances of the CoNNA architecture have been imple- The results of performance comparison experiments are pre-
+- ZH: All six instances of the CoNNA architecture have been imple- The results of performance comparison experiments are pre-
+- EN: mented targeting Xilinx ZU9 MPSoC device, using the ﬂow from sented in Table 4 .
+- ZH: mented targeting Xilinx ZU9 MPSoC device, using the ﬂow from sented in Table 4 .
+- EN: For each of the reference accelerators, perfor-
+- ZH: For each of the reference accelerators, perfor-
+- EN: Table 3
+- ZH: Table 3
+- EN: FPGA Resources required to implement CoNNA instances used in experiments.
+- ZH: FPGA Resources required to implement CoNNA instances used in experiments.
+- EN: Parameter/Conﬁguration CoNNA_C1 CoNNA_C2 CoNNA_C3 CoNNA_C4 CoNNA_C5 CoNNA_C6
+- ZH: Parameter/Conﬁguration CoNNA_C1 CoNNA_C2 CoNNA_C3 CoNNA_C4 CoNNA_C5 CoNNA_C6
+- EN: Number of Processing Blocks 168 128 32 256 216 198
+- ZH: Number of Processing Blocks 168 128 32 256 216 198
+- EN: Slice LUTs 142,470 112,550 35,042 267,424 244,464 225,132
+- ZH: Slice LUTs 142,470 112,550 35,042 267,424 244,464 225,132
+- EN: Number of BRAMs 364 284 86 596 516 480
+- ZH: Number of BRAMs 364 284 86 596 516 480
+- EN: Number of DSPs 177 137 41 277 237 219
+- ZH: Number of DSPs 177 137 41 277 237 219
+- EN: Operating Frequency 200 MHz 60 MHz 100 MHz 140 MHz 150 MHz 214 MHz
+- ZH: Operating Frequency 200 MHz 60 MHz 100 MHz 140 MHz 150 MHz 214 MHz
+
+
+---
+
+### Page 18
+
+- EN: 18 R.
+- ZH: 18 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: Table 4
+- ZH: Table 4
+- EN: Performance comparison with reference CNN accelerators.
+- ZH: Performance comparison with reference CNN accelerators.
+- EN: Architecture CNN Architecture Latency [ms/frame] Frame Rate [frames/sec] Performance [GOp/sec] Effective eﬃciency [%]
+- ZH: Architecture CNN Architecture Latency [ms/frame] Frame Rate [frames/sec] Performance [GOp/sec] Effective eﬃciency [%]
+- EN: (a) Eyeriss AlexNet 115.
+- ZH: (a) Eyeriss AlexNet 115.
+- EN: 3 34.
+- ZH: 3 34.
+- EN: 69 46.
+- ZH: 69 46.
+- EN: 14 68.
+- ZH: 14 68.
+- EN: 66%
+- ZH: 66%
+- EN: VGG-16 4309.
+- ZH: VGG-16 4309.
+- EN: 5 0.
+- ZH: 5 0.
+- EN: 69 21.
+- ZH: 69 21.
+- EN: 36 31.
+- ZH: 36 31.
+- EN: 79%
+- ZH: 79%
+- EN: (a) CoNNA_C1 AlexNet 14.
+- ZH: (a) CoNNA_C1 AlexNet 14.
+- EN: 20 70.
+- ZH: 20 70.
+- EN: 40 93.
+- ZH: 40 93.
+- EN: 74 139.
+- ZH: 74 139.
+- EN: 50%
+- ZH: 50%
+- EN: VGG-16 102.
+- ZH: VGG-16 102.
+- EN: 77 9.
+- ZH: 77 9.
+- EN: 73 301.
+- ZH: 73 301.
+- EN: 17 448.
+- ZH: 17 448.
+- EN: 17%
+- ZH: 17%
+- EN: NullHop VGG-16 2269.
+- ZH: NullHop VGG-16 2269.
+- EN: 00 0.
+- ZH: 00 0.
+- EN: 44 13.
+- ZH: 44 13.
+- EN: 62 88.
+- ZH: 62 88.
+- EN: 67%
+- ZH: 67%
+- EN: VGG-19 2439.
+- ZH: VGG-19 2439.
+- EN: 00 0.
+- ZH: 00 0.
+- EN: 41 16.
+- ZH: 41 16.
+- EN: 10 104.
+- ZH: 10 104.
+- EN: 82%
+- ZH: 82%
+- EN: CoNNA_C2 VGG-16 375.
+- ZH: CoNNA_C2 VGG-16 375.
+- EN: 94 2.
+- ZH: 94 2.
+- EN: 66 82.
+- ZH: 66 82.
+- EN: 33 536.
+- ZH: 33 536.
+- EN: 03%
+- ZH: 03%
+- EN: VGG-19 436.
+- ZH: VGG-19 436.
+- EN: 68 2.
+- ZH: 68 2.
+- EN: 29 89.
+- ZH: 29 89.
+- EN: 94 585.
+- ZH: 94 585.
+- EN: 56%
+- ZH: 56%
+- EN: NVDLA AlexNet 263.
+- ZH: NVDLA AlexNet 263.
+- EN: 01 3.
+- ZH: 01 3.
+- EN: 80 5.
+- ZH: 80 5.
+- EN: 51 86.
+- ZH: 51 86.
+- EN: 09%
+- ZH: 09%
+- EN: GoogleNet 384.
+- ZH: GoogleNet 384.
+- EN: 76 2.
+- ZH: 76 2.
+- EN: 60 8.
+- ZH: 60 8.
+- EN: 21 128.
+- ZH: 21 128.
+- EN: 28%
+- ZH: 28%
+- EN: ResNet-50 1843.
+- ZH: ResNet-50 1843.
+- EN: 51 0.
+- ZH: 51 0.
+- EN: 54 4.
+- ZH: 54 4.
+- EN: 17 65.
+- ZH: 17 65.
+- EN: 16%
+- ZH: 16%
+- EN: CoNNA_C3 AlexNet 96.
+- ZH: CoNNA_C3 AlexNet 96.
+- EN: 90 10.
+- ZH: 90 10.
+- EN: 32 14.
+- ZH: 32 14.
+- EN: 97 233.
+- ZH: 97 233.
+- EN: 91%
+- ZH: 91%
+- EN: GoogleNet 202.
+- ZH: GoogleNet 202.
+- EN: 02 4.
+- ZH: 02 4.
+- EN: 95 15.
+- ZH: 95 15.
+- EN: 63 244.
+- ZH: 63 244.
+- EN: 18%
+- ZH: 18%
+- EN: ResNet-50 431.
+- ZH: ResNet-50 431.
+- EN: 03 2.
+- ZH: 03 2.
+- EN: 32 17.
+- ZH: 32 17.
+- EN: 91 279.
+- ZH: 91 279.
+- EN: 84%
+- ZH: 84%
+- EN: NEURAghe VGG-16 236.
+- ZH: NEURAghe VGG-16 236.
+- EN: 61 5.
+- ZH: 61 5.
+- EN: 52 170.
+- ZH: 52 170.
+- EN: 86 238.
+- ZH: 86 238.
+- EN: 36%
+- ZH: 36%
+- EN: ResNet-18 - 6.
+- ZH: ResNet-18 - 6.
+- EN: 67 23.
+- ZH: 67 23.
+- EN: 97 33.
+- ZH: 97 33.
+- EN: 44%
+- ZH: 44%
+- EN: CoNNA_C4 VGG-16 127.
+- ZH: CoNNA_C4 VGG-16 127.
+- EN: 71 7.
+- ZH: 71 7.
+- EN: 83 242.
+- ZH: 83 242.
+- EN: 36 338.
+- ZH: 36 338.
+- EN: 11%
+- ZH: 11%
+- EN: ResNet-18 56.
+- ZH: ResNet-18 56.
+- EN: 05 17.
+- ZH: 05 17.
+- EN: 84 64.
+- ZH: 84 64.
+- EN: 10 89.
+- ZH: 10 89.
+- EN: 42%
+- ZH: 42%
+- EN: CNN_A1 AlexNet 144.
+- ZH: CNN_A1 AlexNet 144.
+- EN: 93 6.
+- ZH: 93 6.
+- EN: 90 10.
+- ZH: 90 10.
+- EN: 01 15.
+- ZH: 01 15.
+- EN: 45%
+- ZH: 45%
+- EN: VGG-16 1639.
+- ZH: VGG-16 1639.
+- EN: 34 0.
+- ZH: 34 0.
+- EN: 61 18.
+- ZH: 61 18.
+- EN: 88 29.
+- ZH: 88 29.
+- EN: 13%
+- ZH: 13%
+- EN: CoNNA_C5 AlexNet 21.
+- ZH: CoNNA_C5 AlexNet 21.
+- EN: 12 47.
+- ZH: 12 47.
+- EN: 35 68.
+- ZH: 35 68.
+- EN: 71 106.
+- ZH: 71 106.
+- EN: 03%
+- ZH: 03%
+- EN: VGG-16 145.
+- ZH: VGG-16 145.
+- EN: 14 6.
+- ZH: 14 6.
+- EN: 89 213.
+- ZH: 89 213.
+- EN: 26 329.
+- ZH: 26 329.
+- EN: 10%
+- ZH: 10%
+- EN: fpgaConvNet AlexNet 52.
+- ZH: fpgaConvNet AlexNet 52.
+- EN: 40 19.
+- ZH: 40 19.
+- EN: 08 27.
+- ZH: 08 27.
+- EN: 68 65.
+- ZH: 68 65.
+- EN: 90%
+- ZH: 90%
+- EN: VGG-16 633.
+- ZH: VGG-16 633.
+- EN: 00 1.
+- ZH: 00 1.
+- EN: 58 55.
+- ZH: 58 55.
+- EN: 71 132.
+- ZH: 71 132.
+- EN: 64%
+- ZH: 64%
+- EN: CoNNA_C1@125MHz AlexNet 26.
+- ZH: CoNNA_C1@125MHz AlexNet 26.
+- EN: 00 38.
+- ZH: 00 38.
+- EN: 46 55.
+- ZH: 46 55.
+- EN: 81 132.
+- ZH: 81 132.
+- EN: 88%
+- ZH: 88%
+- EN: VGG-16 180.
+- ZH: VGG-16 180.
+- EN: 50 5.
+- ZH: 50 5.
+- EN: 54 171.
+- ZH: 54 171.
+- EN: 48 408.
+- ZH: 48 408.
+- EN: 28%
+- ZH: 28%
+- EN: Aristotle VGG-16 364.
+- ZH: Aristotle VGG-16 364.
+- EN: 96 2.
+- ZH: 96 2.
+- EN: 74 84.
+- ZH: 74 84.
+- EN: 81 100.
+- ZH: 81 100.
+- EN: 08%
+- ZH: 08%
+- EN: CoNNA_C6 VGG-16 101.
+- ZH: CoNNA_C6 VGG-16 101.
+- EN: 83 9.
+- ZH: 83 9.
+- EN: 82 303.
+- ZH: 82 303.
+- EN: 96 358.
+- ZH: 96 358.
+- EN: 68%
+- ZH: 68%
+- EN: a Accelerating only convolutional layers.
+- ZH: a Accelerating only convolutional layers.
+- EN: mance data in terms of input instance processing latency, frame achievable frame rate and effective eﬃciency.
+- ZH: mance data in terms of input instance processing latency, frame achievable frame rate and effective eﬃciency.
+- EN: When compared
+- ZH: When compared
+- EN: rate, average compute power and eﬃciency are presented.
+- ZH: rate, average compute power and eﬃciency are presented.
+- EN: The per- with MIT’s Eyeriss CNN accelerator, it can be seen that the CoNNA
+- ZH: The per- with MIT’s Eyeriss CNN accelerator, it can be seen that the CoNNA
+- EN: formance of each of the reference accelerators is followed by a architecture achieves higher frame rates and higher eﬃciency for
+- ZH: formance of each of the reference accelerators is followed by a architecture achieves higher frame rates and higher eﬃciency for
+- EN: performance of the appropriate CoNNA architecture conﬁguration, both CNN networks used.
+- ZH: performance of the appropriate CoNNA architecture conﬁguration, both CNN networks used.
+- EN: In the case of AlexNet CNN acceleration,
+- ZH: In the case of AlexNet CNN acceleration,
+- EN: speciﬁed in Table 3 , which was conﬁgured in the identical or clos- CoNNA is capable of reaching a 2.
+- ZH: speciﬁed in Table 3 , which was conﬁgured in the identical or clos- CoNNA is capable of reaching a 2.
+- EN: 03 times higher frame rate than
+- ZH: 03 times higher frame rate than
+- EN: est possible conﬁguration as the reference accelerator, to allow a Eyeriss.
+- ZH: est possible conﬁguration as the reference accelerator, to allow a Eyeriss.
+- EN: In the case of VGG16 CNN acceleration, this improvement
+- ZH: In the case of VGG16 CNN acceleration, this improvement
+- EN: fair comparison.
+- ZH: fair comparison.
+- EN: Performance data for the reference CNN hardware is even greater, CoNNA is able to reach a 14.
+- ZH: Performance data for the reference CNN hardware is even greater, CoNNA is able to reach a 14.
+- EN: 10 times higher frame
+- ZH: 10 times higher frame
+- EN: accelerators were taken from papers that introduced these archi- rate than Eyeriss.
+- ZH: accelerators were taken from papers that introduced these archi- rate than Eyeriss.
+- EN: Also, it can be seen that CoNNA is able to achieve
+- ZH: Also, it can be seen that CoNNA is able to achieve
+- EN: tectures [19 , 23 , 25 , 29 , 30 , 32] .
+- ZH: tectures [19 , 23 , 25 , 29 , 30 , 32] .
+- EN: For the NVDLA accelerator supplied much higher effective eﬃciency, even above 100% due to the com-
+- ZH: For the NVDLA accelerator supplied much higher effective eﬃciency, even above 100% due to the com-
+- EN: Excel sheet estimator was used to generate achievable performance pressed data processing, than Eyeriss.
+- ZH: Excel sheet estimator was used to generate achievable performance pressed data processing, than Eyeriss.
+- EN: The main reason for this im-
+- ZH: The main reason for this im-
+- EN: data.
+- ZH: data.
+- EN: provement lies in the fact that the CoNNA architecture is able to
+- ZH: provement lies in the fact that the CoNNA architecture is able to
+- EN: In the case of Eyeriss CNN accelerator, performance data is take advantage of compressed kernel/weight and feature maps pro-
+- ZH: In the case of Eyeriss CNN accelerator, performance data is take advantage of compressed kernel/weight and feature maps pro-
+- EN: related to the processing of convolutional layers only, since Ey- cessing, due to using the “All zero-skipping” technique, and Eyeriss
+- ZH: related to the processing of convolutional layers only, since Ey- cessing, due to using the “All zero-skipping” technique, and Eyeriss
+- EN: eriss cannot accelerate pooling and fully-connected layers.
+- ZH: eriss cannot accelerate pooling and fully-connected layers.
+- EN: Also, is not.
+- ZH: Also, is not.
+- EN: input instance processing latency is reported only when Eyeriss When compared to NullHop, CoNNA is also able to achieve bet-
+- ZH: input instance processing latency is reported only when Eyeriss When compared to NullHop, CoNNA is also able to achieve bet-
+- EN: processes input images in batches, with batch sizes of 4 and 3, ter performance, but this time improvement is not as dramatic as
+- ZH: processes input images in batches, with batch sizes of 4 and 3, ter performance, but this time improvement is not as dramatic as
+- EN: for AlexNet and VGG16 CNNs respectively.
+- ZH: for AlexNet and VGG16 CNNs respectively.
+- EN: Performance data for in the case of the Eyeriss accelerator but is more consistent.
+- ZH: Performance data for in the case of the Eyeriss accelerator but is more consistent.
+- EN: CoNNA
+- ZH: CoNNA
+- EN: all other reference accelerators is related to processing complete achieves 6.
+- ZH: all other reference accelerators is related to processing complete achieves 6.
+- EN: 05 and 5.
+- ZH: 05 and 5.
+- EN: 58 times faster frame rates than NullHop when
+- ZH: 58 times faster frame rates than NullHop when
+- EN: CNNs, since all other architectures, as well as CoNNA, can process processing VGG16 and VGG19 CNNs respectively.
+- ZH: CNNs, since all other architectures, as well as CoNNA, can process processing VGG16 and VGG19 CNNs respectively.
+- EN: The main reason
+- ZH: The main reason
+- EN: all layers from a CNN.
+- ZH: all layers from a CNN.
+- EN: Also, reported input instance processing la- for this is that the NullHop accelerator is also being able to take
+- ZH: Also, reported input instance processing la- for this is that the NullHop accelerator is also being able to take
+- EN: tencies in these cases refer to the latency of processing a single advantage of the sparsity present in the input feature maps.
+- ZH: tencies in these cases refer to the latency of processing a single advantage of the sparsity present in the input feature maps.
+- EN: But
+- ZH: But
+- EN: input image, i.
+- ZH: input image, i.
+- EN: e.
+- ZH: e.
+- EN: working with a batch size of 1.
+- ZH: working with a batch size of 1.
+- EN: because NullHop is not able to take advantage of the sparsity of
+- ZH: because NullHop is not able to take advantage of the sparsity of
+- EN: Average computing performance for all architectures has been CNN weights, because it is not designed to process compressed
+- ZH: Average computing performance for all architectures has been CNN weights, because it is not designed to process compressed
+- EN: calculated as the total number of operations needed to process CNNs, its performance is lower than CoNNA’s.
+- ZH: calculated as the total number of operations needed to process CNNs, its performance is lower than CoNNA’s.
+- EN: In the case of VGG-
+- ZH: In the case of VGG-
+- EN: one input image by the target dense CNN network, multiplied by 19 CNN, NullHop is also able to reach effective eﬃciency values
+- ZH: one input image by the target dense CNN network, multiplied by 19 CNN, NullHop is also able to reach effective eﬃciency values
+- EN: the time required to process one input image.
+- ZH: the time required to process one input image.
+- EN: Effective eﬃciency greater than 100%, due to the fact that it is able to skip all compu-
+- ZH: Effective eﬃciency greater than 100%, due to the fact that it is able to skip all compu-
+- EN: was calculated as the achievable average computing performance tations where input feature map values are equal to zero.
+- ZH: was calculated as the achievable average computing performance tations where input feature map values are equal to zero.
+- EN: divided by the theoretical peak compute performance (calculated The CoNNA architecture is also superior to NVDLA, for all three
+- ZH: divided by the theoretical peak compute performance (calculated The CoNNA architecture is also superior to NVDLA, for all three
+- EN: as the number of available MAC units multiplied by the operat- CNNs used in experiments.
+- ZH: as the number of available MAC units multiplied by the operat- CNNs used in experiments.
+- EN: CoNNA is able to reach 2.
+- ZH: CoNNA is able to reach 2.
+- EN: 72, 2.
+- ZH: 72, 2.
+- EN: 15
+- ZH: 15
+- EN: ing frequency).
+- ZH: ing frequency).
+- EN: Values closer to 100% mean that the CNN accelera- and 4.
+- ZH: Values closer to 100% mean that the CNN accelera- and 4.
+- EN: 91 times higher frame rates than NVLDA, when accelerat-
+- ZH: 91 times higher frame rates than NVLDA, when accelerat-
+- EN: tor is more eﬃciently using available compute power.
+- ZH: tor is more eﬃciently using available compute power.
+- EN: Values above ing AlexNet, GoogleNet and ResNet-50 CNNs respectively.
+- ZH: Values above ing AlexNet, GoogleNet and ResNet-50 CNNs respectively.
+- EN: However,
+- ZH: However,
+- EN: 100% mean that the CNN accelerator is employing some optimiza- the improvement over NVLDA is smaller than in the case of Eye-
+- ZH: 100% mean that the CNN accelerator is employing some optimiza- the improvement over NVLDA is smaller than in the case of Eye-
+- EN: tion technique during CNN processing, effectively reducing the re- riss and NullHop, because NVLDA is using the Winograd algorithm
+- ZH: tion technique during CNN processing, effectively reducing the re- riss and NullHop, because NVLDA is using the Winograd algorithm
+- EN: quired number of computations.
+- ZH: quired number of computations.
+- EN: to speed-up the convolution calculation process, which is suﬃcient
+- ZH: to speed-up the convolution calculation process, which is suﬃcient
+- EN: From Table 4 it can be seen that the CoNNA architecture out- to allow NVDLA to go above 100% of effective eﬃciency in case of
+- ZH: From Table 4 it can be seen that the CoNNA architecture out- to allow NVDLA to go above 100% of effective eﬃciency in case of
+- EN: performs all reference CNN accelerator architectures in terms of processing GoogleNet CNN network.
+- ZH: performs all reference CNN accelerator architectures in terms of processing GoogleNet CNN network.
+
+
+---
+
+### Page 19
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 19
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 19
+- EN: Table 5
+- ZH: Table 5
+- EN: CoNNA_C3 performance breakdown for AlexNet CNN.
+- ZH: CoNNA_C3 performance breakdown for AlexNet CNN.
+- EN: Layer Active PBs Total latency [us] Processing latency [us] PB eﬃciency [%] Number of operations [GOp] Performance [GOp/sec]
+- ZH: Layer Active PBs Total latency [us] Processing latency [us] PB eﬃciency [%] Number of operations [GOp] Performance [GOp/sec]
+- EN: CONV1 32 (100%) 60,689.
+- ZH: CONV1 32 (100%) 60,689.
+- EN: 63 27,668.
+- ZH: 63 27,668.
+- EN: 73 45.
+- ZH: 73 45.
+- EN: 60% 0.
+- ZH: 60% 0.
+- EN: 21083 3.
+- ZH: 21083 3.
+- EN: 47
+- ZH: 47
+- EN: POOL1 4 (12.
+- ZH: POOL1 4 (12.
+- EN: 5%) 2274.
+- ZH: 5%) 2274.
+- EN: 32 1574.
+- ZH: 32 1574.
+- EN: 48 8.
+- ZH: 48 8.
+- EN: 65% 0.
+- ZH: 65% 0.
+- EN: 00126 0.
+- ZH: 00126 0.
+- EN: 55
+- ZH: 55
+- EN: CONV2_1 32 (100%) 9049.
+- ZH: CONV2_1 32 (100%) 9049.
+- EN: 99 8151.
+- ZH: 99 8151.
+- EN: 04 98.
+- ZH: 04 98.
+- EN: 12% 0.
+- ZH: 12% 0.
+- EN: 22395 24.
+- ZH: 22395 24.
+- EN: 75
+- ZH: 75
+- EN: CONV2_2 32 (100%) 9049.
+- ZH: CONV2_2 32 (100%) 9049.
+- EN: 99 8151.
+- ZH: 99 8151.
+- EN: 04 98.
+- ZH: 04 98.
+- EN: 12% 0.
+- ZH: 12% 0.
+- EN: 22395 24.
+- ZH: 22395 24.
+- EN: 75
+- ZH: 75
+- EN: POOL2 4 (12.
+- ZH: POOL2 4 (12.
+- EN: 5%) 1029.
+- ZH: 5%) 1029.
+- EN: 36 596.
+- ZH: 36 596.
+- EN: 72 7.
+- ZH: 72 7.
+- EN: 24% 0.
+- ZH: 24% 0.
+- EN: 00078 0.
+- ZH: 00078 0.
+- EN: 76
+- ZH: 76
+- EN: CONV3 32 (100%) 5409.
+- ZH: CONV3 32 (100%) 5409.
+- EN: 80 4497.
+- ZH: 80 4497.
+- EN: 29 83.
+- ZH: 29 83.
+- EN: 13% 0.
+- ZH: 13% 0.
+- EN: 29904 55.
+- ZH: 29904 55.
+- EN: 28
+- ZH: 28
+- EN: CONV4_1 32 (100%) 1700.
+- ZH: CONV4_1 32 (100%) 1700.
+- EN: 80 1342.
+- ZH: 80 1342.
+- EN: 00 78.
+- ZH: 00 78.
+- EN: 90% 0.
+- ZH: 90% 0.
+- EN: 11214 65.
+- ZH: 11214 65.
+- EN: 93
+- ZH: 93
+- EN: CONV4_2 32 (100%) 1700.
+- ZH: CONV4_2 32 (100%) 1700.
+- EN: 80 1342.
+- ZH: 80 1342.
+- EN: 00 78.
+- ZH: 00 78.
+- EN: 90% 0.
+- ZH: 90% 0.
+- EN: 11214 65.
+- ZH: 11214 65.
+- EN: 93
+- ZH: 93
+- EN: CONV5_1 32 (100%) 1207.
+- ZH: CONV5_1 32 (100%) 1207.
+- EN: 34 968.
+- ZH: 34 968.
+- EN: 14 80.
+- ZH: 14 80.
+- EN: 19% 0.
+- ZH: 19% 0.
+- EN: 07476 61.
+- ZH: 07476 61.
+- EN: 92
+- ZH: 92
+- EN: CONV5_2 32 (100%) 1207.
+- ZH: CONV5_2 32 (100%) 1207.
+- EN: 34 968.
+- ZH: 34 968.
+- EN: 14 80.
+- ZH: 14 80.
+- EN: 19% 0.
+- ZH: 19% 0.
+- EN: 07476 61.
+- ZH: 07476 61.
+- EN: 92
+- ZH: 92
+- EN: POOL3 4 (12.
+- ZH: POOL3 4 (12.
+- EN: 5%) 138.
+- ZH: 5%) 138.
+- EN: 61 46.
+- ZH: 61 46.
+- EN: 45 4.
+- ZH: 45 4.
+- EN: 19% 0.
+- ZH: 19% 0.
+- EN: 00016 1.
+- ZH: 00016 1.
+- EN: 15
+- ZH: 15
+- EN: FC6 4 (12.
+- ZH: FC6 4 (12.
+- EN: 5%) 1943.
+- ZH: 5%) 1943.
+- EN: 70 1902.
+- ZH: 70 1902.
+- EN: 74 12.
+- ZH: 74 12.
+- EN: 24% 0.
+- ZH: 24% 0.
+- EN: 07550 38.
+- ZH: 07550 38.
+- EN: 84
+- ZH: 84
+- EN: FC7 4 (12.
+- ZH: FC7 4 (12.
+- EN: 5%) 886.
+- ZH: 5%) 886.
+- EN: 74 845.
+- ZH: 74 845.
+- EN: 78 11.
+- ZH: 78 11.
+- EN: 92% 0.
+- ZH: 92% 0.
+- EN: 03355 37.
+- ZH: 03355 37.
+- EN: 83
+- ZH: 83
+- EN: FC8 4 (12.
+- ZH: FC8 4 (12.
+- EN: 5%) 583.
+- ZH: 5%) 583.
+- EN: 58 573.
+- ZH: 58 573.
+- EN: 58 12.
+- ZH: 58 12.
+- EN: 29% 0.
+- ZH: 29% 0.
+- EN: 00819 14.
+- ZH: 00819 14.
+- EN: 03
+- ZH: 03
+- EN: When compared with the NEURAghe CNN accelerator, CoNNA Table 5 presents the following data for each AlexNet CNN layer.
+- ZH: When compared with the NEURAghe CNN accelerator, CoNNA Table 5 presents the following data for each AlexNet CNN layer.
+- EN: is also able to achieve better performance, being 1.
+- ZH: is also able to achieve better performance, being 1.
+- EN: 42 and 2.
+- ZH: 42 and 2.
+- EN: 67 The “Active PB” ﬁeld holds the number of Processing Blocks, out
+- ZH: 67 The “Active PB” ﬁeld holds the number of Processing Blocks, out
+- EN: times faster in terms of achievable frame rates.
+- ZH: times faster in terms of achievable frame rates.
+- EN: The NEURAghe of 32 available, which are actually being active during the process-
+- ZH: The NEURAghe of 32 available, which are actually being active during the process-
+- EN: architecture is able to achieve effective eﬃciency that is signif- ing of the current CNN layer.
+- ZH: architecture is able to achieve effective eﬃciency that is signif- ing of the current CNN layer.
+- EN: The “Total Latency” stands for the
+- ZH: The “Total Latency” stands for the
+- EN: icantly higher than 100% in the case of processing the VGG-16 total time needed to process a CNN layer, including the time re-
+- ZH: icantly higher than 100% in the case of processing the VGG-16 total time needed to process a CNN layer, including the time re-
+- EN: CNN network.
+- ZH: CNN network.
+- EN: This is curious since the authors of NEURAghe ar- quired to preload CNN coeﬃcients/weights, perform required com-
+- ZH: This is curious since the authors of NEURAghe ar- quired to preload CNN coeﬃcients/weights, perform required com-
+- EN: chitecture didn’t mention that they are using any optimization putations, and store the ﬁnal results.
+- ZH: chitecture didn’t mention that they are using any optimization putations, and store the ﬁnal results.
+- EN: The “Processing Latency” is
+- ZH: The “Processing Latency” is
+- EN: technique, like zero skipping or Winograd algorithm, during CNN the time that is actually spent performing all computations deﬁned
+- ZH: technique, like zero skipping or Winograd algorithm, during CNN the time that is actually spent performing all computations deﬁned
+- EN: processing.
+- ZH: processing.
+- EN: Furthermore, there is a signiﬁcant drop in the effec- in the current CNN layer, excluding any preparatory steps and is
+- ZH: Furthermore, there is a signiﬁcant drop in the effec- in the current CNN layer, excluding any preparatory steps and is
+- EN: tive computing eﬃciency, of around 7 times, when the ResNet-18 therefore always shorter than the “Total Latency” time.
+- ZH: tive computing eﬃciency, of around 7 times, when the ResNet-18 therefore always shorter than the “Total Latency” time.
+- EN: The “PB Ef-
+- ZH: The “PB Ef-
+- EN: CNN network is accelerated using NEURAghe.
+- ZH: CNN network is accelerated using NEURAghe.
+- EN: This drop, although ﬁciency” value is calculated as the ratio of the “Processing Latency”
+- ZH: This drop, although ﬁciency” value is calculated as the ratio of the “Processing Latency”
+- EN: not that signiﬁcant, is visible in CoNNA’s performance also.
+- ZH: not that signiﬁcant, is visible in CoNNA’s performance also.
+- EN: This and the “Total Latency”, multiplied with the percentage of active
+- ZH: This and the “Total Latency”, multiplied with the percentage of active
+- EN: can probably be partially explained by the fact that the ResNet- PBs for the current CNN layer.
+- ZH: can probably be partially explained by the fact that the ResNet- PBs for the current CNN layer.
+- EN: The “Number of Operations” is the
+- ZH: The “Number of Operations” is the
+- EN: 18 CNN network is the network with many shallow convolutional total number of arithmetic operations required to be performed in
+- ZH: 18 CNN network is the network with many shallow convolutional total number of arithmetic operations required to be performed in
+- EN: layers, where the number of convolutional kernels is signiﬁcantly order to process the current CNN layer.
+- ZH: layers, where the number of convolutional kernels is signiﬁcantly order to process the current CNN layer.
+- EN: The “Performance” is the
+- ZH: The “Performance” is the
+- EN: lower than available 864 MAC units in NEURAghe and 256 PBs in computational throughput for the current CNN layer, calculated as
+- ZH: lower than available 864 MAC units in NEURAghe and 256 PBs in computational throughput for the current CNN layer, calculated as
+- EN: CoNNA_C4 conﬁguration.
+- ZH: CoNNA_C4 conﬁguration.
+- EN: This means that, at least when CoNNA is the ratio of the “Number of Operations” and the “Total Latency”.
+- ZH: This means that, at least when CoNNA is the ratio of the “Number of Operations” and the “Total Latency”.
+- EN: concerned, there will be a signiﬁcant number of idle PBs during From Table 5 it can be seen that the CoNNA architecture is be-
+- ZH: concerned, there will be a signiﬁcant number of idle PBs during From Table 5 it can be seen that the CoNNA architecture is be-
+- EN: the processing of these shallow convolutional layers, as described ing able to maintain high utilization of PBs over all convolutional
+- ZH: the processing of these shallow convolutional layers, as described ing able to maintain high utilization of PBs over all convolutional
+- EN: in Section 3.
+- ZH: in Section 3.
+- EN: 1 .
+- ZH: 1 .
+- EN: This idling PB ineﬃciency can only be partially com- layers, irrelevant of their size and kernel characteristics.
+- ZH: This idling PB ineﬃciency can only be partially com- layers, irrelevant of their size and kernel characteristics.
+- EN: The eﬃ-
+- ZH: The eﬃ-
+- EN: pensated by the “All zero-skipping” technique and is the main rea- ciency of processing convolutional layers is extremely important
+- ZH: pensated by the “All zero-skipping” technique and is the main rea- ciency of processing convolutional layers is extremely important
+- EN: son why CoNNA reaches only 89.
+- ZH: son why CoNNA reaches only 89.
+- EN: 42% effective eﬃciency when pro- since they are the most computationally demanding layer type in
+- ZH: 42% effective eﬃciency when pro- since they are the most computationally demanding layer type in
+- EN: cessing the ResNet-18 CNN network.
+- ZH: cessing the ResNet-18 CNN network.
+- EN: modern CNNs.
+- ZH: modern CNNs.
+- EN: It can also be seen that, as we move to deeper con-
+- ZH: It can also be seen that, as we move to deeper con-
+- EN: The CoNNA architecture is clearly superior to the CNN_A1 ar- volutional layers of the CNN, PB eﬃciency starts to drop.
+- ZH: The CoNNA architecture is clearly superior to the CNN_A1 ar- volutional layers of the CNN, PB eﬃciency starts to drop.
+- EN: This is
+- ZH: This is
+- EN: chitecture, reducing instance classiﬁcation times by a factor of 6.
+- ZH: chitecture, reducing instance classiﬁcation times by a factor of 6.
+- EN: 86 because more time has to be spent in preloading kernel coeﬃcient
+- ZH: 86 because more time has to be spent in preloading kernel coeﬃcient
+- EN: and 11.
+- ZH: and 11.
+- EN: 30 in the case of processing AlexNet and VGG-16 CNNs re- values into PBs before actual computation can start.
+- ZH: 30 in the case of processing AlexNet and VGG-16 CNNs re- values into PBs before actual computation can start.
+- EN: The reason
+- ZH: The reason
+- EN: spectively.
+- ZH: spectively.
+- EN: A similar observation holds in the case of fpgaConvNet for this is that the depths of convolutional layers increase as we
+- ZH: A similar observation holds in the case of fpgaConvNet for this is that the depths of convolutional layers increase as we
+- EN: and Aristotle architectures.
+- ZH: and Aristotle architectures.
+- EN: Compared with the fpgaConvNet archi- go deeper in the CNN, resulting in more kernel weights data that
+- ZH: Compared with the fpgaConvNet archi- go deeper in the CNN, resulting in more kernel weights data that
+- EN: tecture CoNNA architecture is able to reach frame rates that are has to be preloaded into PBs.
+- ZH: tecture CoNNA architecture is able to reach frame rates that are has to be preloaded into PBs.
+- EN: Since CoNNA uses limited bandwidth
+- ZH: Since CoNNA uses limited bandwidth
+- EN: 2.
+- ZH: 2.
+- EN: 02 and 3.
+- ZH: 02 and 3.
+- EN: 08 times higher.
+- ZH: 08 times higher.
+- EN: Similar to the NEURAghe architecture, data bus to transfer data to the PBs, it takes increasingly more time
+- ZH: Similar to the NEURAghe architecture, data bus to transfer data to the PBs, it takes increasingly more time
+- EN: in the case of fpgaConvNet architecture, there is a signiﬁcant differ- to preload convolutional kernel data as the size of convolutional
+- ZH: in the case of fpgaConvNet architecture, there is a signiﬁcant differ- to preload convolutional kernel data as the size of convolutional
+- EN: ence in the effective eﬃciency when processing AlexNet and VGG- kernels increases.
+- ZH: ence in the effective eﬃciency when processing AlexNet and VGG- kernels increases.
+- EN: 16 CNN networks.
+- ZH: 16 CNN networks.
+- EN: Furthermore, the eﬃciency of the fpgaConvNet From Table 5 it can also be seen that the PB eﬃciency
+- ZH: Furthermore, the eﬃciency of the fpgaConvNet From Table 5 it can also be seen that the PB eﬃciency
+- EN: architecture when processing VGG-16 CNN is higher than 100%, in- drops signiﬁcantly when CoNNA is processing pooling and fully-
+- ZH: architecture when processing VGG-16 CNN is higher than 100%, in- drops signiﬁcantly when CoNNA is processing pooling and fully-
+- EN: dicating that the fpgaConvNet architecture must be using some op- connected layers.
+- ZH: dicating that the fpgaConvNet architecture must be using some op- connected layers.
+- EN: Processing of these layer types is data movement
+- ZH: Processing of these layer types is data movement
+- EN: timization technique to speedup CNN processing, although authors intensive, so available data bandwidth of CoNNA’s data bus is again
+- ZH: timization technique to speedup CNN processing, although authors intensive, so available data bandwidth of CoNNA’s data bus is again
+- EN: of fpgaConvNet didn’t comment on this in the original paper.
+- ZH: of fpgaConvNet didn’t comment on this in the original paper.
+- EN: Fi- the main limiting factor.
+- ZH: Fi- the main limiting factor.
+- EN: However, these layers are not computa-
+- ZH: However, these layers are not computa-
+- EN: nally, in the case of the Aristotle architecture, this improvement tionally intensive, as can clearly be seen from Table 5 , so this inef-
+- ZH: nally, in the case of the Aristotle architecture, this improvement tionally intensive, as can clearly be seen from Table 5 , so this inef-
+- EN: is slightly better, CoNNA is reaching 3.
+- ZH: is slightly better, CoNNA is reaching 3.
+- EN: 58 times faster frame rates ﬁciency is not signiﬁcantly degrading the total performance of the
+- ZH: 58 times faster frame rates ﬁciency is not signiﬁcantly degrading the total performance of the
+- EN: when processing the VGG-16 CNN network, compared with Aristo- CoNNA architecture.
+- ZH: when processing the VGG-16 CNN network, compared with Aristo- CoNNA architecture.
+- EN: From Table 5 it can be seen that the number
+- ZH: From Table 5 it can be seen that the number
+- EN: tle’s performance.
+- ZH: tle’s performance.
+- EN: of operations for all pooling and fully-connected layers in the case
+- ZH: of operations for all pooling and fully-connected layers in the case
+- EN: of AlexNet CNN constitutes only 8% of the total number of com-
+- ZH: of AlexNet CNN constitutes only 8% of the total number of com-
+- EN: putations, but it takes CoNNA only 9.
+- ZH: putations, but it takes CoNNA only 9.
+- EN: 45% of total CNN compute
+- ZH: 45% of total CNN compute
+- EN: 4.
+- ZH: 4.
+- EN: 3.
+- ZH: 3.
+- EN: CoNNA CNN computational performance analysis time to compute these layers.
+- ZH: CoNNA CNN computational performance analysis time to compute these layers.
+- EN: This means that there is an increase
+- ZH: This means that there is an increase
+- EN: of only 1.
+- ZH: of only 1.
+- EN: 45% in total CNN compute time despite very low PB ef-
+- ZH: 45% in total CNN compute time despite very low PB ef-
+- EN: ﬁciency values attained during pooling and fully-connected layer In order to better understand how the CoNNA architecture pro-
+- ZH: ﬁciency values attained during pooling and fully-connected layer In order to better understand how the CoNNA architecture pro-
+- EN: processing.
+- ZH: processing.
+- EN: cesses CNNs, and where the bottlenecks are Table 5 presents de-
+- ZH: cesses CNNs, and where the bottlenecks are Table 5 presents de-
+- EN: tailed execution information for the CoNNA_C3 conﬁguration when Finally, Fig.
+- ZH: tailed execution information for the CoNNA_C3 conﬁguration when Finally, Fig.
+- EN: 13 presents data throughput waveforms measured
+- ZH: 13 presents data throughput waveforms measured
+- EN: on CoNNA’s Input Stream and Output Stream interfaces, in the it is accelerating AlexNet CNN.
+- ZH: on CoNNA’s Input Stream and Output Stream interfaces, in the it is accelerating AlexNet CNN.
+
+
+---
+
+### Page 20
+
+- EN: 20 R.
+- ZH: 20 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-20_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 13.
+- ZH: 13.
+- EN: Data throughput waveforms over CaNNA’s ISI and OSI interfaces in case of MobileNet V1 CNN processing using CoNNA_C3 Instance:
+- ZH: Data throughput waveforms over CaNNA’s ISI and OSI interfaces in case of MobileNet V1 CNN processing using CoNNA_C3 Instance:
+- EN: a) During the processing of ﬁrst
+- ZH: a) During the processing of ﬁrst
+- EN: 10 MobileNet V1 CNN Layers;
+- ZH: 10 MobileNet V1 CNN Layers;
+- EN: b) During processing 5th Depthwise Convolutional Layer;
+- ZH: b) During processing 5th Depthwise Convolutional Layer;
+- EN: c) During the processing of 6th Pointwise Convolutional Layer.
+- ZH: c) During the processing of 6th Pointwise Convolutional Layer.
+- EN: case when MobileNet V1 CNN is being accelerated.
+- ZH: case when MobileNet V1 CNN is being accelerated.
+- EN: The CoNNA Fig.
+- ZH: The CoNNA Fig.
+- EN: 13 b presents data throughput waveforms during the pro-
+- ZH: 13 b presents data throughput waveforms during the pro-
+- EN: conﬁguration that was used in this experiment was CoNNA_C3 cessing of the 5th depthwise convolutional layer from MobileNet
+- ZH: conﬁguration that was used in this experiment was CoNNA_C3 cessing of the 5th depthwise convolutional layer from MobileNet
+- EN: from Table 3 .
+- ZH: from Table 3 .
+- EN: Please notice that each graph actually presents V1 CNN.
+- ZH: Please notice that each graph actually presents V1 CNN.
+- EN: Analyzing the ISI interface throughput waveform it can
+- ZH: Analyzing the ISI interface throughput waveform it can
+- EN: data throughputs on both ISI and OSI interfaces.
+- ZH: data throughputs on both ISI and OSI interfaces.
+- EN: Redline shows be observed that it is composed out of eight almost identical
+- ZH: Redline shows be observed that it is composed out of eight almost identical
+- EN: data throughput over the OSI interface, which is actually the data segments.
+- ZH: data throughput over the OSI interface, which is actually the data segments.
+- EN: The reason why there are exactly eight almost iden-
+- ZH: The reason why there are exactly eight almost iden-
+- EN: throughput of writing output feature map data to the operating tical segments is related to the characteristic of the 5th depth-
+- ZH: throughput of writing output feature map data to the operating tical segments is related to the characteristic of the 5th depth-
+- EN: memory.
+- ZH: memory.
+- EN: Blue and green lines together represent data throughput wise convolutional layer and used conﬁguration of the CoNNA ac-
+- ZH: Blue and green lines together represent data throughput wise convolutional layer and used conﬁguration of the CoNNA ac-
+- EN: over the ISI interface.
+- ZH: over the ISI interface.
+- EN: Blueline shows the data throughput during celerator in the following way.
+- ZH: Blueline shows the data throughput during celerator in the following way.
+- EN: The number of different convolu-
+- ZH: The number of different convolu-
+- EN: the loading of convolutional kernel coeﬃcients, which precedes ev- tional kernels used within the 5th depthwise convolutional layer
+- ZH: the loading of convolutional kernel coeﬃcients, which precedes ev- tional kernels used within the 5th depthwise convolutional layer
+- EN: = ery convolutional kernel group calculation phase.
+- ZH: = ery convolutional kernel group calculation phase.
+- EN: Finally, the green from MobileNet V1 CNN equals Kernel_Num 256.
+- ZH: Finally, the green from MobileNet V1 CNN equals Kernel_Num 256.
+- EN: On the other
+- ZH: On the other
+- EN: line shows data throughput during the IFM data processing phase, hand, the CoNNA_C3 conﬁguration uses 32 Processing Blocks, i.
+- ZH: line shows data throughput during the IFM data processing phase, hand, the CoNNA_C3 conﬁguration uses 32 Processing Blocks, i.
+- EN: e.
+- ZH: e.
+- EN: = during which IFM data is loaded into ISB memory from the Input Num_PB 32.
+- ZH: = during which IFM data is loaded into ISB memory from the Input Num_PB 32.
+- EN: This means that the loop L3 from Algorithm 3 dis-
+- ZH: This means that the loop L3 from Algorithm 3 dis-
+- EN: Stream Manager module.
+- ZH: Stream Manager module.
+- EN: In the Fig.
+- ZH: In the Fig.
+- EN: 13 a data throughput on CoNNA’s ISI and OSI inter- Algorithm 3
+- ZH: 13 a data throughput on CoNNA’s ISI and OSI inter- Algorithm 3
+- EN: faces during the processing of the ﬁrst 10 layers from MobileNet Pseudo-code of convolutional layer “All zero-skipping” processing algorithm, imple-
+- ZH: faces during the processing of the ﬁrst 10 layers from MobileNet Pseudo-code of convolutional layer “All zero-skipping” processing algorithm, imple-
+- EN: mented in the CoNNA architecture.
+- ZH: mented in the CoNNA architecture.
+- EN: V1 CNN is shown.
+- ZH: V1 CNN is shown.
+- EN: The reason why data throughput during com-
+- ZH: The reason why data throughput during com-
+- EN: plete MobileNet V1 CNN processing was not shown is that pro- = < ++ L1:
+- ZH: plete MobileNet V1 CNN processing was not shown is that pro- = < ++ L1:
+- EN: for ( x 0;
+- ZH: for ( x 0;
+- EN: x OFM_Width;
+- ZH: x OFM_Width;
+- EN: x )
+- ZH: x )
+- EN: = < ++ cessing times of latter layers from MobileNet V1 are so short, com- L2:
+- ZH: = < ++ cessing times of latter layers from MobileNet V1 are so short, com- L2:
+- EN: for ( y 0;
+- ZH: for ( y 0;
+- EN: y OFM_Height;
+- ZH: y OFM_Height;
+- EN: y )
+- ZH: y )
+- EN: = < += L3:
+- ZH: = < += L3:
+- EN: for (kn 0;
+- ZH: for (kn 0;
+- EN: kn Kernel_Num;
+- ZH: kn Kernel_Num;
+- EN: kn Num_PB) pared to processing times of initial layers, that nothing could be
+- ZH: kn Num_PB) pared to processing times of initial layers, that nothing could be
+- EN: W1:
+- ZH: W1:
+- EN: while (PBs_Busy())
+- ZH: while (PBs_Busy())
+- EN: seen on the graph.
+- ZH: seen on the graph.
+- EN: From Fig.
+- ZH: From Fig.
+- EN: 13 a processing periods of different
+- ZH: 13 a processing periods of different
+- EN: ∗ ∗ += + {OFM[ x ][y][kn] Calc_Next_NZPT(CIFM[ x S h:
+- ZH: ∗ ∗ += + {OFM[ x ][y][kn] Calc_Next_NZPT(CIFM[ x S h:
+- EN: x S h K ernel _W idth -
+- ZH: x S h K ernel _W idth -
+- EN: MobileNet V1 layers are clearly visible.
+- ZH: MobileNet V1 layers are clearly visible.
+- EN: Processing starts with the ∗ ∗ + 1][y Sv:
+- ZH: Processing starts with the ∗ ∗ + 1][y Sv:
+- EN: y Sv Kernel_Height-1][:
+- ZH: y Sv Kernel_Height-1][:
+- EN: ],
+- ZH: ],
+- EN: × processing of the ﬁrst convolutional layer, which uses 3 3 ker- CKM[ kn ][:
+- ZH: × processing of the ﬁrst convolutional layer, which uses 3 3 ker- CKM[ kn ][:
+- EN: ][:
+- ZH: ][:
+- EN: ][:
+- ZH: ][:
+- EN: ]);
+- ZH: ]);
+- EN: + += OFM[ x ][y][kn 1] nels to transform the input image, designated by the yellow seg-
+- ZH: + += OFM[ x ][y][kn 1] nels to transform the input image, designated by the yellow seg-
+- EN: ∗ ∗ + Calc_Next_NZPT(CIFM[ x S h:
+- ZH: ∗ ∗ + Calc_Next_NZPT(CIFM[ x S h:
+- EN: x S h K ernel _W idth -
+- ZH: x S h K ernel _W idth -
+- EN: ment.
+- ZH: ment.
+- EN: After this layer is completed ﬁrst depthwise convolutional
+- ZH: After this layer is completed ﬁrst depthwise convolutional
+- EN: ∗ ∗ + 1][y Sv:
+- ZH: ∗ ∗ + 1][y Sv:
+- EN: y Sv Kernel_Height-1][:
+- ZH: y Sv Kernel_Height-1][:
+- EN: ],
+- ZH: ],
+- EN: layer, designated by the purple segment, is processed next.
+- ZH: layer, designated by the purple segment, is processed next.
+- EN: Next
+- ZH: Next
+- EN: + CKM[ kn 1][:
+- ZH: + CKM[ kn 1][:
+- EN: ][:
+- ZH: ][:
+- EN: ][:
+- ZH: ][:
+- EN: ]);
+- ZH: ]);
+- EN: …
+- ZH: …
+- EN: comes the ﬁrst pointwise convolutional layer, designated by the or- + += OFM[ x ][y][kn Num_PB-1]
+- ZH: comes the ﬁrst pointwise convolutional layer, designated by the or- + += OFM[ x ][y][kn Num_PB-1]
+- EN: ∗ ∗ + ange segment in the Fig.
+- ZH: ∗ ∗ + ange segment in the Fig.
+- EN: 13 a, which is actually a standard convo- Calc_Next_NZPT(CIFM[ x S h:
+- ZH: 13 a, which is actually a standard convo- Calc_Next_NZPT(CIFM[ x S h:
+- EN: x S h K ernel _W idth -
+- ZH: x S h K ernel _W idth -
+- EN: ∗ ∗ + 1][y Sv:
+- ZH: ∗ ∗ + 1][y Sv:
+- EN: y Sv Kernel_Height-1][:
+- ZH: y Sv Kernel_Height-1][:
+- EN: ], ×
+- ZH: ], ×
+- EN: lutional layer that uses 1 1 kernels to process the input feature
+- ZH: lutional layer that uses 1 1 kernels to process the input feature
+- EN: + CKM[ kn N um _PB-1][:
+- ZH: + CKM[ kn N um _PB-1][:
+- EN: ][:
+- ZH: ][:
+- EN: ][:
+- ZH: ][:
+- EN: ]);
+- ZH: ]);
+- EN: }
+- ZH: }
+- EN: map.
+- ZH: map.
+- EN: After this layer, a succession of depthwise and pointwise con-
+- ZH: After this layer, a succession of depthwise and pointwise con-
+- EN: volutional layer pairs follows, which is clearly visible by alternat-
+- ZH: volutional layer pairs follows, which is clearly visible by alternat-
+- EN: ing purple and orange segments in the Fig.
+- ZH: ing purple and orange segments in the Fig.
+- EN: 13 a.
+- ZH: 13 a.
+- EN: Because dataﬂows
+- ZH: Because dataﬂows
+- EN: cussed in Section 3.
+- ZH: cussed in Section 3.
+- EN: 1 will, in this case, be unrolled with the par-
+- ZH: 1 will, in this case, be unrolled with the par-
+- EN: × required for processing convolutional layer with 3 3 kernels,
+- ZH: × required for processing convolutional layer with 3 3 kernels,
+- EN: tial unrolling factor of 32.
+- ZH: tial unrolling factor of 32.
+- EN: This means that 32 different depthwise
+- ZH: This means that 32 different depthwise
+- EN: × depthwise convolutional layer with 3 3 kernels and pointwise
+- ZH: × depthwise convolutional layer with 3 3 kernels and pointwise
+- EN: convolutions, from a total of 256, will be calculated in parallel, by
+- ZH: convolutions, from a total of 256, will be calculated in parallel, by
+- EN: × convolutional layer with 1 1 kernels differ, data throughputs
+- ZH: × convolutional layer with 1 1 kernels differ, data throughputs
+- EN: available PBs.
+- ZH: available PBs.
+- EN: In order to calculate all 256 different depthwise con-
+- ZH: In order to calculate all 256 different depthwise con-
+- EN: over ISI and OSI interfaces during the processing of these layer
+- ZH: over ISI and OSI interfaces during the processing of these layer
+- EN: volutions, the same process has to be repeated 8 times, each time
+- ZH: volutions, the same process has to be repeated 8 times, each time
+- EN: types differ also, which can clearly be visible on Fig.
+- ZH: types differ also, which can clearly be visible on Fig.
+- EN: 13 a.
+- ZH: 13 a.
+- EN: using a different group of 32 depthwise convolutions.
+- ZH: using a different group of 32 depthwise convolutions.
+- EN: At the begin-
+- ZH: At the begin-
+- EN: From Fig.
+- ZH: From Fig.
+- EN: 13 a it can be seen that data throughput over the
+- ZH: 13 a it can be seen that data throughput over the
+- EN: ning of the processing of each group of convolutions, correspond-
+- ZH: ning of the processing of each group of convolutions, correspond-
+- EN: OSI interface is relatively constant during CNN processing, without
+- ZH: OSI interface is relatively constant during CNN processing, without
+- EN: ing convolutional kernels need to be loaded into Local Memory
+- ZH: ing convolutional kernels need to be loaded into Local Memory
+- EN: sudden bursts.
+- ZH: sudden bursts.
+- EN: In contrast, data throughput over the ISI interface
+- ZH: In contrast, data throughput over the ISI interface
+- EN: modules of each PB.
+- ZH: modules of each PB.
+- EN: During this short period of time, there is a
+- ZH: During this short period of time, there is a
+- EN: has a more irregular waveform, with different patterns and bursts
+- ZH: has a more irregular waveform, with different patterns and bursts
+- EN: sudden rise in the data throughput over the ISI interface, shown
+- ZH: sudden rise in the data throughput over the ISI interface, shown
+- EN: of activity, depending on the layer type that is being processed by
+- ZH: of activity, depending on the layer type that is being processed by
+- EN: by the blue line in the Fig.
+- ZH: by the blue line in the Fig.
+- EN: 13 b.
+- ZH: 13 b.
+- EN: After kernel preloading is com-
+- ZH: After kernel preloading is com-
+- EN: the CoNNA accelerator.
+- ZH: the CoNNA accelerator.
+- EN: It can be seen that there are periodic peaks
+- ZH: It can be seen that there are periodic peaks
+- EN: pleted, the processing of IFM data can commence.
+- ZH: pleted, the processing of IFM data can commence.
+- EN: At the begging
+- ZH: At the begging
+- EN: of high throughput values, which actually correspond with periods
+- ZH: of high throughput values, which actually correspond with periods
+- EN: IFM data is fetched at a high rate, indicated by sudden peaks in
+- ZH: IFM data is fetched at a high rate, indicated by sudden peaks in
+- EN: of convolutional kernel loading into Local Memory modules within
+- ZH: of convolutional kernel loading into Local Memory modules within
+- EN: the green line, immediately following the peaks on the blue line
+- ZH: the green line, immediately following the peaks on the blue line
+- EN: PBs and initial ﬁlling of the ISB memory with IFM data.
+- ZH: PBs and initial ﬁlling of the ISB memory with IFM data.
+- EN: During
+- ZH: During
+- EN: in the Fig.
+- ZH: in the Fig.
+- EN: 13 b, because ISB cache memory inside the Input Stream
+- ZH: 13 b, because ISB cache memory inside the Input Stream
+- EN: the actual convolution calculation process throughput over the ISI
+- ZH: the actual convolution calculation process throughput over the ISI
+- EN: Interface module is initially empty and is being ﬁlled up by the
+- ZH: Interface module is initially empty and is being ﬁlled up by the
+- EN: interface is signiﬁcantly lower, because of high IFM data reuse by
+- ZH: interface is signiﬁcantly lower, because of high IFM data reuse by
+- EN: Write Controller module.
+- ZH: Write Controller module.
+- EN: Once IFM data reuse becomes active, IFM
+- ZH: Once IFM data reuse becomes active, IFM
+- EN: adjacent convolutions, as explained in Section 3.
+- ZH: adjacent convolutions, as explained in Section 3.
+- EN: 2.
+- ZH: 2.
+- EN: 2 .
+- ZH: 2 .
+- EN: data throughput falls sharply, because the WC module now has to
+- ZH: data throughput falls sharply, because the WC module now has to
+
+
+---
+
+### Page 21
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 21
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 21
+- EN: wait for RCU to consume individual IFM sticks from the ISB cache using the next IFM bundle.
+- ZH: wait for RCU to consume individual IFM sticks from the ISB cache using the next IFM bundle.
+- EN: In theory, the expected number of non-
+- ZH: In theory, the expected number of non-
+- EN: before replacing them, which can also be visible by inspecting the zero product terms required to compute one convolution is directly
+- ZH: before replacing them, which can also be visible by inspecting the zero product terms required to compute one convolution is directly
+- EN: green line from the Fig.
+- ZH: green line from the Fig.
+- EN: 13 b.
+- ZH: 13 b.
+- EN: Since the 5th depthwise convolutional dependant on the percentage of non-zero values within the current
+- ZH: Since the 5th depthwise convolutional dependant on the percentage of non-zero values within the current
+- EN: × layer uses 3 3 convolutional kernels, a theoretical decrease in the kernel and IFM bundle, as the following equation shows
+- ZH: × layer uses 3 3 convolutional kernels, a theoretical decrease in the kernel and IFM bundle, as the following equation shows
+- EN: data throughput should be around nine times compared with the
+- ZH: data throughput should be around nine times compared with the
+- EN: = · · Num _ MACs _ Ideal K ernel _ W idth K ernel _ Height K ernel _ Depth
+- ZH: = · · Num _ MACs _ Ideal K ernel _ W idth K ernel _ Height K ernel _ Depth
+- EN: throughput during the initial ﬁlling of the ISB cache memory.
+- ZH: throughput during the initial ﬁlling of the ISB cache memory.
+- EN: How-
+- ZH: How-
+- EN: · · P _ IF MNZ P _ KMNZ (5)
+- ZH: · · P _ IF MNZ P _ KMNZ (5)
+- EN: ever, since CoNNA is processing compressed data and performs
+- ZH: ever, since CoNNA is processing compressed data and performs
+- EN: zero-skipping, actual data throughput is higher and more irregu- where P_IFMNZ is the percentage of non-zero valued points in the
+- ZH: zero-skipping, actual data throughput is higher and more irregu- where P_IFMNZ is the percentage of non-zero valued points in the
+- EN: lar, since compression ratios and distributions of zeros vary from input feature map bundle, and P_KMNZ is the percentage of non-
+- ZH: lar, since compression ratios and distributions of zeros vary from input feature map bundle, and P_KMNZ is the percentage of non-
+- EN: one IFM stick to another.
+- ZH: one IFM stick to another.
+- EN: zero valued convolutional coeﬃcients in the convolutional ker-
+- ZH: zero valued convolutional coeﬃcients in the convolutional ker-
+- EN: Finally, Fig.
+- ZH: Finally, Fig.
+- EN: 13 c presents data throughput waveforms during the nel.
+- ZH: 13 c presents data throughput waveforms during the nel.
+- EN: In this ideal scenario, each convolution computation operation
+- ZH: In this ideal scenario, each convolution computation operation
+- EN: processing of a different CNN layer type, this time it is the 6th would require identical time to complete
+- ZH: processing of a different CNN layer type, this time it is the 6th would require identical time to complete
+- EN: pointwise convolutional layer from MobileNet V1 CNN.
+- ZH: pointwise convolutional layer from MobileNet V1 CNN.
+- EN: In this case,
+- ZH: In this case,
+- EN: = · v Con olution _ Compute _ T ime _ I deal N um _ MACs _ Ideal T (6)
+- ZH: = · v Con olution _ Compute _ T ime _ I deal N um _ MACs _ Ideal T (6)
+- EN: there are 16 almost identical segments, because this layer contains clk
+- ZH: there are 16 almost identical segments, because this layer contains clk
+- EN: 512 different convolutional kernels.
+- ZH: 512 different convolutional kernels.
+- EN: What can also be seen from where T is the period of the clock signal used to synchronize
+- ZH: What can also be seen from where T is the period of the clock signal used to synchronize
+- EN: clk
+- ZH: clk
+- EN: Fig.
+- ZH: Fig.
+- EN: 13 c is that the required throughput over the ISI interface dur- CoNNA’s operation.
+- ZH: 13 c is that the required throughput over the ISI interface dur- CoNNA’s operation.
+- EN: ing the actual convolution calculation process is now signiﬁcantly However, due to the irregularity of non-zero values distribu-
+- ZH: ing the actual convolution calculation process is now signiﬁcantly However, due to the irregularity of non-zero values distribu-
+- EN: higher compared with one from Fig.
+- ZH: higher compared with one from Fig.
+- EN: 13 b.
+- ZH: 13 b.
+- EN: The reason for this is that tion within each kernel and IFM bundle, the actual number of
+- ZH: The reason for this is that tion within each kernel and IFM bundle, the actual number of
+- EN: × in this case, CoNNA is actually computing 1 1 convolutions, so non-zero product terms can and will probably vary for each ker-
+- ZH: × in this case, CoNNA is actually computing 1 1 convolutions, so non-zero product terms can and will probably vary for each ker-
+- EN: there is no IFM stick reuse.
+- ZH: there is no IFM stick reuse.
+- EN: nel/IFM bundle pair, leading to a different convolution compute
+- ZH: nel/IFM bundle pair, leading to a different convolution compute
+- EN: time for each active PB.
+- ZH: time for each active PB.
+- EN: Since CoNNA must wait until all active
+- ZH: Since CoNNA must wait until all active
+- EN: PBs complete their convolution computation process before pro-
+- ZH: PBs complete their convolution computation process before pro-
+- EN: 4.
+- ZH: 4.
+- EN: 4.
+- ZH: 4.
+- EN: Analysis of the impact of non-zero distribution of the sparse
+- ZH: Analysis of the impact of non-zero distribution of the sparse
+- EN: ceeding with the next group of convolutions, the actual compute
+- ZH: ceeding with the next group of convolutions, the actual compute
+- EN: weights and activations on the CoNNA architecture CNN processing
+- ZH: weights and activations on the CoNNA architecture CNN processing
+- EN: time for each group of Num_PB convolutions will be longer than
+- ZH: time for each group of Num_PB convolutions will be longer than
+- EN: eﬃciency
+- ZH: eﬃciency
+- EN: the ideal convolution computation time, as the following equation
+- ZH: the ideal convolution computation time, as the following equation
+- EN: shows
+- ZH: shows
+- EN: Since CoNNA operates directly on sparse kernel and input fea-
+- ZH: Since CoNNA operates directly on sparse kernel and input fea-
+- EN: v ture maps during CNN processing, and since non-zero values dis- Con olution _ Compute _ T ime _ Actual
+- ZH: v ture maps during CNN processing, and since non-zero values dis- Con olution _ Compute _ T ime _ Actual
+- EN: tribution within the kernel and IF maps, in general, don’t follow { = ·
+- ZH: tribution within the kernel and IF maps, in general, don’t follow { = ·
+- EN: max Num _ MACs _ Actua l T
+- ZH: max Num _ MACs _ Actua l T
+- EN: i clk
+- ZH: i clk
+- EN: any regular pattern, it would be interesting to investigate how this ∈ i Active _ PBs
+- ZH: any regular pattern, it would be interesting to investigate how this ∈ i Active _ PBs
+- EN: ≥ affects CoNNA’s CNN processing eﬃciency.
+- ZH: ≥ affects CoNNA’s CNN processing eﬃciency.
+- EN: When the CoNNA ar- v Con olution _ Compute _ T ime _ Ideal (7)
+- ZH: When the CoNNA ar- v Con olution _ Compute _ T ime _ Ideal (7)
+- EN: chitecture is concerned, irregular distribution of non-zero values
+- ZH: chitecture is concerned, irregular distribution of non-zero values
+- EN: In order to investigate how severe this increase in compute
+- ZH: In order to investigate how severe this increase in compute
+- EN: within the kernel and IF maps can potentially affect CoNNA’s CNN
+- ZH: within the kernel and IF maps can potentially affect CoNNA’s CNN
+- EN: time could be, a series of experiments have been performed, us-
+- ZH: time could be, a series of experiments have been performed, us-
+- EN: processing eﬃciency in two following ways:
+- ZH: processing eﬃciency in two following ways:
+- EN: ing convolutional kernels of different sizes, with varying percent-
+- ZH: ing convolutional kernels of different sizes, with varying percent-
+- EN: ages of non-zero values present within the kernel and IFM bun- 1.
+- ZH: ages of non-zero values present within the kernel and IFM bun- 1.
+- EN: Irregular non-zero values distribution within the kernel and IF
+- ZH: Irregular non-zero values distribution within the kernel and IF
+- EN: dle.
+- ZH: dle.
+- EN: The results of these experiments are shown in the Fig.
+- ZH: The results of these experiments are shown in the Fig.
+- EN: 14 .
+- ZH: 14 .
+- EN: maps can lead to a different number of non-zero product terms
+- ZH: maps can lead to a different number of non-zero product terms
+- EN: Each of the graphs, shown in the Fig.
+- ZH: Each of the graphs, shown in the Fig.
+- EN: 14 , shows how the convolu- that have to be computed when the same IFM bundle is being
+- ZH: 14 , shows how the convolu- that have to be computed when the same IFM bundle is being
+- EN: tion computation time changes, depending on the actual percent- convolved with different convolutional kernels.
+- ZH: tion computation time changes, depending on the actual percent- convolved with different convolutional kernels.
+- EN: Since CoNNA
+- ZH: Since CoNNA
+- EN: age of non-zero values present in the kernel and IFM bundle, for has to wait until all Processing Blocks complete their convolu-
+- ZH: age of non-zero values present in the kernel and IFM bundle, for has to wait until all Processing Blocks complete their convolu-
+- EN: × × × × × × × × × × 3 3 32, 3 3 64, 3 3 128, 3 3 256, 3 3 512,
+- ZH: × × × × × × × × × × 3 3 32, 3 3 64, 3 3 128, 3 3 256, 3 3 512,
+- EN: tion computation process before proceeding with the computa-
+- ZH: tion computation process before proceeding with the computa-
+- EN: × × and 3 3 1024 convolution kernels.
+- ZH: × × and 3 3 1024 convolution kernels.
+- EN: In all these experiments
+- ZH: In all these experiments
+- EN: tion of the next group of convolutions, some PBs will be idling,
+- ZH: tion of the next group of convolutions, some PBs will be idling,
+- EN: percentage of non-zero values that were present in the kernel and waiting for the slowest one to ﬁnish its work, and the actual
+- ZH: percentage of non-zero values that were present in the kernel and waiting for the slowest one to ﬁnish its work, and the actual
+- EN: IFM bundle has been varied independently, within the [10% - 100%] convolutional layer processing time would be prolonged.
+- ZH: IFM bundle has been varied independently, within the [10% - 100%] convolutional layer processing time would be prolonged.
+- EN: This
+- ZH: This
+- EN: range.
+- ZH: range.
+- EN: issue was discussed in Section 3.
+- ZH: issue was discussed in Section 3.
+- EN: 1 when Algorithm 3 for CNN
+- ZH: 1 when Algorithm 3 for CNN
+- EN: What can be observed in Fig.
+- ZH: What can be observed in Fig.
+- EN: 14 is that there is indeed an in- processing, which is actually being implemented by the CoNNA
+- ZH: 14 is that there is indeed an in- processing, which is actually being implemented by the CoNNA
+- EN: crease in the actual convolution computation time, compared to architecture, was presented.
+- ZH: crease in the actual convolution computation time, compared to architecture, was presented.
+- EN: the ideal theoretical estimate.
+- ZH: the ideal theoretical estimate.
+- EN: This computational time increase is 2.
+- ZH: This computational time increase is 2.
+- EN: Irregular non-zero values distribution within the kernel and IF
+- ZH: Irregular non-zero values distribution within the kernel and IF
+- EN: more severe, as the percentage of non-zero values present in the maps can lead to a situation where there could actually be no
+- ZH: more severe, as the percentage of non-zero values present in the maps can lead to a situation where there could actually be no
+- EN: kernel and IFM bundle decreases.
+- ZH: kernel and IFM bundle decreases.
+- EN: However, this increase in the non-zero product terms in the current non-zero product term
+- ZH: However, this increase in the non-zero product terms in the current non-zero product term
+- EN: computational time is gradual for high and moderate percentages search window, as the Data Fetcher module searches for the
+- ZH: computational time is gradual for high and moderate percentages search window, as the Data Fetcher module searches for the
+- EN: of the non-zero kernel and IFM bundle values and rises sharply next non-zero product term to forward to the Computing Unit.
+- ZH: of the non-zero kernel and IFM bundle values and rises sharply next non-zero product term to forward to the Computing Unit.
+- EN: only when the percentage of the non-zero kernel and IFM bun- This situation will result in one additional idle clock cycle for
+- ZH: only when the percentage of the non-zero kernel and IFM bun- This situation will result in one additional idle clock cycle for
+- EN: dle values approaches relatively small values, less than 30%.
+- ZH: dle values approaches relatively small values, less than 30%.
+- EN: Since the Computing Unit during product term computation and will
+- ZH: Since the Computing Unit during product term computation and will
+- EN: the achievable percentages of non-zero values after CNN pruning prolong the time required to compute one convolution opera-
+- ZH: the achievable percentages of non-zero values after CNN pruning prolong the time required to compute one convolution opera-
+- EN: are rarely lower than 30% [ 19 , 43 ], this means that the increase in tion.
+- ZH: are rarely lower than 30% [ 19 , 43 ], this means that the increase in tion.
+- EN: the convolution computation time will be acceptable, being less
+- ZH: the convolution computation time will be acceptable, being less
+- EN: Let us ﬁrst analyze the severity of the non-equal convolution than 10%, for most of current CNN architectures.
+- ZH: Let us ﬁrst analyze the severity of the non-equal convolution than 10%, for most of current CNN architectures.
+- EN: Furthermore, from
+- ZH: Furthermore, from
+- EN: computation times of different PBs on the CoNNA’s CNN processing Fig.
+- ZH: computation times of different PBs on the CoNNA’s CNN processing Fig.
+- EN: 14 it can also be observed that the maximum increase in the
+- ZH: 14 it can also be observed that the maximum increase in the
+- EN: eﬃciency.
+- ZH: eﬃciency.
+- EN: Since CoNNA computes Num_PB different convolutions convolution computation time decreases, as larger convolutional
+- ZH: Since CoNNA computes Num_PB different convolutions convolution computation time decreases, as larger convolutional
+- EN: in parallel, Num_PB being the number of Processing Blocks that kernels are being used.
+- ZH: in parallel, Num_PB being the number of Processing Blocks that kernels are being used.
+- EN: For example, maximum increase in the
+- ZH: For example, maximum increase in the
+- EN: × × are available within the current CoNNA instance, if different PBs convolution computation time for 3 3 32 kernel can be as
+- ZH: × × are available within the current CoNNA instance, if different PBs convolution computation time for 3 3 32 kernel can be as
+- EN: have to compute a different number of non-zero product terms, high as 54%, but as we move to larger kernels it quickly decreases
+- ZH: have to compute a different number of non-zero product terms, high as 54%, but as we move to larger kernels it quickly decreases
+- EN: × × × × this can lead to different convolution computation times for differ- to 36%, 22%, 17%, 11%, and 8%, in case of 3 3 64, 3 3 128,
+- ZH: × × × × this can lead to different convolution computation times for differ- to 36%, 22%, 17%, 11%, and 8%, in case of 3 3 64, 3 3 128,
+- EN: × × × × × × ent PBs.
+- ZH: × × × × × × ent PBs.
+- EN: In this scenario, some of PBs could be idling, waiting for 3 3 256, 3 3 512, and 3 3 1024 convolutional ker-
+- ZH: In this scenario, some of PBs could be idling, waiting for 3 3 256, 3 3 512, and 3 3 1024 convolutional ker-
+- EN: the other PBs to complete their convolution computation process, nels respectively.
+- ZH: the other PBs to complete their convolution computation process, nels respectively.
+- EN: Most of state-of-the-art CNN architectures domi-
+- ZH: Most of state-of-the-art CNN architectures domi-
+- EN: before proceeding with the next convolution computation process nantly use deep convolutional layers, having only several relatively
+- ZH: before proceeding with the next convolution computation process nantly use deep convolutional layers, having only several relatively
+
+
+---
+
+### Page 22
+
+- EN: 22 R.
+- ZH: 22 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-22_1.jpg)
+
+- EN: × × × × Fig.
+- ZH: × × × × Fig.
+- EN: 14.
+- ZH: 14.
+- EN: Relative increase in convolution layer processing time due to irregular distribution of non-zero kernel and IFM bundle values for:
+- ZH: Relative increase in convolution layer processing time due to irregular distribution of non-zero kernel and IFM bundle values for:
+- EN: a) 3 3 32 kernel;
+- ZH: a) 3 3 32 kernel;
+- EN: a) 3 3 32
+- ZH: a) 3 3 32
+- EN: × × × × × × × × × × kernel;
+- ZH: × × × × × × × × × × kernel;
+- EN: b) 3 3 64 kernel;
+- ZH: b) 3 3 64 kernel;
+- EN: c) 3 3 128 kernel;
+- ZH: c) 3 3 128 kernel;
+- EN: d) 3 3 256 kernel;
+- ZH: d) 3 3 256 kernel;
+- EN: e) 3 3 512 kernel;
+- ZH: e) 3 3 512 kernel;
+- EN: f) 3 3 1024 kernel.
+- ZH: f) 3 3 1024 kernel.
+- EN: shallow layers at the beginning of the CNN network.
+- ZH: shallow layers at the beginning of the CNN network.
+- EN: This is a very uct term search effective, the Data Fetcher module performs a par-
+- ZH: This is a very uct term search effective, the Data Fetcher module performs a par-
+- EN: favorable situation for the CoNNA architecture, meaning that the allel search, checking a number of candidate product terms con-
+- ZH: favorable situation for the CoNNA architecture, meaning that the allel search, checking a number of candidate product terms con-
+- EN: relative increase in processing time will usually be well below 10% currently, in what is called a “Search Window”.
+- ZH: relative increase in processing time will usually be well below 10% currently, in what is called a “Search Window”.
+- EN: This is necessary
+- ZH: This is necessary
+- EN: from ideal, theoretical processing time, for most current CNN ar- in order to keep the Computing Unit busy since if the non-zero
+- ZH: from ideal, theoretical processing time, for most current CNN ar- in order to keep the Computing Unit busy since if the non-zero
+- EN: chitectures.
+- ZH: chitectures.
+- EN: At the end of this section, a detailed analysis of the product term detection process would have been implemented se-
+- ZH: At the end of this section, a detailed analysis of the product term detection process would have been implemented se-
+- EN: actual increase in the CNN layer processing time due to irregu- quentially, the result would be an extremely ineﬃcient convolution
+- ZH: actual increase in the CNN layer processing time due to irregu- quentially, the result would be an extremely ineﬃcient convolution
+- EN: lar distribution of non-zero kernel and IFM bundle values for two calculation process, where the Computing Unit would be idle most
+- ZH: lar distribution of non-zero kernel and IFM bundle values for two calculation process, where the Computing Unit would be idle most
+- EN: standard CNN networks, AlexNet and VGG-16, will be presented in of the time, effectively canceling any processing speedup due to
+- ZH: standard CNN networks, AlexNet and VGG-16, will be presented in of the time, effectively canceling any processing speedup due to
+- EN: order to further justify this conclusion.
+- ZH: order to further justify this conclusion.
+- EN: zero skipping.
+- ZH: zero skipping.
+- EN: The question is how to select the optimal size of
+- ZH: The question is how to select the optimal size of
+- EN: Next, let us analyze the impact of the irregular distribution of this “Search Window”, in order to minimize the number of CU idle
+- ZH: Next, let us analyze the impact of the irregular distribution of this “Search Window”, in order to minimize the number of CU idle
+- EN: non-zero kernel and IFM bundle values on the eﬃciency of non- clock cycles, while keeping required logic resources for DF module
+- ZH: non-zero kernel and IFM bundle values on the eﬃciency of non- clock cycles, while keeping required logic resources for DF module
+- EN: zero product term detection logic, located within the Data Fetcher implementation as low as possible.
+- ZH: zero product term detection logic, located within the Data Fetcher implementation as low as possible.
+- EN: Intuitively, as this “Search Win-
+- ZH: Intuitively, as this “Search Win-
+- EN: module, as shown in Figs.
+- ZH: module, as shown in Figs.
+- EN: 8 and 9 .
+- ZH: 8 and 9 .
+- EN: As explained in Section 3.
+- ZH: As explained in Section 3.
+- EN: 2.
+- ZH: 2.
+- EN: 1 , dow” becomes larger, the probability of not detecting at least one
+- ZH: 1 , dow” becomes larger, the probability of not detecting at least one
+- EN: the Data Fetcher module searches for the non-zero product terms non-zero product term within it would decrease.
+- ZH: the Data Fetcher module searches for the non-zero product terms non-zero product term within it would decrease.
+- EN: In order to in-
+- ZH: In order to in-
+- EN: and forwards them to the Computing Unit which performs the ac- vestigate how the probability of having “Empty Search Windows”
+- ZH: and forwards them to the Computing Unit which performs the ac- vestigate how the probability of having “Empty Search Windows”
+- EN: tual convolution computation process.
+- ZH: tual convolution computation process.
+- EN: To make this non-zero prod- depends on the “Search Window” size and the probability of non-
+- ZH: To make this non-zero prod- depends on the “Search Window” size and the probability of non-
+
+
+---
+
+### Page 23
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 23
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 23
+
+![](/workspace/CoNNa-23_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 15.
+- ZH: 15.
+- EN: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- ZH: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- EN: module with no built-in FIFO, for four different sizes of “Search Window” parameter.
+- ZH: module with no built-in FIFO, for four different sizes of “Search Window” parameter.
+
+![](/workspace/CoNNa-23_2.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 16.
+- ZH: 16.
+- EN: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- ZH: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- EN: module with built-in ideal FIFO, for four different sizes of “Search Window” parameter.
+- ZH: module with built-in ideal FIFO, for four different sizes of “Search Window” parameter.
+- EN: zero kernel and IFM bundle values, a number of experiments have cant percentage of “Empty Search Windows”, at least 20%, during
+- ZH: zero kernel and IFM bundle values, a number of experiments have cant percentage of “Empty Search Windows”, at least 20%, during
+- EN: been performed, and the results are shown in Figs.
+- ZH: been performed, and the results are shown in Figs.
+- EN: 15–17 .
+- ZH: 15–17 .
+- EN: the computation of individual convolutions.
+- ZH: the computation of individual convolutions.
+- EN: As we increase the size
+- ZH: As we increase the size
+- EN: Fig.
+- ZH: Fig.
+- EN: 15 shows the average percentage of “Empty Search Win- of “Search Window”, the percentage of “Empty Search Windows”
+- ZH: 15 shows the average percentage of “Empty Search Win- of “Search Window”, the percentage of “Empty Search Windows”
+- EN: dows” as a function of the percentage of kernel and IFM bundle starts to fall and in the case of the “Search Window” size of 32, it
+- ZH: dows” as a function of the percentage of kernel and IFM bundle starts to fall and in the case of the “Search Window” size of 32, it
+- EN: non-zero values, for four sizes of the “Search Window”, 4, 8, 16 and stays below 10% even when there are only 50% of non-zero valued
+- ZH: non-zero values, for four sizes of the “Search Window”, 4, 8, 16 and stays below 10% even when there are only 50% of non-zero valued
+- EN: 32 product terms wide.
+- ZH: 32 product terms wide.
+- EN: From Fig.
+- ZH: From Fig.
+- EN: 15 it can be seen that the size of elements in the kernel and IFM bundle.
+- ZH: 15 it can be seen that the size of elements in the kernel and IFM bundle.
+- EN: On the other hand, when
+- ZH: On the other hand, when
+- EN: “Search Window” plays a signiﬁcant role in the average percentage there is a small percentage of non-zero values in kernel and IFM
+- ZH: “Search Window” plays a signiﬁcant role in the average percentage there is a small percentage of non-zero values in kernel and IFM
+- EN: of “Empty Search Windows”.
+- ZH: of “Empty Search Windows”.
+- EN: For the “Search Window” size of 4, bundle, less than 20%, the percentage of “Empty Search Windows”
+- ZH: For the “Search Window” size of 4, bundle, less than 20%, the percentage of “Empty Search Windows”
+- EN: even when kernel and IFM bundle contain a very large number of becomes very high for all considered “Search Window” sizes, going
+- ZH: even when kernel and IFM bundle contain a very large number of becomes very high for all considered “Search Window” sizes, going
+- EN: non-zero valued elements, more than 90%, there will be a signiﬁ- even above 90% in the case of “Search Window” size of 4.
+- ZH: non-zero valued elements, more than 90%, there will be a signiﬁ- even above 90% in the case of “Search Window” size of 4.
+
+
+---
+
+### Page 24
+
+- EN: 24 R.
+- ZH: 24 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-24_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 17.
+- ZH: 17.
+- EN: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- ZH: Average percentage of “Empty Search Windows” as the function of percentage of non-zero values present in kernel and IFM bundle in the case of data fetcher
+- EN: module with “Search Window” size of 16, with built-in FIFO of depth 0, 4, 8, 16 and 32.
+- ZH: module with “Search Window” size of 16, with built-in FIFO of depth 0, 4, 8, 16 and 32.
+- EN: In the experiments, resulting in the average percentage of the following equation
+- ZH: In the experiments, resulting in the average percentage of the following equation
+- EN: “Empty Search Windows” surfaces, shown in the Fig.
+- ZH: “Empty Search Windows” surfaces, shown in the Fig.
+- EN: 15 , Data
+- ZH: 15 , Data
+- EN: 1
+- ZH: 1
+- EN: · = P _ IF MNZ P _ KMNZ (9) Fetcher module was operating without a built-in FIFO, which re-
+- ZH: · = P _ IF MNZ P _ KMNZ (9) Fetcher module was operating without a built-in FIFO, which re-
+- EN: 4
+- ZH: 4
+- EN: sults in the simplest possible design.
+- ZH: sults in the simplest possible design.
+- EN: However, because of the ir-
+- ZH: However, because of the ir-
+- EN: which is clearly visible in the Fig.
+- ZH: which is clearly visible in the Fig.
+- EN: 16 .
+- ZH: 16 .
+- EN: However, the beneﬁt of us-
+- ZH: However, the beneﬁt of us-
+- EN: regular distribution of non-zero kernel and IFM bundle values, the
+- ZH: regular distribution of non-zero kernel and IFM bundle values, the
+- EN: ing a FIFO inside Data Fetcher is clearly visible, since it can sig- actual number of detected non-zero product terms in each “Search
+- ZH: ing a FIFO inside Data Fetcher is clearly visible, since it can sig- actual number of detected non-zero product terms in each “Search
+- EN: niﬁcantly reduce the average percentage of “Empty Search Win-
+- ZH: niﬁcantly reduce the average percentage of “Empty Search Win-
+- EN: Window” will probably vary, so there will be situations wherein
+- ZH: Window” will probably vary, so there will be situations wherein
+- EN: dows” for all “Search Window” sizes, up to a theoretical limit, as
+- ZH: dows” for all “Search Window” sizes, up to a theoretical limit, as
+- EN: the current “Search Window” there is more than one non-zero
+- ZH: the current “Search Window” there is more than one non-zero
+- EN: explained above.
+- ZH: explained above.
+- EN: product term detected, but in the subsequent “Search Windows”
+- ZH: product term detected, but in the subsequent “Search Windows”
+- EN: What can also be observed from Fig.
+- ZH: What can also be observed from Fig.
+- EN: 16 is as we increase the there are no non-zero product terms.
+- ZH: 16 is as we increase the there are no non-zero product terms.
+- EN: In this scenario, a simple
+- ZH: In this scenario, a simple
+- EN: “Search Window” size, the intersection curve between the “Empty
+- ZH: “Search Window” size, the intersection curve between the “Empty
+- EN: Data Fetcher module without a FIFO will not be able to avoid
+- ZH: Data Fetcher module without a FIFO will not be able to avoid
+- EN: Search Windows” surface and the zero “Empty Window Percent- idle clock cycles, since it cannot start searching for non-zero prod-
+- ZH: Search Windows” surface and the zero “Empty Window Percent- idle clock cycles, since it cannot start searching for non-zero prod-
+- EN: age” plane moves steadily to the right corner.
+- ZH: age” plane moves steadily to the right corner.
+- EN: If we could use the uct terms in the next “Search Window” until all non-zero prod-
+- ZH: If we could use the uct terms in the next “Search Window” until all non-zero prod-
+- EN: “Search Window” of inﬁnite size we could completely eliminate
+- ZH: “Search Window” of inﬁnite size we could completely eliminate
+- EN: uct terms, detected in the current “Search Window” are computed.
+- ZH: uct terms, detected in the current “Search Window” are computed.
+- EN: all “Empty Search Windows”, but of course this is not possible in
+- ZH: all “Empty Search Windows”, but of course this is not possible in
+- EN: Using Data Fetcher with an internal FIFO, this situation could be
+- ZH: Using Data Fetcher with an internal FIFO, this situation could be
+- EN: practice.
+- ZH: practice.
+- EN: avoided.
+- ZH: avoided.
+- EN: It would be interesting to analyze how the size of this
+- ZH: It would be interesting to analyze how the size of this
+- EN: In the experiments presented in the Fig.
+- ZH: In the experiments presented in the Fig.
+- EN: 16 , an inﬁnitely deep
+- ZH: 16 , an inﬁnitely deep
+- EN: FIFO impacts the average percentage of “Empty Search Windows”,
+- ZH: FIFO impacts the average percentage of “Empty Search Windows”,
+- EN: FIFO was assumed, which cannot be used in practice.
+- ZH: FIFO was assumed, which cannot be used in practice.
+- EN: Therefore, it
+- ZH: Therefore, it
+- EN: and can a large enough FIFO completely eliminate “Empty Search
+- ZH: and can a large enough FIFO completely eliminate “Empty Search
+- EN: would be interesting to analyze how a more realistic FIFO of ﬁ- Windows”.
+- ZH: would be interesting to analyze how a more realistic FIFO of ﬁ- Windows”.
+- EN: In order to investigate this, a new set of experiments
+- ZH: In order to investigate this, a new set of experiments
+- EN: nite depth, reduces the percentage of “Empty Search Windows”.
+- ZH: nite depth, reduces the percentage of “Empty Search Windows”.
+- EN: has been conducted, this time with the Data Fetcher module that
+- ZH: has been conducted, this time with the Data Fetcher module that
+- EN: Fig.
+- ZH: Fig.
+- EN: 17 presents the average percentage of “Empty Search Win-
+- ZH: 17 presents the average percentage of “Empty Search Win-
+- EN: uses an inﬁnitely large FIFO, and the results of these experiments
+- ZH: uses an inﬁnitely large FIFO, and the results of these experiments
+- EN: dows” in the case when the Data Fetcher module with the “Search are shown in the Fig.
+- ZH: dows” in the case when the Data Fetcher module with the “Search are shown in the Fig.
+- EN: 16 .
+- ZH: 16 .
+- EN: Window” size of 16 is used, for ﬁve different depths of built-in As can be seen from Fig.
+- ZH: Window” size of 16 is used, for ﬁve different depths of built-in As can be seen from Fig.
+- EN: 16 , even using an inﬁnitely deep FIFO
+- ZH: 16 , even using an inﬁnitely deep FIFO
+- EN: FIFO, 0, 4, 8, 16 and 32.
+- ZH: FIFO, 0, 4, 8, 16 and 32.
+- EN: cannot remove all “Empty Search Windows”.
+- ZH: cannot remove all “Empty Search Windows”.
+- EN: This was to be ex-
+- ZH: This was to be ex-
+- EN: From Fig.
+- ZH: From Fig.
+- EN: 17 is can be seen as the depth of used FIFO increases, pected since when the average expected number of non-zero prod-
+- ZH: 17 is can be seen as the depth of used FIFO increases, pected since when the average expected number of non-zero prod-
+- EN: the average percentage of the “Empty Search Windows” surface ap- uct terms falls below the value of one per current “Search Win-
+- ZH: the average percentage of the “Empty Search Windows” surface ap- uct terms falls below the value of one per current “Search Win-
+- EN: proaches the ideal average percentage of the “Empty Search Win-
+- ZH: proaches the ideal average percentage of the “Empty Search Win-
+- EN: dow” size, even ideal FIFO cannot eliminate all “Empty Search Win-
+- ZH: dow” size, even ideal FIFO cannot eliminate all “Empty Search Win-
+- EN: dows” surface, shown in the Fig.
+- ZH: dows” surface, shown in the Fig.
+- EN: 16 .
+- ZH: 16 .
+- EN: However, from Fig.
+- ZH: However, from Fig.
+- EN: 17 can be dows”.
+- ZH: 17 can be dows”.
+- EN: This is clearly visible in the Fig.
+- ZH: This is clearly visible in the Fig.
+- EN: 16 .
+- ZH: 16 .
+- EN: When the following in-
+- ZH: When the following in-
+- EN: clearly seen that using even a FIFO of depth 32 is enough to reach equality is satisﬁed
+- ZH: clearly seen that using even a FIFO of depth 32 is enough to reach equality is satisﬁed
+- EN: the ideal average percentage of the “Empty Search Windows” sur-
+- ZH: the ideal average percentage of the “Empty Search Windows” sur-
+- EN: 1
+- ZH: 1
+- EN: face.
+- ZH: face.
+- EN: Because of this, in the current version of the CoNNA architec- < " Search W indow Size " (8)
+- ZH: Because of this, in the current version of the CoNNA architec- < " Search W indow Size " (8)
+- EN: · P _ IF MNZ P _ KMNZ
+- ZH: · P _ IF MNZ P _ KMNZ
+- EN: ture, Data Fetcher modules were conﬁgured to use “Search Win-
+- ZH: ture, Data Fetcher modules were conﬁgured to use “Search Win-
+- EN: non-zero product terms will be, on average, separated by more dow” of size 16, with a built-in FIFO of depth 32.
+- ZH: non-zero product terms will be, on average, separated by more dow” of size 16, with a built-in FIFO of depth 32.
+- EN: than “Search Window Size” zero product terms and even ideal FIFO What Figs.
+- ZH: than “Search Window Size” zero product terms and even ideal FIFO What Figs.
+- EN: 14 and 17 show is that when there is a high per-
+- ZH: 14 and 17 show is that when there is a high per-
+- EN: will not be able to eliminate all “Empty Search Windows”.
+- ZH: will not be able to eliminate all “Empty Search Windows”.
+- EN: For ex- centage of zeros present in the kernel and/or input feature map, a
+- ZH: For ex- centage of zeros present in the kernel and/or input feature map, a
+- EN: ample, in the case of “Search Window” size of 4, the average per- signiﬁcant degradation of CoNNA’s performance could be present,
+- ZH: ample, in the case of “Search Window” size of 4, the average per- signiﬁcant degradation of CoNNA’s performance could be present,
+- EN: centage of “Empty Search Windows” surface intersects with the either because of non-balanced number of non-zero product terms
+- ZH: centage of “Empty Search Windows” surface intersects with the either because of non-balanced number of non-zero product terms
+- EN: zero “Empty Window Percentage” plane at the circle deﬁned by that are present in the convolutional operations that are being
+- ZH: zero “Empty Window Percentage” plane at the circle deﬁned by that are present in the convolutional operations that are being
+
+
+---
+
+### Page 25
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 25
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 25
+
+![](/workspace/CoNNa-25_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 18.
+- ZH: 18.
+- EN: Increase in layer compute times for AlexNet CNN, due to various effects of irregular distribution of non-zero values in kernel and input feature maps:
+- ZH: Increase in layer compute times for AlexNet CNN, due to various effects of irregular distribution of non-zero values in kernel and input feature maps:
+- EN: a) Percentage
+- ZH: a) Percentage
+- EN: increase in individual layer compute time;
+- ZH: increase in individual layer compute time;
+- EN: b) Absolute layer processing time.
+- ZH: b) Absolute layer processing time.
+- EN: computed in parallel by available PBs, or because of “Empty Search 2.
+- ZH: computed in parallel by available PBs, or because of “Empty Search 2.
+- EN: layer compute time when the non-balanced number of non-
+- ZH: layer compute time when the non-balanced number of non-
+- EN: Windows” that are present during the non-zero product term zero product terms that are present in the convolutional op-
+- ZH: Windows” that are present during the non-zero product term zero product terms that are present in the convolutional op-
+- EN: search process.
+- ZH: search process.
+- EN: However, when working with realistic CNN archi- erations that are being computed in parallel by available PBs is
+- ZH: However, when working with realistic CNN archi- erations that are being computed in parallel by available PBs is
+- EN: tectures, the situation where there is a high percentage of zeros taken into account,
+- ZH: tectures, the situation where there is a high percentage of zeros taken into account,
+- EN: present in the kernel and/or input feature map usually happens 3.
+- ZH: present in the kernel and/or input feature map usually happens 3.
+- EN: layer compute time when the increase in compute time due to
+- ZH: layer compute time when the increase in compute time due to
+- EN: only within the layers that are located deep inside the CNN, and “Empty Search Windows” is taken into account, when the Data
+- ZH: only within the layers that are located deep inside the CNN, and “Empty Search Windows” is taken into account, when the Data
+- EN: mostly within the fully-connected layers.
+- ZH: mostly within the fully-connected layers.
+- EN: Please notice that com- Fetcher module uses a 16 product terms wide “Search Window”
+- ZH: Please notice that com- Fetcher module uses a 16 product terms wide “Search Window”
+- EN: pute times of these layers contribute only slightly to the total com- but is not using a built-in FIFO, and
+- ZH: pute times of these layers contribute only slightly to the total com- but is not using a built-in FIFO, and
+- EN: pute time of complete CNN.
+- ZH: pute time of complete CNN.
+- EN: Therefore, any increase in the compute 4.
+- ZH: Therefore, any increase in the compute 4.
+- EN: layer compute time when the increase in compute time due to
+- ZH: layer compute time when the increase in compute time due to
+- EN: times of deep convolutional or fully-connected layers due to irreg- “Empty Search Windows” is taken into account, when the Data
+- ZH: times of deep convolutional or fully-connected layers due to irreg- “Empty Search Windows” is taken into account, when the Data
+- EN: ular non-zero values distribution within kernel and input feature Fetcher module uses a 16 product terms wide “Search Window”
+- ZH: ular non-zero values distribution within kernel and input feature Fetcher module uses a 16 product terms wide “Search Window”
+- EN: maps of these layers should result in only a small increase in the and a 32-deep built-in FIFO is being used.
+- ZH: maps of these layers should result in only a small increase in the and a 32-deep built-in FIFO is being used.
+- EN: total CNN compute time.
+- ZH: total CNN compute time.
+- EN: Figs.
+- ZH: Figs.
+- EN: 18 and 19 present the results of these experiments for
+- ZH: 18 and 19 present the results of these experiments for
+- EN: In order to analyze the magnitude of the increase of total CNN
+- ZH: In order to analyze the magnitude of the increase of total CNN
+- EN: AlexNet and VGG-16 CNN networks respectively.
+- ZH: AlexNet and VGG-16 CNN networks respectively.
+- EN: In both Figures,
+- ZH: In both Figures,
+- EN: compute time, due to irregular non-zero values distribution within
+- ZH: compute time, due to irregular non-zero values distribution within
+- EN: two graphs are presented.
+- ZH: two graphs are presented.
+- EN: First, showing the percentage increase
+- ZH: First, showing the percentage increase
+- EN: kernel and input feature maps, in the case of realistic CNN net-
+- ZH: kernel and input feature maps, in the case of realistic CNN net-
+- EN: in the individual layer compute times, and the second, showing the
+- ZH: in the individual layer compute times, and the second, showing the
+- EN: works, AlexNet and VGG-16 CNN networks have been used.
+- ZH: works, AlexNet and VGG-16 CNN networks have been used.
+- EN: For
+- ZH: For
+- EN: absolute layer compute times.
+- ZH: absolute layer compute times.
+- EN: both of these CNNs, individual layer compute times have been
+- ZH: both of these CNNs, individual layer compute times have been
+- EN: From Fig.
+- ZH: From Fig.
+- EN: 18 and 19 it can be seen that the layer processing
+- ZH: 18 and 19 it can be seen that the layer processing
+- EN: computed, for several scenarios:
+- ZH: computed, for several scenarios:
+- EN: time increase due to a non-balanced number of non-zero product
+- ZH: time increase due to a non-balanced number of non-zero product
+- EN: 1.
+- ZH: 1.
+- EN: ideal layer compute time when the increase in the layer com- terms that are present in the convolutional operations is not signif-
+- ZH: ideal layer compute time when the increase in the layer com- terms that are present in the convolutional operations is not signif-
+- EN: pute time due to the irregular non-zero values distribution is icant.
+- ZH: pute time due to the irregular non-zero values distribution is icant.
+- EN: For two selected CNN networks, when convolutional layers
+- ZH: For two selected CNN networks, when convolutional layers
+- EN: not taken into account, are considered, the maximum processing time increase is less than
+- ZH: not taken into account, are considered, the maximum processing time increase is less than
+
+
+---
+
+### Page 26
+
+- EN: 26 R.
+- ZH: 26 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+
+![](/workspace/CoNNa-26_1.jpg)
+
+- EN: Fig.
+- ZH: Fig.
+- EN: 19.
+- ZH: 19.
+- EN: Increase in layer compute times for AlexNet CNN, due to various effects of irregular distribution of non-zero values in kernel and input feature maps:
+- ZH: Increase in layer compute times for AlexNet CNN, due to various effects of irregular distribution of non-zero values in kernel and input feature maps:
+- EN: a) Percentage
+- ZH: a) Percentage
+- EN: increase in individual layer compute time;
+- ZH: increase in individual layer compute time;
+- EN: b) Absolute layer processing time.
+- ZH: b) Absolute layer processing time.
+- EN: 5% compared to ideal compute time.
+- ZH: 5% compared to ideal compute time.
+- EN: When fully-connected layers eliminated, or reduced, for almost all convolutional layers, and re-
+- ZH: When fully-connected layers eliminated, or reduced, for almost all convolutional layers, and re-
+- EN: are concerned, this increase is slightly higher and can reach as high duced for all fully-connected layers.
+- ZH: are concerned, this increase is slightly higher and can reach as high duced for all fully-connected layers.
+- EN: as 13%, as is the case with the FC8 VGG-16 layer.
+- ZH: as 13%, as is the case with the FC8 VGG-16 layer.
+- EN: However, as can Based on all experiments that were performed in order to an-
+- ZH: However, as can Based on all experiments that were performed in order to an-
+- EN: be observed in Figs.
+- ZH: be observed in Figs.
+- EN: 18 b and 19 b, total compute times of fully- alyze the effects of irregular non-zero values distribution within
+- ZH: 18 b and 19 b, total compute times of fully- alyze the effects of irregular non-zero values distribution within
+- EN: connected layers for both AlexNet and VGG-16 CNNs are almost kernel and input feature maps on the CoNNA architecture CNN
+- ZH: connected layers for both AlexNet and VGG-16 CNNs are almost kernel and input feature maps on the CoNNA architecture CNN
+- EN: negligible in comparison with convolutional layer compute times, processing time, it can be concluded that the irregular non-zero
+- ZH: negligible in comparison with convolutional layer compute times, processing time, it can be concluded that the irregular non-zero
+- EN: so this increase in fully-connected layer processing times doesn’t values distribution has indeed an effect on the increase of CoNNA’s
+- ZH: so this increase in fully-connected layer processing times doesn’t values distribution has indeed an effect on the increase of CoNNA’s
+- EN: signiﬁcantly change the total CNN processing time.
+- ZH: signiﬁcantly change the total CNN processing time.
+- EN: In fact, the to- total CNN processing time, but that this increase is relatively small,
+- ZH: In fact, the to- total CNN processing time, but that this increase is relatively small,
+- EN: tal CNN processing time increase due to a non-balanced number of not exceeding 3% of ideal CNN processing time.
+- ZH: tal CNN processing time increase due to a non-balanced number of not exceeding 3% of ideal CNN processing time.
+- EN: non-zero product terms in the case of AlexNet and VGG-16 CNNs
+- ZH: non-zero product terms in the case of AlexNet and VGG-16 CNNs
+- EN: is only 0.
+- ZH: is only 0.
+- EN: 95% and 2.
+- ZH: 95% and 2.
+- EN: 57% respectively.
+- ZH: 57% respectively.
+- EN: 5.
+- ZH: 5.
+- EN: Conclusion
+- ZH: Conclusion
+- EN: When the individual layer processing times increase due to the
+- ZH: When the individual layer processing times increase due to the
+- EN: “Empty Search Windows” is considered, from Figs.
+- ZH: “Empty Search Windows” is considered, from Figs.
+- EN: 18 and 19 it In this paper, a novel CNN hardware accelerator, CoNNA, has
+- ZH: 18 and 19 it In this paper, a novel CNN hardware accelerator, CoNNA, has
+- EN: can be observed that it is more severe, and can reach the val- been proposed.
+- ZH: can be observed that it is more severe, and can reach the val- been proposed.
+- EN: CoNNA is a coarse-grained reconﬁgurable hardware
+- ZH: CoNNA is a coarse-grained reconﬁgurable hardware
+- EN: ues as high as 80%, for FC6 and FC7 VGG-16 layers.
+- ZH: ues as high as 80%, for FC6 and FC7 VGG-16 layers.
+- EN: Also, it can architecture capable of accelerating complete pruned and com-
+- ZH: Also, it can architecture capable of accelerating complete pruned and com-
+- EN: be seen that this increase is also signiﬁcant for the convolutional pressed CNNs, employing the “All zero-skipping” technique to de-
+- ZH: be seen that this increase is also signiﬁcant for the convolutional pressed CNNs, employing the “All zero-skipping” technique to de-
+- EN: layers which are located deeper within the CNN network, and can crease required CNN processing time by skipping all ineffectual
+- ZH: layers which are located deeper within the CNN network, and can crease required CNN processing time by skipping all ineffectual
+- EN: reach the values of 40%.
+- ZH: reach the values of 40%.
+- EN: However, once more, the contribution of operations during convolutional, pooling and fully-connected layer
+- ZH: However, once more, the contribution of operations during convolutional, pooling and fully-connected layer
+- EN: all these layers to the total CNN processing time, especially the processing.
+- ZH: all these layers to the total CNN processing time, especially the processing.
+- EN: It can be used to accelerate convolutional, depthwise
+- ZH: It can be used to accelerate convolutional, depthwise
+- EN: contribution of fully-connected layers, is small in comparison with convolutional, pooling, fully-connected, concatenation and adding
+- ZH: contribution of fully-connected layers, is small in comparison with convolutional, pooling, fully-connected, concatenation and adding
+- EN: the contribution of bigger convolutional layers located closer to the layers of the target CNN network.
+- ZH: the contribution of bigger convolutional layers located closer to the layers of the target CNN network.
+- EN: CoNNA is designed to process
+- ZH: CoNNA is designed to process
+- EN: beginning of the CNN network.
+- ZH: beginning of the CNN network.
+- EN: This is visible when the increase in compressed CNNs, as well as input feature maps, which seems to
+- ZH: This is visible when the increase in compressed CNNs, as well as input feature maps, which seems to
+- EN: the total CNN processing time, due to “Empty Search Windows” for enable achieving higher processing performance values when com-
+- ZH: the total CNN processing time, due to “Empty Search Windows” for enable achieving higher processing performance values when com-
+- EN: AlexNet and VGG-16 CNNs is computed.
+- ZH: AlexNet and VGG-16 CNNs is computed.
+- EN: In the case of AlexNet to- pared to some of the previously proposed CNN accelerator solu-
+- ZH: In the case of AlexNet to- pared to some of the previously proposed CNN accelerator solu-
+- EN: tal processing time increase is 2.
+- ZH: tal processing time increase is 2.
+- EN: 94%, and for the VGG-16 network, tions.
+- ZH: 94%, and for the VGG-16 network, tions.
+- EN: CoNNA is designed to act as a co-processor soft-IP core that
+- ZH: CoNNA is designed to act as a co-processor soft-IP core that
+- EN: it is even smaller, only 1.
+- ZH: it is even smaller, only 1.
+- EN: 10%.
+- ZH: 10%.
+- EN: is connected to a host processor within contemporary SoC or PSoC
+- ZH: is connected to a host processor within contemporary SoC or PSoC
+- EN: From Figs.
+- ZH: From Figs.
+- EN: 18 and 19 , the beneﬁt of using a built-in FIFO within architectures.
+- ZH: 18 and 19 , the beneﬁt of using a built-in FIFO within architectures.
+- EN: The CoNNA architecture has been implemented us-
+- ZH: The CoNNA architecture has been implemented us-
+- EN: Data Fetcher modules can also be seen.
+- ZH: Data Fetcher modules can also be seen.
+- EN: When FIFO is being used, + ing Xilinx ZynqUtrascale FPGA family and compared with seven
+- ZH: When FIFO is being used, + ing Xilinx ZynqUtrascale FPGA family and compared with seven
+- EN: the resulting increase in layer processing times can be completely previously proposed hardware CNN accelerators.
+- ZH: the resulting increase in layer processing times can be completely previously proposed hardware CNN accelerators.
+- EN: The CoNNA archi-
+- ZH: The CoNNA archi-
+
+
+---
+
+### Page 27
+
+- EN: R.
+- ZH: R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991 27
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991 27
+- EN: tecture, when conﬁgured to use identical number of MAC units [21] J.
+- ZH: tecture, when conﬁgured to use identical number of MAC units [21] J.
+- EN: Qiu , J.
+- ZH: Qiu , J.
+- EN: Wang , S.
+- ZH: Wang , S.
+- EN: Yao , K.
+- ZH: Yao , K.
+- EN: Guo , B.
+- ZH: Guo , B.
+- EN: Li , E.
+- ZH: Li , E.
+- EN: Zhou , J.
+- ZH: Zhou , J.
+- EN: Yu , T.
+- ZH: Yu , T.
+- EN: Tang , N.
+- ZH: Tang , N.
+- EN: Xu , S.
+- ZH: Xu , S.
+- EN: Song ,
+- ZH: Song ,
+- EN: Y.
+- ZH: Y.
+- EN: Wang , Going deeper with embedded fpga platform for convolutional neural and operating at the same clock frequency as previously proposed
+- ZH: Wang , Going deeper with embedded fpga platform for convolutional neural and operating at the same clock frequency as previously proposed
+- EN: network, in:
+- ZH: network, in:
+- EN: Proceedings of the 2016 ACM/SIGDA International Symposium on
+- ZH: Proceedings of the 2016 ACM/SIGDA International Symposium on
+- EN: MIT’s Eyeriss, NullHop and NVIDIA’s NVDLA, NEURAghe, CNN_A1,
+- ZH: MIT’s Eyeriss, NullHop and NVIDIA’s NVDLA, NEURAghe, CNN_A1,
+- EN: Field-Programmable Gate Arrays, Monterey, 2016, pp.
+- ZH: Field-Programmable Gate Arrays, Monterey, 2016, pp.
+- EN: 26–35 .
+- ZH: 26–35 .
+- EN: fpgaConvNet, and Deephi’s Aristotle CNN accelerators, enables up [22] Z.
+- ZH: fpgaConvNet, and Deephi’s Aristotle CNN accelerators, enables up [22] Z.
+- EN: Liu , Y.
+- ZH: Liu , Y.
+- EN: Dou , J.
+- ZH: Dou , J.
+- EN: Jiang , J.
+- ZH: Jiang , J.
+- EN: Xu , S.
+- ZH: Xu , S.
+- EN: Li , Y.
+- ZH: Li , Y.
+- EN: Zhou , Y.
+- ZH: Zhou , Y.
+- EN: Xu , Throughput-Optimized FPGA
+- ZH: Xu , Throughput-Optimized FPGA
+- EN: accelerator for deep convolutional neural networks, ACM Trans.
+- ZH: accelerator for deep convolutional neural networks, ACM Trans.
+- EN: Reconﬁgurable to 14.
+- ZH: Reconﬁgurable to 14.
+- EN: 10, 6.
+- ZH: 10, 6.
+- EN: 05, 4.
+- ZH: 05, 4.
+- EN: 91, 2.
+- ZH: 91, 2.
+- EN: 67, 11.
+- ZH: 67, 11.
+- EN: 30, 3.
+- ZH: 30, 3.
+- EN: 08 and 3.
+- ZH: 08 and 3.
+- EN: 58 times faster CNN ex-
+- ZH: 58 times faster CNN ex-
+- EN: Technol.
+- ZH: Technol.
+- EN: Syst.
+- ZH: Syst.
+- EN: 10 (3) (2017) 17 .
+- ZH: 10 (3) (2017) 17 .
+- EN: ecution of standard CNN networks respectively.
+- ZH: ecution of standard CNN networks respectively.
+- EN: [23] P.
+- ZH: [23] P.
+- EN: Meloni , A.
+- ZH: Meloni , A.
+- EN: Capotondi , G.
+- ZH: Capotondi , G.
+- EN: Deriu , M.
+- ZH: Deriu , M.
+- EN: Brian , F.
+- ZH: Brian , F.
+- EN: Conti , D.
+- ZH: Conti , D.
+- EN: Rossi , L.
+- ZH: Rossi , L.
+- EN: Raffo , L.
+- ZH: Raffo , L.
+- EN: Benini ,
+- ZH: Benini ,
+- EN: NEURAghe:
+- ZH: NEURAghe:
+- EN: exploiting CPU-FPGA synergies for eﬃcient and ﬂexible CNN infer-
+- ZH: exploiting CPU-FPGA synergies for eﬃcient and ﬂexible CNN infer-
+- EN: ence acceleration on Zynq SoCs, ACM Trans.
+- ZH: ence acceleration on Zynq SoCs, ACM Trans.
+- EN: Reconﬁgurable Technol.
+- ZH: Reconﬁgurable Technol.
+- EN: Syst.
+- ZH: Syst.
+- EN: 11
+- ZH: 11
+- EN: Declaration of Competing Interest (3) (2018) 18 .
+- ZH: Declaration of Competing Interest (3) (2018) 18 .
+- EN: [24] N.
+- ZH: [24] N.
+- EN: Shah , P.
+- ZH: Shah , P.
+- EN: Chaudhari , K.
+- ZH: Chaudhari , K.
+- EN: Varghese , Runtime programmable and memory band-
+- ZH: Varghese , Runtime programmable and memory band-
+- EN: width optimized FPGA-Based coprocessor for deep convolutional neural net- The authors declare that they have no known competing ﬁnan-
+- ZH: width optimized FPGA-Based coprocessor for deep convolutional neural net- The authors declare that they have no known competing ﬁnan-
+- EN: work, IEEE Trans.
+- ZH: work, IEEE Trans.
+- EN: Neural Netw.
+- ZH: Neural Netw.
+- EN: Learn.
+- ZH: Learn.
+- EN: Syst.
+- ZH: Syst.
+- EN: 29 (12) (2018) 5922–5934 .
+- ZH: 29 (12) (2018) 5922–5934 .
+- EN: cial interests or personal relationships that could have appeared to
+- ZH: cial interests or personal relationships that could have appeared to
+- EN: [25] S.
+- ZH: [25] S.
+- EN: I.
+- ZH: I.
+- EN: Venieris , C.
+- ZH: Venieris , C.
+- EN: S.
+- ZH: S.
+- EN: Bouganis , fpgaConvNet:
+- ZH: Bouganis , fpgaConvNet:
+- EN: mapping regular and irregular convo-
+- ZH: mapping regular and irregular convo-
+- EN: inﬂuence the work reported in this paper.
+- ZH: inﬂuence the work reported in this paper.
+- EN: lutional neural networks on FPGAs, IEEE Trans.
+- ZH: lutional neural networks on FPGAs, IEEE Trans.
+- EN: Neural Netw.
+- ZH: Neural Netw.
+- EN: Learn.
+- ZH: Learn.
+- EN: Syst.
+- ZH: Syst.
+- EN: (2018)
+- ZH: (2018)
+- EN: (2018) 1–17 Early Access .
+- ZH: (2018) 1–17 Early Access .
+- EN: [26] J.
+- ZH: [26] J.
+- EN: Cheng , J.
+- ZH: Cheng , J.
+- EN: Wu , C.
+- ZH: Wu , C.
+- EN: Leng , Y.
+- ZH: Leng , Y.
+- EN: Wang , Q.
+- ZH: Wang , Q.
+- EN: Hu , Quantized CNN:
+- ZH: Hu , Quantized CNN:
+- EN: a uniﬁed approach
+- ZH: a uniﬁed approach
+- EN: References to accelerate and compress convolutional networks, IEEE Trans Neural Netw
+- ZH: References to accelerate and compress convolutional networks, IEEE Trans Neural Netw
+- EN: Learn Syst 29 (10) (2017) 4730–4743 .
+- ZH: Learn Syst 29 (10) (2017) 4730–4743 .
+- EN: [27] M.
+- ZH: [27] M.
+- EN: Motamedi , P.
+- ZH: Motamedi , P.
+- EN: Gysel , S.
+- ZH: Gysel , S.
+- EN: Ghiasi , PLACID:
+- ZH: Ghiasi , PLACID:
+- EN: a platform for FPGA-based accelera-
+- ZH: a platform for FPGA-based accelera-
+- EN: [1] Y.
+- ZH: [1] Y.
+- EN: LeCun , Y.
+- ZH: LeCun , Y.
+- EN: Bengio , G.
+- ZH: Bengio , G.
+- EN: Hinton , Deep learning, Nature 521 (7553) (2015)
+- ZH: Hinton , Deep learning, Nature 521 (7553) (2015)
+- EN: tor creation for DCNNs, ACM Tran.
+- ZH: tor creation for DCNNs, ACM Tran.
+- EN: Multimed.
+- ZH: Multimed.
+- EN: Comput.
+- ZH: Comput.
+- EN: Commun.
+- ZH: Commun.
+- EN: Appl.
+- ZH: Appl.
+- EN: 13 (4)
+- ZH: 13 (4)
+- EN: 436–4 4 4 .
+- ZH: 436–4 4 4 .
+- EN: (2017) 62 Article No .
+- ZH: (2017) 62 Article No .
+- EN: [2] K.
+- ZH: [2] K.
+- EN: Fukushima , Neocognitron:
+- ZH: Fukushima , Neocognitron:
+- EN: a self-organizing neural network model for a
+- ZH: a self-organizing neural network model for a
+- EN: [28] Y.
+- ZH: [28] Y.
+- EN: Choi , D.
+- ZH: Choi , D.
+- EN: Bae , J.
+- ZH: Bae , J.
+- EN: Sim , S.
+- ZH: Sim , S.
+- EN: Choi , M.
+- ZH: Choi , M.
+- EN: Kim , L.
+- ZH: Kim , L.
+- EN: S.
+- ZH: S.
+- EN: Kim , Energy-Eﬃcient design of
+- ZH: Kim , Energy-Eﬃcient design of
+- EN: mechanism of pattern recognition unaffected by shift in position, Biol.
+- ZH: mechanism of pattern recognition unaffected by shift in position, Biol.
+- EN: Cybern.
+- ZH: Cybern.
+- EN: processing element for convolutional neural network, IEEE Trans.
+- ZH: processing element for convolutional neural network, IEEE Trans.
+- EN: Circuit.
+- ZH: Circuit.
+- EN: Syst.
+- ZH: Syst.
+- EN: 36 (4) (1980) 193–202 .
+- ZH: 36 (4) (1980) 193–202 .
+- EN: II 64 (11) (2017) 1332–1336 .
+- ZH: II 64 (11) (2017) 1332–1336 .
+- EN: [3] A.
+- ZH: [3] A.
+- EN: Krizhevsky , I.
+- ZH: Krizhevsky , I.
+- EN: Sutskever , G.
+- ZH: Sutskever , G.
+- EN: E.
+- ZH: E.
+- EN: Hinton , ImageNet classiﬁcation with deep con-
+- ZH: Hinton , ImageNet classiﬁcation with deep con-
+- EN: [29] X.
+- ZH: [29] X.
+- EN: Chen , Z.
+- ZH: Chen , Z.
+- EN: Yu , A ﬂexible and energy-eﬃcient convolutional neural network volutional neural networks, in:
+- ZH: Yu , A ﬂexible and energy-eﬃcient convolutional neural network volutional neural networks, in:
+- EN: Advances in Neural Information Processing Sys-
+- ZH: Advances in Neural Information Processing Sys-
+- EN: acceleration with dedicated ISA and accelerator, IEEE Trans.
+- ZH: acceleration with dedicated ISA and accelerator, IEEE Trans.
+- EN: Very Large Scale tems, Lake Tahoe, 2012, pp.
+- ZH: Very Large Scale tems, Lake Tahoe, 2012, pp.
+- EN: 1097–1105 .
+- ZH: 1097–1105 .
+- EN: Integr.
+- ZH: Integr.
+- EN: (VLSI) Syst.
+- ZH: (VLSI) Syst.
+- EN: 26 (7) (2018) 1408–1412 .
+- ZH: 26 (7) (2018) 1408–1412 .
+- EN: [4] R.
+- ZH: [4] R.
+- EN: Girshick , R.
+- ZH: Girshick , R.
+- EN: -.
+- ZH: -.
+- EN: C.
+- ZH: C.
+- EN: N.
+- ZH: N.
+- EN: N.
+- ZH: N.
+- EN: Fast , in:
+- ZH: Fast , in:
+- EN: Proceedings of the IEEE Conference on Computer
+- ZH: Proceedings of the IEEE Conference on Computer
+- EN: [30] K.
+- ZH: [30] K.
+- EN: Guo , S.
+- ZH: Guo , S.
+- EN: Han , S.
+- ZH: Han , S.
+- EN: Yao , Y.
+- ZH: Yao , Y.
+- EN: Wang , Y.
+- ZH: Wang , Y.
+- EN: Xie , H.
+- ZH: Xie , H.
+- EN: Yang , Software-Hardware code- Vision and Pattern Recognition - CVPR, 15, 2015, pp.
+- ZH: Yang , Software-Hardware code- Vision and Pattern Recognition - CVPR, 15, 2015, pp.
+- EN: 1440–1448 .
+- ZH: 1440–1448 .
+- EN: sign for eﬃcient neural network acceleration, IEEE Micro.
+- ZH: sign for eﬃcient neural network acceleration, IEEE Micro.
+- EN: 37 (2) (2017) 18– [5] Jonathan Long , Evan Shelhamer , Trevor Darrell , Fully convolutional networks
+- ZH: 37 (2) (2017) 18– [5] Jonathan Long , Evan Shelhamer , Trevor Darrell , Fully convolutional networks
+- EN: 25 .
+- ZH: 25 .
+- EN: for semantic segmentation, in:
+- ZH: for semantic segmentation, in:
+- EN: Proceedings of the IEEE Conference on Com-
+- ZH: Proceedings of the IEEE Conference on Com-
+- EN: [31] J.
+- ZH: [31] J.
+- EN: Albericio , P.
+- ZH: Albericio , P.
+- EN: Judd , T.
+- ZH: Judd , T.
+- EN: Hetherington , T.
+- ZH: Hetherington , T.
+- EN: Aamodt , N.
+- ZH: Aamodt , N.
+- EN: E.
+- ZH: E.
+- EN: Jerger , A.
+- ZH: Jerger , A.
+- EN: Moshovos , puter Vision and Pattern Recognition - CVPR, 15, 2015, pp.
+- ZH: Moshovos , puter Vision and Pattern Recognition - CVPR, 15, 2015, pp.
+- EN: 3431–3440 .
+- ZH: 3431–3440 .
+- EN: Cnvlutin:
+- ZH: Cnvlutin:
+- EN: ineffectual-neuron-free deep neural network computing, in:
+- ZH: ineffectual-neuron-free deep neural network computing, in:
+- EN: 2016 [6] L.
+- ZH: 2016 [6] L.
+- EN: Deng , J.
+- ZH: Deng , J.
+- EN: Li , J.
+- ZH: Li , J.
+- EN: -.
+- ZH: -.
+- EN: T.
+- ZH: T.
+- EN: Huang , K.
+- ZH: Huang , K.
+- EN: Yao , D.
+- ZH: Yao , D.
+- EN: Yu , F.
+- ZH: Yu , F.
+- EN: Seide , M.
+- ZH: Seide , M.
+- EN: Seltzer , G.
+- ZH: Seltzer , G.
+- EN: Zweig , X.
+- ZH: Zweig , X.
+- EN: He ,
+- ZH: He ,
+- EN: ACM/IEEE 43rd Annual International Symposium on Computer Architecture J.
+- ZH: ACM/IEEE 43rd Annual International Symposium on Computer Architecture J.
+- EN: Williams , Y.
+- ZH: Williams , Y.
+- EN: Gong , Recent advances in deep learning for speech research at
+- ZH: Gong , Recent advances in deep learning for speech research at
+- EN: (ISCA), Seoul, 2016, pp.
+- ZH: (ISCA), Seoul, 2016, pp.
+- EN: 1–13 .
+- ZH: 1–13 .
+- EN: microsoft, in:
+- ZH: microsoft, in:
+- EN: IEEE International Conference on Acoustics, Speech and Signal
+- ZH: IEEE International Conference on Acoustics, Speech and Signal
+- EN: [32] A.
+- ZH: [32] A.
+- EN: Aimar , H.
+- ZH: Aimar , H.
+- EN: Mostafa , E.
+- ZH: Mostafa , E.
+- EN: Calabrese , A.
+- ZH: Calabrese , A.
+- EN: Rios-Navarro , R.
+- ZH: Rios-Navarro , R.
+- EN: Tapiador-Morales , Processing (ICASSP), Vancouver, 2013, pp.
+- ZH: Tapiador-Morales , Processing (ICASSP), Vancouver, 2013, pp.
+- EN: 8604–8608 .
+- ZH: 8604–8608 .
+- EN: I.
+- ZH: I.
+- EN: A.
+- ZH: A.
+- EN: Lungu , M.
+- ZH: Lungu , M.
+- EN: B.
+- ZH: B.
+- EN: Milde , F.
+- ZH: Milde , F.
+- EN: Corradi , A.
+- ZH: Corradi , A.
+- EN: Linares-Barranco , S.
+- ZH: Linares-Barranco , S.
+- EN: C.
+- ZH: C.
+- EN: Liu , T.
+- ZH: Liu , T.
+- EN: Delbruck , [7] C.
+- ZH: Delbruck , [7] C.
+- EN: Chen , A.
+- ZH: Chen , A.
+- EN: Seff, A.
+- ZH: Seff, A.
+- EN: Kornhauser , J.
+- ZH: Kornhauser , J.
+- EN: Xiao , Deepdriving:
+- ZH: Xiao , Deepdriving:
+- EN: learning affordance for
+- ZH: learning affordance for
+- EN: NullHop:
+- ZH: NullHop:
+- EN: a ﬂexible convolutional neural network accelerator based on sparse
+- ZH: a ﬂexible convolutional neural network accelerator based on sparse
+- EN: direct perception in autonomous driving, in:
+- ZH: direct perception in autonomous driving, in:
+- EN: Proceedings of the IEEE Interna-
+- ZH: Proceedings of the IEEE Interna-
+- EN: representations of feature maps, IEEE Trans.
+- ZH: representations of feature maps, IEEE Trans.
+- EN: Neural Netw.
+- ZH: Neural Netw.
+- EN: Learn.
+- ZH: Learn.
+- EN: Syst.
+- ZH: Syst.
+- EN: (2018)
+- ZH: (2018)
+- EN: tional Conference on Computer Vision, Santiago, 2015, pp.
+- ZH: tional Conference on Computer Vision, Santiago, 2015, pp.
+- EN: 2722–2730 .
+- ZH: 2722–2730 .
+- EN: 1–13 Early Access .
+- ZH: 1–13 Early Access .
+- EN: [8] A.
+- ZH: [8] A.
+- EN: Esteva , B.
+- ZH: Esteva , B.
+- EN: Kuprel , R.
+- ZH: Kuprel , R.
+- EN: A.
+- ZH: A.
+- EN: Novoa , J.
+- ZH: Novoa , J.
+- EN: Ko , S.
+- ZH: Ko , S.
+- EN: M.
+- ZH: M.
+- EN: Swetter , H.
+- ZH: Swetter , H.
+- EN: M.
+- ZH: M.
+- EN: Blau , S.
+- ZH: Blau , S.
+- EN: Thrun , Derma-
+- ZH: Thrun , Derma-
+- EN: [33] Y.
+- ZH: [33] Y.
+- EN: Lu , C.
+- ZH: Lu , C.
+- EN: Wang , L.
+- ZH: Wang , L.
+- EN: Gong , X.
+- ZH: Gong , X.
+- EN: Zhou , SparseNN:
+- ZH: Zhou , SparseNN:
+- EN: a performance-eﬃcient accelerator
+- ZH: a performance-eﬃcient accelerator
+- EN: tologist-level classiﬁcation of skin cancer with deep neural networks, Nature
+- ZH: tologist-level classiﬁcation of skin cancer with deep neural networks, Nature
+- EN: for large-scale sparse neural networks, Int.
+- ZH: for large-scale sparse neural networks, Int.
+- EN: J.
+- ZH: J.
+- EN: Parallel Program.
+- ZH: Parallel Program.
+- EN: 46 (4) (2018)
+- ZH: 46 (4) (2018)
+- EN: 542 (7639) (2017) 115–118 .
+- ZH: 542 (7639) (2017) 115–118 .
+- EN: 648–659 .
+- ZH: 648–659 .
+- EN: [9] D.
+- ZH: [9] D.
+- EN: Silver , A.
+- ZH: Silver , A.
+- EN: Huang , C.
+- ZH: Huang , C.
+- EN: J.
+- ZH: J.
+- EN: Maddison , A.
+- ZH: Maddison , A.
+- EN: Guez , L.
+- ZH: Guez , L.
+- EN: Sifre , G.
+- ZH: Sifre , G.
+- EN: van den Driess-
+- ZH: van den Driess-
+- EN: [34] S.
+- ZH: [34] S.
+- EN: Zhang , Z.
+- ZH: Zhang , Z.
+- EN: Du , L.
+- ZH: Du , L.
+- EN: Zhang , H.
+- ZH: Zhang , H.
+- EN: Lan , S.
+- ZH: Lan , S.
+- EN: Liu , L.
+- ZH: Liu , L.
+- EN: Li , Q.
+- ZH: Li , Q.
+- EN: Guo , T.
+- ZH: Guo , T.
+- EN: Chen , Y.
+- ZH: Chen , Y.
+- EN: Chen ,
+- ZH: Chen ,
+- EN: che , J.
+- ZH: che , J.
+- EN: Schrittwieser , I.
+- ZH: Schrittwieser , I.
+- EN: Antonoglou , V.
+- ZH: Antonoglou , V.
+- EN: Panneershelvam , M.
+- ZH: Panneershelvam , M.
+- EN: Lanctot , S.
+- ZH: Lanctot , S.
+- EN: Diele-
+- ZH: Diele-
+- EN: Cambricon-x:
+- ZH: Cambricon-x:
+- EN: an accelerator for sparse neural networks, in:
+- ZH: an accelerator for sparse neural networks, in:
+- EN: The 49th Annual
+- ZH: The 49th Annual
+- EN: man , D.
+- ZH: man , D.
+- EN: Grewe , J.
+- ZH: Grewe , J.
+- EN: Nham , N.
+- ZH: Nham , N.
+- EN: Kalchbrenner , I.
+- ZH: Kalchbrenner , I.
+- EN: Sutskever , T.
+- ZH: Sutskever , T.
+- EN: Lillicrap , M.
+- ZH: Lillicrap , M.
+- EN: Leach ,
+- ZH: Leach ,
+- EN: IEEE/ACM International Symposium on Microarchitecture, Taipei, 2016, p.
+- ZH: IEEE/ACM International Symposium on Microarchitecture, Taipei, 2016, p.
+- EN: 20.
+- ZH: 20.
+- EN: K.
+- ZH: K.
+- EN: Kavukcuoglu , T.
+- ZH: Kavukcuoglu , T.
+- EN: Graepel , D.
+- ZH: Graepel , D.
+- EN: Hassabis , Mastering the game of Go with deep
+- ZH: Hassabis , Mastering the game of Go with deep
+- EN: Article No .
+- ZH: Article No .
+- EN: neural networks and tree search, Nature 529 (7587) (2016) 4 84–4 89 .
+- ZH: neural networks and tree search, Nature 529 (7587) (2016) 4 84–4 89 .
+- EN: [35] S.
+- ZH: [35] S.
+- EN: Han , X.
+- ZH: Han , X.
+- EN: Liu , H.
+- ZH: Liu , H.
+- EN: Mao , J.
+- ZH: Mao , J.
+- EN: Pu , A.
+- ZH: Pu , A.
+- EN: Pedram , M.
+- ZH: Pedram , M.
+- EN: A.
+- ZH: A.
+- EN: Horowitz , W.
+- ZH: Horowitz , W.
+- EN: J.
+- ZH: J.
+- EN: Dally , EIE:
+- ZH: Dally , EIE:
+- EN: eﬃ- [10] K.
+- ZH: eﬃ- [10] K.
+- EN: Simonyan, A.
+- ZH: Simonyan, A.
+- EN: Zisserman, Very deep convolutional networks for large-scale
+- ZH: Zisserman, Very deep convolutional networks for large-scale
+- EN: cient inference engine on compressed deep neural network, in:
+- ZH: cient inference engine on compressed deep neural network, in:
+- EN: Proceedings image recognition, arXiv preprint, arXiv:
+- ZH: Proceedings image recognition, arXiv preprint, arXiv:
+- EN: 1409.
+- ZH: 1409.
+- EN: 1556 , 2014.
+- ZH: 1556 , 2014.
+- EN: of the 43rd International Symposium on Computer Architecture, Seoul, 2016, [11] NVIDIA Volta Architecture Whitepaper WP-08608-001_v1.
+- ZH: of the 43rd International Symposium on Computer Architecture, Seoul, 2016, [11] NVIDIA Volta Architecture Whitepaper WP-08608-001_v1.
+- EN: 1, NVIDIA, (2018),
+- ZH: 1, NVIDIA, (2018),
+- EN: pp.
+- ZH: pp.
+- EN: 243–254 .
+- ZH: 243–254 .
+- EN: [Online], Available:
+- ZH: [Online], Available:
+- EN: http:
+- ZH: http:
+- EN: //images.
+- ZH: //images.
+- EN: nvidia.
+- ZH: nvidia.
+- EN: com/content/volta-architecture/pdf/
+- ZH: com/content/volta-architecture/pdf/
+- EN: [36] A.
+- ZH: [36] A.
+- EN: Parashar , M.
+- ZH: Parashar , M.
+- EN: Rhu , A.
+- ZH: Rhu , A.
+- EN: Mukkara , A.
+- ZH: Mukkara , A.
+- EN: Puglielli , R.
+- ZH: Puglielli , R.
+- EN: Venkatesan , B.
+- ZH: Venkatesan , B.
+- EN: Khailany , volta-architecture-whitepaper.
+- ZH: Khailany , volta-architecture-whitepaper.
+- EN: pdf .
+- ZH: pdf .
+- EN: W.
+- ZH: W.
+- EN: J.
+- ZH: J.
+- EN: Dally , Scnn:
+- ZH: Dally , Scnn:
+- EN: an accelerator for compressed-sparse convolutional neural [12] NVIDIA Jetson TX2 Delivers Twice the Intelligence to the Edge, NVIDIA, (2017),
+- ZH: an accelerator for compressed-sparse convolutional neural [12] NVIDIA Jetson TX2 Delivers Twice the Intelligence to the Edge, NVIDIA, (2017),
+- EN: networks, in:
+- ZH: networks, in:
+- EN: 2017 ACM/IEEE 44th Annual International Symposium on Com- [Online], Available:
+- ZH: 2017 ACM/IEEE 44th Annual International Symposium on Com- [Online], Available:
+- EN: https:
+- ZH: https:
+- EN: //devblogs.
+- ZH: //devblogs.
+- EN: nvidia.
+- ZH: nvidia.
+- EN: com/jetson- tx2- delivers- twice-
+- ZH: com/jetson- tx2- delivers- twice-
+- EN: puter Architecture (ISCA), Toronto, 2017, pp.
+- ZH: puter Architecture (ISCA), Toronto, 2017, pp.
+- EN: 27–40 .
+- ZH: 27–40 .
+- EN: intelligence-edge/ .
+- ZH: intelligence-edge/ .
+- EN: [37] S.
+- ZH: [37] S.
+- EN: Anwar, W.
+- ZH: Anwar, W.
+- EN: Sung, Compact Deep Convolutional Neural Networks With Coarse [13] Intel® Stratix® 10 Variable Precision DSP Blocks User Guide, Intel FPGA
+- ZH: Sung, Compact Deep Convolutional Neural Networks With Coarse [13] Intel® Stratix® 10 Variable Precision DSP Blocks User Guide, Intel FPGA
+- EN: Pruning, ArXiv preprint, arXiv:
+- ZH: Pruning, ArXiv preprint, arXiv:
+- EN: 1610.
+- ZH: 1610.
+- EN: 09639 , (2016).
+- ZH: 09639 , (2016).
+- EN: Group, (2017), [Online], Available:
+- ZH: Group, (2017), [Online], Available:
+- EN: https:
+- ZH: https:
+- EN: //www.
+- ZH: //www.
+- EN: intel.
+- ZH: intel.
+- EN: com/content/dam/www/
+- ZH: com/content/dam/www/
+- EN: [38] H.
+- ZH: [38] H.
+- EN: Li, A.
+- ZH: Li, A.
+- EN: Kadav, I.
+- ZH: Kadav, I.
+- EN: Durdanovic, H.
+- ZH: Durdanovic, H.
+- EN: Samet, H.
+- ZH: Samet, H.
+- EN: P.
+- ZH: P.
+- EN: Graf, Pruning ﬁlters for eﬃcient programmable/us/en/pdfs/literature/hb/stratix- 10/ug- s10- dsp.
+- ZH: Graf, Pruning ﬁlters for eﬃcient programmable/us/en/pdfs/literature/hb/stratix- 10/ug- s10- dsp.
+- EN: pdf .
+- ZH: pdf .
+- EN: convnets, arXiv preprint, arXiv:
+- ZH: convnets, arXiv preprint, arXiv:
+- EN: 1608.
+- ZH: 1608.
+- EN: 08710 , (2016).
+- ZH: 08710 , (2016).
+- EN: [14] E.
+- ZH: [14] E.
+- EN: Nurvitadhi , S.
+- ZH: Nurvitadhi , S.
+- EN: Subhaschandra , G.
+- ZH: Subhaschandra , G.
+- EN: Boudoukh , G.
+- ZH: Boudoukh , G.
+- EN: Venkatesh , J.
+- ZH: Venkatesh , J.
+- EN: Sim , D.
+- ZH: Sim , D.
+- EN: Marr ,
+- ZH: Marr ,
+- EN: [39] J.
+- ZH: [39] J.
+- EN: H.
+- ZH: H.
+- EN: Luo , J.
+- ZH: Luo , J.
+- EN: Wu , W.
+- ZH: Wu , W.
+- EN: Lin , Thinet:
+- ZH: Lin , Thinet:
+- EN: a ﬁlter level pruning method for deep neural
+- ZH: a ﬁlter level pruning method for deep neural
+- EN: R.
+- ZH: R.
+- EN: Huang , J.
+- ZH: Huang , J.
+- EN: OngGeeHock , Y.
+- ZH: OngGeeHock , Y.
+- EN: T.
+- ZH: T.
+- EN: Liew , K.
+- ZH: Liew , K.
+- EN: Srivatsan , D.
+- ZH: Srivatsan , D.
+- EN: Moss , Can FPGAs beat
+- ZH: Moss , Can FPGAs beat
+- EN: network compression, in:
+- ZH: network compression, in:
+- EN: The IEEE International Conference on Computer Vi-
+- ZH: The IEEE International Conference on Computer Vi-
+- EN: GPUs in accelerating next-generation deep neural networks?
+- ZH: GPUs in accelerating next-generation deep neural networks?
+- EN: in:
+- ZH: in:
+- EN: Proceedings
+- ZH: Proceedings
+- EN: sion (ICCV’17), Venice, 2017, pp.
+- ZH: sion (ICCV’17), Venice, 2017, pp.
+- EN: 5058–5066 .
+- ZH: 5058–5066 .
+- EN: of the ACM/SIGDA International Symposium on Field-Programmable Gate Ar-
+- ZH: of the ACM/SIGDA International Symposium on Field-Programmable Gate Ar-
+- EN: [40] Y.
+- ZH: [40] Y.
+- EN: He , X.
+- ZH: He , X.
+- EN: Zhang , J.
+- ZH: Zhang , J.
+- EN: Sun , Channel pruning for accelerating very deep neural
+- ZH: Sun , Channel pruning for accelerating very deep neural
+- EN: rays - FPGA, 17, Monterey, 2017, pp.
+- ZH: rays - FPGA, 17, Monterey, 2017, pp.
+- EN: 5–14 .
+- ZH: 5–14 .
+- EN: networks.
+- ZH: networks.
+- EN: , in:
+- ZH: , in:
+- EN: International Conference on Computer Vision (ICCV’17), Venice,
+- ZH: International Conference on Computer Vision (ICCV’17), Venice,
+- EN: [15] Y.
+- ZH: [15] Y.
+- EN: Chen , T.
+- ZH: Chen , T.
+- EN: Luo , S.
+- ZH: Luo , S.
+- EN: Liu , S.
+- ZH: Liu , S.
+- EN: Zhang , L.
+- ZH: Zhang , L.
+- EN: He , J.
+- ZH: He , J.
+- EN: Wang , L.
+- ZH: Wang , L.
+- EN: Li , T.
+- ZH: Li , T.
+- EN: Chen , Z.
+- ZH: Chen , Z.
+- EN: Xu , N.
+- ZH: Xu , N.
+- EN: Sun ,
+- ZH: Sun ,
+- EN: 2017, pp.
+- ZH: 2017, pp.
+- EN: 1389–1397 .
+- ZH: 1389–1397 .
+- EN: O.
+- ZH: O.
+- EN: Temam , DaDianNao:
+- ZH: Temam , DaDianNao:
+- EN: a machine-learning supercomputer, in:
+- ZH: a machine-learning supercomputer, in:
+- EN: Proceedings
+- ZH: Proceedings
+- EN: [41] S.
+- ZH: [41] S.
+- EN: Anwar , K.
+- ZH: Anwar , K.
+- EN: Hwang , W.
+- ZH: Hwang , W.
+- EN: Sung , Structured pruning of deep convolutional neural
+- ZH: Sung , Structured pruning of deep convolutional neural
+- EN: of the 47th Annual IEEE/ACM International Symposium on Microarchitecture,
+- ZH: of the 47th Annual IEEE/ACM International Symposium on Microarchitecture,
+- EN: networks, ACM J.
+- ZH: networks, ACM J.
+- EN: Emerg.
+- ZH: Emerg.
+- EN: Technol.
+- ZH: Technol.
+- EN: Comput.
+- ZH: Comput.
+- EN: Syst.
+- ZH: Syst.
+- EN: 13 (3) (2017) 32 Article No .
+- ZH: 13 (3) (2017) 32 Article No .
+- EN: Cambridge, 2014, pp.
+- ZH: Cambridge, 2014, pp.
+- EN: 609–622 .
+- ZH: 609–622 .
+- EN: [42] S.
+- ZH: [42] S.
+- EN: Han , J.
+- ZH: Han , J.
+- EN: Pool , J.
+- ZH: Pool , J.
+- EN: Tran , W.
+- ZH: Tran , W.
+- EN: Dally , Learning both weights and connections for ef-
+- ZH: Dally , Learning both weights and connections for ef-
+- EN: [16] K.
+- ZH: [16] K.
+- EN: Guo, S.
+- ZH: Guo, S.
+- EN: Lingzhi, J.
+- ZH: Lingzhi, J.
+- EN: Qiu, S.
+- ZH: Qiu, S.
+- EN: Yao, S.
+- ZH: Yao, S.
+- EN: Han, Y.
+- ZH: Han, Y.
+- EN: Wang, and H.
+- ZH: Wang, and H.
+- EN: Yang, Angel-eye:
+- ZH: Yang, Angel-eye:
+- EN: a
+- ZH: a
+- EN: ﬁcient neural network, in:
+- ZH: ﬁcient neural network, in:
+- EN: Advances in neural information processing systems
+- ZH: Advances in neural information processing systems
+- EN: complete design ﬂow for mapping cnn onto customized hardware, in:
+- ZH: complete design ﬂow for mapping cnn onto customized hardware, in:
+- EN: 2016
+- ZH: 2016
+- EN: (NIPS 2015), Montreal, 2015, pp.
+- ZH: (NIPS 2015), Montreal, 2015, pp.
+- EN: 1135–1143 .
+- ZH: 1135–1143 .
+- EN: IEEE Computer Society Annual Symposium on VLSI (ISVLSI) , Pittsburgh (2016),
+- ZH: IEEE Computer Society Annual Symposium on VLSI (ISVLSI) , Pittsburgh (2016),
+- EN: [43] H.
+- ZH: [43] H.
+- EN: Song, H.
+- ZH: Song, H.
+- EN: Mao, W.
+- ZH: Mao, W.
+- EN: J.
+- ZH: J.
+- EN: Dally, Deep compression:
+- ZH: Dally, Deep compression:
+- EN: Compressing deep Neural 24–29.
+- ZH: Compressing deep Neural 24–29.
+- EN: Networks With pruning, Trained Quantization and Huffman Coding, arXiv [17] X.
+- ZH: Networks With pruning, Trained Quantization and Huffman Coding, arXiv [17] X.
+- EN: Wei , C.
+- ZH: Wei , C.
+- EN: H.
+- ZH: H.
+- EN: Yu , P.
+- ZH: Yu , P.
+- EN: Zhang , Y.
+- ZH: Zhang , Y.
+- EN: Chen , Y.
+- ZH: Chen , Y.
+- EN: Wang , H.
+- ZH: Wang , H.
+- EN: Hu , Y.
+- ZH: Hu , Y.
+- EN: Liang , J.
+- ZH: Liang , J.
+- EN: Cong , Auto-
+- ZH: Cong , Auto-
+- EN: preprint, arXiv:
+- ZH: preprint, arXiv:
+- EN: 1510.
+- ZH: 1510.
+- EN: 00149 , (2015).
+- ZH: 00149 , (2015).
+- EN: mated systolic array architecture synthesis for high throughput CNN inference
+- ZH: mated systolic array architecture synthesis for high throughput CNN inference
+- EN: [44] Y.
+- ZH: [44] Y.
+- EN: Guo , A.
+- ZH: Guo , A.
+- EN: Yao , Y.
+- ZH: Yao , Y.
+- EN: Chen , Dynamic network surgery for eﬃcient dnns, on FPGAs, in:
+- ZH: Chen , Dynamic network surgery for eﬃcient dnns, on FPGAs, in:
+- EN: Proceedings of the 54th Annual Design Automation Conference,
+- ZH: Proceedings of the 54th Annual Design Automation Conference,
+- EN: in:
+- ZH: in:
+- EN: Advances In Neural Information Processing Systems, Barcelona, 2016, Austin, 2017, p.
+- ZH: Advances In Neural Information Processing Systems, Barcelona, 2016, Austin, 2017, p.
+- EN: 29 .
+- ZH: 29 .
+- EN: pp.
+- ZH: pp.
+- EN: 1379–1387 .
+- ZH: 1379–1387 .
+- EN: [18] C.
+- ZH: [18] C.
+- EN: Wang , L.
+- ZH: Wang , L.
+- EN: Gong , Q.
+- ZH: Gong , Q.
+- EN: Yu , X.
+- ZH: Yu , X.
+- EN: Li , Y.
+- ZH: Li , Y.
+- EN: Xie , X.
+- ZH: Xie , X.
+- EN: Zhou , DLAU:
+- ZH: Zhou , DLAU:
+- EN: a scalable deep learning
+- ZH: a scalable deep learning
+- EN: [45] A.
+- ZH: [45] A.
+- EN: Erdeljan , B.
+- ZH: Erdeljan , B.
+- EN: Vukobratovi ´c , R.
+- ZH: Vukobratovi ´c , R.
+- EN: Struharik , IP core for eﬃcient zero-run accelerator unit on FPGA, IEEE Trans.
+- ZH: Struharik , IP core for eﬃcient zero-run accelerator unit on FPGA, IEEE Trans.
+- EN: Comput.
+- ZH: Comput.
+- EN: -Aid.
+- ZH: -Aid.
+- EN: Des.
+- ZH: Des.
+- EN: Integr.
+- ZH: Integr.
+- EN: Circuits Syst.
+- ZH: Circuits Syst.
+- EN: 36
+- ZH: 36
+- EN: length compression of CNN feature maps, in:
+- ZH: length compression of CNN feature maps, in:
+- EN: 25th Telecommunications Forum (3) (2017) 513–517 .
+- ZH: 25th Telecommunications Forum (3) (2017) 513–517 .
+- EN: (TELFOR 2017), Belgrade, 2017, pp.
+- ZH: (TELFOR 2017), Belgrade, 2017, pp.
+- EN: 44–49 .
+- ZH: 44–49 .
+- EN: [19] Y.
+- ZH: [19] Y.
+- EN: H.
+- ZH: H.
+- EN: Chen , T.
+- ZH: Chen , T.
+- EN: Krishna , J.
+- ZH: Krishna , J.
+- EN: S.
+- ZH: S.
+- EN: Emer , V.
+- ZH: Emer , V.
+- EN: Sze , Eyeriss:
+- ZH: Sze , Eyeriss:
+- EN: an energy-eﬃcient reconﬁg-
+- ZH: an energy-eﬃcient reconﬁg-
+- EN: [46] M.
+- ZH: [46] M.
+- EN: Horowitz , Computing’s energy problem (and what we can do about it), in:
+- ZH: Horowitz , Computing’s energy problem (and what we can do about it), in:
+- EN: urable accelerator for deep convolutional neural networks, IEEE J.
+- ZH: urable accelerator for deep convolutional neural networks, IEEE J.
+- EN: Solid-State
+- ZH: Solid-State
+- EN: IEEE International Solid-State Circuits Conference Digest of Technical Papers Circuits 52 (1) (2017) 127–138 .
+- ZH: IEEE International Solid-State Circuits Conference Digest of Technical Papers Circuits 52 (1) (2017) 127–138 .
+- EN: (ISSCC’14), San Francisco, 2014, pp.
+- ZH: (ISSCC’14), San Francisco, 2014, pp.
+- EN: 10–14 .
+- ZH: 10–14 .
+- EN: [20] N.
+- ZH: [20] N.
+- EN: Suda , V.
+- ZH: Suda , V.
+- EN: Chandra , G.
+- ZH: Chandra , G.
+- EN: Dasika , A.
+- ZH: Dasika , A.
+- EN: Mohanty , Y.
+- ZH: Mohanty , Y.
+- EN: Ma , S.
+- ZH: Ma , S.
+- EN: Vrudhula , J.
+- ZH: Vrudhula , J.
+- EN: S.
+- ZH: S.
+- EN: Seo , Y.
+- ZH: Seo , Y.
+- EN: Cao ,
+- ZH: Cao ,
+- EN: [47] A.
+- ZH: [47] A.
+- EN: Zhu , T.
+- ZH: Zhu , T.
+- EN: Wang , H.
+- ZH: Wang , H.
+- EN: Snoussi , Hierarchical graphical-based human pose estima-
+- ZH: Snoussi , Hierarchical graphical-based human pose estima-
+- EN: Throughput-optimized OpenCL-based FPGA accelerator for large-scale convolu-
+- ZH: Throughput-optimized OpenCL-based FPGA accelerator for large-scale convolu-
+- EN: tion via local multi-resolution convolutional neural network, AIP Adv.
+- ZH: tion via local multi-resolution convolutional neural network, AIP Adv.
+- EN: 8 (3)
+- ZH: 8 (3)
+- EN: tional neural networks, in:
+- ZH: tional neural networks, in:
+- EN: Proceedings of the 2016 ACM/SIGDA International
+- ZH: Proceedings of the 2016 ACM/SIGDA International
+- EN: (2018) 1–14 .
+- ZH: (2018) 1–14 .
+- EN: Symposium on Field-Programmable Gate Arrays, Monterey, 2016, pp.
+- ZH: Symposium on Field-Programmable Gate Arrays, Monterey, 2016, pp.
+- EN: 16–25 .
+- ZH: 16–25 .
+
+
+---
+
+### Page 28
+
+- EN: 28 R.
+- ZH: 28 R.
+- EN: J.
+- ZH: J.
+- EN: R.
+- ZH: R.
+- EN: Struharik, B.
+- ZH: Struharik, B.
+- EN: Z.
+- ZH: Z.
+- EN: Vukobratovi ´c and A.
+- ZH: Vukobratovi ´c and A.
+- EN: M.
+- ZH: M.
+- EN: Erdeljan et al.
+- ZH: Erdeljan et al.
+- EN: / Microprocessors and Microsystems 73 (2020) 102991
+- ZH: / Microprocessors and Microsystems 73 (2020) 102991
+- EN: [48] M.
+- ZH: [48] M.
+- EN: Al Rahhal , Y.
+- ZH: Al Rahhal , Y.
+- EN: Bazi , T.
+- ZH: Bazi , T.
+- EN: Abdullah , M.
+- ZH: Abdullah , M.
+- EN: Mekhalﬁ, H.
+- ZH: Mekhalﬁ, H.
+- EN: AlHichri , M.
+- ZH: AlHichri , M.
+- EN: Zuair , Learning a [51] C.
+- ZH: Zuair , Learning a [51] C.
+- EN: Szegedy , W.
+- ZH: Szegedy , W.
+- EN: Liu , Y.
+- ZH: Liu , Y.
+- EN: Jia , P.
+- ZH: Jia , P.
+- EN: Sermanet , S.
+- ZH: Sermanet , S.
+- EN: Reed , D.
+- ZH: Reed , D.
+- EN: Anguelov , D.
+- ZH: Anguelov , D.
+- EN: Erhan , V.
+- ZH: Erhan , V.
+- EN: Van-
+- ZH: Van-
+- EN: multi-branch neural network from multiple sources for knowledge adaptation houcke , A.
+- ZH: multi-branch neural network from multiple sources for knowledge adaptation houcke , A.
+- EN: Rabinovich , Going deeper with convolutions, in:
+- ZH: Rabinovich , Going deeper with convolutions, in:
+- EN: Proceedings of the
+- ZH: Proceedings of the
+- EN: in remote sensing imagery, Remote Sens.
+- ZH: in remote sensing imagery, Remote Sens.
+- EN: 10 (12) (2018) 1–18 .
+- ZH: 10 (12) (2018) 1–18 .
+- EN: IEEE Conference on Computer Vision and Pattern Recognition, Boston, 2015,
+- ZH: IEEE Conference on Computer Vision and Pattern Recognition, Boston, 2015,
+- EN: [49] T.
+- ZH: [49] T.
+- EN: Chen , S.
+- ZH: Chen , S.
+- EN: Lu , J.
+- ZH: Lu , J.
+- EN: Fan , SS-HCNN:
+- ZH: Fan , SS-HCNN:
+- EN: semi-Supervised hierarchical convolutional pp.
+- ZH: semi-Supervised hierarchical convolutional pp.
+- EN: 1–9 .
+- ZH: 1–9 .
+- EN: neural network for image classiﬁcation, in:
+- ZH: neural network for image classiﬁcation, in:
+- EN: IEEE Transactions on Image Pro- [52] K.
+- ZH: IEEE Transactions on Image Pro- [52] K.
+- EN: He , X.
+- ZH: He , X.
+- EN: Zhang , S.
+- ZH: Zhang , S.
+- EN: Ren , J.
+- ZH: Ren , J.
+- EN: Sun , Deep residual learning for image recognition, in:
+- ZH: Sun , Deep residual learning for image recognition, in:
+- EN: cessing, Early Access, 2018, pp.
+- ZH: cessing, Early Access, 2018, pp.
+- EN: 1–10 .
+- ZH: 1–10 .
+- EN: Proceedings of the IEEE Conference on Computer Vision and Pattern Recogni-
+- ZH: Proceedings of the IEEE Conference on Computer Vision and Pattern Recogni-
+- EN: [50] NVIDIA Deep Learning Accelerator, [Online], Available:
+- ZH: [50] NVIDIA Deep Learning Accelerator, [Online], Available:
+- EN: http:
+- ZH: http:
+- EN: //nvdla.
+- ZH: //nvdla.
+- EN: org/ , tion, Las Vegas, 2016, pp.
+- ZH: org/ , tion, Las Vegas, 2016, pp.
+- EN: 770–778 .
+- ZH: 770–778 .
+- EN: (2019).
+- ZH: (2019).
