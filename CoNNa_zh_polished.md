@@ -2,7 +2,7 @@
 
 </div>
 
-Microprocessors and Microsystems 73 (2020) 102991
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/89259587f36c5dd19cbb8a85f1befaa825a57c23.jpg)
 
@@ -12,7 +12,7 @@ Contents lists available at ScienceDirect
 
 Microprocessors and Microsystems
 
-journal homepage: www. elsevier. com/locate/micpro
+journal homepage： www. elsevier. com/locate/micpro
 
 CoNNa–Hardware accelerator for compressed convolutional neural
 
@@ -20,50 +20,50 @@ CoNNa–Hardware accelerator for compressed convolutional neural
 
 networks
 
-∗ a , b a Rastislav J. R. Struharik , Bogdan Z. Vukobratovi ´c , Andrea
-M. Erdeljan ,
+∗ a ， b a Rastislav J. R. Struharik ， Bogdan Z. Vukobratovi ´c ，
+Andrea M. Erdeljan ，
 
 a ´c Damjan M. Rakanovi
 
-a University of Novi Sad, Faculty of Technical Sciences, Trg Dositeja
-Obradovi ´ca 6, Novi Sad, 210 0 0, Serbia
+a University of Novi Sad， Faculty of Technical Sciences， Trg Dositeja
+Obradovi ´ca 6， Novi Sad， 210 0 0， Serbia
 
-b Kortiq GmbH, Gebrüder-Eicher-Ring 45, Forstern, Germany
+b Kortiq GmbH， Gebrüder-Eicher-Ring 45， Forstern， Germany
 
 a r t i c l e i n f o a b s t r a c t
 
-Article history: In this paper, we propose a novel Convolutional Neural
-Network hardware accelerator called CoNNA, ca-
+Article history： In this paper， we propose a novel Convolutional
+Neural Network hardware accelerator called CoNNA， ca-
 
-Received 6 January 2019 pable of accelerating pruned, quantized CNNs. In
-contrast to most existing solutions, CoNNA offers a
+Received 6 January 2019 pable of accelerating pruned， quantized CNNs.
+In contrast to most existing solutions， CoNNA offers a
 
 Revised 21 December 2019
 
-complete solution to the compressed CNN acceleration, being able to
+complete solution to the compressed CNN acceleration， being able to
 accelerate all layer types commonly
 
 Accepted 2 January 2020
 
 found in contemporary CNNs. CoNNA is designed as a coarse-grained
-reconﬁgurable architecture, which
+reconﬁgurable architecture， which
 
 Available online 11 January 2020
 
-uses rapid, dynamic reconﬁguration during CNN layer processing. The
+uses rapid， dynamic reconﬁguration during CNN layer processing. The
 CoNNA architecture enables the
 
 on-the-ﬂy selection of the CNN network that should be accelerated and
-also supports the acceleration of Keywords:
+also supports the acceleration of Keywords：
 
-CNN networks with dynamic topology. Furthermore, by being able to
+CNN networks with dynamic topology. Furthermore， by being able to
 directly process compressed feature Machine learning
 
-Convolutional neural network and kernel maps, and skip all ineffectual
-com putations during CNN layer processing, the CoNNA CNN ac-
+Convolutional neural network and kernel maps， and skip all ineffectual
+com putations during CNN layer processing， the CoNNA CNN ac-
 
 CNN pruning celerator is able to achieve higher CNN processing rates
-than some of the previously proposed solutions.
+than some of the previously proposed solutions。
 
 compressed CNN + The CoNNA architecture has been implemented using
 Xilinx ZynqUtrascale FPGA family and compared
@@ -75,310 +75,311 @@ experiments seem to indicate
 
 FPGA
 
-that the CoNNA architecture is up to 14. 10, 6. 05, 4. 91, 2. 67, 11.
-30, 3. 08 and 3. 58 times faster than previ-
+that the CoNNA architecture is up to 14. 10， 6. 05， 4. 91， 2. 67，
+11. 30， 3. 08 and 3. 58 times faster than previ-
 
-ously proposed MIT’s Eyeriss, NullHop, NVIDIA’s Deep Learning
-Accelerator (NVDLA), NEURAghe, CNN_A1,
+ously proposed MIT’s Eyeriss， NullHop， NVIDIA’s Deep Learning
+Accelerator （NVDLA）， NEURAghe， CNN_A1，
 
-fpgaConvNet, and Deephi’s Aristotle CNN accelerators respectively, while
-using identical number of com-
+fpgaConvNet， and Deephi’s Aristotle CNN accelerators respectively，
+while using identical number of com-
 
-puting units and operating at the same clock frequency.
+puting units and operating at the same clock frequency。
 
-© 2020 Elsevier B. V. All rights reserved.
+© 2020 Elsevier B. V. All rights reserved。
 
 1\. Introduction to obtain an effective representation of input space.
 This approach
 
 is different from earlier attempts that have used manually crafted
 
-Deep learning \[1\] , and particularly Deep Neural Networks features or
+Deep learning \[1\] ， and particularly Deep Neural Networks features or
 rules designed by experts. Because of this CNNs cur-
 
-(DNNs), are currently one of the most intensively and widely used rently
-offer the best recognition quality versus alternative object
+（DNNs）， are currently one of the most intensively and widely used
+rently offer the best recognition quality versus alternative object
 
 machine learning predictive models. DNNs are not a new concept
-recognition or image classiﬁcation algorithms.
+recognition or image classiﬁcation algorithms。
 
-\[2\] , but after recent breakthrough applications in the ﬁelds of im-
-However, the superior accuracy of CNNs comes at a high cost
+\[2\] ， but after recent breakthrough applications in the ﬁelds of im-
+However， the superior accuracy of CNNs comes at a high cost
 
-age processing \[3–5\] . and speech recognition \[6\] , they have re-
+age processing \[3–5\] . and speech recognition \[6\] ， they have re-
 because of their computational and storage complexity. State-of-
 
-turned to the academic and industrial focus. Today, different types
+turned to the academic and industrial focus. Today， different types
 the-art CNNs are described by hundreds of millions of parameters
 
-of DNNs are being employed in a wide range of applications, rang- and
+of DNNs are being employed in a wide range of applications， rang- and
 require billions of computations in order to classify single in-
 
-ing from autonomous driving \[7\] , medical \[8\] , and even to playing
-put instance \[3–5\] . For example, one of the largest CNN networks,
+ing from autonomous driving \[7\] ， medical \[8\] ， and even to
+playing put instance \[3–5\] . For example， one of the largest CNN
+networks，
 
-× complex games \[9\] . In many of these application domains, DNNs
-VGG-16 CNN \[10\] , which operates on 224 224 input images, re-
+× complex games \[9\] . In many of these application domains， DNNs
+VGG-16 CNN \[10\] ， which operates on 224 224 input images， re-
 
 are now able to exceed human levels of performance. The excep- quires
 around 500 MB for storing network parameters and per-
 
-tional performance of DNNs, and in particular Convolutional Neu- forming
-more than 30 billion ﬂoating-point operations in order to
+tional performance of DNNs， and in particular Convolutional Neu-
+forming more than 30 billion ﬂoating-point operations in order to
 
-ral Networks (CNNs) \[3\] , predominantly arises from their ability
+ral Networks （CNNs） \[3\] ， predominantly arises from their ability
 classify single input image. It is highly likely that future CNNs will
 
 to automatically extract high-level features from raw sensory data be
-even larger, deeper, will process larger input instances, requir-
+even larger， deeper， will process larger input instances， requir-
 
-during the training phase, using a large amount of data, in order ing
-even more computations per input instance, and will be used
+during the training phase， using a large amount of data， in order ing
+even more computations per input instance， and will be used
 
-to perform more intricate classiﬁcation tasks at faster speeds, ever-
+to perform more intricate classiﬁcation tasks at faster speeds， ever-
 
-increasingly in real-time, within low-power operating conditions.
+increasingly in real-time， within low-power operating conditions。
 
-∗ Corresponding author. Because of this, careful selection of
+∗ Corresponding author. Because of this， careful selection of
 appropriate computing plat-
 
-E-mail addresses: rasti@uns. ac. rs (R. J. R. Struharik), bogdan.
+E-mail addresses： rasti@uns. ac. rs （R. J. R. Struharik）， bogdan.
 vukobratovic@kortiq. form for the implementation of CNN-based
 applications is of great
 
-com (B. Z. Vukobratovi ´c), andrea. erdeljan@uns. ac. rs (A. M.
-Erdeljan),
+com （B. Z. Vukobratovi ´c）， andrea. erdeljan@uns. ac. rs （A. M.
+Erdeljan），
 
-importance.
+importance。
 
-rdamjan@uns. ac. rs (D. M. Rakanovi ´c).
+rdamjan@uns. ac. rs （D. M. Rakanovi ´c）.
 
-https: //doi. org/10. 1016/j. micpro. 2020. 102991
+https： //doi. org/10. 1016/j. micpro. 2020. 102991
 
-0141-9331/© 2020 Elsevier B. V. All rights reserved.
+0141-9331/© 2020 Elsevier B. V. All rights reserved。
 
 <div class="page-break">
 
 </div>
 
-2 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+2 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
-Currently, there are two approaches to implementing CNN net- types,
-types of non-linear activation functions, etc. This is one of
+Currently， there are two approaches to implementing CNN net- types，
+types of non-linear activation functions， etc. This is one of
 
-works: the main drawbacks of the majority of previously proposed cus-
+works： the main drawbacks of the majority of previously proposed cus-
 
-tom hardware solutions, which puts them at a great disadvantage
+tom hardware solutions， which puts them at a great disadvantage
 
-1 Using multicore processor-based hardware accelerators (CPUs
+1 Using multicore processor-based hardware accelerators （CPUs
 
-when compared with CPU/GPU implementations.
+when compared with CPU/GPU implementations。
 
-or GPUs)
+or GPUs）
 
-Both groups of accelerators (CPU/GPU and custom) tend to use
+Both groups of accelerators （CPU/GPU and custom） tend to use
 
-2 Using dedicated hardware accelerators (ASICs or FPGAs)
+2 Using dedicated hardware accelerators （ASICs or FPGAs）
 
 a sequential approach when processing the CNN network. CNN
 
-network is processed layer by layer, storing intermediate values The
+network is processed layer by layer， storing intermediate values The
 ﬁrst group of CPU/GPU based accelerators offers highly ﬂex-
 
-in the external, off-chip DRAM memory. Usually, no parallelization ible
-and easy to develop solutions, in terms of supported CNN
+in the external， off-chip DRAM memory. Usually， no parallelization
+ible and easy to develop solutions， in terms of supported CNN
 
-of layer processing is employed. Please notice, that this frequent
-architectures, kernel parameters, nonlinear activation functions,
+of layer processing is employed. Please notice， that this frequent
+architectures， kernel parameters， nonlinear activation functions，
 
 movement of data between the accelerator and DRAM memory is pooling
-algorithms, and deep learning software frameworks (Caffe,
+algorithms， and deep learning software frameworks （Caffe，
 
-one of the most power-consuming operations, and accounts for the
-TensorFlow, Keras, Matlab), but is ineﬃcient when usage of avail-
+one of the most power-consuming operations， and accounts for the
+TensorFlow， Keras， Matlab）， but is ineﬃcient when usage of avail-
 
 majority of power consumption of the complete accelerator sys- able
 computing resources and power eﬃciency is considered. Stan-
 
-dard CPU can perform between 10–100 GFLOP/s, with the power tem.
+dard CPU can perform between 10–100 GFLOP/s， with the power tem。
 
 Parallelization in both groups of accelerators mostly comes from
-consumption that is usually around 100 Watts. Therefore, using
+consumption that is usually around 100 Watts. Therefore， using
 
-the parallel evaluation of individual convolution operations, located
-CPUs in high-performance requirements, found in CNN cloud appli-
+the parallel evaluation of individual convolution operations， located
+CPUs in high-performance requirements， found in CNN cloud appli-
 
-cations, or in low power requirements in edge/mobile applications within
-convolutional layers, usually using a 2D array of processing
+cations， or in low power requirements in edge/mobile applications
+within convolutional layers， usually using a 2D array of processing
 
 elements. Multiplications and additions involved in the convolution is
-diﬃcult. In contrast, GPUs can reach over 10 TOP/s of peak per-
+diﬃcult. In contrast， GPUs can reach over 10 TOP/s of peak per-
 
-calculation are executed in parallel, on dedicated multiplier and
-formance, but with power consumption reaching over 250 Watts
+calculation are executed in parallel， on dedicated multiplier and
+formance， but with power consumption reaching over 250 Watts
 
-\[11\] , GPUs are good choices only for high-performance CNN cloud adder
-modules located within each processing element. Although
+\[11\] ， GPUs are good choices only for high-performance CNN cloud
+adder modules located within each processing element. Although
 
-this is an eﬃcient way of achieving higher performance numbers,
-applications but are not suitable for the edge/mobile applications.
+this is an eﬃcient way of achieving higher performance numbers，
+applications but are not suitable for the edge/mobile applications。
 
 it has one signiﬁcant drawback. Mapping of convolution operations NVIDIA
 is offering its Jetson TX2 family \[12\] based on GPUs with
 
-of different sizes (with different sizes and shapes of convolutional
+of different sizes （with different sizes and shapes of convolutional
 Pascal architecture as the edge solution. TX2 can reach the perfor-
 
-kernels and with different values of kernel stride values) to these
+kernels and with different values of kernel stride values） to these
 mance of up to 1 TOP/s but with the power consumption of over
 
-2D array structures can be very diﬃcult, and even when it is pos- 10
-Watts, which is still too high for most of the edge applications,
+2D array structures can be very diﬃcult， and even when it is pos- 10
+Watts， which is still too high for most of the edge applications，
 
 sible typically results in ineﬃcient usage of available multipliers
 which can require solutions with the power consumption of less
 
-than 1 Watt. and adders, therefore signiﬁcantly decreasing the eﬃciency
+than 1 Watt. and adders， therefore signiﬁcantly decreasing the eﬃciency
 of an
 
 accelerator. Dedicated hardware accelerators offer much higher
 utilization
 
-In this paper, we present a novel, coarse-grained reconﬁgurable, of
-computing resources, but usually lack ﬂexibility, i. e. they sup-
+In this paper， we present a novel， coarse-grained reconﬁgurable， of
+computing resources， but usually lack ﬂexibility， i. e. they sup-
 
 port only a few different CNN architectures with smaller ranges
-compressed CNN hardware accelerator, named CoNNA, which aims
+compressed CNN hardware accelerator， named CoNNA， which aims
 
 to overcome these diﬃculties. The CoNNA architecture is based of
-supported CNN architecture parameters, like kernel size, shape,
+supported CNN architecture parameters， like kernel size， shape，
 
 on a different way of parallelizing CNN operations. It sequentially etc.
 This is mostly the case because solutions from this group use
 
 highly optimized hardware structures for calculation of only cer-
-computes individual convolution operation, keeping it folded, using
+computes individual convolution operation， keeping it folded， using
 
 a single processing unit to calculate all multiply-accumulate oper- tain
-pre-deﬁned convolutional kernel conﬁgurations, which then
+pre-deﬁned convolutional kernel conﬁgurations， which then
 
-ations contained within one convolution, but employs a number cannot be
+ations contained within one convolution， but employs a number cannot be
 reconﬁgured to eﬃciently calculate other convolutional
 
-kernel conﬁgurations. However, because of the higher utilization of of
+kernel conﬁgurations. However， because of the higher utilization of of
 these processing units to compute a number of convolutions in
 
 parallel. This parallelizing approach can easily accommodate con-
-available computing resources, accelerators from this group tend to
+available computing resources， accelerators from this group tend to
 
-volutional kernels of different sizes, shapes and stride values, with-
-be more power-eﬃcient than the processor-based accelerators.
+volutional kernels of different sizes， shapes and stride values， with-
+be more power-eﬃcient than the processor-based accelerators。
 
 out signiﬁcant loss on the computational eﬃciency. While general-purpose
-compute engines, especially GPUs, have
+compute engines， especially GPUs， have
 
-been the mainstay for much of contemporary CNN processing, Furthermore,
-CoNNA is designed to be able to directly oper-
+been the mainstay for much of contemporary CNN processing，
+Furthermore， CoNNA is designed to be able to directly oper-
 
-ate on compressed CNN networks and compressed feature maps, increasingly
-there is a growing interest in providing more CNN
+ate on compressed CNN networks and compressed feature maps，
+increasingly there is a growing interest in providing more CNN
 
 which results in a signiﬁcant increase in CNN processing perfor-
 implementations based on FPGAs. This shift is occurring mainly
 
 because of two reasons. Improvements in FPGA technology re- mance. The
-CoNNA architecture is highly conﬁgurable, enabling
+CoNNA architecture is highly conﬁgurable， enabling
 
-various types of CNN families (VGG, Inception, ResNet, MobileNet, cently
-demonstrated FPGA performance which comes very close
+various types of CNN families （VGG， Inception， ResNet， MobileNet，
+cently demonstrated FPGA performance which comes very close
 
-NASNet, etc. ) to be implemented eﬃciently. It is also capable of ac- to
-GPU performance, with the reported performance of 9. 2 TOP/s
+NASNet， etc. ） to be implemented eﬃciently. It is also capable of ac-
+to GPU performance， with the reported performance of 9. 2 TOP/s
 
-for FPGA \[13\] . Second, recent trends in CNN architecture develop-
-celerating complete compressed CNNs, supporting all major layers
+for FPGA \[13\] . Second， recent trends in CNN architecture develop-
+celerating complete compressed CNNs， supporting all major layers
 
-found in contemporary CNNs, like convolutional, depthwise convo- ment
+found in contemporary CNNs， like convolutional， depthwise convo- ment
 increasingly exploit the sparsity of CNN networks and the
 
-lutional, pooling, adding and fully-connected layers. use of extreme
+lutional， pooling， adding and fully-connected layers. use of extreme
 compact data types to represent data that is be-
 
-ing processed. These trends strongly favor FPGA devices, which are The
+ing processed. These trends strongly favor FPGA devices， which are The
 CoNNA architecture is not the ﬁrst architecture that takes
 
-beneﬁt from processing sparse, compressed CNNs. Some of the designed to
-easily handle irregular parallelism, which is present
+beneﬁt from processing sparse， compressed CNNs. Some of the designed to
+easily handle irregular parallelism， which is present
 
 most notable previously proposed compressed CNN accelerators when
-working with sparse CNNs, and custom data types. As a re-
+working with sparse CNNs， and custom data types. As a re-
 
-are Cnvlutin \[31\] , NullHop \[32\] , SparseNN \[33\] , Cambricon-x
-\[34\] , sult, next-generation CNN accelerators are expected to deliver
-up
+are Cnvlutin \[31\] ， NullHop \[32\] ， SparseNN \[33\] ， Cambricon-x
+\[34\] ， sult， next-generation CNN accelerators are expected to
+deliver up
 
-EIE \[35\] , and Scnn \[36\] . Although not being the ﬁrst compressed to
-x5. 4 better computational throughput than GPUs \[14\] .
+EIE \[35\] ， and Scnn \[36\] . Although not being the ﬁrst compressed
+to x5. 4 better computational throughput than GPUs \[14\] .
 
-CNN accelerator, CoNNA still has some important advantages over The ﬁeld
-of custom CNN hardware accelerators has been in
+CNN accelerator， CoNNA still has some important advantages over The
+ﬁeld of custom CNN hardware accelerators has been in
 
 all these previously proposed architectures. the focus of the academic
-community in recent years, generat-
+community in recent years， generat-
 
-ing more than ninety different solutions. However, the majority of
-Cnvlutin architecture \[31\] , proposed by Albericio et al. bene-
+ing more than ninety different solutions. However， the majority of
+Cnvlutin architecture \[31\] ， proposed by Albericio et al. bene-
 
 ﬁts from the sparsity of input feature maps but not the sparsity these
 solutions are concerned with acceleration of only one par-
 
 of weights. It is closely based on the well-known dense CNN ac- ticular
-layer type from the CNN, typically the convolutional layer,
+layer type from the CNN， typically the convolutional layer，
 
-because of its high computational demand, \[15–19\] . A signiﬁcant
-celerator DaDianNao \[15\] , where the authors of Cnvlutin have re-
+because of its high computational demand， \[15–19\] . A signiﬁcant
+celerator DaDianNao \[15\] ， where the authors of Cnvlutin have re-
 
-designed the DaDianNao’s NFU module and created a CNV module, number of
+designed the DaDianNao’s NFU module and created a CNV module， number of
 architectures have been proposed for the acceleration
 
 capable of eﬃcient detection and skipping of zeros present in input of
-complete CNNs \[20–30\] . Furthermore, most of the proposed so-
+complete CNNs \[20–30\] . Furthermore， most of the proposed so-
 
-lutions are able to accelerate only uncompressed CNNs \[15–30\] ,
+lutions are able to accelerate only uncompressed CNNs \[15–30\] ，
 feature maps. The CoNNA architecture can also skip input feature
 
-maps zeros, but it can also skip any zeros that are present in the with
+maps zeros， but it can also skip any zeros that are present in the with
 only several examples being able to process compressed CNNs
 
-convolutional kernels, or fully-connected weights, which should re- to
-some degree \[31–36\] . In addition, almost all proposed solu-
+convolutional kernels， or fully-connected weights， which should re- to
+some degree \[31–36\] . In addition， almost all proposed solu-
 
 sult in more eﬃcient CNN processing when compared to Cnvlutin. tions are
-not highly conﬁgurable, severely limiting the ﬂexibility of
+not highly conﬁgurable， severely limiting the ﬂexibility of
 
-Furthermore, Cnvlutin is designed to perform complete CNN pro- supported
-CNNs, in terms of supported layer types, kernel recep-
+Furthermore， Cnvlutin is designed to perform complete CNN pro-
+supported CNNs， in terms of supported layer types， kernel recep-
 
 cessing storing all intermediate data in the on-chip memory. This tive
-ﬁeld sizes, horizontal and vertical kernel stride values, pooling
+ﬁeld sizes， horizontal and vertical kernel stride values， pooling
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 3
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 3
 
-is a power-eﬃcient solution but requires large on-chip memories, 2.
+is a power-eﬃcient solution but requires large on-chip memories， 2.
 Compressed convolutional neural networks
 
-of the order of tens of megabytes, and cannot support arbitrarily
+of the order of tens of megabytes， and cannot support arbitrarily
 
-large CNN networks. On the other hand, CoNNA stores intermedi-
+large CNN networks. On the other hand， CoNNA stores intermedi-
 Convolutional Neural Network \[37\] is a type of feed-forward ar-
 
-ate feature maps in the external DRAM memory, but the power tiﬁcial
+ate feature maps in the external DRAM memory， but the power tiﬁcial
 neural network in which the connectivity pattern between
 
 consumption is reduced signiﬁcantly because CoNNA uses an on- the
@@ -387,49 +388,49 @@ neurons is inspired by the neural connectivity found in the an-
 chip feature map cache to minimize the amount of data movement imal
 visual cortex. Individual neurons from the visual cortex re-
 
-between the accelerator and the external memory. However, by us- spond
-to stimuli only from a restricted region of space, known as
+between the accelerator and the external memory. However， by us- spond
+to stimuli only from a restricted region of space， known as
 
-ing external memory to store all CNN related data, CoNNA can pro- the
+ing external memory to store all CNN related data， CoNNA can pro- the
 receptive ﬁeld. Receptive ﬁelds of neighboring neurons par-
 
-vide acceleration to arbitrarily sized CNN networks. tially overlap,
+vide acceleration to arbitrarily sized CNN networks. tially overlap，
 spanning the entire visual ﬁeld. Previously it was
 
-NullHop architecture \[32\] , proposed by Aimar et al. is similar to
+NullHop architecture \[32\] ， proposed by Aimar et al. is similar to
 shown that the response of an individual neuron to the stimuli
 
 Cnvlutin since it also takes beneﬁt from skipping any zeros that are
 within its receptive ﬁeld can be approximated mathematically by
 
 present in the input feature maps but cannot skip zeros in the CNN a
-convolution operation, which is extensively used in CNNs.
+convolution operation， which is extensively used in CNNs。
 
-weights. Since the CoNNA architecture can effectively skip all zeros,
+weights. Since the CoNNA architecture can effectively skip all zeros，
 CNN architecture is formed by stacking together layers of differ-
 
-present either in the input feature maps or in the CNN weights, entiable
-functions, which gradually transform input instance into
+present either in the input feature maps or in the CNN weights，
+entiable functions， which gradually transform input instance into
 
 it should offer a more eﬃcient acceleration of CNNs. Similar to an
-appropriate output response (e. g. holding the class scores).
+appropriate output response （e. g. holding the class scores）.
 
-CoNNA, NullHop stores both CNN weights and compressed inter- A number of
-different layers types are commonly used when
+CoNNA， NullHop stores both CNN weights and compressed inter- A number
+of different layers types are commonly used when
 
-mediate feature maps in external memory, but NullHop doesn’t building a
-CNN: convolutional layer, depthwise convolutional layer,
+mediate feature maps in external memory， but NullHop doesn’t building a
+CNN： convolutional layer， depthwise convolutional layer，
 
-implement any input feature map caching, which CoNNA does, to pooling
-layer, non-linear activation layer, adding layer, concatena-
+implement any input feature map caching， which CoNNA does， to pooling
+layer， non-linear activation layer， adding layer， concatena-
 
 reduce the required data movement between the accelerator and tion
-layer, and fully-connected layer.
+layer， and fully-connected layer。
 
 external memory when processing convolutional and pooling lay- Before
-proceeding, let us introduce some notations. By an input
+proceeding， let us introduce some notations. By an input
 
-ers. feature map (IFM) we will assume a 3D set of values that make
+ers. feature map （IFM） we will assume a 3D set of values that make
 
 SparseNN \[33\] and Cambricon-x \[34\] architectures take the op- the
 input volume of the current CNN layer. The input values vol-
@@ -437,131 +438,131 @@ input volume of the current CNN layer. The input values vol-
 posite approach than one taken in Cnvlutin and NullHop archi- ume of the
 ﬁrst CNN layer is usually not called an input feature
 
-tectures, by skipping zeros that are present in the CNN weights map;
-rather it is called an input instance. Similarly, an output fea-
+tectures， by skipping zeros that are present in the CNN weights map；
+rather it is called an input instance. Similarly， an output fea-
 
 but are not able to skip zeros that are present in the input fea- ture
-map (OFM) designates the 3D set of activation values of every
+map （OFM） designates the 3D set of activation values of every
 
 ture maps. By being able to skip zeros that are present both neuron
 present in the current CNN layer. The output volume of the
 
 in input feature maps and CNN weights the CoNNA architecture last CNN
-layer is usually not called the output feature map; rather
+layer is usually not called the output feature map； rather
 
 should offer more eﬃcient CNN acceleration than Cambricon-x and it is
-called the classiﬁcation vector.
+called the classiﬁcation vector。
 
 × × SparseNN architectures. A 3D region of N M D points within the input
 feature map
 
-Similar to CoNNA, EIE architecture \[35\] can skip zeros located that is
-directly connected to one neuron from the current CNN
+Similar to CoNNA， EIE architecture \[35\] can skip zeros located that
+is directly connected to one neuron from the current CNN
 
-both in input feature maps and CNN weight. But, EIE is able layer will
+both in input feature maps and CNN weight. But， EIE is able layer will
 be designated as the input feature map bundle. In most
 
-to do this only for fully-connected layers, and not for convolu- CNN
+to do this only for fully-connected layers， and not for convolu- CNN
 architectures values for the horizontal and vertical size of the
 
-= tional layers. Therefore, EIE architecture cannot be used to pro-
-input feature map bundle are equal, N M . For example, the size
+= tional layers. Therefore， EIE architecture cannot be used to pro-
+input feature map bundle are equal， N M . For example， the size
 
-cess convolutional, pooling or adding layers from CNNs, which of the
+cess convolutional， pooling or adding layers from CNNs， which of the
 input feature map bundle of the 4th convolutional layer
 
 × × makes EIE an interesting solution for the acceleration of fully-
 from the VGG-16 CNN network \[10\] is a 3D region of 3 3 128
 
-connected CNN layers, but not the complete compressed CNN ac- points.
-Similarly, the size of the input feature map bundle for the
+connected CNN layers， but not the complete compressed CNN ac- points.
+Similarly， the size of the input feature map bundle for the
 
-celerator. On the other hand, the CoNNA architecture is designed 2nd
+celerator. On the other hand， the CoNNA architecture is designed 2nd
 pooling layer from the VGG-16 network is a 3D region of
 
-× × to be capable of accelerating all standard CNN layer types, in- 2 2
-1 points.
+× × to be capable of accelerating all standard CNN layer types， in- 2 2
+1 points。
 
-× × cluding convolutional, depthwise convolutional, pooling, adding A 3D
-region of 1 1 D points within the feature map bundle
+× × cluding convolutional， depthwise convolutional， pooling， adding A
+3D region of 1 1 D points within the feature map bundle
 
-and fully-connected layers. Furthermore, during the acceleration will be
-designated as the feature map stick. If the feature map is
+and fully-connected layers. Furthermore， during the acceleration will
+be designated as the feature map stick. If the feature map is
 
-of convolutional and fully-connected layers, CoNNA is able to skip the
-input feature map, then the feature map stick will be called
+of convolutional and fully-connected layers， CoNNA is able to skip the
+input feature map， then the feature map stick will be called
 
 all zeros that are present in the input feature maps and convo- the
-input feature map stick. Accordingly, if the feature map is the
+input feature map stick. Accordingly， if the feature map is the
 
 lutional coeﬃcient and fully-connected weight maps. This makes output
-feature map, then the feature map stick will be called the
+feature map， then the feature map stick will be called the
 
-CoNNA a universal pruned CNN accelerator, as opposed to the EIE output
+CoNNA a universal pruned CNN accelerator， as opposed to the EIE output
 feature map stick. Every input feature map bundle is com-
 
 architecture. posed of a number of input feature map sticks. For
-example, the
+example， the
 
 Scnn architecture \[36\] can also skip all zeros located both in input
 feature map bundle of the 4th convolutional layer from the
 
-input feature maps and CNN weights, similar to EIE and CoNNA ar- VGG CNN
-is composed of 9 input feature map sticks, each being a
+input feature maps and CNN weights， similar to EIE and CoNNA ar- VGG
+CNN is composed of 9 input feature map sticks， each being a
 
-× × chitectures, but it can process only convolutional layer type. So
-the 3D region of 1 1 128 points.
+× × chitectures， but it can process only convolutional layer type. So
+the 3D region of 1 1 128 points。
 
 Scnn architecture is to a degree complementary to the EIE archi- Fig. 1
 illustrates the deﬁnitions of the feature map stick and the
 
 tecture. Both architectures can skip all zeros but in different layer
-feature map bundle, in the case when the feature map bundle is
+feature map bundle， in the case when the feature map bundle is
 
-types. Once more, CoNNA is able to skip all zeros both in convo-
-composed of 9 feature map sticks.
+types. Once more， CoNNA is able to skip all zeros both in convo-
+composed of 9 feature map sticks。
 
-lutional and fully-connected layers, and opposed to EIE and Scnn CNNs
-are both computationally and memory demanding, which
+lutional and fully-connected layers， and opposed to EIE and Scnn CNNs
+are both computationally and memory demanding， which
 
 architecture offers a solution to hardware acceleration of complete
-makes their usage diﬃcult, especially in embedded applications.
+makes their usage diﬃcult， especially in embedded applications。
 
-pruned CNNs. For example, VGG-16 CNN \[10\] has more than 138 million
+pruned CNNs. For example， VGG-16 CNN \[10\] has more than 138 million
 net-
 
 The rest of the paper is organized as follows. Section 2 presents work
-parameters. Using 32-bit ﬂoating number representation, ap-
+parameters. Using 32-bit ﬂoating number representation， ap-
 
-a brief introduction to CNNs, with the emphasis on CNN com- proximately
+a brief introduction to CNNs， with the emphasis on CNN com- proximately
 552 MB of memory space must be available only for
 
-pression, since CoNNA takes great beneﬁt from CNN compression. storing
-all required network parameters. Furthermore, during layer
+pression， since CoNNA takes great beneﬁt from CNN compression. storing
+all required network parameters. Furthermore， during layer
 
-Section 3 presents details of the proposed CoNNA architecture, de-
-processing, CNN uses an input feature map, which is either the in-
+Section 3 presents details of the proposed CoNNA architecture， de-
+processing， CNN uses an input feature map， which is either the in-
 
 scribing all of its major components. Section 4 contains the re- put
-image itself, or the output of the previous CNN layer, and pro-
+image itself， or the output of the previous CNN layer， and pro-
 
 sults of the experiments aimed at comparing the performance of duces an
-output feature map (OFM). The sizes of input and output
+output feature map （OFM）. The sizes of input and output
 
 the CoNNA architecture with some of the previously proposed CNN feature
 maps depend on the characteristics of CNN layers. For ex-
 
-hardware acceleration solutions, and also presents a detailed dis-
-ample, the largest input and output feature maps in the case of
+hardware acceleration solutions， and also presents a detailed dis-
+ample， the largest input and output feature maps in the case of
 
 cussion about the impact of the irregular distribution of non-zero the
-VGG-16 CNN are more than 12 MB large each, when 32-bit
+VGG-16 CNN are more than 12 MB large each， when 32-bit
 
 input feature map and CNN weight values on the CoNNA’s CNN ﬂoating-point
 representation is used. Compared to the size of the
 
 processing eﬃciency. Section 5 holds ﬁnal remarks and conclu- memory
-required to store VGG-16 CNN parameters, the size of the
+required to store VGG-16 CNN parameters， the size of the
 
 sions. required memory for storing all intermediate feature maps is only
 
@@ -569,17 +570,17 @@ sions. required memory for storing all intermediate feature maps is only
 
 </div>
 
-4 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+4 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 Fig. 1. Illustration of deﬁnitions of feature map bundle and feature map
-stick.
+stick。
 
-around 6% of the required network parameters memory size. How- rameters,
-especially if CNN parameters are stored in external,
+around 6% of the required network parameters memory size. How-
+rameters， especially if CNN parameters are stored in external，
 
-ever, the total required feature map data movement size to pro- off-chip
-memory, which is usually the case.
+ever， the total required feature map data movement size to pro-
+off-chip memory， which is usually the case。
 
 cess one input image reaches around 120 MB. If we analyze the
 
@@ -589,33 +590,33 @@ number of required computations in order to classify one input
 
 identifying kernel coeﬃcients or fully-connected weights that are
 
-image, in the case of VGG-16 CNN it reaches over 15 G of MAC
+image， in the case of VGG-16 CNN it reaches over 15 G of MAC
 
 redundant and can be removed. Since this can be done in nu-
 
-operations, or equivalently, over 30 GOPs. For example, if VGG-16
+operations， or equivalently， over 30 GOPs. For example， if VGG-16
 
-merous ways, a large number of different pruning algorithms have
+merous ways， a large number of different pruning algorithms have
 
 CNN is deployed in a system that is processing real-time video data
 
-been proposed in the open literature \[38–45\] , with the new ones
+been proposed in the open literature \[38–45\] ， with the new ones
 
-stream, with a speed of 25 frames-per-second, the required com-
+stream， with a speed of 25 frames-per-second， the required com-
 
-continuously being proposed. However, all CNN pruning algorithms
+continuously being proposed. However， all CNN pruning algorithms
 
 pute power of CNN implementation system reaches 750 GOP/sec
 
-can be broadly divided into two large categories:
+can be broadly divided into two large categories：
 
 with required data throughput of at least 16. 8 GB/sec. This makes
 
-deployment of CNNs in embedded applications very challenging, 1.
+deployment of CNNs in embedded applications very challenging， 1.
 Coarse-grained pruning algorithms – these algorithms remove
 
-especially when latency, throughput and/or power consumption is complete
-convolutional kernels (entire ﬁlters) from a convolu-
+especially when latency， throughput and/or power consumption is
+complete convolutional kernels （entire ﬁlters） from a convolu-
 
 of interest. tional layer. Some of the previously proposed
 coarse-grained
@@ -626,16 +627,16 @@ algorithms are \[38–41\] .
 required to store network parameters and intermediate feature 2.
 Fine-grained pruning algorithms – these algorithms remove in-
 
-maps, by using different CNN compression methods. Generally, all
+maps， by using different CNN compression methods. Generally， all
 dividual kernel coeﬃcients from selected ﬁlter within convolu-
 
-CNN compression methods can be divided into two groups, de- tional
-layers, leaving the original number of ﬁlters unchanged,
+CNN compression methods can be divided into two groups， de- tional
+layers， leaving the original number of ﬁlters unchanged，
 
-pending on the target data: methods that compress CNN network or remove
+pending on the target data： methods that compress CNN network or remove
 individual weights from fully-connected layers. Some
 
-parameters, and methods that compress feature map data. of the
+parameters， and methods that compress feature map data. of the
 previously proposed ﬁne-grained pruning algorithms are
 
 CNN pruning \[38–45\] is the major technique used to compress \[42–45\]
@@ -645,81 +646,81 @@ CNN network parameters. CNN pruning can be beneﬁcial because
 
 One widely used CNN network parameter compression algo-
 
-of a number of reasons:
+of a number of reasons：
 
-rithm is the “Deep Compression” algorithm, proposed by Song Han,
+rithm is the “Deep Compression” algorithm， proposed by Song Han，
 
 1\. By removing redundant weights memory footprint of the target et al.
 in \[44\] . “Deep Compression” algorithm uses a three-stage
 
-CNN network is reduced, allowing it to be used in memory- pipeline to
-reduce the storage size required by the CNN network, in
+CNN network is reduced， allowing it to be used in memory- pipeline to
+reduce the storage size required by the CNN network， in
 
 constrained applications. Since pruned weights are actually set a manner
-that preserves original accuracy. First, the original CNN
+that preserves original accuracy. First， the original CNN
 
-to zero, resulting pruned CNN is a sparse structure, containing network
-is pruned by removing all redundant kernel coeﬃcients
+to zero， resulting pruned CNN is a sparse structure， containing
+network is pruned by removing all redundant kernel coeﬃcients
 
 many zeros within its convolutional kernel and fully-connected and
-fully-connected weights, keeping only the most informative
+fully-connected weights， keeping only the most informative
 
-weight maps. Some of the data compression techniques could ones, using
-ﬁne-grained pruning algorithm. Next, remaining con-
+weight maps. Some of the data compression techniques could ones， using
+ﬁne-grained pruning algorithm. Next， remaining con-
 
-be used to compress this sparse representation of CNN, which nection
+be used to compress this sparse representation of CNN， which nection
 weights are quantized so that multiple connections share
 
 will then require a smaller amount of memory space for its the same
-weight, thus only the codebooks (effective weights) and
+weight， thus only the codebooks （effective weights） and
 
-storage. the indices need to be stored. Finally, Huffman encoding is
+storage. the indices need to be stored. Finally， Huffman encoding is
 applied
 
 2\. Trainable CNN weights are dominantly located within convolu- to take
-advantage of the biased distribution of effective weights.
+advantage of the biased distribution of effective weights。
 
 tional and fully-connected layers and are always used in mul- After
 performing all three steps of the “Deep Compression” algo-
 
-tiplicative operations. If some of these weights are set to zero, rithm,
-the size of memory required for storing all CNN parameters
+tiplicative operations. If some of these weights are set to zero，
+rithm， the size of memory required for storing all CNN parameters
 
-because they are redundant, product terms that involve these can be
-reduced signiﬁcantly. For example, in the case of VGG-16
+because they are redundant， product terms that involve these can be
+reduced signiﬁcantly. For example， in the case of VGG-16
 
-zero-valued weights actually don’t have to be computed, be- CNN, the
+zero-valued weights actually don’t have to be computed， be- CNN， the
 required memory size is reduced from 552 MB to only
 
 cause their value will also be equal to zero. If we could detect 5. 5
-MB.
+MB。
 
-these zero-outcome product terms and skip them, the process- Please
+these zero-outcome product terms and skip them， the process- Please
 notice that pruning and weight quantization affect the
 
 ing time of convolutional or fully-connected layers could be re- overall
-accuracy of the CNN network, but as shown in \[44\] , signif-
+accuracy of the CNN network， but as shown in \[44\] ， signif-
 
-duced, resulting in shorter input instance processing time. The icant
-pruning and quantization can be applied to standard CNNs,
+duced， resulting in shorter input instance processing time. The icant
+pruning and quantization can be applied to standard CNNs，
 
 process of skipping zero-valued product terms is also known as trained
-on standard datasets, without degrading initial, unpruned,
+on standard datasets， without degrading initial， unpruned，
 
-the “Zero Skipping” process, and the CoNNA accelerator is de- CNN
-network accuracy. In this paper, we also use ﬁne-grained
+the “Zero Skipping” process， and the CoNNA accelerator is de- CNN
+network accuracy. In this paper， we also use ﬁne-grained
 
 signed to use it during CNN processing. Speeding-up instance pruning to
 sparsify CNN network parameters before the sparse
 
 processing by zero skipping can be beneﬁcial because it can ei- CNN
-network is run on the CoNNA CNN accelerator. However, we
+network is run on the CoNNA CNN accelerator. However， we
 
-ther allow us to process input instances at a faster rate, result- don’t
-cluster remaining weights into codebooks, nor do we use
+ther allow us to process input instances at a faster rate， result-
+don’t cluster remaining weights into codebooks， nor do we use
 
-ing in higher throughput, or alternatively save power because Huffman
-encoding. However, we do perform quantization of un-
+ing in higher throughput， or alternatively save power because Huffman
+encoding. However， we do perform quantization of un-
 
 we could run CNN accelerator at a slower clock frequency and pruned
 weights into a 16-bit ﬁxed-point representation to further
@@ -727,124 +728,124 @@ weights into a 16-bit ﬁxed-point representation to further
 still be able to ﬁnish with instance processing on time. reduce the
 memory footprint and enable more eﬃcient FPGA im-
 
-3\. Finally, since the compressed sparse representation of CNN net-
-plementation.
+3\. Finally， since the compressed sparse representation of CNN net-
+plementation。
 
 work is signiﬁcantly smaller in size when compared with the In a
-ﬁne-grained pruning approach, each convolutional kernel
+ﬁne-grained pruning approach， each convolutional kernel
 
-original, un-pruned, dense representation of CNN, a signiﬁcant is pruned
-individually. Usually, a speciﬁed number of kernel coef-
+original， un-pruned， dense representation of CNN， a signiﬁcant is
+pruned individually. Usually， a speciﬁed number of kernel coef-
 
 amount of energy can be saved during movement of CNN pa- ﬁcients are
-removed from each kernel, to create a sparse convo-
+removed from each kernel， to create a sparse convo-
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 5
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 5
 
-Fig. 2. Fine-grained CNN pruning principle of operation.
+Fig. 2. Fine-grained CNN pruning principle of operation。
 
-lutional kernel. For example, Fig. 2 illustrates the process of ﬁne-
-underlying problem that CNN network is being trained to solve,
+lutional kernel. For example， Fig. 2 illustrates the process of ﬁne-
+underlying problem that CNN network is being trained to solve，
 
 × × grained pruning of a 3 3 5 convolutional kernel. pruning algorithm
-that is being used, distribution of pruning ratios
+that is being used， distribution of pruning ratios
 
 We start with the dense representation of the convolutional over layers
-from CNN network selected for pruning, optimization
+from CNN network selected for pruning， optimization
 
-kernel, shown on the left of Fig. 2 . Dense kernel coeﬃcients are
-algorithm used to train CNN network, etc. Achieving the highest
+kernel， shown on the left of Fig. 2 . Dense kernel coeﬃcients are
+algorithm used to train CNN network， etc. Achieving the highest
 
 obtained during the training process of the selected CNN network.
 pruning ratios for the selected layers from the CNN network can
 
-During ﬁne-grained pruning, a speciﬁed number of kernel coef- be a very
-time-consuming, trial and error, process.
+During ﬁne-grained pruning， a speciﬁed number of kernel coef- be a very
+time-consuming， trial and error， process。
 
-ﬁcients are removed, effectively setting them to zero. In the ex- Please
-notice that pruned, sparse representations of CNN net-
+ﬁcients are removed， effectively setting them to zero. In the ex-
+Please notice that pruned， sparse representations of CNN net-
 
-ample from Fig. 2 , a total of 33 kernel coeﬃcients are removed works by
-themselves don’t reduce the memory size required for
+ample from Fig. 2 ， a total of 33 kernel coeﬃcients are removed works
+by themselves don’t reduce the memory size required for
 
-× × × × from dense 3 3 5 kernel, to obtain a sparse 3 3 5 ker- storing
+× × × × from dense 3 3 5 kernel， to obtain a sparse 3 3 5 ker- storing
 network parameters. They also don’t reduce the amount of
 
-nel, shown on the right of Fig. 2 . In this sparse representation of
+nel， shown on the right of Fig. 2 . In this sparse representation of
 data that will be moved between the CNN accelerator and operat-
 
-× × 3 3 5 kernel, only 12 coeﬃcients have non-zero values, while ing
-memory, nor do they reduce the time required to process the
+× × 3 3 5 kernel， only 12 coeﬃcients have non-zero values， while ing
+memory， nor do they reduce the time required to process the
 
 the remaining 33 coeﬃcients are set to zero. input images. Pruning only
 introduces a certain amount of zero-
 
 Criteria upon which kernel coeﬃcients are selected for pruning valued
-parameters within the CNN network description, but the
+parameters within the CNN network description， but the
 
 can be numerous. One commonly used approach is to prune ker- total
 number of network parameters remains the same as in the
 
-nel coeﬃcients with the smallest absolute values. In this approach,
-original unpruned CNN network.
+nel coeﬃcients with the smallest absolute values. In this approach，
+original unpruned CNN network。
 
 selected kernel coeﬃcients are ﬁrst sorted in ascending order of
-Therefore, the amount of memory required to store pruned
+Therefore， the amount of memory required to store pruned
 
-their absolute value, and the speciﬁed number of smallest valued CNN
+their absolute value， and the speciﬁed number of smallest valued CNN
 network parameters will be identical with the amount re-
 
 coeﬃcients is then set to zero. This process is repeated for all con-
-quired to store parameters of the unpruned CNN network, the only
+quired to store parameters of the unpruned CNN network， the only
 
 volutional kernels from all convolutional layers of the target CNN
 difference being that a certain amount of these parameters will
 
-network, with possibly different pruning ratios for each individual have
-zero value in the case of pruned CNN network. Similarly, the
+network， with possibly different pruning ratios for each individual
+have zero value in the case of pruned CNN network. Similarly， the
 
 convolutional layer. Weight values from fully-connected layers can
 amount of data movement between CNN accelerator and the op-
 
 also be pruned using a similar approach in order to create a sparse
-erating memory, where the CNN network parameters are stored,
+erating memory， where the CNN network parameters are stored，
 
 weight map for every fully-connected layer. will be identical for
 unpruned and pruned CNN network represen-
 
-After CNN network pruning has been performed the result is a tations,
+After CNN network pruning has been performed the result is a tations，
 the difference once more being the fact that in the case of
 
-sparse representation of selected CNN network, containing a sig- pruned
+sparse representation of selected CNN network， containing a sig- pruned
 CNN network many of parameters that will be transferred
 
 niﬁcant number of zero-valued convolutional coeﬃcients or fully- to the
-accelerator will be zero-valued.
+accelerator will be zero-valued。
 
-connected weight values. Usually, especially when high pruning ra-
-However, since pruned CNN network representation contains a
+connected weight values. Usually， especially when high pruning ra-
+However， since pruned CNN network representation contains a
 
-tios are employed, the resulting pruned CNN network has signiﬁ-
-signiﬁcant number of zero-valued parameters, lossless data com-
+tios are employed， the resulting pruned CNN network has signiﬁ-
+signiﬁcant number of zero-valued parameters， lossless data com-
 
-cantly lower accuracy, compared with the original dense, unpruned
+cantly lower accuracy， compared with the original dense， unpruned
 pression algorithms can be used to reduce the amount of data re-
 
-CNN network. Therefore, an additional retraining process of the quired
+CNN network. Therefore， an additional retraining process of the quired
 to store pruned CNN network representation. The CoNNA
 
-pruned CNN network is necessary, in order to regain the accuracy
-architecture uses a variation of standard Zero Run-Length (ZRL)
+pruned CNN network is necessary， in order to regain the accuracy
+architecture uses a variation of standard Zero Run-Length （ZRL）
 
 of the unpruned CNN network. Depending on how severe the CNN encoding
 compression algorithm \[19\] to compress sparse pruned
 
-pruning process has been, retraining of pruned CNN network can CNN
+pruning process has been， retraining of pruned CNN network can CNN
 representations. Using ZRL compression a signiﬁcant reduc-
 
 restore complete or only a fraction of original unpruned CNN net- tion
@@ -854,44 +855,44 @@ work accuracy. representation and the total data transfer size required
 to transfer
 
 Although CNN network pruning can be performed incremen- pruned CNN
-network representation to the CNN accelerator, can be
+network representation to the CNN accelerator， can be
 
-tally, layer by layer, most common approach is to prune all applica-
+tally， layer by layer， most common approach is to prune all applica-
 achieved. For more details about the ZRL compression algorithm
 
-ble CNN layers at the same time, create one sparse representation used
+ble CNN layers at the same time， create one sparse representation used
 within the CoNNA architecture and the amount of data stor-
 
-of complete CNN network and then retrain it, in order to regain as age
-and transfer size reduction that is achievable, please refer to
+of complete CNN network and then retrain it， in order to regain as age
+and transfer size reduction that is achievable， please refer to
 
 much of original accuracy. Please notice that the presented prun-
 Horowitz \[46\] .
 
 ing algorithm was used in this paper to prune the CNN networks Please
-also notice that, compared to the unpruned CNN net-
+also notice that， compared to the unpruned CNN net-
 
-prior to their acceleration by the CoNNA CNN accelerator. work, having a
-pruned CNN network doesn’t reduce the num-
+prior to their acceleration by the CoNNA CNN accelerator. work， having
+a pruned CNN network doesn’t reduce the num-
 
 The amount of pruning that can be used with given CNN net- ber of MAC
 operations that need to be performed in order to
 
-work depends on a number of factors: CNN network architecture, process
+work depends on a number of factors： CNN network architecture， process
 one input image. The only difference will be that in the
 
 <div class="page-break">
 
 </div>
 
-6 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+6 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
-case of a pruned CNN network, a number of these MAC opera- accelerators
-proposed in \[31,32\] use this optimization technique
+case of a pruned CNN network， a number of these MAC opera- accelerators
+proposed in \[31，32\] use this optimization technique
 
 tions will result in zero value since we will be multiplying in- to
-increase CNN processing eﬃciency.
+increase CNN processing eﬃciency。
 
 put feature map points with zero-valued convolutional coeﬃcients 2.
 Weights “zero-skipping” - in this approach all MAC operations
@@ -902,14 +903,14 @@ convolutional coeﬃcient or fully-connected weight value
 time could be possible if the CNN accelerator could somehow “de- is zero
 are skipped during the process of convolutional and
 
-tect” and "skip" these zero-valued MAC operations since they don’t
-weighted sum calculation. For example, CNN accelerators pro-
+tect” and “skip” these zero-valued MAC operations since they don’t
+weighted sum calculation. For example， CNN accelerators pro-
 
 change the ﬁnal outcome of convolution or weighted sum calcula- posed in
-\[33,34\] use this optimization technique to increase
+\[33，34\] use this optimization technique to increase
 
 tions. The CoNNA architecture was designed speciﬁcally to exploit CNN
-processing eﬃciency.
+processing eﬃciency。
 
 this optimization opportunity. 3. “All zero-skipping” - in this approach
 all MAC operations where
@@ -917,41 +918,41 @@ all MAC operations where
 Reduction in memory size required for storing CNN network either IFM
 point or convolutional coeﬃcient/fully-connected
 
-representation, reduction in required data transfer size and reduc-
+representation， reduction in required data transfer size and reduc-
 weight value is zero are skipped during the process of convolu-
 
 tion in instance processing time can have beneﬁcial effects in low-
-tional and weighted sum calculation. For example, CNN accel-
+tional and weighted sum calculation. For example， CNN accel-
 
 ering the cost and increasing the energy eﬃciency of CNN network erators
-proposed in \[35,36\] use this optimization technique to
+proposed in \[35，36\] use this optimization technique to
 
-processing, which could be of special interest, especially in embed-
-increase CNN processing eﬃciency.
+processing， which could be of special interest， especially in embed-
+increase CNN processing eﬃciency。
 
-ded, edge-computing applications.
+ded， edge-computing applications。
 
-Each of the three presented "zero-skipping" techniques lead
+Each of the three presented “zero-skipping” techniques lead
 
 To further improve energy and compute eﬃciency of CNN net-
 
-to an improvement in the CNN instance processing time, but it
+to an improvement in the CNN instance processing time， but it
 
-work processing, statistics of feature map data being processed
+work processing， statistics of feature map data being processed
 
-is clear that the "All zero-skipping" technique leads to the most
+is clear that the “All zero-skipping” technique leads to the most
 
 by CNN network can also be explored to reduce the number of
 
-signiﬁcant improvement, although it is the most diﬃcult to im-
+signiﬁcant improvement， although it is the most diﬃcult to im-
 
-required memory accesses, using feature map compression tech-
+required memory accesses， using feature map compression tech-
 
 plement. Proposed CoNNA architecture is designed speciﬁcally to
 
 nique. Eﬃcient feature map compression is possible because of the
 
-implement this third, "All zero-skipping" optimization technique.
+implement this third， “All zero-skipping” optimization technique。
 
 heavy use of the ReLU activation function within CNN layers. The
 
@@ -961,88 +962,88 @@ ReLU activation function introduces a signiﬁcant number of zeros
 
 accelerators \[15–30\] have completely ignored this “zero-skipping”
 
-in the intermediate feature maps, by rectifying all negative out-
+in the intermediate feature maps， by rectifying all negative out-
 
-optimization opportunity.
+optimization opportunity。
 
 put feature map values to zero. The number of zeros in feature
 
 maps depends on the information content of input data being fed
 
-3\. CoNNA CNN accelerator details to CNN, CNN architecture that is being
-used to process input data,
+3\. CoNNA CNN accelerator details to CNN， CNN architecture that is
+being used to process input data，
 
 as well as the underlying problem that the CNN network is trained
 
 The CoNNA CNN accelerator is speciﬁcally designed to ex- to solve.
-Nevertheless, it tends to increase as we move deeper into
+Nevertheless， it tends to increase as we move deeper into
 
-ploit the “All zero-skipping” optimization opportunity, described in the
-CNN network. For example, in VGG-16 CNN almost 48% of the
+ploit the “All zero-skipping” optimization opportunity， described in
+the CNN network. For example， in VGG-16 CNN almost 48% of the
 
 Section 2 . The CoNNA architecture is designed to accelerate com- IFM
-values of the CONV1_2 layer are zeros on average, and this
+values of the CONV1_2 layer are zeros on average， and this
 
-pressed pruned CNNs, created using some of existing ﬁne-grained value
-goes up to 88% for the CONV5_3 layer, Chen et al. \[19\] .
+pressed pruned CNNs， created using some of existing ﬁne-grained value
+goes up to 88% for the CONV5_3 layer， Chen et al. \[19\] .
 
-CNN pruning algorithms, for example \[38–45\] . As the result of Zero
+CNN pruning algorithms， for example \[38–45\] . As the result of Zero
 Run-Length encoding \[19\] has again been proposed to ef-
 
-the application of CNN pruning procedure, CNN kernel and weight ﬁciently
-exploit this phenomenon and compress zero values found
+the application of CNN pruning procedure， CNN kernel and weight
+ﬁciently exploit this phenomenon and compress zero values found
 
-maps will be sparse, since a certain number of weights will be re- in
-the feature maps, by replacing consecutive runs of zeros with
+maps will be sparse， since a certain number of weights will be re- in
+the feature maps， by replacing consecutive runs of zeros with
 
-moved from the CNN during pruning step. Similarly, because of − the
+moved from the CNN during pruning step. Similarly， because of − the
 single run-length value. Using ZRL encoding only adds 5% 10%
 
-ReLU activation function use, a signiﬁcant number of intermedi- overhead
-to the theoretical entropy limit \[19\] . For example, in the
+ReLU activation function use， a signiﬁcant number of intermedi-
+overhead to the theoretical entropy limit \[19\] . For example， in the
 
 ate feature map values will be zero also. CoNNA is able to detect case
-of VGG-16 CNN, using ZRL encoding results in the reduction of
+of VGG-16 CNN， using ZRL encoding results in the reduction of
 
 on-the-ﬂy all product terms that will result in the zero-valued out-
-required feature map transfer size per input image, from 60 MB in
+required feature map transfer size per input image， from 60 MB in
 
-come and skip their calculation, therefore reducing layer process- the
-uncompressed case, to only 30 MB in compressed case, when
+come and skip their calculation， therefore reducing layer process- the
+uncompressed case， to only 30 MB in compressed case， when
 
-ing time signiﬁcantly. This is done when convolutional, pooling and
+ing time signiﬁcantly. This is done when convolutional， pooling and
 16-bit ﬁxed-point representation of feature map data is used \[19\] .
 
 fully-connected layers are being processed by the CoNNA. Further- In the
-typical usage of feature map compression, all feature
+typical usage of feature map compression， all feature
 
-more, CoNNA is able to process feature and kernel maps data in maps,
-except input image, are stored in compressed format in op-
+more， CoNNA is able to process feature and kernel maps data in maps，
+except input image， are stored in compressed format in op-
 
-compressed form, removing the need for decompression step, thus erating
-memory. Accelerator reads encoded IFMs from operating
+compressed form， removing the need for decompression step， thus
+erating memory. Accelerator reads encoded IFMs from operating
 
-further shortening processing time and reducing the size of on- memory,
-decompresses them using an appropriate decoder, and
+further shortening processing time and reducing the size of on- memory，
+decompresses them using an appropriate decoder， and
 
-chip memories used for storing IFM and KM data, which is a sig- uses a
+chip memories used for storing IFM and KM data， which is a sig- uses a
 decompressed data stream within the accelerator to com-
 
 niﬁcant improvement compared to existing solutions \[19\] . pute output
 feature map. Computed output feature maps are op-
 
-tionally processed by the ReLU module, compressed by the ZRL en-
+tionally processed by the ReLU module， compressed by the ZRL en-
 
-coder, and transmitted to external memory. This saves both space 3. 1.
+coder， and transmitted to external memory. This saves both space 3. 1.
 Principle of operation of the CoNNA CNN accelerator
 
-and R/W bandwidth of the external memory. For example, this ap-
+and R/W bandwidth of the external memory. For example， this ap-
 
 proach is used in MIT’s Eyeriss accelerator \[19\] . More than 90% of
 the operations in CNN processing involve
 
-However, please notice that a further improvement in the CNN
-convolutions \[3,10,51,52\] . Therefore, optimizing the execution of
+However， please notice that a further improvement in the CNN
+convolutions \[3，10，51，52\] . Therefore， optimizing the execution of
 
 processing time is possible if all MAC operations where IFM points
 convolutional layers has an overwhelming impact on the overall
@@ -1050,87 +1051,87 @@ convolutional layers has an overwhelming impact on the overall
 are zero-valued are “skipped” since they once more don’t change eﬃciency
 and performance of any CNN accelerator. The process
 
-the ﬁnal outcome of convolution or weighted sum calculations, of
+the ﬁnal outcome of convolution or weighted sum calculations， of
 transforming an input feature map into an output feature map
 
-similar to "skipping" MAC operations with zero-valued convolu- by a
+similar to “skipping” MAC operations with zero-valued convolu- by a
 convolutional layer can be described by Algorithm 1 . Please
 
-tional coeﬃcients or fully-connected weight values, described pre- note
-that, for the reason of simplicity, in presented pseudo-code
+tional coeﬃcients or fully-connected weight values， described pre- note
+that， for the reason of simplicity， in presented pseudo-code
 
 viously. adding of bias term for each convolutional kernel and optional
 IFM
 
-In principle, having a signiﬁcant number of zero values in in- padding
-(necessary if we want to keep the horizontal and vertical
+In principle， having a signiﬁcant number of zero values in in- padding
+（necessary if we want to keep the horizontal and vertical
 
-put feature maps, as well as in convolutional kernel and fully- size of
-OFM equal to that of IFM) were omitted.
+put feature maps， as well as in convolutional kernel and fully- size of
+OFM equal to that of IFM） were omitted。
 
 connected weight maps can be used to improve CNN instance pro- A
 convolutional layer takes as an input a feature map which
 
-cessing eﬃciency by using one of three possible "zero-skipping" can be
+cessing eﬃciency by using one of three possible “zero-skipping” can be
 represented as a 3D tensor of dimension IFM_Width x
 
-× techniques: IFM_Height IFM_Depth . The convolutional layer then
+× techniques： IFM_Height IFM_Depth . The convolutional layer then
 transforms
 
-this input feature map, using Kernel_Num different convolutional
+this input feature map， using Kernel_Num different convolutional
 
-× 1. IFM “zero-skipping” - in this approach all MAC operations kernels,
+× 1. IFM “zero-skipping” - in this approach all MAC operations kernels，
 into an output feature map of dimension OFM_Width
 
 × where IFM point value is zero are skipped during the process of
 OFM_Height Kernel_Num . Each convolutional kernel K is a 3D
 
-× × convolutional and weighted sum calculation. For example, CNN tensor
-of dimension Kernel_Width Kernel_Height Kernel_Depth ,
+× × convolutional and weighted sum calculation. For example， CNN tensor
+of dimension Kernel_Width Kernel_Height Kernel_Depth ，
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 7
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 7
 
 tion of individual convolutions CoNNA architecture processes IFM
 
 Algorithm 1 Pseudo-code of generic convolutional layer processing
-algorithm.
+algorithm。
 
 bundles in the “Stick First” manner. Each IFM bundle that should
 
-= \< ++ L1: for ( y 0; y OFM_Height; y )
+= \< ++ L1： for （ y 0； y OFM_Height； y ）
 
-be convolved is divided into a number of IFM sticks, using nota-
+be convolved is divided into a number of IFM sticks， using nota-
 
-= \< ++ L2: for ( x 0; x OFM_Width; x )
+= \< ++ L2： for （ x 0； x OFM_Width； x ）
 
-tion from Fig. 1 , and then each individual IFM stick is multiplied
+tion from Fig. 1 ， and then each individual IFM stick is multiplied
 
-= \< ++ L3: for (kn 0; kn Kernel_Num; kn )
+= \< ++ L3： for （kn 0； kn Kernel_Num； kn ）
 
 with the corresponding convolutional coeﬃcients from appropriate = \< ++
-L4: for (kd 0; kd Kernel_Depth; kd )
+L4： for （kd 0； kd Kernel_Depth； kd ）
 
-= \< ++ convolutional kernel stick. Furthermore, each individual
-convolu- L5: for (kw 0; kw Kernel_Width; kw )
+= \< ++ convolutional kernel stick. Furthermore， each individual
+convolu- L5： for （kw 0； kw Kernel_Width； kw ）
 
-= \< ++ L6: for (kh 0; kh Kernel_Height; kh ) tion is calculated
-sequentially, meaning that loops L4-L6 are kept
+= \< ++ L6： for （kh 0； kh Kernel_Height； kh ） tion is calculated
+sequentially， meaning that loops L4-L6 are kept
 
 += OFM\[ x \]\[y\]\[kn\]
 
 rolled. This is in sharp contrast with most of the previously pro-
 
 ∗ ∗ ∗ + + IFM\[ x S h kw \]\[y Sv kh\]\[ kd \] KM\[ kn \]\[kw\]\[ kh
-\]\[kd\];
+\]\[kd\]；
 
 posed CNN accelerators that try to increase processing speed by
 
-partially or totally unrolling some or all of loops L4-L6.
+partially or totally unrolling some or all of loops L4-L6。
 
 where Kernel_Depth parameter must be equal to the IFM_Depth
 
@@ -1140,45 +1141,45 @@ parameter. Since Kernel_Width and Kernel_Height parameters are
 
 ployed by the CoNNA architecture is highly ﬂexible regarding the
 
-usually much smaller than IFM_Width and IFM_Height parameters,
+usually much smaller than IFM_Width and IFM_Height parameters，
 
-parameters of convolutions (kernel size, horizontal and vertical
+parameters of convolutions （kernel size， horizontal and vertical
 
-each convolutional kernel is actually convolved many times, each
+each convolutional kernel is actually convolved many times， each
 
-stride, kernel shape, etc. ), resulting in highly-conﬁgurable accel-
+stride， kernel shape， etc. ）， resulting in highly-conﬁgurable accel-
 
-time with different IFM bundle, using notation introduced in Fig. 1 .
+time with different IFM bundle， using notation introduced in Fig. 1 .
 
-erator, almost to the level of the accelerators based on CPUs and
+erator， almost to the level of the accelerators based on CPUs and
 
 The way how kernels traverse IFM is controlled by two additional
 
-GPUs, while still having high utilization of PB units, equal or even
+GPUs， while still having high utilization of PB units， equal or even
 
-parameters, horizontal and vertical kernel stride values, Sh and Sv .
+parameters， horizontal and vertical kernel stride values， Sh and Sv .
 
 higher than the MAC utilization of the accelerators based on the
 
-Input feature map horizontal and vertical dimensions, stride pa-
+Input feature map horizontal and vertical dimensions， stride pa-
 
 custom hardware solutions. This high ﬂexibility is in sharp con-
 
-rameters, together with horizontal and vertical padding values de-
+rameters， together with horizontal and vertical padding values de-
 
-trast with most of previously proposed CNN accelerators, which
+trast with most of previously proposed CNN accelerators， which
 
 termine the horizontal and vertical dimensions of resulting output
 
-usually support only certain kernel conﬁgurations, allowing for ex-
+usually support only certain kernel conﬁgurations， allowing for ex-
 
-feature map, OFM_Width, and OFM_Height respectively. The depth
+feature map， OFM_Width， and OFM_Height respectively. The depth
 
 × × ample only 3 3 or 5 5 kernels with the stride of 1. Even if
 
 of the resulting output feature map is unrelated to the depth of
 
-they do support arbitrary kernel size and stride values, their eﬃ-
+they do support arbitrary kernel size and stride values， their eﬃ-
 
 the input feature map and is purely determined by the number of
 
@@ -1186,55 +1187,55 @@ ciency drops signiﬁcantly when these parameters are set to some
 
 different convolutional kernels that are deﬁned within the current
 
-non-standard values.
+non-standard values。
 
-convolutional layer, Kernel_Num .
+convolutional layer， Kernel_Num .
 
-Since individual convolutions are calculated sequentially, one
+Since individual convolutions are calculated sequentially， one
 
-As can be seen from the pseudo-code of Algorithm 1 , the pro-
+As can be seen from the pseudo-code of Algorithm 1 ， the pro-
 
-MAC operation at a time, CoNNA architecture can easily support
+MAC operation at a time， CoNNA architecture can easily support
 
 cess of computing the output from a convolutional layer requires
 
-convolutional kernels of any size, with different horizontal and
+convolutional kernels of any size， with different horizontal and
 
 going through six nested loops. Please notice that there can be an
 
-vertical sizes, with different horizontal and vertical strides, with-
+vertical sizes， with different horizontal and vertical strides， with-
 
-additional 7th, outermost loop if batch processing is used, but for
+additional 7th， outermost loop if batch processing is used， but for
 
-out any degradation of the processing eﬃciency. Furthermore, the
+out any degradation of the processing eﬃciency. Furthermore， the
 
-simplicity reasons, it is not present in Algorithm 1 . At the core of
+simplicity reasons， it is not present in Algorithm 1 . At the core of
 
-shape of the convolutional kernel doesn’t have to be squared, it
+shape of the convolutional kernel doesn’t have to be squared， it
 
-these nested loops are the MAC operations, where selected IFM
+these nested loops are the MAC operations， where selected IFM
 
-can be rectangular also, and it can even be triangular, oval, or
+can be rectangular also， and it can even be triangular， oval， or
 
 and KM points are multiplied and then added to the running sum
 
-any other shape for that matter, including asymmetric shapes also.
+any other shape for that matter， including asymmetric shapes also。
 
 of appropriate OFM point. This six nested loops algorithmic de-
 
-Since each convolutional kernel is processed sequentially, one co-
+Since each convolutional kernel is processed sequentially， one co-
 
 scription of convolutional layer operation creates a rather large de-
 
-eﬃcient at a time, its actual shape and size are of no relevance to
+eﬃcient at a time， its actual shape and size are of no relevance to
 
-sign space of possible computing architectures, each of them im-
+sign space of possible computing architectures， each of them im-
 
-the CoNNA architecture, and it also doesn’t affect the eﬃciency of
+the CoNNA architecture， and it also doesn’t affect the eﬃciency of
 
-plementing a different type of parallelism, sequencing computa-
+plementing a different type of parallelism， sequencing computa-
 
-computing individual convolution.
+computing individual convolution。
 
 tions and partitioning large IFM and KM data into smaller blocks
 
@@ -1242,7 +1243,7 @@ The second modiﬁcation of Algorithm 1 that is present in
 
 that can then more easily ﬁt into smaller on-chip memories. It is
 
-Algorithm 2 is the partial unrolling of loop L3, with the partial un-
+Algorithm 2 is the partial unrolling of loop L3， with the partial un-
 
 worth noting that each of the previously proposed CNN hardware
 
@@ -1250,9 +1251,9 @@ rolling factor equalling the number of available Processing Block
 
 accelerator architectures is actually representing one of these de-
 
-modules, Num_PB . This parameter is actually one of the conﬁg-
+modules， Num_PB . This parameter is actually one of the conﬁg-
 
-sign space points, CoNNA architecture included.
+sign space points， CoNNA architecture included。
 
 uration parameters of the CoNNA architecture and can be speci-
 
@@ -1264,70 +1265,70 @@ tial computation of individual convolutions from a convolutional
 
 tecture with a speciﬁed number of Processing Blocks. This con-
 
-layer, using a single Processing Block (PB) unit for each convo-
+layer， using a single Processing Block （PB） unit for each convo-
 
 ﬁgurability enables the scalability of the CoNNA architecture in
 
-lution that needs to be computed, and employing a number of
+lution that needs to be computed， and employing a number of
 
 terms of achievable instance processing performance. As can be
 
-PB units to compute several different convolutions in parallel.
+PB units to compute several different convolutions in parallel。
 
-seen from Algorithm 2 , CoNNA uses existing Processing Block mod-
+seen from Algorithm 2 ， CoNNA uses existing Processing Block mod-
 
 Algorithm 2 presents the pseudo-code of the convolutional layer
 
-ules to concurrently compute a number of individual convolutions.
+ules to concurrently compute a number of individual convolutions。
 
-processing algorithm implemented in the CoNNA architecture.
+processing algorithm implemented in the CoNNA architecture。
 
 All these convolutions involve the same IFM bundle but use differ-
 
-ent convolutional kernels.
+ent convolutional kernels。
 
 Algorithm 2
 
 Partial unrolling of loop L3 actually is one way of speeding-up
-Pseudo-code of convolutional layer processing algorithm, Implemented by
+Pseudo-code of convolutional layer processing algorithm， Implemented by
 the
 
 CoNNA architecture. the CNN processing used within the CoNNA
-architecture, by paral-
+architecture， by paral-
 
 lelizing the process of computation of individual convolutions. An- = \<
 ++
 
-L1: for ( y 0; y OFM_Height; y )
+L1： for （ y 0； y OFM_Height； y ）
 
 = \< ++ other way of speeding-up CNN processing used in CoNNA is skip-
-L2: for ( x 0; x OFM_Width; x )
+L2： for （ x 0； x OFM_Width； x ）
 
-= \< += L3: for (kn 0; kn Kernel_Num; kn Num_PB) ping ineffectual MAC
-operations, by skipping all product terms that
+= \< += L3： for （kn 0； kn Kernel_Num； kn Num_PB） ping ineffectual
+MAC operations， by skipping all product terms that
 
-= \< ++ L5: for (kw 0; kw Kernel_Width; kw )
+= \< ++ L5： for （kw 0； kw Kernel_Width； kw ）
 
-result in the zero-valued outcome. As previously stated, the CoNNA
+result in the zero-valued outcome. As previously stated， the CoNNA
 
-= \< ++ L6: for (kh 0; kh Kernel_Height; kh )
+= \< ++ L6： for （kh 0； kh Kernel_Height； kh ）
 
-architecture implements “All zero-skipping” technique, presented
+architecture implements “All zero-skipping” technique， presented
 
-= \< ++ L4: for (kd 0; kd Kernel_Depth; kd )
+= \< ++ L4： for （kd 0； kd Kernel_Depth； kd ）
 
-in Section 2 , to skip all unnecessary multiplications, which will +=
+in Section 2 ， to skip all unnecessary multiplications， which will +=
 {OFM\[ x \]\[y\]\[kn\]
 
 ∗ + ∗ + ∗ IFM\[ x S h kw \]\[y Sv kh\]\[ kd \] KM\[ kn \]\[kw\]\[ kh
-\]\[kd\]; result in zero-valued outcome during convolutional, pooling
+\]\[kd\]； result in zero-valued outcome during convolutional， pooling
 and
 
-\+ += OFM\[ x \]\[y\]\[kn 1\] fully-connected layer processing, so the
+\+ += OFM\[ x \]\[y\]\[kn 1\] fully-connected layer processing， so the
 actual convolutional layer
 
 ∗ ∗ ∗ + + + IFM\[ x S h kw \]\[y Sv kh\]\[ kd \] KM\[ kn 1\]\[kw\]\[ kh
-\]\[kd\]; …
+\]\[kd\]； …
 
 processing algorithm that is implemented in the CoNNA architec-
 
@@ -1337,9 +1338,9 @@ ture is slightly different from Algorithm 2 . Algorithm 3 presents ∗ ∗
 ∗ + + + IFM\[ x S h kw \]\[y Sv kh\]\[ kd \] KM\[ kn N um \_PB-
 
 the pseudo-code of the ﬁnal convolutional layer processing algo-
-1\]\[kw\]\[ kh \]\[kd\]; }
+1\]\[kw\]\[ kh \]\[kd\]； }
 
-rithm, using the “All zero-skipping” technique, which is actually
+rithm， using the “All zero-skipping” technique， which is actually
 
 implemented in the CoNNA architecture. Comparing Algorithm 2 with
 Algorithm 1 it can be seen that
@@ -1347,35 +1348,35 @@ Algorithm 1 it can be seen that
 As opposed to Algorithms 1–3 operates on a compressed input two
 modiﬁcations have been made. The ﬁrst modiﬁcation makes
 
-feature map, represented by CIFM tensor, and compressed convolu- loop L4
-the innermost loop, which means that during the calcula-
+feature map， represented by CIFM tensor， and compressed convolu- loop
+L4 the innermost loop， which means that during the calcula-
 
 <div class="page-break">
 
 </div>
 
-8 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+8 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
-tional kernels, represented by CKM tensor. Compressed input fea- In case
-of Algorithm 3 , the number of MAC operations is not
+tional kernels， represented by CKM tensor. Compressed input fea- In
+case of Algorithm 3 ， the number of MAC operations is not
 
 ture map is the result of compressing zero-valued activations that
-constant, since it depends on the number of non-zero valued prod-
+constant， since it depends on the number of non-zero valued prod-
 
-are present due to the use of the ReLU activation function, while uct
-terms that are present, which in turn depends on the num-
+are present due to the use of the ReLU activation function， while uct
+terms that are present， which in turn depends on the num-
 
 compressed convolutional kernels are the result of the CNN prun- ber of
 non-zero values in input feature map bundle and associated
 
-ing process, described in Section 2 . These compressed structures
-convolutional kernel, as well as on their actual positions within
+ing process， described in Section 2 . These compressed structures
+convolutional kernel， as well as on their actual positions within
 
-contain only non-zero input feature map and kernel values, to-
-uncompressed structures. However, on average, the number of re-
+contain only non-zero input feature map and kernel values， to-
+uncompressed structures. However， on average， the number of re-
 
-gether with the information about their positions in the original,
+gether with the information about their positions in the original，
 quired MAC operations to compute one convolution operation us-
 
 uncompressed structures. ing “All zero-skipping” technique equals
@@ -1385,9 +1386,9 @@ Algorithm 3 implements the “All zero-skipping” tech-
 = · · Num \_ MACs \_ Al g K ernel \_ W idth K ernel \_ Height K ernel \_
 Depth
 
-3 nique within the W1 loop, which replaces loops L4-L6 from
+3 nique within the W1 loop， which replaces loops L4-L6 from
 
-· · P \_ IF MNZ P \_ KMNZ (2)
+· · P \_ IF MNZ P \_ KMNZ （2）
 
 Algorithms 1 and 2 . W1 loop is actually a while loop that is active
 
@@ -1397,13 +1398,13 @@ where P_IFMNZ is the percentage of non-zero valued points in the
 
 product terms from their associated convolution. When all PBs
 
-input feature map bundle, and P_KMNZ is the percentage of non-
+input feature map bundle， and P_KMNZ is the percentage of non-
 
-complete their convolution calculation tasks, PBs_Busy() function
+complete their convolution calculation tasks， PBs_Busy（） function
 
-zero valued convolutional coeﬃcients in the convolutional kernel.
+zero valued convolutional coeﬃcients in the convolutional kernel。
 
-will return a false value, indicating that the process of computing
+will return a false value， indicating that the process of computing
 
 Theoretical speedup in computing one convolution using the
 
@@ -1415,38 +1416,38 @@ process of computing the next batch of Num_PB convolutions can
 
 proach equals
 
-commence.
+commence。
 
-Num \_ MACs \_ Al g Each PB actually implements Calc_Next_NZPT()
+Num \_ MACs \_ Al g Each PB actually implements Calc_Next_NZPT（）
 function. This /
 
 1 2 = v Con olution \_ Cal cul ation \_ Speedup
 
-Num \_ MACs \_ Al g function determines on-the-ﬂy, on a clock by clock
-basis, the next
+Num \_ MACs \_ Al g function determines on-the-ﬂy， on a clock by clock
+basis， the next
 
 3
 
-non-zero valued product term that should be computed, based 1
+non-zero valued product term that should be computed， based 1
 
-= (3)
+= （3）
 
-· · + on supplied compressed IFM bundle, CIFM\[x Sh: x Sh Kernel_Width-
-·
+· · + on supplied compressed IFM bundle， CIFM\[x Sh： x Sh
+Kernel_Width- ·
 
 P \_ IF MNZ P \_ KMNZ
 
-· · + 1\]\[y Sv: y Sv Kernel_Height-1\]\[: \], and compressed
+· · + 1\]\[y Sv： y Sv Kernel_Height-1\]\[： \]， and compressed
 convolutional ker-
 
 Convolution calculation speedup clearly depends on the num-
 
-nel, CKM\[kn\]\[: \]\[: \]\[: \] . If there are no more non-zero product
-terms
+nel， CKM\[kn\]\[： \]\[： \]\[： \] . If there are no more non-zero
+product terms
 
 ber of zeros that are present in the input feature map bundle and
 
-Calc_Next_NZPT() function returns zero value, which is an indica-
+Calc_Next_NZPT（） function returns zero value， which is an indica-
 
 convolutional kernel. While the number of zeros in the input fea-
 
@@ -1454,13 +1455,13 @@ tion that the PB has ﬁnished computing the convolution operation
 
 ture maps cannot be directly controlled and also depends on the
 
-associated with it.
+associated with it。
 
 input instance that is currently being processed by the CNN net-
 
 Please notice that the number of non-zero valued product
 
-work, the number of zeros in the convolutional kernel depends on
+work， the number of zeros in the convolutional kernel depends on
 
 terms present in individual convolution operation depends on
 
@@ -1472,47 +1473,47 @@ process. Using previously published research we can estimate the
 
 dle and associated convolutional kernel. Since all PBs operate on
 
-typical number of zeros in the input feature maps, which ranges
+typical number of zeros in the input feature maps， which ranges
 
-the same input feature map bundle, the number of non-zero IFM
+the same input feature map bundle， the number of non-zero IFM
 
-from 25% to 88% \[19\] , and the typical number of zeros in con-
+from 25% to 88% \[19\] ， and the typical number of zeros in con-
 
-points is identical for all PBs. However, the number of non-zero
+points is identical for all PBs. However， the number of non-zero
 
-volutional kernels, which ranges from 16% to 78% \[43\] . Based on
+volutional kernels， which ranges from 16% to 78% \[43\] . Based on
 
 convolutional coeﬃcients can vary from one convolutional ker-
 
-these ﬁgures, the achievable speedup of computing individual con-
+these ﬁgures， the achievable speedup of computing individual con-
 
-nel to another. If this would be allowed, computing eﬃciency of
+nel to another. If this would be allowed， computing eﬃciency of
 
 volutional layers using the “All zero-skipping” technique over the
 
-Algorithm 3 could be severely degraded, because in this case, the
+Algorithm 3 could be severely degraded， because in this case， the
 
-“No zero-skipping” approach ranges from 1. 59 up to 37. 88, which
+“No zero-skipping” approach ranges from 1. 59 up to 37. 88， which
 
 number of non-zero product terms each PB must compute could
 
-is clearly a signiﬁcant improvement.
+is clearly a signiﬁcant improvement。
 
-vary signiﬁcantly. In this scenario, all PBs that have already ﬁn-
+vary signiﬁcantly. In this scenario， all PBs that have already ﬁn-
 
 Computing output of a fully-connected layer is the second
 
 ished with computing their associated convolution would have to
 
-most computationally demanding CNN layer type, after the con-
+most computationally demanding CNN layer type， after the con-
 
 wait for the slowest performing PB to complete its calculation pro-
 
-volutional layer. All other standard layer types, including pool-
+volutional layer. All other standard layer types， including pool-
 
-cess. In order to limit this variation, we can enforce that each con-
+cess. In order to limit this variation， we can enforce that each con-
 
-ing, adding, concatenation, have a negligible computational load,
+ing， adding， concatenation， have a negligible computational load，
 
 volutional kernel from a given convolutional layer has to have an
 
@@ -1522,7 +1523,7 @@ identical number of non-zero valued coeﬃcients after pruning is
 
 tice that the computation of a fully-connected layer can be
 
-performed. In other words, during pruning identical number of
+performed. In other words， during pruning identical number of
 
 mapped to a convolutional layer computation in the following
 
@@ -1532,19 +1533,19 @@ way. Each neuron from the fully-connected layer computes the
 
 kernel from a given convolutional layer. Experiments that authors
 
-weighted sum over the entire input feature map, using its own
+weighted sum over the entire input feature map， using its own
 
 have conducted seem to indicate that this constraint is not signiﬁ-
 
-speciﬁc set of weights. However, this weighted sum computa-
+speciﬁc set of weights. However， this weighted sum computa-
 
 cantly limiting the previously reported maximum achievable prun-
 
 tion can be seen as the special case of convolutional sum com-
 
-ing rate for all CNN networks used in \[ 3 , 10 , 52 ,53\].
+ing rate for all CNN networks used in \[ 3 ， 10 ， 52 ，53\].
 
-putation, where the convolution involves the entire input fea-
+putation， where the convolution involves the entire input fea-
 
 Please notice that even having convolutional kernels with an
 
@@ -1552,7 +1553,7 @@ ture map and convolutional coeﬃcients equal fully-connected neu-
 
 identical number of non-zero coeﬃcients will not result in iden-
 
-ron weight values. Therefore, computing fully-connected layer of
+ron weight values. Therefore， computing fully-connected layer of
 
 tical convolution computation times for different PBs. This is be-
 
@@ -1562,7 +1563,7 @@ cause the distribution of these non-zero coeﬃcients will vary be-
 
 spanning the entire input feature map. The result of processing
 
-tween different convolutional kernels, and when these kernels
+tween different convolutional kernels， and when these kernels
 
 a fully-connected layer will be an output feature map of dimen-
 
@@ -1572,23 +1573,23 @@ are correlated with the IFM bundle they could still have an un-
 
 equal number of non-zero valued product terms to compute. In
 
-to compute the output of a fully-connected layer also, conﬁgur-
+to compute the output of a fully-connected layer also， conﬁgur-
 
 Section 4. 4 a detailed analysis of this effect on the overall CNN
 
-= ing algorithm parameters in the following way: OFM_Width 1;
+= ing algorithm parameters in the following way： OFM_Width 1；
 
-processing eﬃciency of the CoNNA architecture will be presented.
+processing eﬃciency of the CoNNA architecture will be presented。
 
-= = = OFM_Height 1; Kernel_Num N; Kernel_Width IFM_Width; Ker-
+= = = OFM_Height 1； Kernel_Num N； Kernel_Width IFM_Width； Ker-
 
 Let us compare the number of MAC operations required to
 
-= = nel_Height IFM_Height; Kernel_Depth IFM_Depth .
+= = nel_Height IFM_Height； Kernel_Depth IFM_Depth .
 
 compute one convolution using Algorithms 1–3 . In the case of
 
-Algorithms 1 and 2 , the number of operations is constant and
+Algorithms 1 and 2 ， the number of operations is constant and
 
 3\. 2. Overview of the CoNNA CNN accelerator architecture
 
@@ -1596,85 +1597,85 @@ equals
 
 The CoNNA architecture is designed to act as a standalone CNN
 
-= · · hardware accelerator. It is designed as a standard soft-IP core,
+= · · hardware accelerator. It is designed as a standard soft-IP core，
 that Num \_ MACs \_ Al g K ernel \_ W idth K ernel \_ Height K ernel \_
 Depth
 
 / 1 2
 
-can be easily integrated into contemporary System-on-Chip (SoC)
+can be easily integrated into contemporary System-on-Chip （SoC）
 
-\(1\)
+（1）
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 9
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 9
 
-Fig. 3. CoNNA Compressed CNN Accelerator: a) Integration into SoC or
-PSoC; b) Top level architecture with available interfaces.
+Fig. 3. CoNNA Compressed CNN Accelerator： a） Integration into SoC or
+PSoC； b） Top level architecture with available interfaces。
 
-• or Programmable System-on-Chip (PSoC) solutions. CoNNA uses Output
-Stream Manager (OSM) – used to format, compress and
+• or Programmable System-on-Chip （PSoC） solutions. CoNNA uses Output
+Stream Manager （OSM） – used to format， compress and
 
-standard AXI interfaces, so it can be easily connected with ARM or
-stream output feature map data, generated by the RCU as it
+standard AXI interfaces， so it can be easily connected with ARM or
+stream output feature map data， generated by the RCU as it
 
-RISC-V microprocessors, using standard AXI-Interconnect modules,
-processes CNN layers, to the external DRAM memory or on-chip
+RISC-V microprocessors， using standard AXI-Interconnect modules，
+processes CNN layers， to the external DRAM memory or on-chip
 
-as shown in Fig. 3 a. cache memory.
+as shown in Fig. 3 a. cache memory。
 
 • Having a microprocessor within the system eases the control
-Conﬁguration and Control Unit (CCU) – used to control the op-
+Conﬁguration and Control Unit （CCU） – used to control the op-
 
-and conﬁguration of the CoNNA CNN accelerator, but it must be eration of
-the CoNNA CNN accelerator and enable interfacing
+and conﬁguration of the CoNNA CNN accelerator， but it must be eration
+of the CoNNA CNN accelerator and enable interfacing
 
 stated that conﬁguration and control of the CoNNA accelerator is a with
-surrounding logic.
+surrounding logic。
 
-relatively simple process, so a pure hardware-based solution, with
+relatively simple process， so a pure hardware-based solution， with
 
 The CoNNA CNN accelerator uses four AXI interfaces to commu- hardwired
-FSM controlling CoNNA, can also be used. However, in
+FSM controlling CoNNA， can also be used. However， in
 
-nicate with surrounding on-chip modules: order for CoNNA to be fully
-functional, some kind of memory
+nicate with surrounding on-chip modules： order for CoNNA to be fully
+functional， some kind of memory
 
-needs to be present in the system, which could be on-chip cache
+needs to be present in the system， which could be on-chip cache
 
-• Input Stream Interface (ISI) – AXI-Full interface used to stream
+• Input Stream Interface （ISI） – AXI-Full interface used to stream
 
-memory or off-chip operating memory, as shown in Fig. 3 a. If the
+memory or off-chip operating memory， as shown in Fig. 3 a. If the
 
-input data, including input image, intermediate input feature
+input data， including input image， intermediate input feature
 
-system can implement large enough on-chip cache memory, as
+system can implement large enough on-chip cache memory， as
 
-maps and kernel maps for selected CNN network, to the CoNNA
+maps and kernel maps for selected CNN network， to the CoNNA
 
-shown in Fig. 3 a, of an order of several tens of megabytes, which is
+shown in Fig. 3 a， of an order of several tens of megabytes， which is
 
 accelerator module for processing. CoNNA acts as the master of
 
-today possible even if we use FPGA devices, the result would be a
+today possible even if we use FPGA devices， the result would be a
 
 the ISI interface. The other side of the ISI interface is connected
 
-highly power-eﬃcient solution. In this conﬁguration, all CNN topol-
+highly power-eﬃcient solution. In this conﬁguration， all CNN topol-
 
 either to the on-chip cache module or to the DRAM memory
 
-ogy data, as well as all intermediate feature maps would be stored
+ogy data， as well as all intermediate feature maps would be stored
 
-controller module.
+controller module。
 
 inside the on-chip cache. This would signiﬁcantly reduce required
 
-• Output Stream Interface (OSI) – AXI-Full interface used to
+• Output Stream Interface （OSI） – AXI-Full interface used to
 
 data movement between external memory and the CoNNA acceler-
 
@@ -1688,23 +1689,23 @@ energy in data processing systems is spent in moving data between
 
 face. The other side of the OSI interface is connected either to
 
-external DRAM memory and processing system \[47\] . However, for
+external DRAM memory and processing system \[47\] . However， for
 
 the on-chip cache module or to the DRAM memory controller
 
-low-cost solutions, this conﬁguration will probably not be possi-
+low-cost solutions， this conﬁguration will probably not be possi-
 
-module.
+module。
 
-ble, so in this case, instead of using an on-chip cache, the system
+ble， so in this case， instead of using an on-chip cache， the system
 
-• CNN Description Interface (CDI) – AXI-Full interface used to
+• CNN Description Interface （CDI） – AXI-Full interface used to
 
-would have to include external operating memory, usually imple-
+would have to include external operating memory， usually imple-
 
 load structural information about the CNN network that is be-
 
-mented as DRAM memory, as shown in the Fig. 3 a.
+mented as DRAM memory， as shown in the Fig. 3 a。
 
 ing accelerated. CDI interface is implemented using standard
 
@@ -1716,41 +1717,41 @@ celerator is shown in the Fig. 3 b. The CoNNA CNN accelerator is
 
 CDI interface. The other side of the CDI interface is connected
 
-composed of the following four modules:
+composed of the following four modules：
 
 either to the on-chip cache module or to the DRAM memory
 
-controller module.
+controller module。
 
-• Reconﬁgurable Computing Unit (RCU) – used to perform all •
+• Reconﬁgurable Computing Unit （RCU） – used to perform all •
 
-Conﬁguration Interface (CI) – AXI-Lite interface used to conﬁg-
+Conﬁguration Interface （CI） – AXI-Lite interface used to conﬁg-
 
 computations deﬁned by different layers from the CNN net- ure and
 control the operation of the CoNNA CNN accelerator. CI
 
-work (including convolutional, depthwise convolutional, pool- interface
-is implemented using standard AXI-Lite interface pro-
+work （including convolutional， depthwise convolutional， pool-
+interface is implemented using standard AXI-Lite interface pro-
 
-ing, concatenation, adding and fully connected layers), exploit- tocol.
-CoNNA acts as the slave of the CI interface. The other side
+ing， concatenation， adding and fully connected layers）， exploit-
+tocol. CoNNA acts as the slave of the CI interface. The other side
 
 ing the sparsity of kernel and feature maps. RCU module is fur- of the
 CI interface is connected either directly to the host pro-
 
 ther composed out of a number of Processing Block modules. cessor or
-hardwired FSM or to some AXI interconnect module.
+hardwired FSM or to some AXI interconnect module。
 
-• Input Stream Manager (ISM) – used to supply all input data
+• Input Stream Manager （ISM） – used to supply all input data
 
-(conﬁguration, kernel map, input feature map), in compressed
-Furthermore, the CoNNA accelerator has an interrupt request
+（conﬁguration， kernel map， input feature map）， in compressed
+Furthermore， the CoNNA accelerator has an interrupt request
 
-format, coming from external DRAM memory or on-chip cache output port,
+format， coming from external DRAM memory or on-chip cache output port，
 which is used to signal to the surrounding mod-
 
 memory to the appropriate internal modules of the RCU mod- ules that
-CoNNA has ﬁnished processing one input instance, and
+CoNNA has ﬁnished processing one input instance， and
 
 ule. that the instance classiﬁcation data is available. Since the CoNNA
 
@@ -1758,14 +1759,14 @@ ule. that the instance classiﬁcation data is available. Since the CoNNA
 
 </div>
 
-10 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+10 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 Fig. 4. Linked list representation of target CNN structural description
-that will be accelerated by the CoNNA CNN accelerator.
+that will be accelerated by the CoNNA CNN accelerator。
 
-• CNN accelerator uses AXI interfaces, integration within ARM/RISC-
-Classiﬁcation Data Buffer (CDB) – memory buffer used for stor-
+• CNN accelerator uses AXI interfaces， integration within ARM/RISC-
+Classiﬁcation Data Buffer （CDB） – memory buffer used for stor-
 
 V based SoCs or PSoCs is greatly simpliﬁed. All data that is being ing
 classiﬁcation data for the last input instance that was pro-
@@ -1773,101 +1774,102 @@ classiﬁcation data for the last input instance that was pro-
 processed or generated by the CoNNA accelerator is stored either cessed
 by the CoNNA CNN accelerator. The output feature map
 
-in the internal on-chip cache memory or external DRAM memory, generated
+in the internal on-chip cache memory or external DRAM memory， generated
 by the ﬁnal layer of the target CNN network is stored
 
 depending on the available memory resources in the system. in this
 buffer. This data represents the classiﬁcation information
 
 The operation of the CoNNA CNN accelerator is conﬁgured and about the
-instance that was processed by the CNN network, and
+instance that was processed by the CNN network， and
 
-controlled using a set of internal registers, as well as several data it
-can be used by higher application levels within the complete
+controlled using a set of internal registers， as well as several data
+it can be used by higher application levels within the complete
 
-structures required for correct operation, which are stored either in
-system.
+structures required for correct operation， which are stored either in
+system。
 
 the on-chip cache memory or external DRAM memory. The CoNNA
 
-CNN accelerator operates on the following data structures: CNNSD linked
-list, shown in the Fig. 4 , deﬁnes the topology,
+CNN accelerator operates on the following data structures： CNNSD linked
+list， shown in the Fig. 4 ， deﬁnes the topology，
 
-together with various parameter values, of the target CNN network
+together with various parameter values， of the target CNN network
 
-• CNN Structural Description (CNNSD) list – this is a linked list that
+• CNN Structural Description （CNNSD） list – this is a linked list that
 should be accelerated by the CoNNA CNN accelerator. CNNSD
 
-of nodes, each one describing one layer from a particular CNN list is
-composed of a number of nodes, the exact number being
+of nodes， each one describing one layer from a particular CNN list is
+composed of a number of nodes， the exact number being
 
 network that the CoNNA accelerator should process. equal to the number
-of layers in the target CNN network, where
+of layers in the target CNN network， where
 
-• Input Instance Buffer (IIBs) – memory buffer, used for storing each
+• Input Instance Buffer （IIBs） – memory buffer， used for storing each
 node describes the characteristics of one particular layer from
 
 input instances that should be processed by the CoNNA CNN the selected
-CNN network.
+CNN network。
 
-accelerator. Every CNNSD node, shown in Fig. 4 , contains the following
+accelerator. Every CNNSD node， shown in Fig. 4 ， contains the
+following
 
-• Feature Map Buffers (FMBs) – a number of memory buffers, ﬁelds:
+• Feature Map Buffers （FMBs） – a number of memory buffers， ﬁelds：
 
 used for storing input feature maps and output feature maps
 
 • data that are processed by various layers from the target CNN Layer
-Info – this ﬁeld, which has multiple subﬁelds, is used to
+Info – this ﬁeld， which has multiple subﬁelds， is used to
 
-network. The minimum number of FMB buffers equals two, one specify
+network. The minimum number of FMB buffers equals two， one specify
 details about the current CNN layer that should be pro-
 
 for storing input feature map that is being processed by the cessed by
 CoNNA. Layer Info ﬁeld is composed of the following
 
-current CNN layer and another for storing output feature map subﬁelds:
+current CNN layer and another for storing output feature map subﬁelds：
 
 ◦ that is being generated by the current CNN layer. This conﬁg- Layer
 Type – this ﬁeld speciﬁes the type of the current
 
-uration is suﬃcient in case the target CNN network topology layer, valid
-values being: convolutional, depthwise convolu-
+uration is suﬃcient in case the target CNN network topology layer，
+valid values being： convolutional， depthwise convolu-
 
-doesn’t contain adding or concatenation layers, like in the case tional,
-pooling (average or max pooling), adding, concatena-
+doesn’t contain adding or concatenation layers， like in the case
+tional， pooling （average or max pooling）， adding， concatena-
 
-of AlexNet, VGG or MobileNet V1 CNN architectures. However, tion, and
-fully-connected.
+of AlexNet， VGG or MobileNet V1 CNN architectures. However， tion， and
+fully-connected。
 
 ◦ if the target CNN network topology contains adding or concate- IFM
 Width – this ﬁeld speciﬁes the width of the input fea-
 
-nation layers, which is, for example, the case with ResNet, In- ture
-map, expressed as the number of IFM points.
+nation layers， which is， for example， the case with ResNet， In- ture
+map， expressed as the number of IFM points。
 
-◦ ception and NASNet architectures, then additional FMB buffers IFM
+◦ ception and NASNet architectures， then additional FMB buffers IFM
 Height – this ﬁeld speciﬁes the height of the input fea-
 
-are necessary. ture map, expressed as the number of IFM points.
+are necessary. ture map， expressed as the number of IFM points。
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 11
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 11
 
 ◦ IFM Depth – this ﬁeld speciﬁes the depth of the input fea- erated is
-possible when using the CoNNA CNN accelerator, with-
+possible when using the CoNNA CNN accelerator， with-
 
-ture map, expressed as the number of IFM points. out the need to modify
-and re-implement the accelerator itself.
+ture map， expressed as the number of IFM points. out the need to modify
+and re-implement the accelerator itself。
 
 ◦ Number of Kernels – this ﬁeld speciﬁes the number of ker- This
 situation is shown in the Fig. 5 . There can be a number
 
 nels used to process IFM data by the current convolutional of CNN
-topology description lists, sitting in the operating mem-
+topology description lists， sitting in the operating mem-
 
 layer. This number also determines the depth of the OFM ory to which the
 CoNNA accelerator is connected. By simply writ-
@@ -1876,85 +1878,85 @@ generated by the current convolutional layer. This ﬁeld is ing the
 correct base address of the target CNN description list in
 
 valid only if the “Layer Type” ﬁeld is set to “convolutional” the CNNSD
-Pointer register, the user can easily select the desired
+Pointer register， the user can easily select the desired
 
 or “depthwise convolutional”. CNN network that should be processed by
 the CoNNA accelera-
 
 ◦ Kernel Size – this ﬁeld speciﬁes the horizontal or vertical tor. This
-selection can be done on-the-ﬂy, without any need for
+selection can be done on-the-ﬂy， without any need for
 
-size of the square convolutional kernel, or pooling area, ex- hardware
+size of the square convolutional kernel， or pooling area， ex- hardware
 reprogramming or reconﬁguration. Switching between
 
 pressed as the number of KM points. This ﬁeld is valid only different
 CNN networks that should be accelerated is extremely
 
-if the “Layer Type” ﬁeld is set to “convolutional”, “depthwise fast,
-requiring only one write to CoNNA’s internal register (CNNSD
+if the “Layer Type” ﬁeld is set to “convolutional”， “depthwise fast，
+requiring only one write to CoNNA’s internal register （CNNSD
 
-convolutional”, “max pooling” and “average pooling”. Pointer). This
+convolutional”， “max pooling” and “average pooling”. Pointer）. This
 feature of the CoNNA accelerator is of great impor-
 
 ◦ Kernel Stride – this ﬁeld speciﬁes the stride of the convolu- tance in
-the case of applications where rapid, dynamic switching
+the case of applications where rapid， dynamic switching
 
 tional kernel or pooling area. This ﬁeld is valid only if the of CNN
 networks is necessary. It is worth noting that many previ-
 
-“Layer Type” ﬁeld is set to “convolutional”, “depthwise con- ously
-proposed CNN accelerators, particularly accelerators designed
+“Layer Type” ﬁeld is set to “convolutional”， “depthwise con- ously
+proposed CNN accelerators， particularly accelerators designed
 
-volutional”, “max pooling” and “average pooling”. using HLS techniques,
-cannot support this kind of functionality.
+volutional”， “max pooling” and “average pooling”. using HLS
+techniques， cannot support this kind of functionality。
 
-◦ Padding – this ﬁeld speciﬁes if padding should be used Furthermore,
+◦ Padding – this ﬁeld speciﬁes if padding should be used Furthermore，
 on-the-ﬂy modiﬁcation of accelerated CNN net-
 
 when processing IFM data with the current CNN layer. work topology is
-also possible when using CoNNA CNN accelerator,
+also possible when using CoNNA CNN accelerator，
 
 ◦ Activation Function Type – this ﬁeld speciﬁes the type of removing or
 adding CNN layers or changing parameters of exist-
 
-activation function to be used, valid values being: “none”, ing layers,
-by a simple modiﬁcation of the target CNN description
+activation function to be used， valid values being： “none”， ing
+layers， by a simple modiﬁcation of the target CNN description
 
-“ReLU” or “arbitrary”. In the case of the “arbitrary” type, linked list.
-For example, in the Fig. 5 CNN description linked list
+“ReLU” or “arbitrary”. In the case of the “arbitrary” type， linked
+list. For example， in the Fig. 5 CNN description linked list
 
 th additional Activation Function Lookup Table Pointer ﬁeld for M CNN
 network could be modiﬁed by replacing the existing
 
 points to the beginning of the activation function lookup description of
-Layer 2 with the description of some other layer, for
+Layer 2 with the description of some other layer， for
 
-∗ table content memory block. This block is loaded into the example,
-Layer 2 . This can easily be done, by simply rewriting ex-
+∗ table content memory block. This block is loaded into the example，
+Layer 2 . This can easily be done， by simply rewriting ex-
 
 CoNNA’s Arbitrary Non-Linear Activation Function Calculator isting
 values of the “Next Layer Pointer” ﬁeld from Layer 1 node
 
-module, located within the RCU module, to specify the ex- and IFM Data
+module， located within the RCU module， to specify the ex- and IFM Data
 Pointer ﬁeld from Layer 3 node. After these modiﬁca-
 
-th act shape of the non-linear activation function that should tions,
+th act shape of the non-linear activation function that should tions，
 the topology of M CNN network will be modiﬁed to include
 
 ∗ be used within the current CNN layer. In the case of “none” a new
-layer, Layer 2 , instead of existing Layer 2. As can be seen,
+layer， Layer 2 ， instead of existing Layer 2. As can be seen，
 
-and “ReLU” values, Activation Function Lookup Table Pointer this
-modiﬁcation is very quick, requiring only a couple of mem-
+and “ReLU” values， Activation Function Lookup Table Pointer this
+modiﬁcation is very quick， requiring only a couple of mem-
 
 is ignored. ory accesses to the operating memory where the CNN
 description
 
 • Input Feature Map Data Pointer – this ﬁeld speciﬁes the base list is
-stored. Therefore, rapid, dynamic modiﬁcation of target CNN
+stored. Therefore， rapid， dynamic modiﬁcation of target CNN
 
-address of the memory block, which holds the values of the topology is
-also supported by the CoNNA CNN accelerator, which
+address of the memory block， which holds the values of the topology is
+also supported by the CoNNA CNN accelerator， which
 
 input feature map of the current CNN layer. can be of particular
 interest when working with hierarchical CNNs
@@ -1962,72 +1964,72 @@ interest when working with hierarchical CNNs
 • Output Feature Map Data Pointer – this ﬁeld speciﬁes the base
 \[48–50\] .
 
-address of the memory block, which will store the values of the CoNNA
-processes the CNN network in a sequential manner, one
+address of the memory block， which will store the values of the CoNNA
+processes the CNN network in a sequential manner， one
 
-output feature map, generated by the current CNN layer. layer at a time.
-It uses information about the current CNN layer
+output feature map， generated by the current CNN layer. layer at a
+time. It uses information about the current CNN layer
 
 • Kernel Data Pointer – this ﬁeld speciﬁes the base address of the to be
-accelerated, stored in the appropriate node of the associ-
+accelerated， stored in the appropriate node of the associ-
 
-memory block, holding the kernel coeﬃcients, in case of a con- ated CNN
-description linked list, to reconﬁgure the RCU unit and
+memory block， holding the kernel coeﬃcients， in case of a con- ated
+CNN description linked list， to reconﬁgure the RCU unit and
 
-volutional or depthwise convolutional layer, or weight values in perform
-all necessary computations deﬁned within that CNN layer.
+volutional or depthwise convolutional layer， or weight values in
+perform all necessary computations deﬁned within that CNN layer。
 
 case of a fully connected layer. When all computations deﬁned in the
-current layer are completed,
+current layer are completed，
 
 • Next Layer Pointer – this ﬁeld speciﬁes the address of the next output
 feature map data generated by the current layer is stored
 
-CNNSD node, which describes the characteristics of the subse- in the
+CNNSD node， which describes the characteristics of the subse- in the
 appropriate memory buffer and CoNNA can proceed with
 
 quent layer from the CNN network that is being accelerated. If the next
 CNN layer from the supplied CNNDS linked list. This op-
 
-the value of this ﬁeld is NULL , this is an indication that the eration
+the value of this ﬁeld is NULL ， this is an indication that the eration
 is repeated until a ﬁnal node from the CNNDS linked list
 
 current CNN layer is actually the ﬁnal layer of the CNN and is
-processed, indicating the end of processing of the current input
+processed， indicating the end of processing of the current input
 
 that the CoNNA accelerator should signal completion of the cur- instance
 by selected CNN. The process of sequential processing of
 
-rent input instance classiﬁcation, after it has processed this ﬁ- CNN
+rent input instance classiﬁcation， after it has processed this ﬁ- CNN
 layers employed by the CoNNA CNN accelerator is shown in
 
 nal layer. the Fig. 6 .
 
 Please note that although CoNNA processes CNN layers sequen-
 
-Besides CNNSD linked list, IIB, FMB and CDB buffers, the CoNNA
+Besides CNNSD linked list， IIB， FMB and CDB buffers， the CoNNA
 
-tially, layer by layer, computations deﬁned within each CNN layer
+tially， layer by layer， computations deﬁned within each CNN layer
 
-CNN accelerator has the following set of internal registers, that are
+CNN accelerator has the following set of internal registers， that are
 
-are executed concurrently, using available Processing Block mod-
+are executed concurrently， using available Processing Block mod-
 
-used to conﬁgure and control its operation. All registers are 32-bit,
+used to conﬁgure and control its operation. All registers are 32-bit，
 
 ules from the RCU module. The way how this is done was pre-
 
 and are accessed using the CI AXI-Lite interface of the CoNNA CNN
 
-sented at the beginning of Section 3 , and will also be explained in
+sented at the beginning of Section 3 ， and will also be explained in
 
-accelerator:
+accelerator：
 
 more detail in Section 3. 2. 1 .
 
 • Control Register – used to control the operation of the CoNNA
 
-CNN accelerator.
+CNN accelerator。
 
 3\. 2. 1. Details of RCU module
 
@@ -2035,299 +2037,299 @@ CNN accelerator.
 
 RCU module is the central module of the CoNNA CNN accel-
 
-CNN accelerator.
+CNN accelerator。
 
-erator. It is used to perform all necessary numerical calculations,
+erator. It is used to perform all necessary numerical calculations，
 
 • CNNSD Pointer – register holding the base address of the
 
-deﬁned by different CNN layers. RCU module, shown in Fig. 7 , is
+deﬁned by different CNN layers. RCU module， shown in Fig. 7 ， is
 
-CNNSD linked list, where the ﬁrst CNNSD node is located. The
+CNNSD linked list， where the ﬁrst CNNSD node is located. The
 
-designed as a coarse-grained reconﬁgurable hardware module, al-
+designed as a coarse-grained reconﬁgurable hardware module， al-
 
 CoNNA CNN accelerator uses this address value to fetch the in-
 
-lowing easy, fast, dynamic, on-the-ﬂy reconﬁguration, in order to
+lowing easy， fast， dynamic， on-the-ﬂy reconﬁguration， in order to
 
 formation about the structure of the ﬁrst and all subsequent
 
-create different dataﬂows, optimized for processing particular CNN
+create different dataﬂows， optimized for processing particular CNN
 
-layers of the CNN network that is being accelerated.
+layers of the CNN network that is being accelerated。
 
-layer type.
+layer type。
 
 Because CNN’s structural information is stored in a form of a RCU module
 is composed of a number of Processing Block mod-
 
-linked list, on-the-ﬂy selection of target CNN network to be accel- ules
-and one Activation Function Calculator (AFC) module. PBs are
+linked list， on-the-ﬂy selection of target CNN network to be accel-
+ules and one Activation Function Calculator （AFC） module. PBs are
 
 <div class="page-break">
 
 </div>
 
-12 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+12 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/b567810f02c2ebb003f7dfe8d3c654be12472835.png)
 
 Fig. 5. Principle of on-line switching between different CNNs and
-accelerating CNNs with dynamic topology.
+accelerating CNNs with dynamic topology。
 
 ![](/workspace/CoNNa_zh_media/3dda74979f9f59aff09674718c44c2c8d1e31b50.jpg)
 
 Fig. 6. Principle of sequential layer processing during CNN acceleration
-implemented by CoNNA.
+implemented by CoNNA。
 
-able to perform all required CNN layer processing operations, using In
+able to perform all required CNN layer processing operations， using In
 the Fig. 7 b distribution of different convolutions over available
 
-compressed input feature map and kernel map data, implement- PBs, in
+compressed input feature map and kernel map data， implement- PBs， in
 case of processing convolutional layer with 6 different con-
 
-ing the “All zero-skipping” technique, to increase CNN computation
-volutional kernels, is presented. Please notice that if the number
+ing the “All zero-skipping” technique， to increase CNN computation
+volutional kernels， is presented. Please notice that if the number
 
 performance. AFC module is used for post-processing data com- of
-convolutional kernels is smaller than the number of PBs, some
+convolutional kernels is smaller than the number of PBs， some
 
 ing from PB modules. AFC module contains a number of Rectiﬁed of the PBs
 will be inactive. Also note that the amount of paral-
 
-Linear Units (ReLUs), implementing the Rectiﬁed Linear activation lelism
-is limited by the number of available PBs, since their num-
+Linear Units （ReLUs）， implementing the Rectiﬁed Linear activation
+lelism is limited by the number of available PBs， since their num-
 
 function and one Arbitrary Non-Linear Activation Function Calcu- ber
 determines the partial unrolling factor that will be used to un-
 
-lator unit, capable of implementing arbitrary non-linear activation roll
-loop L3 from Algorithm 3 , Num_PB . However, for most stan-
+lator unit， capable of implementing arbitrary non-linear activation
+roll loop L3 from Algorithm 3 ， Num_PB . However， for most stan-
 
-functions, which are mainly used in fully-connected CNN layers. dard CNN
-networks \[ 3 , 10 , 52 ,53\] number of different convolutional
+functions， which are mainly used in fully-connected CNN layers. dard
+CNN networks \[ 3 ， 10 ， 52 ，53\] number of different convolutional
 
-As already mentioned in Section 3. 1 , during convolutional layer
+As already mentioned in Section 3. 1 ， during convolutional layer
 kernels speciﬁed in convolutional layers rises sharply as we move
 
 processing CoNNA allocates computation of one complete convolu- deeper
-inside the CNN network, and quickly reach values above
+inside the CNN network， and quickly reach values above
 
-tion to a single PB. Multiple convolutions, operating on the same 100,
-so this constraint is usually not so severe.
+tion to a single PB. Multiple convolutions， operating on the same 100，
+so this constraint is usually not so severe。
 
-IFM bundle are being calculated in parallel, by different PBs, as The
+IFM bundle are being calculated in parallel， by different PBs， as The
 detailed architecture of Processing Block is shown in the
 
-shown in the Fig. 7 b, and previously described by Algorithm 3 . Fig. 8
-. PB contains non-zero product term detection logic, imple-
+shown in the Fig. 7 b， and previously described by Algorithm 3 . Fig. 8
+. PB contains non-zero product term detection logic， imple-
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 13
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 13
 
-Fig. 7. Details of the RCU Module: a) top-level architecture of the RCU
-Module; b) mapping individual convolutions to available PB units.
+Fig. 7. Details of the RCU Module： a） top-level architecture of the
+RCU Module； b） mapping individual convolutions to available PB units。
 
-Fig. 8. The architecture of the processing block module.
+Fig. 8. The architecture of the processing block module。
 
-mented inside the Data Fetcher (DF) module, which allows the ex-
+mented inside the Data Fetcher （DF） module， which allows the ex-
 eﬃcients and their actual positions in the original uncompressed
 
 ecution of numerical computations only when their result will be kernel.
 Remaining two memories do the same for the IFM bun-
 
-different from zero, skipping all unnecessary (zero-outcome) com- dle
+different from zero， skipping all unnecessary （zero-outcome） com- dle
 that is currently being processed by the PB module. Please
 
-putations, resulting in a signiﬁcant speedup of the CNN calcula- notice
+putations， resulting in a signiﬁcant speedup of the CNN calcula- notice
 that all data stored in these four memories are stored in
 
 tion process. Please notice that the DF module actually implements a
-serialized format, as the result of ﬂattening loops L4-L6 from
+serialized format， as the result of ﬂattening loops L4-L6 from
 
-the Calc_Next_NZPT() function from Algorithm 3 , directly in hard-
-Algorithm 2 , using the “Stick First” approach described during the
+the Calc_Next_NZPT（） function from Algorithm 3 ， directly in hard-
+Algorithm 2 ， using the “Stick First” approach described during the
 
-ware. PB also contains four local memories, located in the Local
-analysis of Algorithm 2 . Computing Unit (CU) performs all neces-
+ware. PB also contains four local memories， located in the Local
+analysis of Algorithm 2 . Computing Unit （CU） performs all neces-
 
-Memory module (LM), used for storing data from selected convo- sary
-operations on the selected kernel and IFM value pairs, sup-
+Memory module （LM）， used for storing data from selected convo- sary
+operations on the selected kernel and IFM value pairs， sup-
 
-lutional kernel and IFM bundle, in compressed format. Two mem- plied by
-the DF module. It contains one MAC unit, together with
+lutional kernel and IFM bundle， in compressed format. Two mem- plied by
+the DF module. It contains one MAC unit， together with
 
 ories are used to store all non-zero valued convolution kernel co- some
-additional logic, for enabling different compute dataﬂows,
+additional logic， for enabling different compute dataﬂows，
 
 <div class="page-break">
 
 </div>
 
-14 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+14 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
-Fig. 9. Zero-valued product term skipping principle of operation.
+Fig. 9. Zero-valued product term skipping principle of operation。
 
 • depending on the type of CNN layer that is being processed by the
-Input Stick Buffer (ISB) memory – used for storing cached IFM
+Input Stick Buffer （ISB） memory – used for storing cached IFM
 
 CoNNA CNN accelerator. Output FIFO is used to synchronize pro- sticks in
-compressed format.
+compressed format。
 
 • cessing steps performed by different PBs since different PBs can Stick
-Valid (SV) memory – used to store information is the IFM
+Valid （SV） memory – used to store information is the IFM
 
 require different periods of time to calculate their associated con-
 stick located at the same position in ISB memory valid for read-
 
 volutions. This can occur because of the possible difference in the ing
-or not.
+or not。
 
 • actual number of non-zero valued product terms that are present Read
-Controller (RC) – used to read selected compressed IFM
+Controller （RC） – used to read selected compressed IFM
 
-in different convolutions, as it was described during the presen- stick
-from ISB memory and transfer it to the RCU module, more
+in different convolutions， as it was described during the presen- stick
+from ISB memory and transfer it to the RCU module， more
 
-tation of Algorithm 3 . Finally, the Conﬁguration Register is used
+tation of Algorithm 3 . Finally， the Conﬁguration Register is used
 speciﬁcally into two local memories located inside the LM mod-
 
 to specify the desired PB operating mode that should be used. ule of
-each PB module.
+each PB module。
 
-• PB module supports several datapath conﬁgurations, which enable Write
-Controller (WC) – used to write compressed IFM stick
+• PB module supports several datapath conﬁgurations， which enable Write
+Controller （WC） – used to write compressed IFM stick
 
-eﬃcient processing of convolutional, pooling, fully-connected and from
+eﬃcient processing of convolutional， pooling， fully-connected and from
 external DRAM memory or on-chip cache memory to ap-
 
-adding CNN layer types. propriate position inside ISB memory.
+adding CNN layer types. propriate position inside ISB memory。
 
 • The principle of the “All zero-skipping” technique used to skip Input
-Stream Router (ISR) – used to select which input data
+Stream Router （ISR） – used to select which input data
 
-all zero-valued product terms, used by the PB module during the stream
+all zero-valued product terms， used by the PB module during the stream
 will be sent to the RCU module. Two possible input data
 
-convolution calculation process, is shown in the Fig. 9 . LM module
-stream sources are available:
+convolution calculation process， is shown in the Fig. 9 . LM module
+stream sources are available：
 
-◦ streams information about the positions of kernel and IFM bun- First,
-coming from the RC module, used when compressed
+◦ streams information about the positions of kernel and IFM bun- First，
+coming from the RC module， used when compressed
 
 dle non-zero values to the DF module. DF module detects on-the- IFM
-sticks are being transferred to the RCU.
+sticks are being transferred to the RCU。
 
-◦ ﬂy the next kernel/IFM non-zero valued pair, implementing the Second,
-coming directly from Input Stream Interface, used
+◦ ﬂy the next kernel/IFM non-zero valued pair， implementing the
+Second， coming directly from Input Stream Interface， used
 
-“All zero-skipping” technique, using the information about the ker- when
-convolutional kernel map or fully-connected weight
+“All zero-skipping” technique， using the information about the ker-
+when convolutional kernel map or fully-connected weight
 
 nel/IFM non-zero value positions in the uncompressed data struc- map
-data is being transferred to the RCU module.
+data is being transferred to the RCU module。
 
-tures, and passes it to the CU module for processing. This is ac-
+tures， and passes it to the CU module for processing. This is ac-
 
 The central module of ISM is the Input Stick Buffer memory complished by
 a parallel search for the next coincident non-zero
 
 module. This memory is used for storing selected compressed IFM valued
-position in both KM and IFM data streams, within a spec-
+position in both KM and IFM data streams， within a spec-
 
-sticks from the current input feature map, which is being pro- iﬁed
-search window, which is 16 elements wide in the case of
+sticks from the current input feature map， which is being pro- iﬁed
+search window， which is 16 elements wide in the case of
 
 cessed by the current CNN layer. During input feature map pro- the CoNNA
 architecture. This operation is repeated until all data
 
-cessing by the convolutional layers, IFM sticks are being repeatedly is
-used, and all relevant, non-zero valued product terms are accu-
+cessing by the convolutional layers， IFM sticks are being repeatedly is
+used， and all relevant， non-zero valued product terms are accu-
 
-reused during the calculation of adjacent convolutions, as convo-
-mulated within the CU module, to obtain the ﬁnal value of convo-
+reused during the calculation of adjacent convolutions， as convo-
+mulated within the CU module， to obtain the ﬁnal value of convo-
 
 lutional kernels slide over input feature map. This will always be
-lution calculation operation.
+lution calculation operation。
 
-the case if the horizontal and vertical stride values, Sh and Sv , are
+the case if the horizontal and vertical stride values， Sh and Sv ， are
 
 3\. 2. 2. Details of ISM and OSM modules smaller than the corresponding
-horizontal and vertical kernel sizes,
+horizontal and vertical kernel sizes，
 
 ISM module is used to stream input data to the RCU module. In-
 Kernel_Width and Kernel_Height . This opens a possibility to mini-
 
-put stream data consists of PB conﬁguration data, input image data mize
+put stream data consists of PB conﬁguration data， input image data mize
 data movement between the CNN accelerator and external
 
-or input feature map data, and convolutional kernel coeﬃcient val-
+or input feature map data， and convolutional kernel coeﬃcient val-
 memory by caching IFM sticks that will be reused during the ad-
 
-ues or fully-connected weight values, depending on the type of jacent
+ues or fully-connected weight values， depending on the type of jacent
 convolutions computation process. ISB memory module acts
 
-CNN layer that is currently being processed. All CNN-related data, as
+CNN layer that is currently being processed. All CNN-related data， as
 this local cache of selected IFM sticks. ISB stores selected com-
 
 × which include all above-mentioned data except PB conﬁguration pressed
-IFM sticks, 1 1xS sections of the IFM, where S is the
+IFM sticks， 1 1xS sections of the IFM， where S is the
 
 D D
 
-data, is received either from on-chip or external DRAM memory number of
+data， is received either from on-chip or external DRAM memory number of
 non-zero valued IFM points that are present in the cur-
 
-in compressed format, which is then either stored inside the Input rent
-IFM stick, which will be used in the upcoming convolution
+in compressed format， which is then either stored inside the Input rent
+IFM stick， which will be used in the upcoming convolution
 
-Stick Buffer (ISB) module, in case of the input feature map data, or
-calculation operations, as shown in the Fig. 10 b. Please notice that
+Stick Buffer （ISB） module， in case of the input feature map data， or
+calculation operations， as shown in the Fig. 10 b. Please notice that
 
 routed directly to the appropriate LM module inside the selected the 3D
-cube from Fig. 10 b, which represents the content of the ISB
+cube from Fig. 10 b， which represents the content of the ISB
 
-PB module, in case of convolutional coeﬃcients or fully-connected memory
-module, is actually toothed since different IFM sticks can
+PB module， in case of convolutional coeﬃcients or fully-connected
+memory module， is actually toothed since different IFM sticks can
 
 weights. Please notice that the CoNNA CNN accelerator is designed
-contain a different number of non-zero valued points.
+contain a different number of non-zero valued points。
 
-to process all incoming CNN-related data in compressed format, so Each
+to process all incoming CNN-related data in compressed format， so Each
 time the same IFM stick is needed in the convolution cal-
 
 there is no need to decompress it. Fig. 10 presents details about the
-culation operation, instead of re-fetching it from external DRAM
+culation operation， instead of re-fetching it from external DRAM
 
-internal organization of the Input Stream Manager module, with all
-memory, it is fetched from the ISB module, reducing the number
+internal organization of the Input Stream Manager module， with all
+memory， it is fetched from the ISB module， reducing the number
 
-major sub-modules shown. of data transfers from external DRAM memory,
-thus saving power.
+major sub-modules shown. of data transfers from external DRAM memory，
+thus saving power。
 
 Input Stream Manager is composed of the following major mod- Once all
 convolution operations involving given IFM stick are com-
 
-ules. pleted, that IFM stick can be removed from the ISB module and
+ules. pleted， that IFM stick can be removed from the ISB module and
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 15
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 15
 
-Fig. 10. Input stream manager: a) Top level ism modules; b) Organization
-of ISB and SVM memories.
+Fig. 10. Input stream manager： a） Top level ism modules； b）
+Organization of ISB and SVM memories。
 
-Fig. 11. Principle of ISB memory operation.
+Fig. 11. Principle of ISB memory operation。
 
 the next IFM stick can be loaded in its place from external DRAM
 Required ISB memory size clearly depends on the size of the
@@ -2336,19 +2338,19 @@ memory. input feature map that is being cached and the percentage of
 non-
 
 Read Controller and Write Controller modules are charged with zero
-valued IFM points, but is signiﬁcantly smaller than the mem-
+valued IFM points， but is signiﬁcantly smaller than the mem-
 
 correct manipulation of IFM sticks stored inside the ISB cache ory
-required to store the complete IFM map, because Kernel_Height
+required to store the complete IFM map， because Kernel_Height
 
 memory module. WC module sweeps the input feature map line parameter is
 always signiﬁcantly smaller than the IFM_Height pa-
 
-by line, as shown in Fig. 11 , and writes IFM sticks in appropriate
-rameter.
+by line， as shown in Fig. 11 ， and writes IFM sticks in appropriate
+rameter。
 
 positions inside the ISB memory module. Please notice that the re- On
-the other hand, the RC module reads selected IFM sticks
+the other hand， the RC module reads selected IFM sticks
 
 quired size of ISB memory is signiﬁcantly smaller than the size of from
 ISB memory and transfers them to the RCU module. RC mod-
@@ -2356,18 +2358,18 @@ ISB memory and transfers them to the RCU module. RC mod-
 the complete input feature map that is being processed by the cur- ule
 reads IFM sticks in a different order from the order WC module
 
-rent convolutional layer. ISB memory size, measured in the num- uses to
+rent convolutional layer. ISB memory size， measured in the num- uses to
 write them in the ISB memory. While WC traverses input
 
-ber of IFM points, that is suﬃcient to correctly cache IFM memory
-feature map horizontally, loading complete IFM line before moving
+ber of IFM points， that is suﬃcient to correctly cache IFM memory
+feature map horizontally， loading complete IFM line before moving
 
-sticks from a given CNN network equals to the next one, RC traverses ISB
-memory in the more localized
+sticks from a given CNN network equals to the next one， RC traverses
+ISB memory in the more localized
 
-manner, deﬁned by the frontal shape of the convolutional kernel,
+manner， deﬁned by the frontal shape of the convolutional kernel，
 
-× as shown in the Fig. 11 in the case of 3 3 kernel.
+× as shown in the Fig. 11 in the case of 3 3 kernel。
 
 { } = ISB \_ Memory \_ Size max IF M \_ W idt h
 
@@ -2382,7 +2384,7 @@ IFM sticks into ISB memory can differ from the speed at which the
 · max Kernel \_ Heigh t RC module reads IFM sticks from ISB memory. This
 can happen be-
 
-, i j
+， i j
 
 ∈ i layers
 
@@ -2390,12 +2392,12 @@ cause data processing throughputs of the memory subsystem and ∈
 
 j ker nels
 
-RCU module can be different. Therefore, a mechanism that ensures
+RCU module can be different. Therefore， a mechanism that ensures
 
-· max S (4)
+· max S （4）
 
-D , , the consistency of ISB memory content needs to be devised. This i
-j k
+D ， ， the consistency of ISB memory content needs to be devised. This
+i j k
 
 ∈ i layers
 
@@ -2410,85 +2412,85 @@ i ≤ \<
 
 </div>
 
-16 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+16 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 · · IFM_Width Kernel_Height 1 bits large. For each IFM stick from ISB
 Table 1
 
 Characteristics of the CNNs used in comparison experiments. memory there
-is a corresponding bit in the SV memory, indicat-
+is a corresponding bit in the SV memory， indicat-
 
 ing is that particular IFM stick valid or not. Each time WC module No.
-of Layers (Conv, Pool,
+of Layers （Conv， Pool，
 
 wants to write a new IFM stick into selected location inside the ISB CNN
-Architecture Add, Fully-Conn) No. of Parameters
+Architecture Add， Fully-Conn） No. of Parameters
 
 memory it ﬁrst checks is the corresponding bit from the SV mem-
 \[Millions\] No. of Operations
 
-ory cleared, which indicates that all convolutions which use IFM
+ory cleared， which indicates that all convolutions which use IFM
 \[GOps\]
 
-AlexNet \[3\] (16, 5, 0, 3) 60. 93 1. 45 stick currently stored at the
-selected location inside ISB memory
+AlexNet \[3\] （16， 5， 0， 3） 60. 93 1. 45 stick currently stored at
+the selected location inside ISB memory
 
-VGG-16 \[10\] (16, 5, 0, 3) 138. 35 30. 95
+VGG-16 \[10\] （16， 5， 0， 3） 138. 35 30. 95
 
-have been computed, and it can be replaced with a new IFM stick.
+have been computed， and it can be replaced with a new IFM stick。
 
-VGG-19 \[10\] (19, 5, 0, 3) 143. 66 39. 28
+VGG-19 \[10\] （19， 5， 0， 3） 143. 66 39. 28
 
-If this is the case, WC writes a new IFM stick in the selected lo-
+If this is the case， WC writes a new IFM stick in the selected lo-
 
-GoogleNet \[52\] (21, 5, 0, 1) 6. 97 3. 16
+GoogleNet \[52\] （21， 5， 0， 1） 6. 97 3. 16
 
 cation inside ISB memory and sets the corresponding bit inside SV
-ResNet-18 \[53\] (17, 2, 8, 1) 11. 51 3. 59
+ResNet-18 \[53\] （17， 2， 8， 1） 11. 51 3. 59
 
-memory. Otherwise, the WC module needs to wait until the corre-
-ResNet-50 \[53\] (49, 2, 16, 1) 25. 50 7. 72
+memory. Otherwise， the WC module needs to wait until the corre-
+ResNet-50 \[53\] （49， 2， 16， 1） 25. 50 7. 72
 
 sponding SV memory bit is cleared. When the RC module wants to
 
 read IFM stick from ISB memory it ﬁrst checks is the IFM stick at
 
-celerator, originally developed by a startup company Deephi \[30\] ,
+celerator， originally developed by a startup company Deephi \[30\] ，
 
-selected ISB memory location valid or not, by checking the corre-
+selected ISB memory location valid or not， by checking the corre-
 
 now is the part of the IP portfolio of the largest FPGA manufacturer
 
-sponding bit from the SV memory. If the bit is set, this means that
+sponding bit from the SV memory. If the bit is set， this means that
 
-Xilinx, who recently bought DeePhi. Finally, NVLDA \[51\] is one
+Xilinx， who recently bought DeePhi. Finally， NVLDA \[51\] is one
 
-the IFM stick is valid and RC can transfer it to the RCU module,
+the IFM stick is valid and RC can transfer it to the RCU module，
 
 of the ﬁrst open-source based CNN accelerators coming from the
 
 otherwise the RC module has to wait until the WC module certi-
 
-industrial sector, developed by NVIDIA, the current leader in the
+industrial sector， developed by NVIDIA， the current leader in the
 
-ﬁes that the IFM stick data is valid.
+ﬁes that the IFM stick data is valid。
 
 deep learning acceleration ﬁeld. The performance of the CoNNA
 
-The operation of ISB memory is shown in the Fig. 11 , which
+The operation of ISB memory is shown in the Fig. 11 ， which
 
 CNN accelerator was compared with seven previously proposed
 
-× shows a snapshot of the input feature map, 6 6 IFM sticks in
+× shows a snapshot of the input feature map， 6 6 IFM sticks in
 
-CNN accelerators using six well-known CNN networks, AlexNet \[3\] ,
+CNN accelerators using six well-known CNN networks， AlexNet \[3\] ，
 
 size. Please notice that there is a third dimension to the IFM since
 
-VGG-16, VGG-19 \[10\] , GoogleNet \[52\] , ResNet-18 and ResNet-50
+VGG-16， VGG-19 \[10\] ， GoogleNet \[52\] ， ResNet-18 and ResNet-50
 
-its depth is always bigger than one, but for clarity, it was omitted.
+its depth is always bigger than one， but for clarity， it was omitted。
 
 \[53\]. Relevant data for each CNN network used in experiments are
 
@@ -2496,7 +2498,7 @@ its depth is always bigger than one, but for clarity, it was omitted.
 
 presented in Table 1 .
 
-with horizontal and vertical strides of 1, then each IFM stick will
+with horizontal and vertical strides of 1， then each IFM stick will
 
 Conﬁgurations of all reference CNN accelerators that were used
 
@@ -2504,37 +2506,38 @@ be used in the process of calculating of up to nine different convo-
 
 in performance comparison experiments are presented in Table 2 .
 
-lutions, as shown in the Fig. 11 for stick number 15. Without the
+lutions， as shown in the Fig. 11 for stick number 15. Without the
 
-Conﬁgurations of Eyeriss, NullHop, NEURAghe, CNN_A1, fpgaCon-
+Conﬁgurations of Eyeriss， NullHop， NEURAghe， CNN_A1， fpgaCon-
 
-ISB module, each IFM stick would have to be loaded from DRAM
+ISB module， each IFM stick would have to be loaded from DRAM
 
-vNet, and Aristotle CNN accelerators are the ones that were used
+vNet， and Aristotle CNN accelerators are the ones that were used
 
-memory up to nine times, but by using ISB memory it is only nec-
+memory up to nine times， but by using ISB memory it is only nec-
 
-in original papers \[19,23,25,29,30,32\] , in order to enable easy com-
+in original papers \[19，23，25，29，30，32\] ， in order to enable easy
+com-
 
-essary to load each IFM stick exactly once from external DRAM.
+essary to load each IFM stick exactly once from external DRAM。
 
-parison. As for the NVDLA \[51\] , it comes with an Excel sheet esti-
+parison. As for the NVDLA \[51\] ， it comes with an Excel sheet esti-
 
-This means that for the example shown in the Fig. 11 , it is pos-
+This means that for the example shown in the Fig. 11 ， it is pos-
 
-mator, which allows specifying different conﬁguration options. We
+mator， which allows specifying different conﬁguration options. We
 
-sible to reduce DRAM memory traﬃc when transferring IFM data,
+sible to reduce DRAM memory traﬃc when transferring IFM data，
 
 have used the one presented in Table 2 since the CoNNA accel-
 
 up to nine times. Fig. 11 also shows the concept of replacing al-
 
-erator is mainly intended for usage in low-cost, edge-computing
+erator is mainly intended for usage in low-cost， edge-computing
 
-ready used IFM sticks within the ISB module with the new ones.
+ready used IFM sticks within the ISB module with the new ones。
 
-devices with limited computing resources.
+devices with limited computing resources。
 
 The new IFM stick that is written in the ISB memory by the WC
 
@@ -2546,21 +2549,21 @@ OSM module is used to collect output data from the RCU mod-
 
 comparison with previous work
 
-ule, pack it into appropriate blocks in the form of output feature
+ule， pack it into appropriate blocks in the form of output feature
 
-map sticks, in order to maximize the data throughput between the
+map sticks， in order to maximize the data throughput between the
 
 The CoNNA CNN accelerator was modeled as a standard soft-
 
-accelerator and the external DRAM memory, and compress these
+accelerator and the external DRAM memory， and compress these
 
-IP core, using SystemVerilog hardware description language, with
+IP core， using SystemVerilog hardware description language， with
 
 OFM sticks on-the-ﬂy. ZRL encoder module is used to compress se-
 
-many conﬁguration parameters, allowing easy generation of differ-
+many conﬁguration parameters， allowing easy generation of differ-
 
-quences of zeros within the OFM sticks, which will contain a sig-
+quences of zeros within the OFM sticks， which will contain a sig-
 
 ent CoNNA instances with the same underlying architecture. In or-
 
@@ -2568,31 +2571,31 @@ niﬁcant number of zero values if the ReLU activation function is
 
 der to create a complete CNN acceleration system based on the
 
-being used. Compressed OFM sticks, containing only non-zero val-
+being used. Compressed OFM sticks， containing only non-zero val-
 
-CoNNA accelerator following four steps, shown in Fig. 12 , need to
+CoNNA accelerator following four steps， shown in Fig. 12 ， need to
 
-ued OFM points and their locations within original, uncompressed
+ued OFM points and their locations within original， uncompressed
 
-be performed:
+be performed：
 
-OFM data, are then written into either external DRAM memory or
+OFM data， are then written into either external DRAM memory or
 
-internal on-chip cache memory, as shown in the Fig. 3 . For more 1.
-Training and pruning selected CNN network – for this task, any
+internal on-chip cache memory， as shown in the Fig. 3 . For more 1.
+Training and pruning selected CNN network – for this task， any
 
 details about the encoding algorithm that is used to compress OFM
-ﬁne-grained pruning algorithm can be used, and also any avail-
+ﬁne-grained pruning algorithm can be used， and also any avail-
 
-data, please refer to Horowitz \[46\] . able deep learning framework,
-like Caffe, TensorFlow, Keras, and
+data， please refer to Horowitz \[46\] . able deep learning framework，
+like Caffe， TensorFlow， Keras， and
 
-Matlab, can be used to train and prune selected CNN network.
+Matlab， can be used to train and prune selected CNN network。
 
 4\. Experiments We have implemented the ﬁne-grained pruning algorithm
 de-
 
-scribed in Section 2 within Keras deep learning framework, and
+scribed in Section 2 within Keras deep learning framework， and
 
 The performance of the CoNNA architecture was compared with used Keras
 for training and pruning CNN networks presented in
@@ -2605,8 +2608,8 @@ Selecting optimal ﬁxed-point number representation and gener-
 it was chosen because it is de-facto a standard reference for com- ating
 a description of pruned CNN in a format recognizable by
 
-parison, used in many CNN hardware accelerator papers. NullHop the CoNNA
-CNN accelerator – pruned and retrained ﬂoating-
+parison， used in many CNN hardware accelerator papers. NullHop the
+CoNNA CNN accelerator – pruned and retrained ﬂoating-
 
 \[32\] is an FPGA-based CNN accelerator using the “IFM zero skip- point
 CNN model needs to be converted into a 16-bit ﬁxed-
@@ -2617,17 +2620,17 @@ model because CoNNA uses ﬁxed-point arithmetic blocks
 ware accelerator with ARM processor employing a cooperative het- for
 implementing all arithmetic operations required to process
 
-erogeneous computing approach to CNN acceleration, intended to CNN
-network. After this conversion, the model which is still
+erogeneous computing approach to CNN acceleration， intended to CNN
+network. After this conversion， the model which is still
 
-be used with ARM-based FPGA families, like Xilinx Zynq or Zyn-
+be used with ARM-based FPGA families， like Xilinx Zynq or Zyn-
 represented in a format that depends on selected deep learning
 
 qUltrascale families. CNN_A1 \[29\] is a reconﬁgurable CNN acceler-
 framework needs to be converted into a CNN structural descrip-
 
-ator based on using CNN-speciﬁc Instruction Set Architecture, and tion
-linked list, presented in Section 3. 1 , in order to be “un-
+ator based on using CNN-speciﬁc Instruction Set Architecture， and tion
+linked list， presented in Section 3. 1 ， in order to be “un-
 
 embedding parallel computation and data reuse parameters in the
 derstandable” by the CoNNA CNN accelerator. This CNN struc-
@@ -2636,42 +2639,42 @@ instructions. fpgaConvNet CNN accelerator \[25\] is the accelerator
 tural description linked list will actually be generated in a bi-
 
 created using HLS techniques targeting FPGA devices. Aristotle ac- nary
-format, which can be downloaded into operating memory
+format， which can be downloaded into operating memory
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 17
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 17
 
 Table 2
 
 Important Characteristics of reference CNN accelerators used for
-comparison.
+comparison。
 
 Accelerator/Parameter Supported CNN Layers Number of MAC Units Operating
 Frequency Arithmetic Precision
 
 Eyeriss \[19\] Conv only 168 200 MHz 16-bit
 
-NullHop \[32\] Conv, Pooling, Fully-Connected 128 60 MHz 16-bit
+NullHop \[32\] Conv， Pooling， Fully-Connected 128 60 MHz 16-bit
 
 NVDLA \[51\] All 32 100 MHz 16-bit
 
 NEURAghe \[23\] All 864 140 MHz 16-bit
 
-CNN_A1 \[29\] Conv, Pooling, Fully-Connected 216 150 MHz 16-bit
+CNN_A1 \[29\] Conv， Pooling， Fully-Connected 216 150 MHz 16-bit
 
-fpgaConvNet \[25\] Conv, Pooling, Fully-Connected 164, 198 125 MHz
+fpgaConvNet \[25\] Conv， Pooling， Fully-Connected 164， 198 125 MHz
 16-bit
 
-Aristotle \[30\] Conv, Pooling, Fully-Connected 198 214 MHz 8-bit
+Aristotle \[30\] Conv， Pooling， Fully-Connected 198 214 MHz 8-bit
 
 ![](/workspace/CoNNa_zh_media/a83ec62a9e85fa8e96a747b6a886cb6a7f9d10df.jpg)
 
 Fig. 12. Development ﬂow for the CNN acceleration using the CoNNA CNN
-accelerator.
+accelerator。
 
 and processed by the CoNNA CNN accelerator. We have devel- Fig. 12 .
 Vivado Design Suite 2018. 1 has been used to perform
@@ -2679,7 +2682,7 @@ Vivado Design Suite 2018. 1 has been used to perform
 oped Python-based translator software that takes pruned CNN synthesis
 and implementation of the complete CNN acceleration
 
-Keras model, performs ﬂoating-point to ﬁxed-point conversion, system,
+Keras model， performs ﬂoating-point to ﬁxed-point conversion， system，
 with default Vivado synthesis and implementation set-
 
 determines the optimal 16-bit number format for representing tings.
@@ -2703,66 +2706,66 @@ acceleration system using some of Xilinx PSoC or MPSoC fam- tions is
 larger than the number of MAC units used by the refer-
 
 ily devices. Within this system speciﬁed conﬁguration of the ence CNN
-hardware accelerators respectively, presented in Table 2 .
+hardware accelerators respectively， presented in Table 2 .
 
-CoNNA CNN accelerator, with a user-deﬁned number of PBs, The reason for
-this is the fact that CoNNA uses additional DSP
+CoNNA CNN accelerator， with a user-deﬁned number of PBs， The reason
+for this is the fact that CoNNA uses additional DSP
 
-will be integrated. blocks inside the ISM module, but these additional
+will be integrated. blocks inside the ISM module， but these additional
 DSP blocks
 
-4\. Programing FPGA, downloading CNN structural description bi- are not
-used to perform computations deﬁned by the target CNN.
+4\. Programing FPGA， downloading CNN structural description bi- are not
+used to perform computations deﬁned by the target CNN。
 
-nary ﬁle into operating memory, initializing and starting the All six
+nary ﬁle into operating memory， initializing and starting the All six
 implementations of CoNNA architecture have been tested
 
 CoNNA CNN accelerator and measuring achievable CNN pro- and benchmarked
-on six selected CNN architectures (AlexNet,
+on six selected CNN architectures （AlexNet，
 
-cessing performance. VGG16, VGG19, GoogleNet, ResNet-18, and ResNet-50)
-using Xil-
+cessing performance. VGG16， VGG19， GoogleNet， ResNet-18， and
+ResNet-50） using Xil-
 
 inx ZCU102 development board. Based on these experiments per-
 
-In order to perform comparison experiments, the CoNNA CNN
+In order to perform comparison experiments， the CoNNA CNN
 
 formance results have been extracted and compared with seven
 
-accelerator has been conﬁgured in six different conﬁgurations,
+accelerator has been conﬁgured in six different conﬁgurations，
 
-reference CNN accelerator architectures (Eyeriss, NullHop, NVDLA,
+reference CNN accelerator architectures （Eyeriss， NullHop， NVDLA，
 
 speciﬁed in Table 3 . The idea was to use CoNNA conﬁgurations
 
-NEURAghe, CNN_A1, fpgaConvNet, and Aristotle).
+NEURAghe， CNN_A1， fpgaConvNet， and Aristotle）.
 
 that are as close as possible to the conﬁgurations of the reference
 
-accelerators from Table 2 , in terms of the number of computing
+accelerators from Table 2 ， in terms of the number of computing
 
-elements (MAC units), operating frequency and number represen- 4. 2.
+elements （MAC units）， operating frequency and number represen- 4. 2.
 Performance comparison results
 
-tation, to enable as fair as possible performance comparison.
+tation， to enable as fair as possible performance comparison。
 
 All six instances of the CoNNA architecture have been imple- The results
 of performance comparison experiments are pre-
 
-mented targeting Xilinx ZU9 MPSoC device, using the ﬂow from sented in
-Table 4 . For each of the reference accelerators, perfor-
+mented targeting Xilinx ZU9 MPSoC device， using the ﬂow from sented in
+Table 4 . For each of the reference accelerators， perfor-
 
 Table 3
 
 FPGA Resources required to implement CoNNA instances used in
-experiments.
+experiments。
 
 Parameter/Conﬁguration CoNNA_C1 CoNNA_C2 CoNNA_C3 CoNNA_C4 CoNNA_C5
 CoNNA_C6
 
 Number of Processing Blocks 168 128 32 256 216 198
 
-Slice LUTs 142,470 112,550 35,042 267,424 244,464 225,132
+Slice LUTs 142，470 112，550 35，042 267，424 244，464 225，132
 
 Number of BRAMs 364 284 86 596 516 480
 
@@ -2774,21 +2777,21 @@ Operating Frequency 200 MHz 60 MHz 100 MHz 140 MHz 150 MHz 214 MHz
 
 </div>
 
-18 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+18 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 Table 4
 
-Performance comparison with reference CNN accelerators.
+Performance comparison with reference CNN accelerators。
 
 Architecture CNN Architecture Latency \[ms/frame\] Frame Rate
 \[frames/sec\] Performance \[GOp/sec\] Effective eﬃciency \[%\]
 
-\(a\) Eyeriss AlexNet 115. 3 34. 69 46. 14 68. 66%
+（a） Eyeriss AlexNet 115. 3 34. 69 46. 14 68. 66%
 
 VGG-16 4309. 5 0. 69 21. 36 31. 79%
 
-\(a\) CoNNA_C1 AlexNet 14. 20 70. 40 93. 74 139. 50%
+（a） CoNNA_C1 AlexNet 14. 20 70. 40 93. 74 139. 50%
 
 VGG-16 102. 77 9. 73 301. 17 448. 17%
 
@@ -2840,54 +2843,55 @@ Aristotle VGG-16 364. 96 2. 74 84. 81 100. 08%
 
 CoNNA_C6 VGG-16 101. 83 9. 82 303. 96 358. 68%
 
-a Accelerating only convolutional layers.
+a Accelerating only convolutional layers。
 
-mance data in terms of input instance processing latency, frame
+mance data in terms of input instance processing latency， frame
 achievable frame rate and effective eﬃciency. When compared
 
-rate, average compute power and eﬃciency are presented. The per- with
-MIT’s Eyeriss CNN accelerator, it can be seen that the CoNNA
+rate， average compute power and eﬃciency are presented. The per- with
+MIT’s Eyeriss CNN accelerator， it can be seen that the CoNNA
 
 formance of each of the reference accelerators is followed by a
 architecture achieves higher frame rates and higher eﬃciency for
 
-performance of the appropriate CoNNA architecture conﬁguration, both CNN
-networks used. In the case of AlexNet CNN acceleration,
+performance of the appropriate CoNNA architecture conﬁguration， both
+CNN networks used. In the case of AlexNet CNN acceleration，
 
-speciﬁed in Table 3 , which was conﬁgured in the identical or clos-
+speciﬁed in Table 3 ， which was conﬁgured in the identical or clos-
 CoNNA is capable of reaching a 2. 03 times higher frame rate than
 
-est possible conﬁguration as the reference accelerator, to allow a
-Eyeriss. In the case of VGG16 CNN acceleration, this improvement
+est possible conﬁguration as the reference accelerator， to allow a
+Eyeriss. In the case of VGG16 CNN acceleration， this improvement
 
 fair comparison. Performance data for the reference CNN hardware is even
-greater, CoNNA is able to reach a 14. 10 times higher frame
+greater， CoNNA is able to reach a 14. 10 times higher frame
 
 accelerators were taken from papers that introduced these archi- rate
-than Eyeriss. Also, it can be seen that CoNNA is able to achieve
+than Eyeriss. Also， it can be seen that CoNNA is able to achieve
 
-tectures \[19 , 23 , 25 , 29 , 30 , 32\] . For the NVDLA accelerator
-supplied much higher effective eﬃciency, even above 100% due to the com-
+tectures \[19 ， 23 ， 25 ， 29 ， 30 ， 32\] . For the NVDLA
+accelerator supplied much higher effective eﬃciency， even above 100%
+due to the com-
 
 Excel sheet estimator was used to generate achievable performance
-pressed data processing, than Eyeriss. The main reason for this im-
+pressed data processing， than Eyeriss. The main reason for this im-
 
 data. provement lies in the fact that the CoNNA architecture is able to
 
-In the case of Eyeriss CNN accelerator, performance data is take
+In the case of Eyeriss CNN accelerator， performance data is take
 advantage of compressed kernel/weight and feature maps pro-
 
-related to the processing of convolutional layers only, since Ey-
-cessing, due to using the “All zero-skipping” technique, and Eyeriss
+related to the processing of convolutional layers only， since Ey-
+cessing， due to using the “All zero-skipping” technique， and Eyeriss
 
-eriss cannot accelerate pooling and fully-connected layers. Also, is
-not.
+eriss cannot accelerate pooling and fully-connected layers. Also， is
+not。
 
 input instance processing latency is reported only when Eyeriss When
-compared to NullHop, CoNNA is also able to achieve bet-
+compared to NullHop， CoNNA is also able to achieve bet-
 
-processes input images in batches, with batch sizes of 4 and 3, ter
-performance, but this time improvement is not as dramatic as
+processes input images in batches， with batch sizes of 4 and 3， ter
+performance， but this time improvement is not as dramatic as
 
 for AlexNet and VGG16 CNNs respectively. Performance data for in the
 case of the Eyeriss accelerator but is more consistent. CoNNA
@@ -2895,137 +2899,137 @@ case of the Eyeriss accelerator but is more consistent. CoNNA
 all other reference accelerators is related to processing complete
 achieves 6. 05 and 5. 58 times faster frame rates than NullHop when
 
-CNNs, since all other architectures, as well as CoNNA, can process
+CNNs， since all other architectures， as well as CoNNA， can process
 processing VGG16 and VGG19 CNNs respectively. The main reason
 
-all layers from a CNN. Also, reported input instance processing la- for
+all layers from a CNN. Also， reported input instance processing la- for
 this is that the NullHop accelerator is also being able to take
 
 tencies in these cases refer to the latency of processing a single
 advantage of the sparsity present in the input feature maps. But
 
-input image, i. e. working with a batch size of 1. because NullHop is
+input image， i. e. working with a batch size of 1. because NullHop is
 not able to take advantage of the sparsity of
 
 Average computing performance for all architectures has been CNN
-weights, because it is not designed to process compressed
+weights， because it is not designed to process compressed
 
-calculated as the total number of operations needed to process CNNs, its
-performance is lower than CoNNA’s. In the case of VGG-
+calculated as the total number of operations needed to process CNNs，
+its performance is lower than CoNNA’s. In the case of VGG-
 
-one input image by the target dense CNN network, multiplied by 19 CNN,
+one input image by the target dense CNN network， multiplied by 19 CNN，
 NullHop is also able to reach effective eﬃciency values
 
 the time required to process one input image. Effective eﬃciency greater
-than 100%, due to the fact that it is able to skip all compu-
+than 100%， due to the fact that it is able to skip all compu-
 
 was calculated as the achievable average computing performance tations
-where input feature map values are equal to zero.
+where input feature map values are equal to zero。
 
-divided by the theoretical peak compute performance (calculated The
-CoNNA architecture is also superior to NVDLA, for all three
+divided by the theoretical peak compute performance （calculated The
+CoNNA architecture is also superior to NVDLA， for all three
 
 as the number of available MAC units multiplied by the operat- CNNs used
-in experiments. CoNNA is able to reach 2. 72, 2. 15
+in experiments. CoNNA is able to reach 2. 72， 2. 15
 
-ing frequency). Values closer to 100% mean that the CNN accelera- and 4.
-91 times higher frame rates than NVLDA, when accelerat-
+ing frequency）. Values closer to 100% mean that the CNN accelera- and
+4. 91 times higher frame rates than NVLDA， when accelerat-
 
 tor is more eﬃciently using available compute power. Values above ing
-AlexNet, GoogleNet and ResNet-50 CNNs respectively. However,
+AlexNet， GoogleNet and ResNet-50 CNNs respectively. However，
 
 100% mean that the CNN accelerator is employing some optimiza- the
 improvement over NVLDA is smaller than in the case of Eye-
 
-tion technique during CNN processing, effectively reducing the re- riss
-and NullHop, because NVLDA is using the Winograd algorithm
+tion technique during CNN processing， effectively reducing the re- riss
+and NullHop， because NVLDA is using the Winograd algorithm
 
 quired number of computations. to speed-up the convolution calculation
-process, which is suﬃcient
+process， which is suﬃcient
 
 From Table 4 it can be seen that the CoNNA architecture out- to allow
 NVDLA to go above 100% of effective eﬃciency in case of
 
 performs all reference CNN accelerator architectures in terms of
-processing GoogleNet CNN network.
+processing GoogleNet CNN network。
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 19
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 19
 
 Table 5
 
-CoNNA_C3 performance breakdown for AlexNet CNN.
+CoNNA_C3 performance breakdown for AlexNet CNN。
 
 Layer Active PBs Total latency \[us\] Processing latency \[us\] PB
 eﬃciency \[%\] Number of operations \[GOp\] Performance \[GOp/sec\]
 
-CONV1 32 (100%) 60,689. 63 27,668. 73 45. 60% 0. 21083 3. 47
+CONV1 32 （100%） 60，689. 63 27，668. 73 45. 60% 0. 21083 3. 47
 
-POOL1 4 (12. 5%) 2274. 32 1574. 48 8. 65% 0. 00126 0. 55
+POOL1 4 （12. 5%） 2274. 32 1574. 48 8. 65% 0. 00126 0. 55
 
-CONV2_1 32 (100%) 9049. 99 8151. 04 98. 12% 0. 22395 24. 75
+CONV2_1 32 （100%） 9049. 99 8151. 04 98. 12% 0. 22395 24. 75
 
-CONV2_2 32 (100%) 9049. 99 8151. 04 98. 12% 0. 22395 24. 75
+CONV2_2 32 （100%） 9049. 99 8151. 04 98. 12% 0. 22395 24. 75
 
-POOL2 4 (12. 5%) 1029. 36 596. 72 7. 24% 0. 00078 0. 76
+POOL2 4 （12. 5%） 1029. 36 596. 72 7. 24% 0. 00078 0. 76
 
-CONV3 32 (100%) 5409. 80 4497. 29 83. 13% 0. 29904 55. 28
+CONV3 32 （100%） 5409. 80 4497. 29 83. 13% 0. 29904 55. 28
 
-CONV4_1 32 (100%) 1700. 80 1342. 00 78. 90% 0. 11214 65. 93
+CONV4_1 32 （100%） 1700. 80 1342. 00 78. 90% 0. 11214 65. 93
 
-CONV4_2 32 (100%) 1700. 80 1342. 00 78. 90% 0. 11214 65. 93
+CONV4_2 32 （100%） 1700. 80 1342. 00 78. 90% 0. 11214 65. 93
 
-CONV5_1 32 (100%) 1207. 34 968. 14 80. 19% 0. 07476 61. 92
+CONV5_1 32 （100%） 1207. 34 968. 14 80. 19% 0. 07476 61. 92
 
-CONV5_2 32 (100%) 1207. 34 968. 14 80. 19% 0. 07476 61. 92
+CONV5_2 32 （100%） 1207. 34 968. 14 80. 19% 0. 07476 61. 92
 
-POOL3 4 (12. 5%) 138. 61 46. 45 4. 19% 0. 00016 1. 15
+POOL3 4 （12. 5%） 138. 61 46. 45 4. 19% 0. 00016 1. 15
 
-FC6 4 (12. 5%) 1943. 70 1902. 74 12. 24% 0. 07550 38. 84
+FC6 4 （12. 5%） 1943. 70 1902. 74 12. 24% 0. 07550 38. 84
 
-FC7 4 (12. 5%) 886. 74 845. 78 11. 92% 0. 03355 37. 83
+FC7 4 （12. 5%） 886. 74 845. 78 11. 92% 0. 03355 37. 83
 
-FC8 4 (12. 5%) 583. 58 573. 58 12. 29% 0. 00819 14. 03
+FC8 4 （12. 5%） 583. 58 573. 58 12. 29% 0. 00819 14. 03
 
-When compared with the NEURAghe CNN accelerator, CoNNA Table 5 presents
-the following data for each AlexNet CNN layer.
+When compared with the NEURAghe CNN accelerator， CoNNA Table 5 presents
+the following data for each AlexNet CNN layer。
 
-is also able to achieve better performance, being 1. 42 and 2. 67 The
-“Active PB” ﬁeld holds the number of Processing Blocks, out
+is also able to achieve better performance， being 1. 42 and 2. 67 The
+“Active PB” ﬁeld holds the number of Processing Blocks， out
 
 times faster in terms of achievable frame rates. The NEURAghe of 32
-available, which are actually being active during the process-
+available， which are actually being active during the process-
 
 architecture is able to achieve effective eﬃciency that is signif- ing
 of the current CNN layer. The “Total Latency” stands for the
 
 icantly higher than 100% in the case of processing the VGG-16 total time
-needed to process a CNN layer, including the time re-
+needed to process a CNN layer， including the time re-
 
 CNN network. This is curious since the authors of NEURAghe ar- quired to
-preload CNN coeﬃcients/weights, perform required com-
+preload CNN coeﬃcients/weights， perform required com-
 
 chitecture didn’t mention that they are using any optimization
-putations, and store the ﬁnal results. The “Processing Latency” is
+putations， and store the ﬁnal results. The “Processing Latency” is
 
-technique, like zero skipping or Winograd algorithm, during CNN the time
-that is actually spent performing all computations deﬁned
+technique， like zero skipping or Winograd algorithm， during CNN the
+time that is actually spent performing all computations deﬁned
 
-processing. Furthermore, there is a signiﬁcant drop in the effec- in the
-current CNN layer, excluding any preparatory steps and is
+processing. Furthermore， there is a signiﬁcant drop in the effec- in
+the current CNN layer， excluding any preparatory steps and is
 
-tive computing eﬃciency, of around 7 times, when the ResNet-18 therefore
-always shorter than the “Total Latency” time. The “PB Ef-
+tive computing eﬃciency， of around 7 times， when the ResNet-18
+therefore always shorter than the “Total Latency” time. The “PB Ef-
 
-CNN network is accelerated using NEURAghe. This drop, although ﬁciency”
+CNN network is accelerated using NEURAghe. This drop， although ﬁciency”
 value is calculated as the ratio of the “Processing Latency”
 
-not that signiﬁcant, is visible in CoNNA’s performance also. This and
-the “Total Latency”, multiplied with the percentage of active
+not that signiﬁcant， is visible in CoNNA’s performance also. This and
+the “Total Latency”， multiplied with the percentage of active
 
 can probably be partially explained by the fact that the ResNet- PBs for
 the current CNN layer. The “Number of Operations” is the
@@ -3033,23 +3037,23 @@ the current CNN layer. The “Number of Operations” is the
 18 CNN network is the network with many shallow convolutional total
 number of arithmetic operations required to be performed in
 
-layers, where the number of convolutional kernels is signiﬁcantly order
+layers， where the number of convolutional kernels is signiﬁcantly order
 to process the current CNN layer. The “Performance” is the
 
 lower than available 864 MAC units in NEURAghe and 256 PBs in
-computational throughput for the current CNN layer, calculated as
+computational throughput for the current CNN layer， calculated as
 
-CoNNA_C4 conﬁguration. This means that, at least when CoNNA is the ratio
-of the “Number of Operations” and the “Total Latency”.
+CoNNA_C4 conﬁguration. This means that， at least when CoNNA is the
+ratio of the “Number of Operations” and the “Total Latency”.
 
-concerned, there will be a signiﬁcant number of idle PBs during From
+concerned， there will be a signiﬁcant number of idle PBs during From
 Table 5 it can be seen that the CoNNA architecture is be-
 
-the processing of these shallow convolutional layers, as described ing
+the processing of these shallow convolutional layers， as described ing
 able to maintain high utilization of PBs over all convolutional
 
 in Section 3. 1 . This idling PB ineﬃciency can only be partially com-
-layers, irrelevant of their size and kernel characteristics. The eﬃ-
+layers， irrelevant of their size and kernel characteristics. The eﬃ-
 
 pensated by the “All zero-skipping” technique and is the main rea-
 ciency of processing convolutional layers is extremely important
@@ -3058,12 +3062,12 @@ son why CoNNA reaches only 89. 42% effective eﬃciency when pro- since
 they are the most computationally demanding layer type in
 
 cessing the ResNet-18 CNN network. modern CNNs. It can also be seen
-that, as we move to deeper con-
+that， as we move to deeper con-
 
 The CoNNA architecture is clearly superior to the CNN_A1 ar- volutional
-layers of the CNN, PB eﬃciency starts to drop. This is
+layers of the CNN， PB eﬃciency starts to drop. This is
 
-chitecture, reducing instance classiﬁcation times by a factor of 6. 86
+chitecture， reducing instance classiﬁcation times by a factor of 6. 86
 because more time has to be spent in preloading kernel coeﬃcient
 
 and 11. 30 in the case of processing AlexNet and VGG-16 CNNs re- values
@@ -3073,42 +3077,43 @@ spectively. A similar observation holds in the case of fpgaConvNet for
 this is that the depths of convolutional layers increase as we
 
 and Aristotle architectures. Compared with the fpgaConvNet archi- go
-deeper in the CNN, resulting in more kernel weights data that
+deeper in the CNN， resulting in more kernel weights data that
 
 tecture CoNNA architecture is able to reach frame rates that are has to
 be preloaded into PBs. Since CoNNA uses limited bandwidth
 
-2\. 02 and 3. 08 times higher. Similar to the NEURAghe architecture,
-data bus to transfer data to the PBs, it takes increasingly more time
+2\. 02 and 3. 08 times higher. Similar to the NEURAghe architecture，
+data bus to transfer data to the PBs， it takes increasingly more time
 
-in the case of fpgaConvNet architecture, there is a signiﬁcant differ-
+in the case of fpgaConvNet architecture， there is a signiﬁcant differ-
 to preload convolutional kernel data as the size of convolutional
 
 ence in the effective eﬃciency when processing AlexNet and VGG- kernels
-increases.
+increases。
 
-16 CNN networks. Furthermore, the eﬃciency of the fpgaConvNet From Table
-5 it can also be seen that the PB eﬃciency
+16 CNN networks. Furthermore， the eﬃciency of the fpgaConvNet From
+Table 5 it can also be seen that the PB eﬃciency
 
-architecture when processing VGG-16 CNN is higher than 100%, in- drops
+architecture when processing VGG-16 CNN is higher than 100%， in- drops
 signiﬁcantly when CoNNA is processing pooling and fully-
 
 dicating that the fpgaConvNet architecture must be using some op-
 connected layers. Processing of these layer types is data movement
 
-timization technique to speedup CNN processing, although authors
-intensive, so available data bandwidth of CoNNA’s data bus is again
+timization technique to speedup CNN processing， although authors
+intensive， so available data bandwidth of CoNNA’s data bus is again
 
 of fpgaConvNet didn’t comment on this in the original paper. Fi- the
-main limiting factor. However, these layers are not computa-
+main limiting factor. However， these layers are not computa-
 
-nally, in the case of the Aristotle architecture, this improvement
-tionally intensive, as can clearly be seen from Table 5 , so this inef-
+nally， in the case of the Aristotle architecture， this improvement
+tionally intensive， as can clearly be seen from Table 5 ， so this
+inef-
 
-is slightly better, CoNNA is reaching 3. 58 times faster frame rates
+is slightly better， CoNNA is reaching 3. 58 times faster frame rates
 ﬁciency is not signiﬁcantly degrading the total performance of the
 
-when processing the VGG-16 CNN network, compared with Aristo- CoNNA
+when processing the VGG-16 CNN network， compared with Aristo- CoNNA
 architecture. From Table 5 it can be seen that the number
 
 tle’s performance. of operations for all pooling and fully-connected
@@ -3116,7 +3121,7 @@ layers in the case
 
 of AlexNet CNN constitutes only 8% of the total number of com-
 
-putations, but it takes CoNNA only 9. 45% of total CNN compute
+putations， but it takes CoNNA only 9. 45% of total CNN compute
 
 4\. 3. CoNNA CNN computational performance analysis time to compute
 these layers. This means that there is an increase
@@ -3126,31 +3131,31 @@ of only 1. 45% in total CNN compute time despite very low PB ef-
 ﬁciency values attained during pooling and fully-connected layer In
 order to better understand how the CoNNA architecture pro-
 
-processing. cesses CNNs, and where the bottlenecks are Table 5 presents
+processing. cesses CNNs， and where the bottlenecks are Table 5 presents
 de-
 
-tailed execution information for the CoNNA_C3 conﬁguration when Finally,
-Fig. 13 presents data throughput waveforms measured
+tailed execution information for the CoNNA_C3 conﬁguration when
+Finally， Fig. 13 presents data throughput waveforms measured
 
-on CoNNA’s Input Stream and Output Stream interfaces, in the it is
-accelerating AlexNet CNN.
+on CoNNA’s Input Stream and Output Stream interfaces， in the it is
+accelerating AlexNet CNN。
 
 <div class="page-break">
 
 </div>
 
-20 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+20 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/d60cdeed0fd21a81be349538612c0ed9658796f9.jpg)
 
 Fig. 13. Data throughput waveforms over CaNNA’s ISI and OSI interfaces
-in case of MobileNet V1 CNN processing using CoNNA_C3 Instance: a)
+in case of MobileNet V1 CNN processing using CoNNA_C3 Instance： a）
 During the processing of ﬁrst
 
-10 MobileNet V1 CNN Layers; b) During processing 5th Depthwise
-Convolutional Layer; c) During the processing of 6th Pointwise
-Convolutional Layer.
+10 MobileNet V1 CNN Layers； b） During processing 5th Depthwise
+Convolutional Layer； c） During the processing of 6th Pointwise
+Convolutional Layer。
 
 case when MobileNet V1 CNN is being accelerated. The CoNNA Fig. 13 b
 presents data throughput waveforms during the pro-
@@ -3164,7 +3169,7 @@ Analyzing the ISI interface throughput waveform it can
 data throughputs on both ISI and OSI interfaces. Redline shows be
 observed that it is composed out of eight almost identical
 
-data throughput over the OSI interface, which is actually the data
+data throughput over the OSI interface， which is actually the data
 segments. The reason why there are exactly eight almost iden-
 
 throughput of writing output feature map data to the operating tical
@@ -3176,171 +3181,171 @@ convolutional layer and used conﬁguration of the CoNNA ac-
 over the ISI interface. Blueline shows the data throughput during
 celerator in the following way. The number of different convolu-
 
-the loading of convolutional kernel coeﬃcients, which precedes ev-
+the loading of convolutional kernel coeﬃcients， which precedes ev-
 tional kernels used within the 5th depthwise convolutional layer
 
-= ery convolutional kernel group calculation phase. Finally, the green
+= ery convolutional kernel group calculation phase. Finally， the green
 from MobileNet V1 CNN equals Kernel_Num 256. On the other
 
-line shows data throughput during the IFM data processing phase, hand,
-the CoNNA_C3 conﬁguration uses 32 Processing Blocks, i. e.
+line shows data throughput during the IFM data processing phase， hand，
+the CoNNA_C3 conﬁguration uses 32 Processing Blocks， i. e。
 
 = during which IFM data is loaded into ISB memory from the Input Num_PB
 32. This means that the loop L3 from Algorithm 3 dis-
 
-Stream Manager module.
+Stream Manager module。
 
 In the Fig. 13 a data throughput on CoNNA’s ISI and OSI inter- Algorithm
 3
 
 faces during the processing of the ﬁrst 10 layers from MobileNet
 Pseudo-code of convolutional layer “All zero-skipping” processing
-algorithm, imple-
+algorithm， imple-
 
 mented in the CoNNA architecture. V1 CNN is shown. The reason why data
 throughput during com-
 
-plete MobileNet V1 CNN processing was not shown is that pro- = \< ++ L1:
-for ( x 0; x OFM_Width; x )
+plete MobileNet V1 CNN processing was not shown is that pro- = \< ++
+L1： for （ x 0； x OFM_Width； x ）
 
-= \< ++ cessing times of latter layers from MobileNet V1 are so short,
-com- L2: for ( y 0; y OFM_Height; y )
+= \< ++ cessing times of latter layers from MobileNet V1 are so short，
+com- L2： for （ y 0； y OFM_Height； y ）
 
-= \< += L3: for (kn 0; kn Kernel_Num; kn Num_PB) pared to processing
-times of initial layers, that nothing could be
+= \< += L3： for （kn 0； kn Kernel_Num； kn Num_PB） pared to
+processing times of initial layers， that nothing could be
 
-W1: while (PBs_Busy())
+W1： while （PBs_Busy（））
 
 seen on the graph. From Fig. 13 a processing periods of different
 
-∗ ∗ += + {OFM\[ x \]\[y\]\[kn\] Calc_Next_NZPT(CIFM\[ x S h: x S h K
+∗ ∗ += + {OFM\[ x \]\[y\]\[kn\] Calc_Next_NZPT（CIFM\[ x S h： x S h K
 ernel \_W idth -
 
 MobileNet V1 layers are clearly visible. Processing starts with the ∗
-∗ + 1\]\[y Sv: y Sv Kernel_Height-1\]\[: \],
+∗ + 1\]\[y Sv： y Sv Kernel_Height-1\]\[： \]，
 
-× processing of the ﬁrst convolutional layer, which uses 3 3 ker- CKM\[
-kn \]\[: \]\[: \]\[: \]);
+× processing of the ﬁrst convolutional layer， which uses 3 3 ker- CKM\[
+kn \]\[： \]\[： \]\[： \]）；
 
-\+ += OFM\[ x \]\[y\]\[kn 1\] nels to transform the input image,
+\+ += OFM\[ x \]\[y\]\[kn 1\] nels to transform the input image，
 designated by the yellow seg-
 
-∗ ∗ + Calc_Next_NZPT(CIFM\[ x S h: x S h K ernel \_W idth -
+∗ ∗ + Calc_Next_NZPT（CIFM\[ x S h： x S h K ernel \_W idth -
 
 ment. After this layer is completed ﬁrst depthwise convolutional
 
-∗ ∗ + 1\]\[y Sv: y Sv Kernel_Height-1\]\[: \],
+∗ ∗ + 1\]\[y Sv： y Sv Kernel_Height-1\]\[： \]，
 
-layer, designated by the purple segment, is processed next. Next
+layer， designated by the purple segment， is processed next. Next
 
-\+ CKM\[ kn 1\]\[: \]\[: \]\[: \]); …
+\+ CKM\[ kn 1\]\[： \]\[： \]\[： \]）； …
 
-comes the ﬁrst pointwise convolutional layer, designated by the or- + +=
-OFM\[ x \]\[y\]\[kn Num_PB-1\]
+comes the ﬁrst pointwise convolutional layer， designated by the or- +
++= OFM\[ x \]\[y\]\[kn Num_PB-1\]
 
-∗ ∗ + ange segment in the Fig. 13 a, which is actually a standard convo-
-Calc_Next_NZPT(CIFM\[ x S h: x S h K ernel \_W idth -
+∗ ∗ + ange segment in the Fig. 13 a， which is actually a standard
+convo- Calc_Next_NZPT（CIFM\[ x S h： x S h K ernel \_W idth -
 
-∗ ∗ + 1\]\[y Sv: y Sv Kernel_Height-1\]\[: \], ×
+∗ ∗ + 1\]\[y Sv： y Sv Kernel_Height-1\]\[： \]， ×
 
 lutional layer that uses 1 1 kernels to process the input feature
 
-\+ CKM\[ kn N um \_PB-1\]\[: \]\[: \]\[: \]); }
+\+ CKM\[ kn N um \_PB-1\]\[： \]\[： \]\[： \]）； }
 
-map. After this layer, a succession of depthwise and pointwise con-
+map. After this layer， a succession of depthwise and pointwise con-
 
-volutional layer pairs follows, which is clearly visible by alternat-
+volutional layer pairs follows， which is clearly visible by alternat-
 
 ing purple and orange segments in the Fig. 13 a. Because dataﬂows
 
-cussed in Section 3. 1 will, in this case, be unrolled with the par-
+cussed in Section 3. 1 will， in this case， be unrolled with the par-
 
-× required for processing convolutional layer with 3 3 kernels,
+× required for processing convolutional layer with 3 3 kernels，
 
 tial unrolling factor of 32. This means that 32 different depthwise
 
 × depthwise convolutional layer with 3 3 kernels and pointwise
 
-convolutions, from a total of 256, will be calculated in parallel, by
+convolutions， from a total of 256， will be calculated in parallel， by
 
-× convolutional layer with 1 1 kernels differ, data throughputs
+× convolutional layer with 1 1 kernels differ， data throughputs
 
 available PBs. In order to calculate all 256 different depthwise con-
 
 over ISI and OSI interfaces during the processing of these layer
 
-volutions, the same process has to be repeated 8 times, each time
+volutions， the same process has to be repeated 8 times， each time
 
-types differ also, which can clearly be visible on Fig. 13 a.
+types differ also， which can clearly be visible on Fig. 13 a。
 
 using a different group of 32 depthwise convolutions. At the begin-
 
 From Fig. 13 a it can be seen that data throughput over the
 
-ning of the processing of each group of convolutions, correspond-
+ning of the processing of each group of convolutions， correspond-
 
-OSI interface is relatively constant during CNN processing, without
+OSI interface is relatively constant during CNN processing， without
 
 ing convolutional kernels need to be loaded into Local Memory
 
-sudden bursts. In contrast, data throughput over the ISI interface
+sudden bursts. In contrast， data throughput over the ISI interface
 
-modules of each PB. During this short period of time, there is a
+modules of each PB. During this short period of time， there is a
 
-has a more irregular waveform, with different patterns and bursts
+has a more irregular waveform， with different patterns and bursts
 
-sudden rise in the data throughput over the ISI interface, shown
+sudden rise in the data throughput over the ISI interface， shown
 
-of activity, depending on the layer type that is being processed by
+of activity， depending on the layer type that is being processed by
 
 by the blue line in the Fig. 13 b. After kernel preloading is com-
 
 the CoNNA accelerator. It can be seen that there are periodic peaks
 
-pleted, the processing of IFM data can commence. At the begging
+pleted， the processing of IFM data can commence. At the begging
 
-of high throughput values, which actually correspond with periods
+of high throughput values， which actually correspond with periods
 
-IFM data is fetched at a high rate, indicated by sudden peaks in
+IFM data is fetched at a high rate， indicated by sudden peaks in
 
 of convolutional kernel loading into Local Memory modules within
 
-the green line, immediately following the peaks on the blue line
+the green line， immediately following the peaks on the blue line
 
 PBs and initial ﬁlling of the ISB memory with IFM data. During
 
-in the Fig. 13 b, because ISB cache memory inside the Input Stream
+in the Fig. 13 b， because ISB cache memory inside the Input Stream
 
 the actual convolution calculation process throughput over the ISI
 
 Interface module is initially empty and is being ﬁlled up by the
 
-interface is signiﬁcantly lower, because of high IFM data reuse by
+interface is signiﬁcantly lower， because of high IFM data reuse by
 
-Write Controller module. Once IFM data reuse becomes active, IFM
+Write Controller module. Once IFM data reuse becomes active， IFM
 
-adjacent convolutions, as explained in Section 3. 2. 2 .
+adjacent convolutions， as explained in Section 3. 2. 2 .
 
-data throughput falls sharply, because the WC module now has to
+data throughput falls sharply， because the WC module now has to
 
 <div class="page-break">
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 21
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 21
 
 wait for RCU to consume individual IFM sticks from the ISB cache using
-the next IFM bundle. In theory, the expected number of non-
+the next IFM bundle. In theory， the expected number of non-
 
-before replacing them, which can also be visible by inspecting the zero
+before replacing them， which can also be visible by inspecting the zero
 product terms required to compute one convolution is directly
 
 green line from the Fig. 13 b. Since the 5th depthwise convolutional
 dependant on the percentage of non-zero values within the current
 
-× layer uses 3 3 convolutional kernels, a theoretical decrease in the
-kernel and IFM bundle, as the following equation shows
+× layer uses 3 3 convolutional kernels， a theoretical decrease in the
+kernel and IFM bundle， as the following equation shows
 
 data throughput should be around nine times compared with the
 
@@ -3349,31 +3354,31 @@ data throughput should be around nine times compared with the
 
 throughput during the initial ﬁlling of the ISB cache memory. How-
 
-· · P \_ IF MNZ P \_ KMNZ (5)
+· · P \_ IF MNZ P \_ KMNZ （5）
 
-ever, since CoNNA is processing compressed data and performs
+ever， since CoNNA is processing compressed data and performs
 
-zero-skipping, actual data throughput is higher and more irregu- where
+zero-skipping， actual data throughput is higher and more irregu- where
 P_IFMNZ is the percentage of non-zero valued points in the
 
-lar, since compression ratios and distributions of zeros vary from input
-feature map bundle, and P_KMNZ is the percentage of non-
+lar， since compression ratios and distributions of zeros vary from
+input feature map bundle， and P_KMNZ is the percentage of non-
 
 one IFM stick to another. zero valued convolutional coeﬃcients in the
 convolutional ker-
 
-Finally, Fig. 13 c presents data throughput waveforms during the nel. In
-this ideal scenario, each convolution computation operation
+Finally， Fig. 13 c presents data throughput waveforms during the nel.
+In this ideal scenario， each convolution computation operation
 
-processing of a different CNN layer type, this time it is the 6th would
+processing of a different CNN layer type， this time it is the 6th would
 require identical time to complete
 
-pointwise convolutional layer from MobileNet V1 CNN. In this case,
+pointwise convolutional layer from MobileNet V1 CNN. In this case，
 
 = · v Con olution \_ Compute \_ T ime \_ I deal N um \_ MACs \_ Ideal T
-(6)
+（6）
 
-there are 16 almost identical segments, because this layer contains clk
+there are 16 almost identical segments， because this layer contains clk
 
 512 different convolutional kernels. What can also be seen from where T
 is the period of the clock signal used to synchronize
@@ -3381,19 +3386,19 @@ is the period of the clock signal used to synchronize
 clk
 
 Fig. 13 c is that the required throughput over the ISI interface dur-
-CoNNA’s operation.
+CoNNA’s operation。
 
 ing the actual convolution calculation process is now signiﬁcantly
-However, due to the irregularity of non-zero values distribu-
+However， due to the irregularity of non-zero values distribu-
 
 higher compared with one from Fig. 13 b. The reason for this is that
-tion within each kernel and IFM bundle, the actual number of
+tion within each kernel and IFM bundle， the actual number of
 
-× in this case, CoNNA is actually computing 1 1 convolutions, so
+× in this case， CoNNA is actually computing 1 1 convolutions， so
 non-zero product terms can and will probably vary for each ker-
 
-there is no IFM stick reuse. nel/IFM bundle pair, leading to a different
-convolution compute
+there is no IFM stick reuse. nel/IFM bundle pair， leading to a
+different convolution compute
 
 time for each active PB. Since CoNNA must wait until all active
 
@@ -3401,7 +3406,7 @@ PBs complete their convolution computation process before pro-
 
 4\. 4. Analysis of the impact of non-zero distribution of the sparse
 
-ceeding with the next group of convolutions, the actual compute
+ceeding with the next group of convolutions， the actual compute
 
 weights and activations on the CoNNA architecture CNN processing
 
@@ -3409,38 +3414,39 @@ time for each group of Num_PB convolutions will be longer than
 
 eﬃciency
 
-the ideal convolution computation time, as the following equation
+the ideal convolution computation time， as the following equation
 
 shows
 
 Since CoNNA operates directly on sparse kernel and input fea-
 
-v ture maps during CNN processing, and since non-zero values dis- Con
+v ture maps during CNN processing， and since non-zero values dis- Con
 olution \_ Compute \_ T ime \_ Actual
 
-tribution within the kernel and IF maps, in general, don’t follow { = ·
+tribution within the kernel and IF maps， in general， don’t follow { =
+·
 
 max Num \_ MACs \_ Actua l T
 
 i clk
 
-any regular pattern, it would be interesting to investigate how this ∈ i
-Active \_ PBs
+any regular pattern， it would be interesting to investigate how this ∈
+i Active \_ PBs
 
 ≥ affects CoNNA’s CNN processing eﬃciency. When the CoNNA ar- v Con
-olution \_ Compute \_ T ime \_ Ideal (7)
+olution \_ Compute \_ T ime \_ Ideal （7）
 
-chitecture is concerned, irregular distribution of non-zero values
+chitecture is concerned， irregular distribution of non-zero values
 
 In order to investigate how severe this increase in compute
 
 within the kernel and IF maps can potentially affect CoNNA’s CNN
 
-time could be, a series of experiments have been performed, us-
+time could be， a series of experiments have been performed， us-
 
-processing eﬃciency in two following ways:
+processing eﬃciency in two following ways：
 
-ing convolutional kernels of different sizes, with varying percent-
+ing convolutional kernels of different sizes， with varying percent-
 
 ages of non-zero values present within the kernel and IFM bun- 1.
 Irregular non-zero values distribution within the kernel and IF
@@ -3448,150 +3454,151 @@ Irregular non-zero values distribution within the kernel and IF
 dle. The results of these experiments are shown in the Fig. 14 . maps
 can lead to a different number of non-zero product terms
 
-Each of the graphs, shown in the Fig. 14 , shows how the convolu- that
+Each of the graphs， shown in the Fig. 14 ， shows how the convolu- that
 have to be computed when the same IFM bundle is being
 
-tion computation time changes, depending on the actual percent-
+tion computation time changes， depending on the actual percent-
 convolved with different convolutional kernels. Since CoNNA
 
-age of non-zero values present in the kernel and IFM bundle, for has to
+age of non-zero values present in the kernel and IFM bundle， for has to
 wait until all Processing Blocks complete their convolu-
 
-× × × × × × × × × × 3 3 32, 3 3 64, 3 3 128, 3 3 256, 3 3 512,
+× × × × × × × × × × 3 3 32， 3 3 64， 3 3 128， 3 3 256， 3 3 512，
 
 tion computation process before proceeding with the computa-
 
 × × and 3 3 1024 convolution kernels. In all these experiments
 
-tion of the next group of convolutions, some PBs will be idling,
+tion of the next group of convolutions， some PBs will be idling，
 
 percentage of non-zero values that were present in the kernel and
-waiting for the slowest one to ﬁnish its work, and the actual
+waiting for the slowest one to ﬁnish its work， and the actual
 
-IFM bundle has been varied independently, within the \[10% - 100%\]
+IFM bundle has been varied independently， within the \[10% - 100%\]
 convolutional layer processing time would be prolonged. This
 
 range. issue was discussed in Section 3. 1 when Algorithm 3 for CNN
 
 What can be observed in Fig. 14 is that there is indeed an in-
-processing, which is actually being implemented by the CoNNA
+processing， which is actually being implemented by the CoNNA
 
-crease in the actual convolution computation time, compared to
-architecture, was presented.
+crease in the actual convolution computation time， compared to
+architecture， was presented。
 
 the ideal theoretical estimate. This computational time increase is 2.
 Irregular non-zero values distribution within the kernel and IF
 
-more severe, as the percentage of non-zero values present in the maps
+more severe， as the percentage of non-zero values present in the maps
 can lead to a situation where there could actually be no
 
-kernel and IFM bundle decreases. However, this increase in the non-zero
+kernel and IFM bundle decreases. However， this increase in the non-zero
 product terms in the current non-zero product term
 
 computational time is gradual for high and moderate percentages search
-window, as the Data Fetcher module searches for the
+window， as the Data Fetcher module searches for the
 
 of the non-zero kernel and IFM bundle values and rises sharply next
-non-zero product term to forward to the Computing Unit.
+non-zero product term to forward to the Computing Unit。
 
 only when the percentage of the non-zero kernel and IFM bun- This
 situation will result in one additional idle clock cycle for
 
-dle values approaches relatively small values, less than 30%. Since the
+dle values approaches relatively small values， less than 30%. Since the
 Computing Unit during product term computation and will
 
 the achievable percentages of non-zero values after CNN pruning prolong
 the time required to compute one convolution opera-
 
-are rarely lower than 30% \[ 19 , 43 \], this means that the increase in
-tion.
+are rarely lower than 30% \[ 19 ， 43 \]， this means that the increase
+in tion。
 
-the convolution computation time will be acceptable, being less
+the convolution computation time will be acceptable， being less
 
-Let us ﬁrst analyze the severity of the non-equal convolution than 10%,
-for most of current CNN architectures. Furthermore, from
+Let us ﬁrst analyze the severity of the non-equal convolution than 10%，
+for most of current CNN architectures. Furthermore， from
 
 computation times of different PBs on the CoNNA’s CNN processing Fig. 14
 it can also be observed that the maximum increase in the
 
 eﬃciency. Since CoNNA computes Num_PB different convolutions convolution
-computation time decreases, as larger convolutional
+computation time decreases， as larger convolutional
 
-in parallel, Num_PB being the number of Processing Blocks that kernels
-are being used. For example, maximum increase in the
+in parallel， Num_PB being the number of Processing Blocks that kernels
+are being used. For example， maximum increase in the
 
-× × are available within the current CoNNA instance, if different PBs
+× × are available within the current CoNNA instance， if different PBs
 convolution computation time for 3 3 32 kernel can be as
 
-have to compute a different number of non-zero product terms, high as
-54%, but as we move to larger kernels it quickly decreases
+have to compute a different number of non-zero product terms， high as
+54%， but as we move to larger kernels it quickly decreases
 
 × × × × this can lead to different convolution computation times for
-differ- to 36%, 22%, 17%, 11%, and 8%, in case of 3 3 64, 3 3 128,
+differ- to 36%， 22%， 17%， 11%， and 8%， in case of 3 3 64， 3 3
+128，
 
-× × × × × × ent PBs. In this scenario, some of PBs could be idling,
-waiting for 3 3 256, 3 3 512, and 3 3 1024 convolutional ker-
+× × × × × × ent PBs. In this scenario， some of PBs could be idling，
+waiting for 3 3 256， 3 3 512， and 3 3 1024 convolutional ker-
 
-the other PBs to complete their convolution computation process, nels
+the other PBs to complete their convolution computation process， nels
 respectively. Most of state-of-the-art CNN architectures domi-
 
 before proceeding with the next convolution computation process nantly
-use deep convolutional layers, having only several relatively
+use deep convolutional layers， having only several relatively
 
 <div class="page-break">
 
 </div>
 
-22 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+22 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/8e3dadb3bbee4de5c8be7658aeecf816170323b3.jpg)
 
 × × × × Fig. 14. Relative increase in convolution layer processing time
 due to irregular distribution of non-zero kernel and IFM bundle values
-for: a) 3 3 32 kernel; a) 3 3 32
+for： a） 3 3 32 kernel； a） 3 3 32
 
-× × × × × × × × × × kernel; b) 3 3 64 kernel; c) 3 3 128 kernel; d) 3 3
-256 kernel; e) 3 3 512 kernel; f) 3 3 1024 kernel.
+× × × × × × × × × × kernel； b） 3 3 64 kernel； c） 3 3 128 kernel；
+d） 3 3 256 kernel； e） 3 3 512 kernel； f） 3 3 1024 kernel。
 
 shallow layers at the beginning of the CNN network. This is a very uct
-term search effective, the Data Fetcher module performs a par-
+term search effective， the Data Fetcher module performs a par-
 
-favorable situation for the CoNNA architecture, meaning that the allel
-search, checking a number of candidate product terms con-
+favorable situation for the CoNNA architecture， meaning that the allel
+search， checking a number of candidate product terms con-
 
 relative increase in processing time will usually be well below 10%
-currently, in what is called a “Search Window”. This is necessary
+currently， in what is called a “Search Window”. This is necessary
 
-from ideal, theoretical processing time, for most current CNN ar- in
+from ideal， theoretical processing time， for most current CNN ar- in
 order to keep the Computing Unit busy since if the non-zero
 
-chitectures. At the end of this section, a detailed analysis of the
+chitectures. At the end of this section， a detailed analysis of the
 product term detection process would have been implemented se-
 
 actual increase in the CNN layer processing time due to irregu-
-quentially, the result would be an extremely ineﬃcient convolution
+quentially， the result would be an extremely ineﬃcient convolution
 
 lar distribution of non-zero kernel and IFM bundle values for two
-calculation process, where the Computing Unit would be idle most
+calculation process， where the Computing Unit would be idle most
 
-standard CNN networks, AlexNet and VGG-16, will be presented in of the
-time, effectively canceling any processing speedup due to
+standard CNN networks， AlexNet and VGG-16， will be presented in of the
+time， effectively canceling any processing speedup due to
 
 order to further justify this conclusion. zero skipping. The question is
 how to select the optimal size of
 
-Next, let us analyze the impact of the irregular distribution of this
-“Search Window”, in order to minimize the number of CU idle
+Next， let us analyze the impact of the irregular distribution of this
+“Search Window”， in order to minimize the number of CU idle
 
 non-zero kernel and IFM bundle values on the eﬃciency of non- clock
-cycles, while keeping required logic resources for DF module
+cycles， while keeping required logic resources for DF module
 
-zero product term detection logic, located within the Data Fetcher
-implementation as low as possible. Intuitively, as this “Search Win-
+zero product term detection logic， located within the Data Fetcher
+implementation as low as possible. Intuitively， as this “Search Win-
 
-module, as shown in Figs. 8 and 9 . As explained in Section 3. 2. 1 ,
-dow” becomes larger, the probability of not detecting at least one
+module， as shown in Figs. 8 and 9 . As explained in Section 3. 2. 1 ，
+dow” becomes larger， the probability of not detecting at least one
 
 the Data Fetcher module searches for the non-zero product terms non-zero
 product term within it would decrease. In order to in-
@@ -3606,8 +3613,8 @@ depends on the “Search Window” size and the probability of non-
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 23
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 23
 
 ![](/workspace/CoNNa_zh_media/59973c7c2183f4bf0ad5262c29a24f6a7d34faa6.jpg)
 
@@ -3615,8 +3622,8 @@ Fig. 15. Average percentage of “Empty Search Windows” as the function of
 percentage of non-zero values present in kernel and IFM bundle in the
 case of data fetcher
 
-module with no built-in FIFO, for four different sizes of “Search
-Window” parameter.
+module with no built-in FIFO， for four different sizes of “Search
+Window” parameter。
 
 ![](/workspace/CoNNa_zh_media/82ae7a1c52aee0e7f90c5a6beeb0dfdf62da179f.jpg)
 
@@ -3624,45 +3631,45 @@ Fig. 16. Average percentage of “Empty Search Windows” as the function of
 percentage of non-zero values present in kernel and IFM bundle in the
 case of data fetcher
 
-module with built-in ideal FIFO, for four different sizes of “Search
-Window” parameter.
+module with built-in ideal FIFO， for four different sizes of “Search
+Window” parameter。
 
-zero kernel and IFM bundle values, a number of experiments have cant
-percentage of “Empty Search Windows”, at least 20%, during
+zero kernel and IFM bundle values， a number of experiments have cant
+percentage of “Empty Search Windows”， at least 20%， during
 
-been performed, and the results are shown in Figs. 15–17 . the
+been performed， and the results are shown in Figs. 15–17 . the
 computation of individual convolutions. As we increase the size
 
 Fig. 15 shows the average percentage of “Empty Search Win- of “Search
-Window”, the percentage of “Empty Search Windows”
+Window”， the percentage of “Empty Search Windows”
 
 dows” as a function of the percentage of kernel and IFM bundle starts to
-fall and in the case of the “Search Window” size of 32, it
+fall and in the case of the “Search Window” size of 32， it
 
-non-zero values, for four sizes of the “Search Window”, 4, 8, 16 and
+non-zero values， for four sizes of the “Search Window”， 4， 8， 16 and
 stays below 10% even when there are only 50% of non-zero valued
 
 32 product terms wide. From Fig. 15 it can be seen that the size of
-elements in the kernel and IFM bundle. On the other hand, when
+elements in the kernel and IFM bundle. On the other hand， when
 
 “Search Window” plays a signiﬁcant role in the average percentage there
 is a small percentage of non-zero values in kernel and IFM
 
-of “Empty Search Windows”. For the “Search Window” size of 4, bundle,
-less than 20%, the percentage of “Empty Search Windows”
+of “Empty Search Windows”. For the “Search Window” size of 4， bundle，
+less than 20%， the percentage of “Empty Search Windows”
 
 even when kernel and IFM bundle contain a very large number of becomes
-very high for all considered “Search Window” sizes, going
+very high for all considered “Search Window” sizes， going
 
-non-zero valued elements, more than 90%, there will be a signiﬁ- even
-above 90% in the case of “Search Window” size of 4.
+non-zero valued elements， more than 90%， there will be a signiﬁ- even
+above 90% in the case of “Search Window” size of 4。
 
 <div class="page-break">
 
 </div>
 
-24 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+24 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/5c35fe73824b269876d27a45c698bef490c3614d.jpg)
 
@@ -3670,95 +3677,95 @@ Fig. 17. Average percentage of “Empty Search Windows” as the function of
 percentage of non-zero values present in kernel and IFM bundle in the
 case of data fetcher
 
-module with “Search Window” size of 16, with built-in FIFO of depth 0,
-4, 8, 16 and 32.
+module with “Search Window” size of 16， with built-in FIFO of depth 0，
+4， 8， 16 and 32。
 
-In the experiments, resulting in the average percentage of the following
-equation
+In the experiments， resulting in the average percentage of the
+following equation
 
-“Empty Search Windows” surfaces, shown in the Fig. 15 , Data
+“Empty Search Windows” surfaces， shown in the Fig. 15 ， Data
 
 1
 
-· = P \_ IF MNZ P \_ KMNZ (9) Fetcher module was operating without a
-built-in FIFO, which re-
+· = P \_ IF MNZ P \_ KMNZ （9） Fetcher module was operating without a
+built-in FIFO， which re-
 
 4
 
-sults in the simplest possible design. However, because of the ir-
+sults in the simplest possible design. However， because of the ir-
 
-which is clearly visible in the Fig. 16 . However, the beneﬁt of us-
+which is clearly visible in the Fig. 16 . However， the beneﬁt of us-
 
-regular distribution of non-zero kernel and IFM bundle values, the
+regular distribution of non-zero kernel and IFM bundle values， the
 
-ing a FIFO inside Data Fetcher is clearly visible, since it can sig-
+ing a FIFO inside Data Fetcher is clearly visible， since it can sig-
 actual number of detected non-zero product terms in each “Search
 
 niﬁcantly reduce the average percentage of “Empty Search Win-
 
-Window” will probably vary, so there will be situations wherein
+Window” will probably vary， so there will be situations wherein
 
-dows” for all “Search Window” sizes, up to a theoretical limit, as
+dows” for all “Search Window” sizes， up to a theoretical limit， as
 
 the current “Search Window” there is more than one non-zero
 
-explained above. product term detected, but in the subsequent “Search
+explained above. product term detected， but in the subsequent “Search
 Windows”
 
 What can also be observed from Fig. 16 is as we increase the there are
-no non-zero product terms. In this scenario, a simple
+no non-zero product terms. In this scenario， a simple
 
-“Search Window” size, the intersection curve between the “Empty
+“Search Window” size， the intersection curve between the “Empty
 
 Data Fetcher module without a FIFO will not be able to avoid
 
 Search Windows” surface and the zero “Empty Window Percent- idle clock
-cycles, since it cannot start searching for non-zero prod-
+cycles， since it cannot start searching for non-zero prod-
 
 age” plane moves steadily to the right corner. If we could use the uct
 terms in the next “Search Window” until all non-zero prod-
 
 “Search Window” of inﬁnite size we could completely eliminate
 
-uct terms, detected in the current “Search Window” are computed.
+uct terms， detected in the current “Search Window” are computed。
 
-all “Empty Search Windows”, but of course this is not possible in
+all “Empty Search Windows”， but of course this is not possible in
 
-Using Data Fetcher with an internal FIFO, this situation could be
+Using Data Fetcher with an internal FIFO， this situation could be
 
 practice. avoided. It would be interesting to analyze how the size of
 this
 
-In the experiments presented in the Fig. 16 , an inﬁnitely deep
+In the experiments presented in the Fig. 16 ， an inﬁnitely deep
 
-FIFO impacts the average percentage of “Empty Search Windows”,
+FIFO impacts the average percentage of “Empty Search Windows”，
 
-FIFO was assumed, which cannot be used in practice. Therefore, it
+FIFO was assumed， which cannot be used in practice. Therefore， it
 
 and can a large enough FIFO completely eliminate “Empty Search
 
 would be interesting to analyze how a more realistic FIFO of ﬁ-
-Windows”. In order to investigate this, a new set of experiments
+Windows”. In order to investigate this， a new set of experiments
 
-nite depth, reduces the percentage of “Empty Search Windows”.
+nite depth， reduces the percentage of “Empty Search Windows”.
 
-has been conducted, this time with the Data Fetcher module that
+has been conducted， this time with the Data Fetcher module that
 
 Fig. 17 presents the average percentage of “Empty Search Win-
 
-uses an inﬁnitely large FIFO, and the results of these experiments
+uses an inﬁnitely large FIFO， and the results of these experiments
 
 dows” in the case when the Data Fetcher module with the “Search are
 shown in the Fig. 16 .
 
-Window” size of 16 is used, for ﬁve different depths of built-in As can
-be seen from Fig. 16 , even using an inﬁnitely deep FIFO
+Window” size of 16 is used， for ﬁve different depths of built-in As can
+be seen from Fig. 16 ， even using an inﬁnitely deep FIFO
 
-FIFO, 0, 4, 8, 16 and 32.
+FIFO， 0， 4， 8， 16 and 32。
 
 cannot remove all “Empty Search Windows”. This was to be ex-
 
-From Fig. 17 is can be seen as the depth of used FIFO increases, pected
+From Fig. 17 is can be seen as the depth of used FIFO increases， pected
 since when the average expected number of non-zero prod-
 
 the average percentage of the “Empty Search Windows” surface ap- uct
@@ -3766,9 +3773,9 @@ terms falls below the value of one per current “Search Win-
 
 proaches the ideal average percentage of the “Empty Search Win-
 
-dow” size, even ideal FIFO cannot eliminate all “Empty Search Win-
+dow” size， even ideal FIFO cannot eliminate all “Empty Search Win-
 
-dows” surface, shown in the Fig. 16 . However, from Fig. 17 can be
+dows” surface， shown in the Fig. 16 . However， from Fig. 17 can be
 dows”. This is clearly visible in the Fig. 16 . When the following in-
 
 clearly seen that using even a FIFO of depth 32 is enough to reach
@@ -3778,24 +3785,24 @@ the ideal average percentage of the “Empty Search Windows” sur-
 
 1
 
-face. Because of this, in the current version of the CoNNA architec- \<
-" Search W indow Size " (8)
+face. Because of this， in the current version of the CoNNA architec- \<
+“ Search W indow Size ” （8）
 
 · P \_ IF MNZ P \_ KMNZ
 
-ture, Data Fetcher modules were conﬁgured to use “Search Win-
+ture， Data Fetcher modules were conﬁgured to use “Search Win-
 
-non-zero product terms will be, on average, separated by more dow” of
-size 16, with a built-in FIFO of depth 32.
+non-zero product terms will be， on average， separated by more dow” of
+size 16， with a built-in FIFO of depth 32。
 
 than “Search Window Size” zero product terms and even ideal FIFO What
 Figs. 14 and 17 show is that when there is a high per-
 
 will not be able to eliminate all “Empty Search Windows”. For ex-
-centage of zeros present in the kernel and/or input feature map, a
+centage of zeros present in the kernel and/or input feature map， a
 
-ample, in the case of “Search Window” size of 4, the average per-
-signiﬁcant degradation of CoNNA’s performance could be present,
+ample， in the case of “Search Window” size of 4， the average per-
+signiﬁcant degradation of CoNNA’s performance could be present，
 
 centage of “Empty Search Windows” surface intersects with the either
 because of non-balanced number of non-zero product terms
@@ -3807,79 +3814,79 @@ present in the convolutional operations that are being
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 25
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 25
 
 ![](/workspace/CoNNa_zh_media/7712db05375da1318850d811e816e508dc51647a.jpg)
 
-Fig. 18. Increase in layer compute times for AlexNet CNN, due to various
-effects of irregular distribution of non-zero values in kernel and input
-feature maps: a) Percentage
+Fig. 18. Increase in layer compute times for AlexNet CNN， due to
+various effects of irregular distribution of non-zero values in kernel
+and input feature maps： a） Percentage
 
-increase in individual layer compute time; b) Absolute layer processing
-time.
+increase in individual layer compute time； b） Absolute layer
+processing time。
 
-computed in parallel by available PBs, or because of “Empty Search 2.
+computed in parallel by available PBs， or because of “Empty Search 2.
 layer compute time when the non-balanced number of non-
 
 Windows” that are present during the non-zero product term zero product
 terms that are present in the convolutional op-
 
-search process. However, when working with realistic CNN archi- erations
-that are being computed in parallel by available PBs is
+search process. However， when working with realistic CNN archi-
+erations that are being computed in parallel by available PBs is
 
-tectures, the situation where there is a high percentage of zeros taken
-into account,
+tectures， the situation where there is a high percentage of zeros taken
+into account，
 
 present in the kernel and/or input feature map usually happens 3. layer
 compute time when the increase in compute time due to
 
-only within the layers that are located deep inside the CNN, and “Empty
-Search Windows” is taken into account, when the Data
+only within the layers that are located deep inside the CNN， and “Empty
+Search Windows” is taken into account， when the Data
 
 mostly within the fully-connected layers. Please notice that com-
 Fetcher module uses a 16 product terms wide “Search Window”
 
 pute times of these layers contribute only slightly to the total com-
-but is not using a built-in FIFO, and
+but is not using a built-in FIFO， and
 
-pute time of complete CNN. Therefore, any increase in the compute 4.
+pute time of complete CNN. Therefore， any increase in the compute 4.
 layer compute time when the increase in compute time due to
 
 times of deep convolutional or fully-connected layers due to irreg-
-“Empty Search Windows” is taken into account, when the Data
+“Empty Search Windows” is taken into account， when the Data
 
 ular non-zero values distribution within kernel and input feature
 Fetcher module uses a 16 product terms wide “Search Window”
 
 maps of these layers should result in only a small increase in the and a
-32-deep built-in FIFO is being used.
+32-deep built-in FIFO is being used。
 
-total CNN compute time.
+total CNN compute time。
 
 Figs. 18 and 19 present the results of these experiments for
 
 In order to analyze the magnitude of the increase of total CNN
 
-AlexNet and VGG-16 CNN networks respectively. In both Figures,
+AlexNet and VGG-16 CNN networks respectively. In both Figures，
 
-compute time, due to irregular non-zero values distribution within
+compute time， due to irregular non-zero values distribution within
 
-two graphs are presented. First, showing the percentage increase
+two graphs are presented. First， showing the percentage increase
 
-kernel and input feature maps, in the case of realistic CNN net-
+kernel and input feature maps， in the case of realistic CNN net-
 
-in the individual layer compute times, and the second, showing the
+in the individual layer compute times， and the second， showing the
 
-works, AlexNet and VGG-16 CNN networks have been used. For
+works， AlexNet and VGG-16 CNN networks have been used. For
 
-absolute layer compute times.
+absolute layer compute times。
 
-both of these CNNs, individual layer compute times have been
+both of these CNNs， individual layer compute times have been
 
 From Fig. 18 and 19 it can be seen that the layer processing
 
-computed, for several scenarios:
+computed， for several scenarios：
 
 time increase due to a non-balanced number of non-zero product
 
@@ -3887,53 +3894,53 @@ time increase due to a non-balanced number of non-zero product
 that are present in the convolutional operations is not signif-
 
 pute time due to the irregular non-zero values distribution is icant.
-For two selected CNN networks, when convolutional layers
+For two selected CNN networks， when convolutional layers
 
-not taken into account, are considered, the maximum processing time
+not taken into account， are considered， the maximum processing time
 increase is less than
 
 <div class="page-break">
 
 </div>
 
-26 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+26 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
 ![](/workspace/CoNNa_zh_media/38f2c80ebeede9a8125de25789872b0b5eafb3f0.jpg)
 
-Fig. 19. Increase in layer compute times for AlexNet CNN, due to various
-effects of irregular distribution of non-zero values in kernel and input
-feature maps: a) Percentage
+Fig. 19. Increase in layer compute times for AlexNet CNN， due to
+various effects of irregular distribution of non-zero values in kernel
+and input feature maps： a） Percentage
 
-increase in individual layer compute time; b) Absolute layer processing
-time.
+increase in individual layer compute time； b） Absolute layer
+processing time。
 
 5% compared to ideal compute time. When fully-connected layers
-eliminated, or reduced, for almost all convolutional layers, and re-
+eliminated， or reduced， for almost all convolutional layers， and re-
 
-are concerned, this increase is slightly higher and can reach as high
-duced for all fully-connected layers.
+are concerned， this increase is slightly higher and can reach as high
+duced for all fully-connected layers。
 
-as 13%, as is the case with the FC8 VGG-16 layer. However, as can Based
-on all experiments that were performed in order to an-
+as 13%， as is the case with the FC8 VGG-16 layer. However， as can
+Based on all experiments that were performed in order to an-
 
-be observed in Figs. 18 b and 19 b, total compute times of fully- alyze
+be observed in Figs. 18 b and 19 b， total compute times of fully- alyze
 the effects of irregular non-zero values distribution within
 
 connected layers for both AlexNet and VGG-16 CNNs are almost kernel and
 input feature maps on the CoNNA architecture CNN
 
-negligible in comparison with convolutional layer compute times,
-processing time, it can be concluded that the irregular non-zero
+negligible in comparison with convolutional layer compute times，
+processing time， it can be concluded that the irregular non-zero
 
 so this increase in fully-connected layer processing times doesn’t
 values distribution has indeed an effect on the increase of CoNNA’s
 
-signiﬁcantly change the total CNN processing time. In fact, the to-
-total CNN processing time, but that this increase is relatively small,
+signiﬁcantly change the total CNN processing time. In fact， the to-
+total CNN processing time， but that this increase is relatively small，
 
 tal CNN processing time increase due to a non-balanced number of not
-exceeding 3% of ideal CNN processing time.
+exceeding 3% of ideal CNN processing time。
 
 non-zero product terms in the case of AlexNet and VGG-16 CNNs
 
@@ -3941,52 +3948,52 @@ is only 0. 95% and 2. 57% respectively. 5. Conclusion
 
 When the individual layer processing times increase due to the
 
-“Empty Search Windows” is considered, from Figs. 18 and 19 it In this
-paper, a novel CNN hardware accelerator, CoNNA, has
+“Empty Search Windows” is considered， from Figs. 18 and 19 it In this
+paper， a novel CNN hardware accelerator， CoNNA， has
 
-can be observed that it is more severe, and can reach the val- been
+can be observed that it is more severe， and can reach the val- been
 proposed. CoNNA is a coarse-grained reconﬁgurable hardware
 
-ues as high as 80%, for FC6 and FC7 VGG-16 layers. Also, it can
+ues as high as 80%， for FC6 and FC7 VGG-16 layers. Also， it can
 architecture capable of accelerating complete pruned and com-
 
 be seen that this increase is also signiﬁcant for the convolutional
-pressed CNNs, employing the “All zero-skipping” technique to de-
+pressed CNNs， employing the “All zero-skipping” technique to de-
 
-layers which are located deeper within the CNN network, and can crease
+layers which are located deeper within the CNN network， and can crease
 required CNN processing time by skipping all ineffectual
 
-reach the values of 40%. However, once more, the contribution of
-operations during convolutional, pooling and fully-connected layer
+reach the values of 40%. However， once more， the contribution of
+operations during convolutional， pooling and fully-connected layer
 
-all these layers to the total CNN processing time, especially the
-processing. It can be used to accelerate convolutional, depthwise
+all these layers to the total CNN processing time， especially the
+processing. It can be used to accelerate convolutional， depthwise
 
-contribution of fully-connected layers, is small in comparison with
-convolutional, pooling, fully-connected, concatenation and adding
+contribution of fully-connected layers， is small in comparison with
+convolutional， pooling， fully-connected， concatenation and adding
 
 the contribution of bigger convolutional layers located closer to the
 layers of the target CNN network. CoNNA is designed to process
 
 beginning of the CNN network. This is visible when the increase in
-compressed CNNs, as well as input feature maps, which seems to
+compressed CNNs， as well as input feature maps， which seems to
 
-the total CNN processing time, due to “Empty Search Windows” for enable
+the total CNN processing time， due to “Empty Search Windows” for enable
 achieving higher processing performance values when com-
 
 AlexNet and VGG-16 CNNs is computed. In the case of AlexNet to- pared to
 some of the previously proposed CNN accelerator solu-
 
-tal processing time increase is 2. 94%, and for the VGG-16 network,
+tal processing time increase is 2. 94%， and for the VGG-16 network，
 tions. CoNNA is designed to act as a co-processor soft-IP core that
 
-it is even smaller, only 1. 10%. is connected to a host processor within
-contemporary SoC or PSoC
+it is even smaller， only 1. 10%. is connected to a host processor
+within contemporary SoC or PSoC
 
-From Figs. 18 and 19 , the beneﬁt of using a built-in FIFO within
+From Figs. 18 and 19 ， the beneﬁt of using a built-in FIFO within
 architectures. The CoNNA architecture has been implemented us-
 
-Data Fetcher modules can also be seen. When FIFO is being used, + ing
+Data Fetcher modules can also be seen. When FIFO is being used， + ing
 Xilinx ZynqUtrascale FPGA family and compared with seven
 
 the resulting increase in layer processing times can be completely
@@ -3996,388 +4003,397 @@ previously proposed hardware CNN accelerators. The CoNNA archi-
 
 </div>
 
-R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991 27
+R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991 27
 
-tecture, when conﬁgured to use identical number of MAC units \[21\] J.
-Qiu , J. Wang , S. Yao , K. Guo , B. Li , E. Zhou , J. Yu , T. Tang , N.
-Xu , S. Song ,
+tecture， when conﬁgured to use identical number of MAC units \[21\] J.
+Qiu ， J. Wang ， S. Yao ， K. Guo ， B. Li ， E. Zhou ， J. Yu ， T.
+Tang ， N. Xu ， S. Song ，
 
-Y. Wang , Going deeper with embedded fpga platform for convolutional
+Y. Wang ， Going deeper with embedded fpga platform for convolutional
 neural and operating at the same clock frequency as previously proposed
 
-network, in: Proceedings of the 2016 ACM/SIGDA International Symposium
+network， in： Proceedings of the 2016 ACM/SIGDA International Symposium
 on
 
-MIT’s Eyeriss, NullHop and NVIDIA’s NVDLA, NEURAghe, CNN_A1,
+MIT’s Eyeriss， NullHop and NVIDIA’s NVDLA， NEURAghe， CNN_A1，
 
-Field-Programmable Gate Arrays, Monterey, 2016, pp. 26–35 .
+Field-Programmable Gate Arrays， Monterey， 2016， pp. 26–35 .
 
-fpgaConvNet, and Deephi’s Aristotle CNN accelerators, enables up \[22\]
-Z. Liu , Y. Dou , J. Jiang , J. Xu , S. Li , Y. Zhou , Y. Xu ,
-Throughput-Optimized FPGA
+fpgaConvNet， and Deephi’s Aristotle CNN accelerators， enables up
+\[22\] Z. Liu ， Y. Dou ， J. Jiang ， J. Xu ， S. Li ， Y. Zhou ， Y.
+Xu ， Throughput-Optimized FPGA
 
-accelerator for deep convolutional neural networks, ACM Trans.
-Reconﬁgurable to 14. 10, 6. 05, 4. 91, 2. 67, 11. 30, 3. 08 and 3. 58
-times faster CNN ex-
+accelerator for deep convolutional neural networks， ACM Trans.
+Reconﬁgurable to 14. 10， 6. 05， 4. 91， 2. 67， 11. 30， 3. 08 and 3.
+58 times faster CNN ex-
 
-Technol. Syst. 10 (3) (2017) 17 .
+Technol. Syst. 10 （3） （2017） 17 .
 
-ecution of standard CNN networks respectively.
+ecution of standard CNN networks respectively。
 
-\[23\] P. Meloni , A. Capotondi , G. Deriu , M. Brian , F. Conti , D.
-Rossi , L. Raffo , L. Benini ,
+\[23\] P. Meloni ， A. Capotondi ， G. Deriu ， M. Brian ， F. Conti ，
+D. Rossi ， L. Raffo ， L. Benini ，
 
-NEURAghe: exploiting CPU-FPGA synergies for eﬃcient and ﬂexible CNN
+NEURAghe： exploiting CPU-FPGA synergies for eﬃcient and ﬂexible CNN
 infer-
 
-ence acceleration on Zynq SoCs, ACM Trans. Reconﬁgurable Technol. Syst.
+ence acceleration on Zynq SoCs， ACM Trans. Reconﬁgurable Technol. Syst.
 11
 
-Declaration of Competing Interest (3) (2018) 18 .
+Declaration of Competing Interest （3） （2018） 18 .
 
-\[24\] N. Shah , P. Chaudhari , K. Varghese , Runtime programmable and
-memory band-
+\[24\] N. Shah ， P. Chaudhari ， K. Varghese ， Runtime programmable
+and memory band-
 
 width optimized FPGA-Based coprocessor for deep convolutional neural
 net- The authors declare that they have no known competing ﬁnan-
 
-work, IEEE Trans. Neural Netw. Learn. Syst. 29 (12) (2018) 5922–5934 .
+work， IEEE Trans. Neural Netw. Learn. Syst. 29 （12） （2018）
+5922–5934 .
 
 cial interests or personal relationships that could have appeared to
 
-\[25\] S. I. Venieris , C. S. Bouganis , fpgaConvNet: mapping regular
+\[25\] S. I. Venieris ， C. S. Bouganis ， fpgaConvNet： mapping regular
 and irregular convo-
 
 inﬂuence the work reported in this paper. lutional neural networks on
-FPGAs, IEEE Trans. Neural Netw. Learn. Syst. (2018)
+FPGAs， IEEE Trans. Neural Netw. Learn. Syst. （2018）
 
-\(2018\) 1–17 Early Access .
+（2018） 1–17 Early Access .
 
-\[26\] J. Cheng , J. Wu , C. Leng , Y. Wang , Q. Hu , Quantized CNN: a
-uniﬁed approach
+\[26\] J. Cheng ， J. Wu ， C. Leng ， Y. Wang ， Q. Hu ， Quantized
+CNN： a uniﬁed approach
 
-References to accelerate and compress convolutional networks, IEEE Trans
-Neural Netw
+References to accelerate and compress convolutional networks， IEEE
+Trans Neural Netw
 
-Learn Syst 29 (10) (2017) 4730–4743 .
+Learn Syst 29 （10） （2017） 4730–4743 .
 
-\[27\] M. Motamedi , P. Gysel , S. Ghiasi , PLACID: a platform for
+\[27\] M. Motamedi ， P. Gysel ， S. Ghiasi ， PLACID： a platform for
 FPGA-based accelera-
 
-\[1\] Y. LeCun , Y. Bengio , G. Hinton , Deep learning, Nature 521
-(7553) (2015)
+\[1\] Y. LeCun ， Y. Bengio ， G. Hinton ， Deep learning， Nature 521
+（7553） （2015）
 
-tor creation for DCNNs, ACM Tran. Multimed. Comput. Commun. Appl. 13 (4)
+tor creation for DCNNs， ACM Tran. Multimed. Comput. Commun. Appl. 13
+（4）
 
 436–4 4 4 .
 
-\(2017\) 62 Article No .
+（2017） 62 Article No .
 
-\[2\] K. Fukushima , Neocognitron: a self-organizing neural network
+\[2\] K. Fukushima ， Neocognitron： a self-organizing neural network
 model for a
 
-\[28\] Y. Choi , D. Bae , J. Sim , S. Choi , M. Kim , L. S. Kim ,
+\[28\] Y. Choi ， D. Bae ， J. Sim ， S. Choi ， M. Kim ， L. S. Kim ，
 Energy-Eﬃcient design of
 
-mechanism of pattern recognition unaffected by shift in position, Biol.
-Cybern.
+mechanism of pattern recognition unaffected by shift in position， Biol.
+Cybern。
 
-processing element for convolutional neural network, IEEE Trans.
-Circuit. Syst.
+processing element for convolutional neural network， IEEE Trans.
+Circuit. Syst。
 
-36 (4) (1980) 193–202 .
+36 （4） （1980） 193–202 .
 
-II 64 (11) (2017) 1332–1336 .
+II 64 （11） （2017） 1332–1336 .
 
-\[3\] A. Krizhevsky , I. Sutskever , G. E. Hinton , ImageNet
+\[3\] A. Krizhevsky ， I. Sutskever ， G. E. Hinton ， ImageNet
 classiﬁcation with deep con-
 
-\[29\] X. Chen , Z. Yu , A ﬂexible and energy-eﬃcient convolutional
-neural network volutional neural networks, in: Advances in Neural
+\[29\] X. Chen ， Z. Yu ， A ﬂexible and energy-eﬃcient convolutional
+neural network volutional neural networks， in： Advances in Neural
 Information Processing Sys-
 
-acceleration with dedicated ISA and accelerator, IEEE Trans. Very Large
-Scale tems, Lake Tahoe, 2012, pp. 1097–1105 .
+acceleration with dedicated ISA and accelerator， IEEE Trans. Very Large
+Scale tems， Lake Tahoe， 2012， pp. 1097–1105 .
 
-Integr. (VLSI) Syst. 26 (7) (2018) 1408–1412 . \[4\] R. Girshick , R. -.
-C. N. N. Fast , in: Proceedings of the IEEE Conference on Computer
+Integr. （VLSI） Syst. 26 （7） （2018） 1408–1412 . \[4\] R. Girshick
+， R. -. C. N. N. Fast ， in： Proceedings of the IEEE Conference on
+Computer
 
-\[30\] K. Guo , S. Han , S. Yao , Y. Wang , Y. Xie , H. Yang ,
-Software-Hardware code- Vision and Pattern Recognition - CVPR, 15, 2015,
-pp. 1440–1448 .
+\[30\] K. Guo ， S. Han ， S. Yao ， Y. Wang ， Y. Xie ， H. Yang ，
+Software-Hardware code- Vision and Pattern Recognition - CVPR， 15，
+2015， pp. 1440–1448 .
 
-sign for eﬃcient neural network acceleration, IEEE Micro. 37 (2) (2017)
-18– \[5\] Jonathan Long , Evan Shelhamer , Trevor Darrell , Fully
-convolutional networks
+sign for eﬃcient neural network acceleration， IEEE Micro. 37 （2）
+（2017） 18– \[5\] Jonathan Long ， Evan Shelhamer ， Trevor Darrell ，
+Fully convolutional networks
 
-25 . for semantic segmentation, in: Proceedings of the IEEE Conference
+25 . for semantic segmentation， in： Proceedings of the IEEE Conference
 on Com-
 
-\[31\] J. Albericio , P. Judd , T. Hetherington , T. Aamodt , N. E.
-Jerger , A. Moshovos , puter Vision and Pattern Recognition - CVPR, 15,
-2015, pp. 3431–3440 .
+\[31\] J. Albericio ， P. Judd ， T. Hetherington ， T. Aamodt ， N. E.
+Jerger ， A. Moshovos ， puter Vision and Pattern Recognition - CVPR，
+15， 2015， pp. 3431–3440 .
 
-Cnvlutin: ineffectual-neuron-free deep neural network computing, in:
-2016 \[6\] L. Deng , J. Li , J. -. T. Huang , K. Yao , D. Yu , F. Seide
-, M. Seltzer , G. Zweig , X. He ,
+Cnvlutin： ineffectual-neuron-free deep neural network computing， in：
+2016 \[6\] L. Deng ， J. Li ， J. -. T. Huang ， K. Yao ， D. Yu ， F.
+Seide ， M. Seltzer ， G. Zweig ， X. He ，
 
 ACM/IEEE 43rd Annual International Symposium on Computer Architecture J.
-Williams , Y. Gong , Recent advances in deep learning for speech
+Williams ， Y. Gong ， Recent advances in deep learning for speech
 research at
 
-(ISCA), Seoul, 2016, pp. 1–13 . microsoft, in: IEEE International
-Conference on Acoustics, Speech and Signal
+（ISCA）， Seoul， 2016， pp. 1–13 . microsoft， in： IEEE International
+Conference on Acoustics， Speech and Signal
 
-\[32\] A. Aimar , H. Mostafa , E. Calabrese , A. Rios-Navarro , R.
-Tapiador-Morales , Processing (ICASSP), Vancouver, 2013, pp. 8604–8608 .
+\[32\] A. Aimar ， H. Mostafa ， E. Calabrese ， A. Rios-Navarro ， R.
+Tapiador-Morales ， Processing （ICASSP）， Vancouver， 2013， pp.
+8604–8608 .
 
-I. A. Lungu , M. B. Milde , F. Corradi , A. Linares-Barranco , S. C. Liu
-, T. Delbruck , \[7\] C. Chen , A. Seff, A. Kornhauser , J. Xiao ,
-Deepdriving: learning affordance for
+I. A. Lungu ， M. B. Milde ， F. Corradi ， A. Linares-Barranco ， S. C.
+Liu ， T. Delbruck ， \[7\] C. Chen ， A. Seff， A. Kornhauser ， J.
+Xiao ， Deepdriving： learning affordance for
 
-NullHop: a ﬂexible convolutional neural network accelerator based on
+NullHop： a ﬂexible convolutional neural network accelerator based on
 sparse
 
-direct perception in autonomous driving, in: Proceedings of the IEEE
+direct perception in autonomous driving， in： Proceedings of the IEEE
 Interna-
 
-representations of feature maps, IEEE Trans. Neural Netw. Learn. Syst.
-(2018)
+representations of feature maps， IEEE Trans. Neural Netw. Learn. Syst.
+（2018）
 
-tional Conference on Computer Vision, Santiago, 2015, pp. 2722–2730 .
+tional Conference on Computer Vision， Santiago， 2015， pp. 2722–2730 .
 
 1–13 Early Access .
 
-\[8\] A. Esteva , B. Kuprel , R. A. Novoa , J. Ko , S. M. Swetter , H.
-M. Blau , S. Thrun , Derma-
+\[8\] A. Esteva ， B. Kuprel ， R. A. Novoa ， J. Ko ， S. M. Swetter ，
+H. M. Blau ， S. Thrun ， Derma-
 
-\[33\] Y. Lu , C. Wang , L. Gong , X. Zhou , SparseNN: a
+\[33\] Y. Lu ， C. Wang ， L. Gong ， X. Zhou ， SparseNN： a
 performance-eﬃcient accelerator
 
-tologist-level classiﬁcation of skin cancer with deep neural networks,
+tologist-level classiﬁcation of skin cancer with deep neural networks，
 Nature
 
-for large-scale sparse neural networks, Int. J. Parallel Program. 46 (4)
-(2018)
+for large-scale sparse neural networks， Int. J. Parallel Program. 46
+（4） （2018）
 
-542 (7639) (2017) 115–118 .
+542 （7639） （2017） 115–118 .
 
 648–659 .
 
-\[9\] D. Silver , A. Huang , C. J. Maddison , A. Guez , L. Sifre , G.
-van den Driess-
+\[9\] D. Silver ， A. Huang ， C. J. Maddison ， A. Guez ， L. Sifre ，
+G. van den Driess-
 
-\[34\] S. Zhang , Z. Du , L. Zhang , H. Lan , S. Liu , L. Li , Q. Guo ,
-T. Chen , Y. Chen ,
+\[34\] S. Zhang ， Z. Du ， L. Zhang ， H. Lan ， S. Liu ， L. Li ， Q.
+Guo ， T. Chen ， Y. Chen ，
 
-che , J. Schrittwieser , I. Antonoglou , V. Panneershelvam , M. Lanctot
-, S. Diele-
+che ， J. Schrittwieser ， I. Antonoglou ， V. Panneershelvam ， M.
+Lanctot ， S. Diele-
 
-Cambricon-x: an accelerator for sparse neural networks, in: The 49th
+Cambricon-x： an accelerator for sparse neural networks， in： The 49th
 Annual
 
-man , D. Grewe , J. Nham , N. Kalchbrenner , I. Sutskever , T. Lillicrap
-, M. Leach ,
+man ， D. Grewe ， J. Nham ， N. Kalchbrenner ， I. Sutskever ， T.
+Lillicrap ， M. Leach ，
 
-IEEE/ACM International Symposium on Microarchitecture, Taipei, 2016, p.
-20.
+IEEE/ACM International Symposium on Microarchitecture， Taipei， 2016，
+p. 20。
 
-K. Kavukcuoglu , T. Graepel , D. Hassabis , Mastering the game of Go
+K. Kavukcuoglu ， T. Graepel ， D. Hassabis ， Mastering the game of Go
 with deep
 
 Article No .
 
-neural networks and tree search, Nature 529 (7587) (2016) 4 84–4 89 .
-
-\[35\] S. Han , X. Liu , H. Mao , J. Pu , A. Pedram , M. A. Horowitz ,
-W. J. Dally , EIE: eﬃ- \[10\] K. Simonyan, A. Zisserman, Very deep
-convolutional networks for large-scale
-
-cient inference engine on compressed deep neural network, in:
-Proceedings image recognition, arXiv preprint, arXiv: 1409. 1556 , 2014.
-
-of the 43rd International Symposium on Computer Architecture, Seoul,
-2016, \[11\] NVIDIA Volta Architecture Whitepaper WP-08608-001_v1. 1,
-NVIDIA, (2018),
-
-pp. 243–254 . \[Online\], Available: http: //images. nvidia.
-com/content/volta-architecture/pdf/
-
-\[36\] A. Parashar , M. Rhu , A. Mukkara , A. Puglielli , R. Venkatesan
-, B. Khailany , volta-architecture-whitepaper. pdf .
-
-W. J. Dally , Scnn: an accelerator for compressed-sparse convolutional
-neural \[12\] NVIDIA Jetson TX2 Delivers Twice the Intelligence to the
-Edge, NVIDIA, (2017),
-
-networks, in: 2017 ACM/IEEE 44th Annual International Symposium on Com-
-\[Online\], Available: https: //devblogs. nvidia. com/jetson- tx2-
-delivers- twice-
-
-puter Architecture (ISCA), Toronto, 2017, pp. 27–40 . intelligence-edge/
+neural networks and tree search， Nature 529 （7587） （2016） 4 84–4 89
 .
 
-\[37\] S. Anwar, W. Sung, Compact Deep Convolutional Neural Networks
+\[35\] S. Han ， X. Liu ， H. Mao ， J. Pu ， A. Pedram ， M. A.
+Horowitz ， W. J. Dally ， EIE： eﬃ- \[10\] K. Simonyan， A. Zisserman，
+Very deep convolutional networks for large-scale
+
+cient inference engine on compressed deep neural network， in：
+Proceedings image recognition， arXiv preprint， arXiv： 1409. 1556 ，
+2014。
+
+of the 43rd International Symposium on Computer Architecture， Seoul，
+2016， \[11\] NVIDIA Volta Architecture Whitepaper WP-08608-001_v1. 1，
+NVIDIA， （2018），
+
+pp. 243–254 . \[Online\]， Available： http： //images. nvidia.
+com/content/volta-architecture/pdf/
+
+\[36\] A. Parashar ， M. Rhu ， A. Mukkara ， A. Puglielli ， R.
+Venkatesan ， B. Khailany ， volta-architecture-whitepaper. pdf .
+
+W. J. Dally ， Scnn： an accelerator for compressed-sparse convolutional
+neural \[12\] NVIDIA Jetson TX2 Delivers Twice the Intelligence to the
+Edge， NVIDIA， （2017），
+
+networks， in： 2017 ACM/IEEE 44th Annual International Symposium on
+Com- \[Online\]， Available： https： //devblogs. nvidia. com/jetson-
+tx2- delivers- twice-
+
+puter Architecture （ISCA）， Toronto， 2017， pp. 27–40 .
+intelligence-edge/ .
+
+\[37\] S. Anwar， W. Sung， Compact Deep Convolutional Neural Networks
 With Coarse \[13\] Intel® Stratix® 10 Variable Precision DSP Blocks User
-Guide, Intel FPGA
+Guide， Intel FPGA
 
-Pruning, ArXiv preprint, arXiv: 1610. 09639 , (2016). Group, (2017),
-\[Online\], Available: https: //www. intel. com/content/dam/www/
+Pruning， ArXiv preprint， arXiv： 1610. 09639 ， （2016）. Group，
+（2017）， \[Online\]， Available： https： //www. intel.
+com/content/dam/www/
 
-\[38\] H. Li, A. Kadav, I. Durdanovic, H. Samet, H. P. Graf, Pruning
-ﬁlters for eﬃcient programmable/us/en/pdfs/literature/hb/stratix- 10/ug-
-s10- dsp. pdf .
+\[38\] H. Li， A. Kadav， I. Durdanovic， H. Samet， H. P. Graf，
+Pruning ﬁlters for eﬃcient
+programmable/us/en/pdfs/literature/hb/stratix- 10/ug- s10- dsp. pdf .
 
-convnets, arXiv preprint, arXiv: 1608. 08710 , (2016). \[14\] E.
-Nurvitadhi , S. Subhaschandra , G. Boudoukh , G. Venkatesh , J. Sim , D.
-Marr ,
+convnets， arXiv preprint， arXiv： 1608. 08710 ， （2016）. \[14\] E.
+Nurvitadhi ， S. Subhaschandra ， G. Boudoukh ， G. Venkatesh ， J. Sim
+， D. Marr ，
 
-\[39\] J. H. Luo , J. Wu , W. Lin , Thinet: a ﬁlter level pruning method
-for deep neural
+\[39\] J. H. Luo ， J. Wu ， W. Lin ， Thinet： a ﬁlter level pruning
+method for deep neural
 
-R. Huang , J. OngGeeHock , Y. T. Liew , K. Srivatsan , D. Moss , Can
-FPGAs beat
+R. Huang ， J. OngGeeHock ， Y. T. Liew ， K. Srivatsan ， D. Moss ，
+Can FPGAs beat
 
-network compression, in: The IEEE International Conference on Computer
+network compression， in： The IEEE International Conference on Computer
 Vi-
 
-GPUs in accelerating next-generation deep neural networks? in:
+GPUs in accelerating next-generation deep neural networks？ in：
 Proceedings
 
-sion (ICCV’17), Venice, 2017, pp. 5058–5066 .
+sion （ICCV’17）， Venice， 2017， pp. 5058–5066 .
 
 of the ACM/SIGDA International Symposium on Field-Programmable Gate Ar-
 
-\[40\] Y. He , X. Zhang , J. Sun , Channel pruning for accelerating very
-deep neural
+\[40\] Y. He ， X. Zhang ， J. Sun ， Channel pruning for accelerating
+very deep neural
 
-rays - FPGA, 17, Monterey, 2017, pp. 5–14 .
+rays - FPGA， 17， Monterey， 2017， pp. 5–14 .
 
-networks. , in: International Conference on Computer Vision (ICCV’17),
-Venice,
+networks. ， in： International Conference on Computer Vision
+（ICCV’17）， Venice，
 
-\[15\] Y. Chen , T. Luo , S. Liu , S. Zhang , L. He , J. Wang , L. Li ,
-T. Chen , Z. Xu , N. Sun ,
+\[15\] Y. Chen ， T. Luo ， S. Liu ， S. Zhang ， L. He ， J. Wang ， L.
+Li ， T. Chen ， Z. Xu ， N. Sun ，
 
-2017, pp. 1389–1397 .
+2017， pp. 1389–1397 .
 
-O. Temam , DaDianNao: a machine-learning supercomputer, in: Proceedings
+O. Temam ， DaDianNao： a machine-learning supercomputer， in：
+Proceedings
 
-\[41\] S. Anwar , K. Hwang , W. Sung , Structured pruning of deep
+\[41\] S. Anwar ， K. Hwang ， W. Sung ， Structured pruning of deep
 convolutional neural
 
 of the 47th Annual IEEE/ACM International Symposium on
-Microarchitecture,
+Microarchitecture，
 
-networks, ACM J. Emerg. Technol. Comput. Syst. 13 (3) (2017) 32 Article
-No .
+networks， ACM J. Emerg. Technol. Comput. Syst. 13 （3） （2017） 32
+Article No .
 
-Cambridge, 2014, pp. 609–622 .
+Cambridge， 2014， pp. 609–622 .
 
-\[42\] S. Han , J. Pool , J. Tran , W. Dally , Learning both weights and
-connections for ef-
+\[42\] S. Han ， J. Pool ， J. Tran ， W. Dally ， Learning both weights
+and connections for ef-
 
-\[16\] K. Guo, S. Lingzhi, J. Qiu, S. Yao, S. Han, Y. Wang, and H. Yang,
-Angel-eye: a
+\[16\] K. Guo， S. Lingzhi， J. Qiu， S. Yao， S. Han， Y. Wang， and H.
+Yang， Angel-eye： a
 
-ﬁcient neural network, in: Advances in neural information processing
+ﬁcient neural network， in： Advances in neural information processing
 systems
 
-complete design ﬂow for mapping cnn onto customized hardware, in: 2016
+complete design ﬂow for mapping cnn onto customized hardware， in： 2016
 
-(NIPS 2015), Montreal, 2015, pp. 1135–1143 .
+（NIPS 2015）， Montreal， 2015， pp. 1135–1143 .
 
-IEEE Computer Society Annual Symposium on VLSI (ISVLSI) , Pittsburgh
-(2016),
+IEEE Computer Society Annual Symposium on VLSI （ISVLSI） ， Pittsburgh
+（2016），
 
-\[43\] H. Song, H. Mao, W. J. Dally, Deep compression: Compressing deep
-Neural 24–29.
+\[43\] H. Song， H. Mao， W. J. Dally， Deep compression： Compressing
+deep Neural 24–29。
 
-Networks With pruning, Trained Quantization and Huffman Coding, arXiv
-\[17\] X. Wei , C. H. Yu , P. Zhang , Y. Chen , Y. Wang , H. Hu , Y.
-Liang , J. Cong , Auto-
+Networks With pruning， Trained Quantization and Huffman Coding， arXiv
+\[17\] X. Wei ， C. H. Yu ， P. Zhang ， Y. Chen ， Y. Wang ， H. Hu ，
+Y. Liang ， J. Cong ， Auto-
 
-preprint, arXiv: 1510. 00149 , (2015). mated systolic array architecture
-synthesis for high throughput CNN inference
+preprint， arXiv： 1510. 00149 ， （2015）. mated systolic array
+architecture synthesis for high throughput CNN inference
 
-\[44\] Y. Guo , A. Yao , Y. Chen , Dynamic network surgery for eﬃcient
-dnns, on FPGAs, in: Proceedings of the 54th Annual Design Automation
-Conference,
+\[44\] Y. Guo ， A. Yao ， Y. Chen ， Dynamic network surgery for
+eﬃcient dnns， on FPGAs， in： Proceedings of the 54th Annual Design
+Automation Conference，
 
-in: Advances In Neural Information Processing Systems, Barcelona, 2016,
-Austin, 2017, p. 29 .
+in： Advances In Neural Information Processing Systems， Barcelona，
+2016， Austin， 2017， p. 29 .
 
-pp. 1379–1387 . \[18\] C. Wang , L. Gong , Q. Yu , X. Li , Y. Xie , X.
-Zhou , DLAU: a scalable deep learning
+pp. 1379–1387 . \[18\] C. Wang ， L. Gong ， Q. Yu ， X. Li ， Y. Xie ，
+X. Zhou ， DLAU： a scalable deep learning
 
-\[45\] A. Erdeljan , B. Vukobratovi ´c , R. Struharik , IP core for
-eﬃcient zero-run accelerator unit on FPGA, IEEE Trans. Comput. -Aid.
+\[45\] A. Erdeljan ， B. Vukobratovi ´c ， R. Struharik ， IP core for
+eﬃcient zero-run accelerator unit on FPGA， IEEE Trans. Comput. -Aid.
 Des. Integr. Circuits Syst. 36
 
-length compression of CNN feature maps, in: 25th Telecommunications
-Forum (3) (2017) 513–517 .
+length compression of CNN feature maps， in： 25th Telecommunications
+Forum （3） （2017） 513–517 .
 
-(TELFOR 2017), Belgrade, 2017, pp. 44–49 . \[19\] Y. H. Chen , T.
-Krishna , J. S. Emer , V. Sze , Eyeriss: an energy-eﬃcient reconﬁg-
+（TELFOR 2017）， Belgrade， 2017， pp. 44–49 . \[19\] Y. H. Chen ， T.
+Krishna ， J. S. Emer ， V. Sze ， Eyeriss： an energy-eﬃcient reconﬁg-
 
-\[46\] M. Horowitz , Computing’s energy problem (and what we can do
-about it), in: urable accelerator for deep convolutional neural
-networks, IEEE J. Solid-State
+\[46\] M. Horowitz ， Computing’s energy problem （and what we can do
+about it）， in： urable accelerator for deep convolutional neural
+networks， IEEE J. Solid-State
 
 IEEE International Solid-State Circuits Conference Digest of Technical
-Papers Circuits 52 (1) (2017) 127–138 .
+Papers Circuits 52 （1） （2017） 127–138 .
 
-(ISSCC’14), San Francisco, 2014, pp. 10–14 .
+（ISSCC’14）， San Francisco， 2014， pp. 10–14 .
 
-\[20\] N. Suda , V. Chandra , G. Dasika , A. Mohanty , Y. Ma , S.
-Vrudhula , J. S. Seo , Y. Cao ,
+\[20\] N. Suda ， V. Chandra ， G. Dasika ， A. Mohanty ， Y. Ma ， S.
+Vrudhula ， J. S. Seo ， Y. Cao ，
 
-\[47\] A. Zhu , T. Wang , H. Snoussi , Hierarchical graphical-based
+\[47\] A. Zhu ， T. Wang ， H. Snoussi ， Hierarchical graphical-based
 human pose estima-
 
 Throughput-optimized OpenCL-based FPGA accelerator for large-scale
 convolu-
 
-tion via local multi-resolution convolutional neural network, AIP Adv. 8
-(3)
+tion via local multi-resolution convolutional neural network， AIP Adv.
+8 （3）
 
-tional neural networks, in: Proceedings of the 2016 ACM/SIGDA
+tional neural networks， in： Proceedings of the 2016 ACM/SIGDA
 International
 
-\(2018\) 1–14 .
+（2018） 1–14 .
 
-Symposium on Field-Programmable Gate Arrays, Monterey, 2016, pp. 16–25 .
+Symposium on Field-Programmable Gate Arrays， Monterey， 2016， pp.
+16–25 .
 
 <div class="page-break">
 
 </div>
 
-28 R. J. R. Struharik, B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
-Microprocessors and Microsystems 73 (2020) 102991
+28 R. J. R. Struharik， B. Z. Vukobratovi ´c and A. M. Erdeljan et al. /
+Microprocessors and Microsystems 73 （2020） 102991
 
-\[48\] M. Al Rahhal , Y. Bazi , T. Abdullah , M. Mekhalﬁ, H. AlHichri ,
-M. Zuair , Learning a \[51\] C. Szegedy , W. Liu , Y. Jia , P. Sermanet
-, S. Reed , D. Anguelov , D. Erhan , V. Van-
+\[48\] M. Al Rahhal ， Y. Bazi ， T. Abdullah ， M. Mekhalﬁ， H.
+AlHichri ， M. Zuair ， Learning a \[51\] C. Szegedy ， W. Liu ， Y. Jia
+， P. Sermanet ， S. Reed ， D. Anguelov ， D. Erhan ， V. Van-
 
 multi-branch neural network from multiple sources for knowledge
-adaptation houcke , A. Rabinovich , Going deeper with convolutions, in:
-Proceedings of the
+adaptation houcke ， A. Rabinovich ， Going deeper with convolutions，
+in： Proceedings of the
 
-in remote sensing imagery, Remote Sens. 10 (12) (2018) 1–18 . IEEE
-Conference on Computer Vision and Pattern Recognition, Boston, 2015,
+in remote sensing imagery， Remote Sens. 10 （12） （2018） 1–18 . IEEE
+Conference on Computer Vision and Pattern Recognition， Boston， 2015，
 
-\[49\] T. Chen , S. Lu , J. Fan , SS-HCNN: semi-Supervised hierarchical
-convolutional pp. 1–9 .
+\[49\] T. Chen ， S. Lu ， J. Fan ， SS-HCNN： semi-Supervised
+hierarchical convolutional pp. 1–9 .
 
-neural network for image classiﬁcation, in: IEEE Transactions on Image
-Pro- \[52\] K. He , X. Zhang , S. Ren , J. Sun , Deep residual learning
-for image recognition, in:
+neural network for image classiﬁcation， in： IEEE Transactions on Image
+Pro- \[52\] K. He ， X. Zhang ， S. Ren ， J. Sun ， Deep residual
+learning for image recognition， in：
 
-cessing, Early Access, 2018, pp. 1–10 . Proceedings of the IEEE
+cessing， Early Access， 2018， pp. 1–10 . Proceedings of the IEEE
 Conference on Computer Vision and Pattern Recogni-
 
-\[50\] NVIDIA Deep Learning Accelerator, \[Online\], Available: http:
-//nvdla. org/ , tion, Las Vegas, 2016, pp. 770–778 .
+\[50\] NVIDIA Deep Learning Accelerator， \[Online\]， Available：
+http： //nvdla. org/ ， tion， Las Vegas， 2016， pp. 770–778 .
 
-(2019).
+（2019）.
